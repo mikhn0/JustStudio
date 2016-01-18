@@ -1,0 +1,6 @@
+framework module Pods_JustStudio {
+  umbrella header "Pods-JustStudio-umbrella.h"
+
+  export *
+  module * { export * }
+}
