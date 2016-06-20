@@ -17,8 +17,9 @@ class CategoryCell: UITableViewCell {
         self.clipsToBounds = true
         self.titleLabel = EdgeInsetLabel.init()
         self.titleLabel.textColor = UIColor.whiteColor()
-        self.titleLabel.shadowColor = UIColor.lightGrayColor()
-        self.titleLabel.font = UIFont(name: "HelveticaNeue-Medium", size: 25)
+        self.titleLabel.shadowColor = UIColor.grayColor()
+        self.titleLabel.shadowOffset = CGSize(width: 1, height: -1)
+        self.titleLabel.font = UIFont(name: "HelveticaNeue-Medium", size: 35)
         
         self.photoView = UIImageView.init()
         self.photoView.contentMode = UIViewContentMode.ScaleAspectFill
@@ -38,6 +39,6 @@ class CategoryCell: UITableViewCell {
         
         let contentRect = self.contentView.bounds
         self.photoView.frame = CGRectMake(0, 0, contentRect.size.width, contentRect.size.height)
-        self.titleLabel.frame = CGRectMake(20, 170, contentRect.size.width-40, 50)
+        self.titleLabel.frame = CGRectMake(20, 240, contentRect.size.width-40, 50)
     }
 }

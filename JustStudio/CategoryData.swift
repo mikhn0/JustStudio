@@ -10,15 +10,20 @@ import Foundation
 
 class CategoryData: NSObject {
     var id : String!
-    var category : String!
-    var language : String!
+    var active : Bool!
+    var en : String!
     var image_url : String!
+    var name: String!
+    var ru: String!
     
-    init(id: String, category:String, language:String, image_url:String) {
+    
+    init(id: String!, active:Bool!, en:String!, image_url:String!, name:String!, ru:String!) {
         super.init()
         self.id = id
-        self.category = category
-        self.language = language
+        self.active = active
+        self.en = en
         self.image_url = image_url
+        self.name = name
+        self.ru = ru
     }
 }

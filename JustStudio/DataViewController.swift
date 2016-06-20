@@ -16,21 +16,9 @@ class DataViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     var dataObject: FactData!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        print("CURRENT FACT ==== \(dataObject)")
         
         let url = NSURL(string: dataObject.image_url!)
         self.imageView.sd_setImageWithURL(url)
@@ -44,8 +32,8 @@ class DataViewController: UIViewController {
         
         self.infoView.insertSubview(blurredEffectView, belowSubview: self.dataLabel)
         
-        self.dataLabel!.text = dataObject.facts
-        self.dataLabel!.shadowColor = UIColor.lightGrayColor()
+        self.dataLabel!.text = dataObject.ru
+        self.dataLabel!.shadowColor = UIColor.grayColor()
         
     }
 }
