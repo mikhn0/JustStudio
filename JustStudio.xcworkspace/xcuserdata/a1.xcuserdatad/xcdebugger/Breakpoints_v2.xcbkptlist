@@ -9,38 +9,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "JustStudio/API/LibraryAPI.swift"
-            timestampString = "487881150.505584"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "getAllCategory(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "JustStudio/API/LibraryAPI.swift"
-            timestampString = "487707668.617931"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "getAllCategory(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "JustStudio/CategoryData.swift"
             timestampString = "487708289.642839"
             startingColumnNumber = "9223372036854775807"
@@ -57,13 +25,29 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "JustStudio/API/LibraryAPI.swift"
-            timestampString = "487708459.446033"
+            filePath = "JustStudio/ModelController.swift"
+            timestampString = "488211845.949255"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "getAllCategory(_:)"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "pageViewController(_:viewControllerBeforeViewController:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JustStudio/ModelController.swift"
+            timestampString = "488211845.949255"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "pageViewController(_:viewControllerAfterViewController:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -74,44 +58,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JustStudio/CategoryDetailViewController.swift"
-            timestampString = "488125952.999353"
+            timestampString = "488211763.189163"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "114"
             endingLineNumber = "114"
-            landmarkName = "willMoveToParentViewController(_:)"
-            landmarkType = "5">
+            landmarkName = "CategoryDetailViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "JustStudio/CategoryDetailViewController.swift"
-            timestampString = "488125952.999353"
+            filePath = "JustStudio/ModelController.swift"
+            timestampString = "488211845.949255"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "ConfigurationViewControllers(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "JustStudio/CategoryDetailViewController.swift"
-            timestampString = "488125952.999353"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
-            landmarkName = "pageViewController(_:spineLocationForInterfaceOrientation:)"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "indexOfViewController(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -121,45 +89,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "JustStudio/CategoryDetailViewController.swift"
-            timestampString = "488124035.778921"
+            filePath = "JustStudio/ModelController.swift"
+            timestampString = "488211772.724514"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "38"
             endingLineNumber = "38"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "JustStudio/CategoryDetailViewController.swift"
-            timestampString = "488125952.999353"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "ConfigurationViewControllers(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "JustStudio/CategoryDetailViewController.swift"
-            timestampString = "488125952.999353"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "ConfigurationViewControllers(_:)"
+            landmarkName = "viewControllerAtIndex(_:storyboard:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

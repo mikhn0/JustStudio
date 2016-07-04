@@ -19,9 +19,22 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
         super.viewDidLoad()
         dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) { // 1
             LibraryAPI.sharedInstance().getAllCategory ({ (categories: [CategoryData]) -> Void in
-                self.categories = categories;
-                dispatch_async(dispatch_get_main_queue()) {
-                    self.tableView.reloadData()
+                if categories != [] {
+                    self.categories = categories;
+                    dispatch_async(dispatch_get_main_queue()) {
+                        self.tableView.reloadData()
+                    }
+                } else {
+                    let alertController = UIAlertController(title: "Error", message: "System error.", preferredStyle: .Alert)
+                    
+                    let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
+                        // ...
+                    }
+                    alertController.addAction(OKAction)
+                    
+                    self.presentViewController(alertController, animated: true) {
+                        // ...
+                    }
                 }
             })
         }
@@ -73,9 +86,6 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
             let categoryDetailViewController: CategoryDetailViewController = segue.destinationViewController as! CategoryDetailViewController
             categoryDetailViewController.category = sender as? CategoryData
             
-            //self.navigationController?.navigationBarHidden = false
-            //self.navigationController?.navigationBar.backgroundColor = UIColor.whiteColor()
-            //self.navigationController?.navigationBar.translucent = true
             
         }
     }

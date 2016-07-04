@@ -11,7 +11,10 @@ import UIKit
 
 class CategoryDetailViewController: UIViewController, UIPageViewControllerDelegate {
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var bannerView: GADBannerView!
+    @IBOutlet weak var shareButton: UIButton!
+    @IBOutlet weak var shareView: UIView!
     var pageViewController: UIPageViewController?
     var category: CategoryData?
 
@@ -20,13 +23,24 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         // Configure the page view controller and add it as a child view controller.
-        self.pageViewController = UIPageViewController(transitionStyle: .Scroll, navigationOrientation: .Horizontal, options: nil)
+        self.activityIndicator.startAnimating()
+        
+        self.shareView.layer.cornerRadius = 5
+        let blurEffect = UIBlurEffect(style: .Light)
+        let blurredEffectView = UIVisualEffectView(effect: blurEffect)
+        var frame = self.shareView.frame
+        frame.origin.x = 0
+        frame.origin.y = 0
+        blurredEffectView.frame = frame
+        self.shareView.insertSubview(blurredEffectView, belowSubview: self.shareButton)
+        
+        self.pageViewController = UIPageViewController(transitionStyle: .PageCurl, navigationOrientation: .Horizontal, options: nil)
         self.pageViewController!.delegate = self
         
-        print("Google Mobile Ads SDK version: " + GADRequest.sdkVersion())
-        self.bannerView.adUnitID = "ca-app-pub-9914727606483597/7269455068"
-        self.bannerView.rootViewController = self
-        self.bannerView.loadRequest(GADRequest())
+//        print("Google Mobile Ads SDK version: " + GADRequest.sdkVersion())
+//        self.bannerView.adUnitID = "ca-app-pub-8295422108411344/2897372116"
+//        self.bannerView.rootViewController = self
+//        self.bannerView.loadRequest(GADRequest())
         
         LibraryAPI.sharedInstance().getFactsByCategory(self.category!.name!, completion:{ (facts: [FactData]) -> Void in
             
@@ -50,21 +64,49 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
     func ConfigurationViewControllers(facts: [FactData]) -> Void {
         
         self.modelController.allFacts = facts;
+        
+        self.modelController.activityIndicator = self.activityIndicator
         let startingViewController: DataViewController = self.modelController.viewControllerAtIndex(0, storyboard: self.storyboard!)!
+        
         
         let viewControllers = [startingViewController]
         self.pageViewController!.setViewControllers(viewControllers, direction: .Forward, animated: true, completion: {done in })
         self.pageViewController!.dataSource = self.modelController
-        //self.addChildViewController(self.pageViewController!)
-        self.view.insertSubview(self.pageViewController!.view, belowSubview: self.bannerView)
+        self.addChildViewController(self.pageViewController!)
+        self.view.insertSubview(self.pageViewController!.view, aboveSubview: self.bannerView)
         
     }
     
-     func backButton(sender: AnyObject) {
+    @IBAction func shareAction(sender: AnyObject) {
+        // Check and see if the text field is empty
+        let currentViewController = self.pageViewController!.viewControllers![0] as! DataViewController
+        let indexOfCurrentViewController = self.modelController.indexOfViewController(currentViewController)
         
+        if (self.modelController.allFacts[indexOfCurrentViewController].image_url == "") {
+            // The text field is empty so display an Alert
+            displayAlert("Warning", message: "Enter something in the text field!")
+        } else {
+            // We have contents so display the share sheet
+            displayShareSheet(self.modelController.allFacts[indexOfCurrentViewController])
+        }
     }
-    
 
+    func displayAlert(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+        presentViewController(alertController, animated: true, completion: nil)
+        return
+    }
+    
+    func displayShareSheet(shareContent:FactData) {
+        let siteUrl:NSURL! = NSURL.init(string: "https://justfacts.carrd.co/")
+        let url = NSURL(string: shareContent.image_url)
+        let imageView: UIImageView? = UIImageView.init()
+        imageView!.sd_setImageWithURL(url)
+        let shareImage: UIImage! = imageView?.image
+        let activityViewController = UIActivityViewController(activityItems: [shareImage as UIImage, shareContent.ru as String, siteUrl as NSURL], applicationActivities: nil)
+        presentViewController(activityViewController, animated: true, completion: {})
+    }
     
     var modelController: ModelController {
         // Return the model controller object, creating it if necessary.
@@ -110,10 +152,5 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
     }
 
     
-    override func willMoveToParentViewController(parent: UIViewController?) {
-        //if parent == nil {
-        //    self.navigationController?.navigationBarHidden = true
-        //}
-    }
 }
 

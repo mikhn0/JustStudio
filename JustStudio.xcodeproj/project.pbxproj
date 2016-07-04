@@ -694,6 +694,7 @@
 			baseConfigurationReference = 28C62404C5D69967FED13264 /* Pods-JustStudioTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = JustStudioTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = juststudio2.JustStudioTests;
@@ -707,6 +708,7 @@
 			baseConfigurationReference = B2A739AF0A7367AC9D47AEDE /* Pods-JustStudioTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = JustStudioTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = juststudio2.JustStudioTests;
@@ -719,6 +721,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 12F41E2AD60D40074395FCBB /* Pods-JustStudioUITests.debug.xcconfig */;
 			buildSettings = {
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = JustStudioUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = juststudio2.JustStudioUITests;
@@ -732,6 +735,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A727AB167C36D5CD7EB9B127 /* Pods-JustStudioUITests.release.xcconfig */;
 			buildSettings = {
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = JustStudioUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = juststudio2.JustStudioUITests;

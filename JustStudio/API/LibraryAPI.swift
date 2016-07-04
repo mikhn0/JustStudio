@@ -26,18 +26,27 @@ class LibraryAPI : NSObject {
             .validate(statusCode: 200..<300)
             .validate(contentType: ["application/json"])
             .responseJSON { response in
-            let jsonDict = response.result.value as! NSDictionary
-            let jsonCategoryArr = jsonDict["categories"] as! NSArray
-            
-            var categoryArr: [CategoryData] = []
-            for element in jsonCategoryArr {
-                let dict = element as! NSDictionary
-                let categoryData = CategoryData(id:(dict["_id"] as? String) , active:(dict["active"] as? Bool), en:(dict["en"] as? String), image_url:(dict["image"] as? String), name:(dict["name"] as? String), ru:(dict["ru"] as? String))
-                categoryArr.append(categoryData)
+                switch response.result {
+                case .Success(let JSON):
+                    let jsonDict = JSON as! NSDictionary
+                    let jsonCategoryArr = jsonDict["categories"] as! NSArray
+                    
+                    var categoryArr: [CategoryData] = []
+                    for element in jsonCategoryArr {
+                        let dict = element as! NSDictionary
+                        let categoryData = CategoryData(id:(dict["_id"] as? String) , active:(dict["active"] as? Bool), en:(dict["en"] as? String), image_url:(dict["image"] as? String), name:(dict["name"] as? String), ru:(dict["ru"] as? String))
+                        categoryArr.append(categoryData)
+                        
+                    }
+                    //print("CATEGORIES ==== \(categoryArr)")
+                    completion(categories: categoryArr)
 
-            }
-            //print("CATEGORIES ==== \(categoryArr)")
-            completion(categories: categoryArr)
+                    
+                case .Failure(let error):
+                    print("Request failed with error: \(error)")
+                    completion(categories:  [])
+
+                }
         }
     }
     

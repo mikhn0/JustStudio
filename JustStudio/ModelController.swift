@@ -21,7 +21,7 @@ import UIKit
 class ModelController: NSObject, UIPageViewControllerDataSource {
 
     var allFacts: [FactData] = []
-
+    var activityIndicator: UIActivityIndicatorView!
 
     override init() {
         super.init()
@@ -36,7 +36,8 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
 
         // Create a new view controller and pass suitable data.
         let dataViewController = storyboard.instantiateViewControllerWithIdentifier("DataViewController") as! DataViewController
-        dataViewController.dataObject = self.allFacts[index] 
+        dataViewController.dataObject = self.allFacts[index]
+        dataViewController.activityIndicator = self.activityIndicator
         return dataViewController
     }
 
@@ -72,7 +73,7 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
         if index == NSNotFound {
             return nil
         }
-        
+        self.activityIndicator.startAnimating()
         index += 1
         if index == self.allFacts.count {
             return nil
