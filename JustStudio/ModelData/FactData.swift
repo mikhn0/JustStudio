@@ -10,15 +10,19 @@ import Foundation
 
 class FactData: NSObject {
     var id : String!
-    var facts : String!
-    var language : String!
+    var active : Bool!
+    var category : String!
+    var en : String!
+    var ru : String!
     var image_url : String!
     
-    init(id:String, facts:String, language:String, image_url:String) {
+    init(id:String!, active:Bool!, category:String!, en:String!, ru:String!, image_url:String!) {
         super.init()
         self.id = id
-        self.facts = facts
-        self.language = language
+        self.active = active
+        self.category = category
+        self.en = en
+        self.ru = ru
         self.image_url = image_url
     }
 }

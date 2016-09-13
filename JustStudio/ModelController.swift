@@ -20,15 +20,11 @@ import UIKit
 
 class ModelController: NSObject, UIPageViewControllerDataSource {
 
-    //var pageData: [String] = []
     var allFacts: [FactData] = []
-
+    var activityIndicator: UIActivityIndicatorView!
 
     override init() {
         super.init()
-        // Create the data model.
-        //let dateFormatter = NSDateFormatter()
-        //pageData = dateFormatter.monthSymbols
 
     }
 
@@ -40,7 +36,8 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
 
         // Create a new view controller and pass suitable data.
         let dataViewController = storyboard.instantiateViewControllerWithIdentifier("DataViewController") as! DataViewController
-        dataViewController.dataObject = self.allFacts[index] 
+        dataViewController.dataObject = self.allFacts[index]
+        dataViewController.activityIndicator = self.activityIndicator
         return dataViewController
     }
 
@@ -48,7 +45,7 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
         // Return the index of the given data view controller.
         // For simplicity, this implementation uses a static array of model objects and the view controller stores the model object; you can therefore use the model object to identify the index.
         var indexOfFact: Int = NSNotFound
-        for var index = 0 ; index < allFacts.count ; ++index {
+        for index in 0  ..< allFacts.count  {
             let factData: FactData = allFacts[index]
             if factData.id == viewController.dataObject.id {
                 indexOfFact = index
@@ -67,7 +64,7 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
             return nil
         }
         
-        index--
+        index -= 1
         return self.viewControllerAtIndex(index, storyboard: viewController.storyboard!)
     }
 
@@ -76,8 +73,8 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
         if index == NSNotFound {
             return nil
         }
-        
-        index++
+        self.activityIndicator.startAnimating()
+        index += 1
         if index == self.allFacts.count {
             return nil
         }

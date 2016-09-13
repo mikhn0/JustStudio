@@ -13,28 +13,42 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var tableView: UITableView!
     let textCellIdentifier = "CategoryCell"
     var categories: NSArray! = []
+    var heightOfCell: CGFloat = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) { // 1
             LibraryAPI.sharedInstance().getAllCategory ({ (categories: [CategoryData]) -> Void in
-                self.categories = categories;
-                dispatch_async(dispatch_get_main_queue()) {
-                    self.tableView.reloadData()
+                if categories != [] {
+                    self.categories = categories;
+                    dispatch_async(dispatch_get_main_queue()) {
+                        self.tableView.reloadData()
+                    }
+                } else {
+                    let alertController = UIAlertController(title: "Error", message: "System error.", preferredStyle: .Alert)
+                    
+                    let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
+                        // ...
+                    }
+                    alertController.addAction(OKAction)
+                    
+                    self.presentViewController(alertController, animated: true) {
+                        // ...
+                    }
                 }
             })
         }
         
         tableView.delegate = self
         tableView.dataSource = self
-        self.navigationController?.navigationBarHidden = true
+        heightOfCell = (self.view.frame.size.height+20) / 2
     }
-    
+
     
     //#pragma - mark UITableViewDelegate
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 224
+        return heightOfCell
         
     }
     
@@ -51,9 +65,13 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
         let row = indexPath.row
         
         let categoryData = categories[row] as! CategoryData
-        cell.titleLabel.text = categoryData.category
-        let url = NSURL(string: categoryData.image_url!)
-        cell.photoView.sd_setImageWithURL(url)
+        cell.titleLabel.text = categoryData.ru
+        
+        if (categoryData.image_url != nil) {
+            let url = NSURL(string: categoryData.image_url)
+            cell.photoView.sd_setImageWithURL(url)
+        }
+        
         
         return cell
     }
@@ -65,12 +83,18 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "FactsByCategorySegue" {
-            let rootViewController: RootViewController = segue.destinationViewController as! RootViewController
-            rootViewController.category = sender as? CategoryData
+            let categoryDetailViewController: CategoryDetailViewController = segue.destinationViewController as! CategoryDetailViewController
+            categoryDetailViewController.category = sender as? CategoryData
             
-            self.navigationController?.navigationBarHidden = false
-            self.navigationController?.navigationBar.translucent = true
             
         }
     }
+    
+    @IBAction func prepareForUnwind(segue: UIStoryboardSegue) -> Void {
+        if segue.identifier == "unwindToViewController" {
+            let factVC: CategoryDetailViewController = segue.sourceViewController as! CategoryDetailViewController
+            print("UNVIND SEGUE");
+        }
+    }
+    
 }
