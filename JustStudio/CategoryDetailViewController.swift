@@ -37,10 +37,10 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
         self.pageViewController = UIPageViewController(transitionStyle: .PageCurl, navigationOrientation: .Horizontal, options: nil)
         self.pageViewController!.delegate = self
         
-//        print("Google Mobile Ads SDK version: " + GADRequest.sdkVersion())
-//        self.bannerView.adUnitID = "ca-app-pub-8295422108411344/2897372116"
-//        self.bannerView.rootViewController = self
-//        self.bannerView.loadRequest(GADRequest())
+        print("Google Mobile Ads SDK version: " + GADRequest.sdkVersion())
+        self.bannerView.adUnitID = "ca-app-pub-8295422108411344/2897372116"
+        self.bannerView.rootViewController = self
+        self.bannerView.loadRequest(GADRequest())
         
         LibraryAPI.sharedInstance().getFactsByCategory(self.category!.name!, completion:{ (facts: [FactData]) -> Void in
             

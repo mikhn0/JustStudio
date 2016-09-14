@@ -12,7 +12,7 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
 
     @IBOutlet weak var tableView: UITableView!
     let textCellIdentifier = "CategoryCell"
-    var categories: NSArray! = []
+    var categories: [CategoryData]! = []
     var heightOfCell: CGFloat = 0.0
     
     override func viewDidLoad() {
@@ -23,6 +23,15 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
                     self.categories = categories;
                     dispatch_async(dispatch_get_main_queue()) {
                         self.tableView.reloadData()
+                    }
+                    
+                    for categ in self.categories {
+                        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+                            print("start prepare image for \(categ.name)")
+                            let data = NSData(contentsOfURL: NSURL(string: categ.image_url)!)
+                            categ.image = UIImage(data:data!)
+                            print("finished prepare image for \(categ.name)")
+                        }
                     }
                 } else {
                     let alertController = UIAlertController(title: "Error", message: "System error.", preferredStyle: .Alert)
@@ -49,7 +58,6 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return heightOfCell
-        
     }
     
     
@@ -64,12 +72,13 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
         
         let row = indexPath.row
         
-        let categoryData = categories[row] as! CategoryData
+        let categoryData = categories[row]
         cell.titleLabel.text = categoryData.ru
         
         if (categoryData.image_url != nil) {
+            print("IndexPath.row === \(row)")
             let url = NSURL(string: categoryData.image_url)
-            cell.photoView.sd_setImageWithURL(url)
+            cell.photoView.sd_setImageWithURL(url, placeholderImage: categoryData.image)
         }
         
         
@@ -77,7 +86,7 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let selectCategory: CategoryData = categories[indexPath.row] as! CategoryData
+        let selectCategory: CategoryData = categories[indexPath.row] 
         self.performSegueWithIdentifier("FactsByCategorySegue", sender: selectCategory)
     }
     
