@@ -18,10 +18,11 @@ class CategoryCell: UITableViewCell {
         self.titleLabel = EdgeInsetLabel.init()
         self.titleLabel.textColor = UIColor.white
         self.titleLabel.shadowColor = UIColor.gray
+        self.titleLabel.numberOfLines = 0
         self.titleLabel.shadowOffset = CGSize(width: 1, height: -1)
         self.titleLabel.font = UIFont(name: "HelveticaNeue-Medium", size: 35)
         
-        self.photoView = UIImageView.init()
+        self.photoView = UIImageView()
         self.photoView.contentMode = UIViewContentMode.scaleAspectFill
         
         self.contentView.addSubview(self.photoView)
@@ -39,6 +40,6 @@ class CategoryCell: UITableViewCell {
         
         let contentRect = self.contentView.bounds
         self.photoView.frame = CGRect(x: 0, y: 0, width: contentRect.size.width, height: contentRect.size.height)
-        self.titleLabel.frame = CGRect(x: 20, y: 240, width: contentRect.size.width-40, height: 50)
+        self.titleLabel.frame = CGRect(x: 20, y: contentRect.size.height-100, width: contentRect.size.width-40, height: 100)
     }
 }

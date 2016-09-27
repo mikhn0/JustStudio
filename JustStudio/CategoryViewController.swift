@@ -17,35 +17,38 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        LibraryAPI.sharedInstance().getAllCategory (completion: { ( categories: [CategoryData]) -> Void  in
-            if categories != [] {
-                self.categories = categories;
-                DispatchQueue.main.async() {
-                    self.tableView.reloadData()
-                }
-                
-                for categ in self.categories {
-                    DispatchQueue.global().async {
-                        print("start prepare image for \(categ.name)")
-                        let data = NSData(contentsOf: NSURL(string: categ.image_url)! as URL)
-                        categ.image = UIImage(data:data! as Data)
-                        print("finished prepare image for \(categ.name)")
+        //dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) { // 1
+            LibraryAPI.sharedInstance().getAllCategory ({ (categories: [CategoryData]) -> Void in
+                if categories != [] {
+                    self.categories = categories;
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                    
+                    for categ in self.categories {
+                    DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.default).async {
+                            print("START prepare image for \(categ.name)")
+                            let data = try? Data(contentsOf: URL(string: categ.image_url)!)
+                            if categ.image == nil {
+                                categ.image = UIImage(data:data!)!
+                            }
+                            print("FINISHED prepare image for \(categ.name)")
+                        }
+                    }
+                } else {
+                    let alertController = UIAlertController(title: "Error", message: "System error.", preferredStyle: .alert)
+                    
+                    let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
+                        // ...
+                    }
+                    alertController.addAction(OKAction)
+                    
+                    self.present(alertController, animated: true) {
+                        // ...
                     }
                 }
-            } else {
-                let alertController = UIAlertController(title: "Error", message: "System error.", preferredStyle: .alert)
-                
-                let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
-                    // ...
-                }
-                alertController.addAction(OKAction)
-                
-                self.present(alertController, animated: true) {
-                    // ...
-                }
-            }
-        })
+            })
+        //}
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -67,19 +70,19 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = CategoryCell.init(style: UITableViewCellStyle.value1, reuseIdentifier: textCellIdentifier)
+        let cell = CategoryCell(style: UITableViewCellStyle.value1, reuseIdentifier: textCellIdentifier)
         
         let row = (indexPath as NSIndexPath).row
         
         let categoryData = categories[row]
         cell.titleLabel.text = categoryData.ru
+        cell.titleLabel.sizeToFit()
         
         if (categoryData.image_url != nil) {
             print("IndexPath.row === \(row)")
             let url = URL(string: categoryData.image_url)
-            cell.photoView.sd_setImage(with: url, placeholderImage: categoryData.image)
+            cell.photoView.sd_setImage(with: url, placeholderImage: categoryData.image==nil ? UIImage(named:"placeholder") :categoryData.image)
         }
-        
         
         return cell
     }
@@ -93,16 +96,16 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
         if segue.identifier == "FactsByCategorySegue" {
             let categoryDetailViewController: CategoryDetailViewController = segue.destination as! CategoryDetailViewController
             categoryDetailViewController.category = sender as? CategoryData
-            
-            
         }
     }
     
     @IBAction func prepareForUnwind(_ segue: UIStoryboardSegue) -> Void {
         if segue.identifier == "unwindToViewController" {
-            let factVC: CategoryDetailViewController = segue.source as! CategoryDetailViewController
+            //let factVC: CategoryDetailViewController = segue.sourceViewController as! CategoryDetailViewController
             print("UNVIND SEGUE");
         }
     }
+    
+
     
 }

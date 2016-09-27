@@ -1,5 +1,5 @@
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '9.0'
+platform :ios, '10.0'
 use_frameworks!
 
 target 'JustStudio' do
@@ -8,11 +8,11 @@ target 'JustStudio' do
     pod 'Google-Mobile-Ads-SDK'
 end
 
-#target 'JustStudioTests' do
+target 'JustStudioTests' do
 
-#end
+end
 
-#target 'JustStudioUITests' do
+target 'JustStudioUITests' do
 
-#end
+end
 

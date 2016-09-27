@@ -38,11 +38,11 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
         self.pageViewController!.delegate = self
         
         print("Google Mobile Ads SDK version: " + GADRequest.sdkVersion())
-        self.bannerView.adUnitID = "ca-app-pub-8295422108411344/2897372116"
+        self.bannerView.adUnitID = "ca-app-pub-8295422108411344/4374105316"
         self.bannerView.rootViewController = self
         self.bannerView.load(GADRequest())
         
-        LibraryAPI.sharedInstance().getFactsByCategory(self.category!.name!, completion:{ (facts: [FactData]) in
+        LibraryAPI.sharedInstance().getFactsByCategory(self.category!.name!, completion:{ (facts: [FactData]) -> Void in
             
             self.ConfigurationViewControllers(facts)
 
@@ -55,16 +55,17 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
         }
         self.pageViewController!.view.frame = pageViewRect
         self.pageViewController!.didMove(toParentViewController: self)
-        
-        
-        // Add the page view controller's gesture recognizers to the book view controller's view so that the gestures are started more easily.
-        //self.view.gestureRecognizers = self.pageViewController!.gestureRecognizers
     }
 
     func ConfigurationViewControllers(_ facts: [FactData]) -> Void {
         
         self.modelController.allFacts = facts;
-        
+        DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.high).async {
+            for fact in facts {
+                    let data = try? Data(contentsOf: URL(string: fact.image_url)!)
+                    fact.image = UIImage(data:data!)
+            }
+        }
         self.modelController.activityIndicator = self.activityIndicator
         let startingViewController: DataViewController = self.modelController.viewControllerAtIndex(0, storyboard: self.storyboard!)!
         
@@ -73,7 +74,7 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
         self.pageViewController!.setViewControllers(viewControllers, direction: .forward, animated: true, completion: {done in })
         self.pageViewController!.dataSource = self.modelController
         self.addChildViewController(self.pageViewController!)
-        self.view.insertSubview(self.pageViewController!.view, aboveSubview: self.bannerView)
+        self.view.insertSubview(self.pageViewController!.view, belowSubview: self.bannerView)
         
     }
     
@@ -99,12 +100,12 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
     }
     
     func displayShareSheet(_ shareContent:FactData) {
-        let siteUrl:URL! = URL.init(string: "https://justfacts.carrd.co/")
+        let siteUrl:URL! = URL(string: "https://justfacts.carrd.co/")
         let url = URL(string: shareContent.image_url)
-        let imageView: UIImageView? = UIImageView.init()
+        let imageView: UIImageView? = UIImageView()
         imageView!.sd_setImage(with: url)
         let shareImage: UIImage! = imageView?.image
-        let activityViewController = UIActivityViewController(activityItems: [shareImage as UIImage, shareContent.ru as String, siteUrl as URL], applicationActivities: nil)
+        let activityViewController = UIActivityViewController(activityItems: [shareContent.ru as String, shareImage as UIImage, siteUrl as URL], applicationActivities: nil)
         present(activityViewController, animated: true, completion: {})
     }
     

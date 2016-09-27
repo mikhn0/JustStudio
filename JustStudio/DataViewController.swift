@@ -19,12 +19,9 @@ class DataViewController: UIViewController {
     var dataObject: FactData!
     var activityIndicator: UIActivityIndicatorView?
     
-    //override func viewWillAppear(animated: Bool) {
-        //super.viewWillAppear(animated)
-        
     override func viewDidLoad() {
         let url = URL(string: dataObject.image_url!)
-        self.imageView.sd_setImage(with: url, placeholderImage:UIImage.init(named: "tree_bsckground"), options:SDWebImageOptions.cacheMemoryOnly , progress: { (receivedSize, expectedSize) in
+        self.imageView.sd_setImage(with: url, placeholderImage:dataObject.image, options:SDWebImageOptions.cacheMemoryOnly , progress: { (receivedSize, expectedSize) in
                 self.activityIndicator!.startAnimating()
             }) { (image, error, imageCacheType, url) in
                 self.activityIndicator!.stopAnimating()
@@ -37,7 +34,7 @@ class DataViewController: UIViewController {
         frame.origin.y = 0
         blurredEffectView.frame = frame
         
-        self.infoView.insertSubview(blurredEffectView, belowSubview: self.dataLabel)
+        //self.infoView.insertSubview(blurredEffectView, belowSubview: self.dataLabel)
         
         self.dataLabel!.text = dataObject.ru
         self.dataLabel!.shadowColor = UIColor.gray
@@ -51,7 +48,5 @@ class DataViewController: UIViewController {
         self.dataLabel.layer.masksToBounds = false
     }
 
-        
-    //}
 }
 

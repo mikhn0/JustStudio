@@ -25,7 +25,6 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
 
     override init() {
         super.init()
-
     }
 
     func viewControllerAtIndex(_ index: Int, storyboard: UIStoryboard) -> DataViewController? {
@@ -73,7 +72,6 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
         if index == NSNotFound {
             return nil
         }
-        self.activityIndicator.startAnimating()
         index += 1
         if index == self.allFacts.count {
             return nil
