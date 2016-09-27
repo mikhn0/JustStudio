@@ -21,13 +21,13 @@ class LibraryAPI : NSObject {
         return self.instance
     }
     
-    func getAllCategory(completion: (categories: [CategoryData]) -> Void) -> Void {
-        Alamofire.request(.GET, "\(SERVER_URL)/categories", parameters:nil)
+    func getAllCategory(completion: @escaping ([CategoryData]) -> Void) {
+        Alamofire.request("\(SERVER_URL)/categories")
             .validate(statusCode: 200..<300)
             .validate(contentType: ["application/json"])
             .responseJSON { response in
                 switch response.result {
-                case .Success(let JSON):
+                case .success(let JSON):
                     let jsonDict = JSON as! NSDictionary
                     let jsonCategoryArr = jsonDict["categories"] as! NSArray
                     
@@ -39,55 +39,19 @@ class LibraryAPI : NSObject {
                         
                     }
                     //print("CATEGORIES ==== \(categoryArr)")
-                    completion(categories: categoryArr)
+                    completion(categoryArr)
 
                     
-                case .Failure(let error):
+                case .failure(let error):
                     print("Request failed with error: \(error)")
-                    completion(categories:  [])
+                    completion([])
 
                 }
         }
     }
-    
-    func getAllFacts(completion: (facts: [FactData]) -> Void) -> Void {
-//        Alamofire.request(.GET, "\(SERVER_URL)/facts").responseJSON { response in
-//            if response.result.value != nil {
-//                let jsonDict = response.result.value as! NSDictionary
-//                let responseData = jsonDict["facts"] as! NSArray
-//                
-//                var responseArr: [FactData] = []
-//                for element in responseData {
-//                    
-//                    let dict = element as! NSDictionary
-//                    
-//                    let arr = element["fact"] as! NSArray
-//                    let pre = NSLocale.preferredLanguages()[0]
-//                    
-//                    for i in 0 ..< arr.count {
-//                        
-//                        let factDict = arr[i] as! NSDictionary
-//                        if pre.rangeOfString(factDict["language"] as! String) != nil {
-//                            
-//                            let factData = FactData(id:(dict["_id"] as! String), facts:(factDict["fact"] as! String), language:(factDict["language"] as! String), image_url:(dict["image"] as! String))
-//                            responseArr.append(factData)
-//                            
-//                        }
-//                    }
-//                    
-//                }
-//                
-//                completion(facts: responseArr);
-//            } else {
-//                print("ERROR ==== \(response.result.error)")
-//            }
-//
-//        }
-    }
-    
-    
-    func getFactsByCategory(category:String, completion: (facts: [FactData]) -> Void) -> Void {
-        Alamofire.request(.GET, "\(SERVER_URL)/facts", parameters:["category":category])
+
+    func getFactsByCategory(_ category:String, completion: @escaping (_ facts: [FactData]) -> Void) -> Void {
+        Alamofire.request("\(SERVER_URL)/facts", parameters:["category":category])
             .validate(statusCode: 200..<300)
             .validate(contentType: ["application/json"])
             .responseJSON { response in
@@ -103,7 +67,7 @@ class LibraryAPI : NSObject {
                     
                 }
                 //print("CATEGORIES ==== \(categoryArr)")
-                completion(facts: factsArr)
+                completion(factsArr)
         }
     }
     

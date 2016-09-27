@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		35CCE91C0F7B447F8E6146E0 /* Pods_JustStudioUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC49613D166B624246FB2113 /* Pods_JustStudioUITests.framework */; };
-		6976F75A4710922615D64868 /* Pods_JustStudioTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F23405B96ED7B27E692B4A59 /* Pods_JustStudioTests.framework */; };
+		634BA8E91D9A71BE0042FB2B /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634BA8E81D9A71BE0042FB2B /* Alamofire.framework */; };
 		755150FD1C47EE1C00527733 /* UILable+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755150FC1C47EE1C00527733 /* UILable+Layout.swift */; };
 		75620F3E1C464CF10069DD5F /* CategoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75620F3D1C464CF10069DD5F /* CategoryData.swift */; };
 		75620F411C464D880069DD5F /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75620F401C464D880069DD5F /* CategoryCell.swift */; };
@@ -21,35 +20,17 @@
 		883D700E1C0DAE22003ECEE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 883D700C1C0DAE22003ECEE2 /* Main.storyboard */; };
 		883D70101C0DAE22003ECEE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 883D700F1C0DAE22003ECEE2 /* Assets.xcassets */; };
 		883D70131C0DAE22003ECEE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 883D70111C0DAE22003ECEE2 /* LaunchScreen.storyboard */; };
-		883D701E1C0DAE22003ECEE2 /* JustStudioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883D701D1C0DAE22003ECEE2 /* JustStudioTests.swift */; };
-		883D70291C0DAE22003ECEE2 /* JustStudioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883D70281C0DAE22003ECEE2 /* JustStudioUITests.swift */; };
 		8844561F1C281CF00014DA09 /* FactData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8844561E1C281CF00014DA09 /* FactData.swift */; };
 		88F1E09C1C24511100D8C28C /* LibraryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F1E09B1C24511100D8C28C /* LibraryAPI.swift */; };
 		C350DB6D50EFEC23B70C990F /* Pods_JustStudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 492DADD39FD73FE0D68407A3 /* Pods_JustStudio.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		883D701A1C0DAE22003ECEE2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 883D6FF91C0DAE22003ECEE2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 883D70001C0DAE22003ECEE2;
-			remoteInfo = JustStudio;
-		};
-		883D70251C0DAE22003ECEE2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 883D6FF91C0DAE22003ECEE2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 883D70001C0DAE22003ECEE2;
-			remoteInfo = JustStudio;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		12F41E2AD60D40074395FCBB /* Pods-JustStudioUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustStudioUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JustStudioUITests/Pods-JustStudioUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		28C62404C5D69967FED13264 /* Pods-JustStudioTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustStudioTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JustStudioTests/Pods-JustStudioTests.debug.xcconfig"; sourceTree = "<group>"; };
 		416BB99370592DD884B562DA /* Pods-JustStudio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustStudio.release.xcconfig"; path = "Pods/Target Support Files/Pods-JustStudio/Pods-JustStudio.release.xcconfig"; sourceTree = "<group>"; };
 		492DADD39FD73FE0D68407A3 /* Pods_JustStudio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JustStudio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		634BA8E81D9A71BE0042FB2B /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../Library/Developer/Xcode/DerivedData/JustStudio-fuvsexioqtfstjhhedbfqxcktqds/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		755150FC1C47EE1C00527733 /* UILable+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILable+Layout.swift"; sourceTree = "<group>"; };
 		75620F3C1C4580E40069DD5F /* JustStudio-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JustStudio-Bridging-Header.h"; sourceTree = "<group>"; };
 		75620F3D1C464CF10069DD5F /* CategoryData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryData.swift; sourceTree = "<group>"; };
@@ -66,10 +47,8 @@
 		883D700F1C0DAE22003ECEE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		883D70121C0DAE22003ECEE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		883D70141C0DAE22003ECEE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		883D70191C0DAE22003ECEE2 /* JustStudioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JustStudioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		883D701D1C0DAE22003ECEE2 /* JustStudioTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustStudioTests.swift; sourceTree = "<group>"; };
 		883D701F1C0DAE22003ECEE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		883D70241C0DAE22003ECEE2 /* JustStudioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JustStudioUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		883D70281C0DAE22003ECEE2 /* JustStudioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustStudioUITests.swift; sourceTree = "<group>"; };
 		883D702A1C0DAE22003ECEE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8844561E1C281CF00014DA09 /* FactData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FactData.swift; path = ModelData/FactData.swift; sourceTree = "<group>"; };
@@ -86,23 +65,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				634BA8E91D9A71BE0042FB2B /* Alamofire.framework in Frameworks */,
 				C350DB6D50EFEC23B70C990F /* Pods_JustStudio.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		883D70161C0DAE22003ECEE2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6976F75A4710922615D64868 /* Pods_JustStudioTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		883D70211C0DAE22003ECEE2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				35CCE91C0F7B447F8E6146E0 /* Pods_JustStudioUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,8 +129,6 @@
 			isa = PBXGroup;
 			children = (
 				883D70011C0DAE22003ECEE2 /* JustStudio.app */,
-				883D70191C0DAE22003ECEE2 /* JustStudioTests.xctest */,
-				883D70241C0DAE22003ECEE2 /* JustStudioUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -229,6 +191,7 @@
 		F4B5816DB2F43C9DC5A3C79F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				634BA8E81D9A71BE0042FB2B /* Alamofire.framework */,
 				492DADD39FD73FE0D68407A3 /* Pods_JustStudio.framework */,
 				F23405B96ED7B27E692B4A59 /* Pods_JustStudioTests.framework */,
 				EC49613D166B624246FB2113 /* Pods_JustStudioUITests.framework */,
@@ -259,47 +222,6 @@
 			productReference = 883D70011C0DAE22003ECEE2 /* JustStudio.app */;
 			productType = "com.apple.product-type.application";
 		};
-		883D70181C0DAE22003ECEE2 /* JustStudioTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 883D70301C0DAE22003ECEE2 /* Build configuration list for PBXNativeTarget "JustStudioTests" */;
-			buildPhases = (
-				B2D8ED57C23CB82C2F1DDB20 /* [CP] Check Pods Manifest.lock */,
-				883D70151C0DAE22003ECEE2 /* Sources */,
-				883D70161C0DAE22003ECEE2 /* Frameworks */,
-				883D70171C0DAE22003ECEE2 /* Resources */,
-				CEF10262034B3B0EB6B65470 /* [CP] Embed Pods Frameworks */,
-				E6A556AF791ED6789ED707AE /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				883D701B1C0DAE22003ECEE2 /* PBXTargetDependency */,
-			);
-			name = JustStudioTests;
-			productName = JustStudioTests;
-			productReference = 883D70191C0DAE22003ECEE2 /* JustStudioTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		883D70231C0DAE22003ECEE2 /* JustStudioUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 883D70331C0DAE22003ECEE2 /* Build configuration list for PBXNativeTarget "JustStudioUITests" */;
-			buildPhases = (
-				6651F453B22354E1FFA3D148 /* [CP] Check Pods Manifest.lock */,
-				883D70201C0DAE22003ECEE2 /* Sources */,
-				883D70211C0DAE22003ECEE2 /* Frameworks */,
-				883D70221C0DAE22003ECEE2 /* Resources */,
-				4767D59E3605ECE451D4B3D8 /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				883D70261C0DAE22003ECEE2 /* PBXTargetDependency */,
-			);
-			name = JustStudioUITests;
-			productName = JustStudioUITests;
-			productReference = 883D70241C0DAE22003ECEE2 /* JustStudioUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -313,14 +235,7 @@
 					883D70001C0DAE22003ECEE2 = {
 						CreatedOnToolsVersion = 7.1.1;
 						DevelopmentTeam = UT3YUVT7N2;
-					};
-					883D70181C0DAE22003ECEE2 = {
-						CreatedOnToolsVersion = 7.1.1;
-						TestTargetID = 883D70001C0DAE22003ECEE2;
-					};
-					883D70231C0DAE22003ECEE2 = {
-						CreatedOnToolsVersion = 7.1.1;
-						TestTargetID = 883D70001C0DAE22003ECEE2;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -338,8 +253,6 @@
 			projectRoot = "";
 			targets = (
 				883D70001C0DAE22003ECEE2 /* JustStudio */,
-				883D70181C0DAE22003ECEE2 /* JustStudioTests */,
-				883D70231C0DAE22003ECEE2 /* JustStudioUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -352,20 +265,6 @@
 				883D70131C0DAE22003ECEE2 /* LaunchScreen.storyboard in Resources */,
 				883D70101C0DAE22003ECEE2 /* Assets.xcassets in Resources */,
 				883D700E1C0DAE22003ECEE2 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		883D70171C0DAE22003ECEE2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		883D70221C0DAE22003ECEE2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,21 +286,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JustStudio/Pods-JustStudio-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4767D59E3605ECE451D4B3D8 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JustStudioUITests/Pods-JustStudioUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		4E63342072CA38680BFF8E0D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -417,21 +301,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JustStudio/Pods-JustStudio-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6651F453B22354E1FFA3D148 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
 		A9BBB0F60A50B7E0553DE80D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -445,51 +314,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		B2D8ED57C23CB82C2F1DDB20 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		CEF10262034B3B0EB6B65470 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JustStudioTests/Pods-JustStudioTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E6A556AF791ED6789ED707AE /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JustStudioTests/Pods-JustStudioTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -513,36 +337,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		883D70151C0DAE22003ECEE2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				883D701E1C0DAE22003ECEE2 /* JustStudioTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		883D70201C0DAE22003ECEE2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				883D70291C0DAE22003ECEE2 /* JustStudioUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		883D701B1C0DAE22003ECEE2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 883D70001C0DAE22003ECEE2 /* JustStudio */;
-			targetProxy = 883D701A1C0DAE22003ECEE2 /* PBXContainerItemProxy */;
-		};
-		883D70261C0DAE22003ECEE2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 883D70001C0DAE22003ECEE2 /* JustStudio */;
-			targetProxy = 883D70251C0DAE22003ECEE2 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		883D700C1C0DAE22003ECEE2 /* Main.storyboard */ = {
@@ -606,6 +401,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "JustStudio/JustStudio-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -644,6 +440,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "JustStudio/JustStudio-Bridging-Header.h";
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -665,6 +462,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "JustStudio/JustStudio-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -685,63 +483,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "JustStudio/JustStudio-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Release;
-		};
-		883D70311C0DAE22003ECEE2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 28C62404C5D69967FED13264 /* Pods-JustStudioTests.debug.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = JustStudioTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = juststudio2.JustStudioTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JustStudio.app/JustStudio";
-			};
-			name = Debug;
-		};
-		883D70321C0DAE22003ECEE2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B2A739AF0A7367AC9D47AEDE /* Pods-JustStudioTests.release.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = JustStudioTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = juststudio2.JustStudioTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JustStudio.app/JustStudio";
-			};
-			name = Release;
-		};
-		883D70341C0DAE22003ECEE2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 12F41E2AD60D40074395FCBB /* Pods-JustStudioUITests.debug.xcconfig */;
-			buildSettings = {
-				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = JustStudioUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = juststudio2.JustStudioUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = JustStudio;
-				USES_XCTRUNNER = YES;
-			};
-			name = Debug;
-		};
-		883D70351C0DAE22003ECEE2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A727AB167C36D5CD7EB9B127 /* Pods-JustStudioUITests.release.xcconfig */;
-			buildSettings = {
-				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = JustStudioUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = juststudio2.JustStudioUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = JustStudio;
-				USES_XCTRUNNER = YES;
 			};
 			name = Release;
 		};
@@ -762,24 +505,6 @@
 			buildConfigurations = (
 				883D702E1C0DAE22003ECEE2 /* Debug */,
 				883D702F1C0DAE22003ECEE2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		883D70301C0DAE22003ECEE2 /* Build configuration list for PBXNativeTarget "JustStudioTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				883D70311C0DAE22003ECEE2 /* Debug */,
-				883D70321C0DAE22003ECEE2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		883D70331C0DAE22003ECEE2 /* Build configuration list for PBXNativeTarget "JustStudioUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				883D70341C0DAE22003ECEE2 /* Debug */,
-				883D70351C0DAE22003ECEE2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
