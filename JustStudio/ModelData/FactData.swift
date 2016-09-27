@@ -15,6 +15,7 @@ class FactData: NSObject {
     var en : String!
     var ru : String!
     var image_url : String!
+    var image : UIImage! = UIImage(named:"tree_bsckground")
     
     init(id:String!, active:Bool!, category:String!, en:String!, ru:String!, image_url:String!) {
         super.init()

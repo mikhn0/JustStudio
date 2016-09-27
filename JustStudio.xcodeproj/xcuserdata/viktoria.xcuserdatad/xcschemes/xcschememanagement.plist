@@ -4,6 +4,16 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>JustFacts WatchOS (Notification).xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
+		<key>JustFacts WatchOS.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
 		<key>JustStudio.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -12,6 +22,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>75FC744A1D8C2E3E00683CA0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>883D70001C0DAE22003ECEE2</key>
 		<dict>
 			<key>primary</key>

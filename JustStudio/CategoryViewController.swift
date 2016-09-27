@@ -17,36 +17,38 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) { // 1
+        //dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) { // 1
             LibraryAPI.sharedInstance().getAllCategory ({ (categories: [CategoryData]) -> Void in
                 if categories != [] {
                     self.categories = categories;
-                    dispatch_async(dispatch_get_main_queue()) {
+                    DispatchQueue.main.async {
                         self.tableView.reloadData()
                     }
                     
                     for categ in self.categories {
-                        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-                            print("start prepare image for \(categ.name)")
-                            let data = NSData(contentsOfURL: NSURL(string: categ.image_url)!)
-                            categ.image = UIImage(data:data!)
-                            print("finished prepare image for \(categ.name)")
+                    DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.default).async {
+                            print("START prepare image for \(categ.name)")
+                            let data = try? Data(contentsOf: URL(string: categ.image_url)!)
+                            if categ.image == nil {
+                                categ.image = UIImage(data:data!)!
+                            }
+                            print("FINISHED prepare image for \(categ.name)")
                         }
                     }
                 } else {
-                    let alertController = UIAlertController(title: "Error", message: "System error.", preferredStyle: .Alert)
+                    let alertController = UIAlertController(title: "Error", message: "System error.", preferredStyle: .alert)
                     
-                    let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
+                    let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
                         // ...
                     }
                     alertController.addAction(OKAction)
                     
-                    self.presentViewController(alertController, animated: true) {
+                    self.present(alertController, animated: true) {
                         // ...
                     }
                 }
             })
-        }
+        //}
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -56,54 +58,54 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
     
     //#pragma - mark UITableViewDelegate
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return heightOfCell
     }
     
     
     //#pragma - mark UITableViewDataSource
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return categories.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = CategoryCell.init(style: UITableViewCellStyle.Value1, reuseIdentifier: textCellIdentifier)
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = CategoryCell(style: UITableViewCellStyle.value1, reuseIdentifier: textCellIdentifier)
         
-        let row = indexPath.row
+        let row = (indexPath as NSIndexPath).row
         
         let categoryData = categories[row]
         cell.titleLabel.text = categoryData.ru
+        cell.titleLabel.sizeToFit()
         
         if (categoryData.image_url != nil) {
             print("IndexPath.row === \(row)")
-            let url = NSURL(string: categoryData.image_url)
-            cell.photoView.sd_setImageWithURL(url, placeholderImage: categoryData.image)
+            let url = URL(string: categoryData.image_url)
+            cell.photoView.sd_setImage(with: url, placeholderImage: categoryData.image==nil ? UIImage(named:"placeholder") :categoryData.image)
         }
-        
         
         return cell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let selectCategory: CategoryData = categories[indexPath.row] 
-        self.performSegueWithIdentifier("FactsByCategorySegue", sender: selectCategory)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectCategory: CategoryData = categories[(indexPath as NSIndexPath).row] 
+        self.performSegue(withIdentifier: "FactsByCategorySegue", sender: selectCategory)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "FactsByCategorySegue" {
-            let categoryDetailViewController: CategoryDetailViewController = segue.destinationViewController as! CategoryDetailViewController
+            let categoryDetailViewController: CategoryDetailViewController = segue.destination as! CategoryDetailViewController
             categoryDetailViewController.category = sender as? CategoryData
-            
-            
         }
     }
     
-    @IBAction func prepareForUnwind(segue: UIStoryboardSegue) -> Void {
+    @IBAction func prepareForUnwind(_ segue: UIStoryboardSegue) -> Void {
         if segue.identifier == "unwindToViewController" {
-            let factVC: CategoryDetailViewController = segue.sourceViewController as! CategoryDetailViewController
+            //let factVC: CategoryDetailViewController = segue.sourceViewController as! CategoryDetailViewController
             print("UNVIND SEGUE");
         }
     }
+    
+
     
 }

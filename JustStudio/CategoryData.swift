@@ -15,7 +15,7 @@ class CategoryData: NSObject {
     var image_url : String!
     var name: String!
     var ru: String!
-    var image: UIImage! = UIImage(named:"placeholder")
+    var image: UIImage?
     
     init(id: String!, active:Bool!, en:String!, image_url:String!, name:String!, ru:String!) {
         super.init()

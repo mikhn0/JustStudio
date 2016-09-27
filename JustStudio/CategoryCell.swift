@@ -13,16 +13,17 @@ class CategoryCell: UITableViewCell {
     var titleLabel : EdgeInsetLabel!
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
-        super.init(style: UITableViewCellStyle.Value1, reuseIdentifier: reuseIdentifier)
+        super.init(style: UITableViewCellStyle.value1, reuseIdentifier: reuseIdentifier)
         self.clipsToBounds = true
         self.titleLabel = EdgeInsetLabel.init()
-        self.titleLabel.textColor = UIColor.whiteColor()
-        self.titleLabel.shadowColor = UIColor.grayColor()
+        self.titleLabel.textColor = UIColor.white
+        self.titleLabel.shadowColor = UIColor.gray
+        self.titleLabel.numberOfLines = 0
         self.titleLabel.shadowOffset = CGSize(width: 1, height: -1)
         self.titleLabel.font = UIFont(name: "HelveticaNeue-Medium", size: 35)
         
-        self.photoView = UIImageView.init()
-        self.photoView.contentMode = UIViewContentMode.ScaleAspectFill
+        self.photoView = UIImageView()
+        self.photoView.contentMode = UIViewContentMode.scaleAspectFill
         
         self.contentView.addSubview(self.photoView)
         self.contentView.addSubview(self.titleLabel)
@@ -38,7 +39,7 @@ class CategoryCell: UITableViewCell {
         super.layoutSubviews()
         
         let contentRect = self.contentView.bounds
-        self.photoView.frame = CGRectMake(0, 0, contentRect.size.width, contentRect.size.height)
-        self.titleLabel.frame = CGRectMake(20, 240, contentRect.size.width-40, 50)
+        self.photoView.frame = CGRect(x: 0, y: 0, width: contentRect.size.width, height: contentRect.size.height)
+        self.titleLabel.frame = CGRect(x: 20, y: contentRect.size.height-100, width: contentRect.size.width-40, height: 100)
     }
 }

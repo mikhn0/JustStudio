@@ -1,20 +1,20 @@
 PODS:
-  - Alamofire (3.4.0)
-  - Google-Mobile-Ads-SDK (7.6.0)
-  - SDWebImage (3.7.4):
-    - SDWebImage/Core (= 3.7.4)
-  - SDWebImage/Core (3.7.4)
+  - Alamofire (4.0.0)
+  - Google-Mobile-Ads-SDK (7.11.0)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
 
 DEPENDENCIES:
-  - Alamofire (~> 3.4)
+  - Alamofire (~> 4.0)
   - Google-Mobile-Ads-SDK
   - SDWebImage (~> 3.7)
 
 SPEC CHECKSUMS:
-  Alamofire: c19a627cefd6a95f840401c49ab1f124e07f54ee
-  Google-Mobile-Ads-SDK: 0290020329c61183c4685304264b73382bc49fb4
-  SDWebImage: 247edd7dd80dd6124197b0d6a17846fe9d1df968
+  Alamofire: fef59f00388f267e52d9b432aa5d93dc97190f14
+  Google-Mobile-Ads-SDK: 0e864ab93ba1ff8afe92e16de0e4e883f581ed33
+  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
 
-PODFILE CHECKSUM: fbbe233fe93db339cb0644fe99a23a38676b91be
+PODFILE CHECKSUM: 5eda567bff2657e245e1187d1c246ef2fdfb2ff4
 
 COCOAPODS: 1.0.1
