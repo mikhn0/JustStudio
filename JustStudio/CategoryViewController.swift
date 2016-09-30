@@ -17,39 +17,37 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) { // 1
-            LibraryAPI.sharedInstance().getAllCategory ({ (categories: [CategoryData]) -> Void in
-                if categories != [] {
-                    self.categories = categories;
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
-                    }
-                    
-                    for categ in self.categories {
-                    DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.default).async {
-                            print("START prepare image for \(categ.name)")
-                            let data = try? Data(contentsOf: URL(string: categ.image_url)!)
-                            if categ.image == nil {
-                                categ.image = UIImage(data:data!)!
-                            }
-                            print("FINISHED prepare image for \(categ.name)")
+        LibraryAPI.sharedInstance().getAllCategory ({ (categories: [CategoryData]) -> Void in
+            if categories != [] {
+                self.categories = categories;
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+                
+                for categ in self.categories {
+                DispatchQueue.global().async {
+                        print("START prepare image for \(categ.name)")
+                        let data = try? Data(contentsOf: URL(string: categ.image_url)!)
+                        if categ.image == nil {
+                            categ.image = UIImage(data:data!)!
                         }
-                    }
-                } else {
-                    let alertController = UIAlertController(title: "Error", message: "System error.", preferredStyle: .alert)
-                    
-                    let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
-                        // ...
-                    }
-                    alertController.addAction(OKAction)
-                    
-                    self.present(alertController, animated: true) {
-                        // ...
+                        print("FINISHED prepare image for \(categ.name)")
                     }
                 }
-            })
-        //}
-        
+            } else {
+                let alertController = UIAlertController(title: "Error", message: "System error.", preferredStyle: .alert)
+                
+                let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
+                    // ...
+                }
+                alertController.addAction(OKAction)
+                
+                self.present(alertController, animated: true) {
+                    // ...
+                }
+            }
+        })
+    
         tableView.delegate = self
         tableView.dataSource = self
         heightOfCell = (self.view.frame.size.height+20) / 2

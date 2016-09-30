@@ -60,7 +60,7 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
     func ConfigurationViewControllers(_ facts: [FactData]) -> Void {
         
         self.modelController.allFacts = facts;
-        DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.high).async {
+        DispatchQueue.global().async {
             for fact in facts {
                     let data = try? Data(contentsOf: URL(string: fact.image_url)!)
                     fact.image = UIImage(data:data!)

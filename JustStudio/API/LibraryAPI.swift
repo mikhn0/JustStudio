@@ -36,20 +36,21 @@ class LibraryAPI : NSObject {
                 switch response.result {
                 case .success(let JSON):
                     
-                    DispatchQueue.global().async(execute: {//global(DispatchQueue.GlobalQueuePriority.high ,0).asynchronously(execute: {
+                    DispatchQueue.global().async(execute: {
+                        //do {
+                            //let jsonData = try JSONSerialization.data(withJSONObject: JSON, options: JSONSerialization.WritingOptions.prettyPrinted)
+                            let appGroupID = "group.fruktorum.JustFacts"
+                            if let defaults = UserDefaults(suiteName: appGroupID) {
+                                defaults.setValue("GGG", forKey: "CategoriesJson")
+                                defaults.synchronize()
+                            }
                         
-                    
-                    //DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.default).async {
-                        do {
-                            let jsonData = try JSONSerialization.data(withJSONObject: JSON, options: JSONSerialization.WritingOptions.prettyPrinted)
+                            //self.writeIntoFile(NSString(data: jsonData, encoding: String.Encoding.utf8.rawValue)! as String)
                             
-                            self.writeIntoFile(NSString(data: jsonData, encoding: String.Encoding.utf8.rawValue)! as String)
-                            
-                        } catch let error as NSError {
-                            print(error)
-                        }
+                        //} catch let error as NSError {
+                        //    print(error)
+                        //}
                     })
-                    //}
                     
                     let jsonDict = JSON as! NSDictionary
                     let jsonCategoryArr = jsonDict["categories"] as! [AnyObject]
@@ -89,9 +90,7 @@ class LibraryAPI : NSObject {
                     let dict = element as! NSDictionary
                     let categoryData = FactData(id:(dict["_id"] as? String) , active:(dict["active"] as? Bool), category:(dict["category"] as? String), en:(dict["en"] as? String), ru:(dict["ru"] as? String), image_url:(dict["image"] as? String))
                     factsArr.append(categoryData)
-                    
                 }
-                //print("CATEGORIES ==== \(categoryArr)")
                 completion(factsArr)
         }
     }
