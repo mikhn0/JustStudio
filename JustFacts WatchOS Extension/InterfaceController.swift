@@ -13,7 +13,7 @@ import Foundation
 class InterfaceController: WKInterfaceController {
 
     @IBOutlet var categoryTable: WKInterfaceTable!
-    var categories = Category.allCategories()
+    var categories = InterfaceController.allCategories()
     var  selectedIndex = 0
     
     override func awake(withContext context: Any?) {
@@ -35,12 +35,26 @@ class InterfaceController: WKInterfaceController {
         }
     }
     override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {
-        //let category = categories[rowIndex]
-        //let controllers = category.checkedIn ? ["FLight", "BoardingPass"] : ["Flight", "CheckIn"]
         selectedIndex = rowIndex
-        //presentControllerWithNames(controllers, contexts: [category, category]);
     }
 
-
+    class func allCategories() -> [Category] {
+        var categoriesArr = [Category]()
+        
+        let appGroupID = "group.fruktorum.JustFacts"
+        
+        let defaults = UserDefaults(suiteName: appGroupID)
+        let ggg = defaults!.string(forKey: "CategoriesJson")
+        print("ggg ===== \(ggg)")
+        if let unit = defaults?.dictionary(forKey: "CategoriesJson") {
+            let categories:[[String: AnyObject]] = unit["categories"] as! [[String: AnyObject]]
+            for dict in categories {
+                let category = Category(category: dict)
+                categoriesArr.append(category)
+            }
+        }
+        
+        return categoriesArr
+    }
 }
 

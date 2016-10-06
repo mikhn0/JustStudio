@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11201" systemVersion="16A320" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="10032"/>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11077"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
@@ -17,7 +18,7 @@
                                         <items>
                                             <imageView width="39" alignment="left" contentMode="scaleAspectFill" id="AZC-Mj-QNR"/>
                                             <separator alignment="left" id="gCn-jk-wVr">
-                                                <color key="color" red="0.91764705879999997" green="0.094117647060000004" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="color" red="0.91764705879999997" green="0.094117647060000004" blue="0.37254901959999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </separator>
                                             <label width="90" height="39.5" alignment="center" verticalAlignment="center" text="Животные в природе" numberOfLines="0" id="zNd-u7-3uX"/>
                                         </items>
@@ -30,6 +31,7 @@
                                     </connections>
                                 </tableRow>
                             </items>
+                            <color key="backgroundColor" red="0.76862745099999996" green="1" blue="0.62745098040000002" alpha="1" colorSpace="calibratedRGB"/>
                         </table>
                     </items>
                     <connections>

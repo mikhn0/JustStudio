@@ -14,6 +14,20 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "75FC744A1D8C2E3E00683CA0"
+               BuildableName = "JustFacts WatchOS.app"
+               BlueprintName = "JustFacts WatchOS"
+               ReferencedContainer = "container:JustStudio.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "883D70001C0DAE22003ECEE2"
                BuildableName = "JustStudio.app"
                BlueprintName = "JustStudio"
@@ -28,33 +42,13 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "883D70181C0DAE22003ECEE2"
-               BuildableName = "JustStudioTests.xctest"
-               BlueprintName = "JustStudioTests"
-               ReferencedContainer = "container:JustStudio.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "883D70231C0DAE22003ECEE2"
-               BuildableName = "JustStudioUITests.xctest"
-               BlueprintName = "JustStudioUITests"
-               ReferencedContainer = "container:JustStudio.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "883D70001C0DAE22003ECEE2"
-            BuildableName = "JustStudio.app"
-            BlueprintName = "JustStudio"
+            BlueprintIdentifier = "75FC744A1D8C2E3E00683CA0"
+            BuildableName = "JustFacts WatchOS.app"
+            BlueprintName = "JustFacts WatchOS"
             ReferencedContainer = "container:JustStudio.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -71,16 +65,27 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <RemoteRunnable
+         runnableDebuggingMode = "2"
+         BundleIdentifier = "com.apple.carousel"
+         RemotePath = "/JustFacts">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "883D70001C0DAE22003ECEE2"
-            BuildableName = "JustStudio.app"
-            BlueprintName = "JustStudio"
+            BlueprintIdentifier = "75FC744A1D8C2E3E00683CA0"
+            BuildableName = "JustFacts WatchOS.app"
+            BlueprintName = "JustFacts WatchOS"
             ReferencedContainer = "container:JustStudio.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </RemoteRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "75FC744A1D8C2E3E00683CA0"
+            BuildableName = "JustFacts WatchOS.app"
+            BlueprintName = "JustFacts WatchOS"
+            ReferencedContainer = "container:JustStudio.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -90,16 +95,27 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <RemoteRunnable
+         runnableDebuggingMode = "2"
+         BundleIdentifier = "com.apple.carousel"
+         RemotePath = "/JustFacts">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "883D70001C0DAE22003ECEE2"
-            BuildableName = "JustStudio.app"
-            BlueprintName = "JustStudio"
+            BlueprintIdentifier = "75FC744A1D8C2E3E00683CA0"
+            BuildableName = "JustFacts WatchOS.app"
+            BlueprintName = "JustFacts WatchOS"
             ReferencedContainer = "container:JustStudio.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </RemoteRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "75FC744A1D8C2E3E00683CA0"
+            BuildableName = "JustFacts WatchOS.app"
+            BlueprintName = "JustFacts WatchOS"
+            ReferencedContainer = "container:JustStudio.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
