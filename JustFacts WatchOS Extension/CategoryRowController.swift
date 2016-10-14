@@ -22,7 +22,7 @@ class CategoryRowController: NSObject {
             if let category = category {
                 // 4
                 titleLabel.setText(category.ru)
-                image.setImageWithUrl(category.image, scale: 2.0)
+                image.setImageWithUrl(category.image)
         
             }
         }
@@ -37,7 +37,7 @@ class CategoryRowController: NSObject {
 
 public extension WKInterfaceImage {
     
-    public func setImageWithUrl(_ url:String, scale: CGFloat = 1.0) -> WKInterfaceImage? {
+    public func setImageWithUrl(_ url:String, scale: CGFloat = 1.0) {
         
         URLSession.shared.dataTask(with: URL(string: url)!, completionHandler: { data, response, error in
             if (data != nil && error == nil) {
@@ -49,7 +49,7 @@ public extension WKInterfaceImage {
             }
             }) .resume()
         
-        return self
+        //return self
     }
 }
 

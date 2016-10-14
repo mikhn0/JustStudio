@@ -8,11 +8,10 @@ target 'JustStudio' do
     pod 'Google-Mobile-Ads-SDK'
 end
 
-target 'JustStudioTests' do
 
+
+
+target 'JustFacts WatchOS Extension' do
+    platform :watchos, '2.0'
+    pod 'Alamofire', '~> 4.0'
 end
-
-target 'JustStudioUITests' do
-
-end
-

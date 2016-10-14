@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11201" systemVersion="16A320" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
         <deployment identifier="watchOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -16,7 +16,7 @@
                                 <tableRow identifier="CategoryRow" id="yTO-Fg-MkA" customClass="CategoryRowController" customModule="JustFacts_WatchOS_Extension">
                                     <group key="rootItem" width="1" height="0.0" alignment="left" id="9Jl-CL-Dpp">
                                         <items>
-                                            <imageView width="39" alignment="left" contentMode="scaleAspectFill" id="AZC-Mj-QNR"/>
+                                            <imageView width="40" height="40" alignment="left" verticalAlignment="center" contentMode="scaleAspectFit" id="AZC-Mj-QNR"/>
                                             <separator alignment="left" id="gCn-jk-wVr">
                                                 <color key="color" red="0.91764705879999997" green="0.094117647060000004" blue="0.37254901959999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </separator>
@@ -31,7 +31,7 @@
                                     </connections>
                                 </tableRow>
                             </items>
-                            <color key="backgroundColor" red="0.76862745099999996" green="1" blue="0.62745098040000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </table>
                     </items>
                     <connections>
@@ -40,6 +40,26 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="220" y="355"/>
+        </scene>
+        <!--FactsController-->
+        <scene sceneID="jex-gH-htk">
+            <objects>
+                <controller identifier="FactsController" id="Zh1-Xv-I1d" customClass="FactsController" customModule="JustFacts_WatchOS_Extension">
+                    <items>
+                        <group alignment="center" layout="vertical" id="8hd-B1-V1M">
+                            <items>
+                                <imageView width="1" height="72" alignment="center" contentMode="scaleAspectFit" id="lvX-JE-cue"/>
+                                <label width="1" alignment="left" text="Label" textAlignment="center" numberOfLines="0" id="ECu-Th-eMT"/>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="factImage" destination="lvX-JE-cue" id="S7z-Uy-sVK"/>
+                        <outlet property="factLabel" destination="ECu-Th-eMT" id="5fK-TS-ywW"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="481" y="355"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">

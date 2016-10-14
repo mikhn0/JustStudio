@@ -7,13 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		35CCE91C0F7B447F8E6146E0 /* Pods_JustStudioUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC49613D166B624246FB2113 /* Pods_JustStudioUITests.framework */; };
+		75024E2E1DA8209B002C5056 /* FactData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8844561E1C281CF00014DA09 /* FactData.swift */; };
+		751F353E1DABDC700099CB19 /* LibraryWatchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751F353D1DABDC700099CB19 /* LibraryWatchAPI.swift */; };
+		751F35411DAC1B160099CB19 /* Fact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751F35401DAC1B160099CB19 /* Fact.swift */; };
+		751F35431DAD30230099CB19 /* FactsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751F35421DAD30230099CB19 /* FactsController.swift */; };
 		755150FD1C47EE1C00527733 /* UILable+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755150FC1C47EE1C00527733 /* UILable+Layout.swift */; };
 		75620F3E1C464CF10069DD5F /* CategoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75620F3D1C464CF10069DD5F /* CategoryData.swift */; };
 		75620F411C464D880069DD5F /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75620F401C464D880069DD5F /* CategoryCell.swift */; };
 		75620F431C464FB10069DD5F /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75620F421C464FB10069DD5F /* CategoryViewController.swift */; };
 		75620F4A1C4671EC0069DD5F /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 75620F491C4671EC0069DD5F /* UIImage+ImageEffects.m */; };
 		75D9A3141D92A01E0075BBBD /* CategoryRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D9A3131D92A01E0075BBBD /* CategoryRowController.swift */; };
+		75DE668C1DABD3F200E52FD0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75DE668B1DABD3F200E52FD0 /* UIKit.framework */; };
+		75DE668E1DABD41700E52FD0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75DE668D1DABD41700E52FD0 /* UIKit.framework */; };
 		75FC744F1D8C2E3E00683CA0 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75FC744D1D8C2E3E00683CA0 /* Interface.storyboard */; };
 		75FC74511D8C2E3E00683CA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75FC74501D8C2E3E00683CA0 /* Assets.xcassets */; };
 		75FC74581D8C2E3F00683CA0 /* JustFacts WatchOS Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 75FC74571D8C2E3F00683CA0 /* JustFacts WatchOS Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -37,6 +42,7 @@
 		883D70291C0DAE22003ECEE2 /* JustStudioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883D70281C0DAE22003ECEE2 /* JustStudioUITests.swift */; };
 		8844561F1C281CF00014DA09 /* FactData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8844561E1C281CF00014DA09 /* FactData.swift */; };
 		88F1E09C1C24511100D8C28C /* LibraryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F1E09B1C24511100D8C28C /* LibraryAPI.swift */; };
+		BA5A06A9450DD1CD8389F5D2 /* Pods_JustFacts_WatchOS_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0899E4389F381D9937CCD07 /* Pods_JustFacts_WatchOS_Extension.framework */; };
 		C350DB6D50EFEC23B70C990F /* Pods_JustStudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 492DADD39FD73FE0D68407A3 /* Pods_JustStudio.framework */; };
 /* End PBXBuildFile section */
 
@@ -90,12 +96,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		12F41E2AD60D40074395FCBB /* Pods-JustStudioUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustStudioUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JustStudioUITests/Pods-JustStudioUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		1A6C4C7455CD19EF84BF4328 /* Pods-JustFacts WatchOS Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustFacts WatchOS Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-JustFacts WatchOS Extension/Pods-JustFacts WatchOS Extension.release.xcconfig"; sourceTree = "<group>"; };
 		28C62404C5D69967FED13264 /* Pods-JustStudioTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustStudioTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JustStudioTests/Pods-JustStudioTests.debug.xcconfig"; sourceTree = "<group>"; };
+		377BFE1D839CE693B7BCB1EA /* Pods-JustFacts WatchOS Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustFacts WatchOS Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JustFacts WatchOS Extension/Pods-JustFacts WatchOS Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		416BB99370592DD884B562DA /* Pods-JustStudio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustStudio.release.xcconfig"; path = "Pods/Target Support Files/Pods-JustStudio/Pods-JustStudio.release.xcconfig"; sourceTree = "<group>"; };
 		492DADD39FD73FE0D68407A3 /* Pods_JustStudio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JustStudio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63579A451D9C3C5400AFC0BC /* JustStudio.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JustStudio.entitlements; sourceTree = "<group>"; };
 		63579A461D9C3C7000AFC0BC /* JustFacts WatchOS Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "JustFacts WatchOS Extension.entitlements"; sourceTree = "<group>"; };
+		751F353D1DABDC700099CB19 /* LibraryWatchAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryWatchAPI.swift; sourceTree = "<group>"; };
+		751F35401DAC1B160099CB19 /* Fact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fact.swift; sourceTree = "<group>"; };
+		751F35421DAD30230099CB19 /* FactsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FactsController.swift; sourceTree = "<group>"; };
 		755150FC1C47EE1C00527733 /* UILable+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILable+Layout.swift"; sourceTree = "<group>"; };
 		75620F3C1C4580E40069DD5F /* JustStudio-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JustStudio-Bridging-Header.h"; sourceTree = "<group>"; };
 		75620F3D1C464CF10069DD5F /* CategoryData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryData.swift; sourceTree = "<group>"; };
@@ -103,7 +113,10 @@
 		75620F421C464FB10069DD5F /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		75620F481C4671EC0069DD5F /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+ImageEffects.h"; path = "Support File/UIImage+ImageEffects.h"; sourceTree = "<group>"; };
 		75620F491C4671EC0069DD5F /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ImageEffects.m"; path = "Support File/UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		758B9E7B1DA794F30078E96A /* JustFacts WatchOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "JustFacts WatchOS.entitlements"; sourceTree = "<group>"; };
 		75D9A3131D92A01E0075BBBD /* CategoryRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryRowController.swift; sourceTree = "<group>"; };
+		75DE668B1DABD3F200E52FD0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		75DE668D1DABD41700E52FD0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS3.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		75FC744B1D8C2E3E00683CA0 /* JustFacts WatchOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JustFacts WatchOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		75FC744E1D8C2E3E00683CA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		75FC74501D8C2E3E00683CA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -133,7 +146,7 @@
 		883D702A1C0DAE22003ECEE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8844561E1C281CF00014DA09 /* FactData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FactData.swift; path = ModelData/FactData.swift; sourceTree = "<group>"; };
 		88F1E09B1C24511100D8C28C /* LibraryAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LibraryAPI.swift; path = API/LibraryAPI.swift; sourceTree = "<group>"; };
-		A727AB167C36D5CD7EB9B127 /* Pods-JustStudioUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustStudioUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JustStudioUITests/Pods-JustStudioUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A0899E4389F381D9937CCD07 /* Pods_JustFacts_WatchOS_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JustFacts_WatchOS_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2A739AF0A7367AC9D47AEDE /* Pods-JustStudioTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustStudioTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JustStudioTests/Pods-JustStudioTests.release.xcconfig"; sourceTree = "<group>"; };
 		DADD5D824B7B0B8FB7772D82 /* Pods-JustStudio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustStudio.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JustStudio/Pods-JustStudio.debug.xcconfig"; sourceTree = "<group>"; };
 		EC49613D166B624246FB2113 /* Pods_JustStudioUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JustStudioUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,6 +158,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75DE668E1DABD41700E52FD0 /* UIKit.framework in Frameworks */,
+				BA5A06A9450DD1CD8389F5D2 /* Pods_JustFacts_WatchOS_Extension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,6 +174,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75DE668C1DABD3F200E52FD0 /* UIKit.framework in Frameworks */,
 				C350DB6D50EFEC23B70C990F /* Pods_JustStudio.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -167,7 +183,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35CCE91C0F7B447F8E6146E0 /* Pods_JustStudioUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,10 +196,18 @@
 				416BB99370592DD884B562DA /* Pods-JustStudio.release.xcconfig */,
 				28C62404C5D69967FED13264 /* Pods-JustStudioTests.debug.xcconfig */,
 				B2A739AF0A7367AC9D47AEDE /* Pods-JustStudioTests.release.xcconfig */,
-				12F41E2AD60D40074395FCBB /* Pods-JustStudioUITests.debug.xcconfig */,
-				A727AB167C36D5CD7EB9B127 /* Pods-JustStudioUITests.release.xcconfig */,
+				377BFE1D839CE693B7BCB1EA /* Pods-JustFacts WatchOS Extension.debug.xcconfig */,
+				1A6C4C7455CD19EF84BF4328 /* Pods-JustFacts WatchOS Extension.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		751F353C1DABDB870099CB19 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				751F353D1DABDC700099CB19 /* LibraryWatchAPI.swift */,
+			);
+			name = API;
 			sourceTree = "<group>";
 		};
 		755150F81C47E41A00527733 /* Category */ = {
@@ -217,6 +240,7 @@
 		75FC744C1D8C2E3E00683CA0 /* JustFacts WatchOS */ = {
 			isa = PBXGroup;
 			children = (
+				758B9E7B1DA794F30078E96A /* JustFacts WatchOS.entitlements */,
 				75FC744D1D8C2E3E00683CA0 /* Interface.storyboard */,
 				75FC74501D8C2E3E00683CA0 /* Assets.xcassets */,
 				75FC74521D8C2E3E00683CA0 /* Info.plist */,
@@ -227,7 +251,9 @@
 		75FC745B1D8C2E3F00683CA0 /* JustFacts WatchOS Extension */ = {
 			isa = PBXGroup;
 			children = (
+				751F353C1DABDB870099CB19 /* API */,
 				63579A461D9C3C7000AFC0BC /* JustFacts WatchOS Extension.entitlements */,
+				751F35421DAD30230099CB19 /* FactsController.swift */,
 				75FC745E1D8C2E3F00683CA0 /* InterfaceController.swift */,
 				75FC74601D8C2E3F00683CA0 /* ExtensionDelegate.swift */,
 				75D9A3131D92A01E0075BBBD /* CategoryRowController.swift */,
@@ -252,6 +278,7 @@
 			children = (
 				75FC74731D8C3E1B00683CA0 /* Category.swift */,
 				75FC74741D8C3E1B00683CA0 /* Category.json */,
+				751F35401DAC1B160099CB19 /* Fact.swift */,
 			);
 			name = Shared;
 			sourceTree = "<group>";
@@ -341,9 +368,12 @@
 		F4B5816DB2F43C9DC5A3C79F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				75DE668D1DABD41700E52FD0 /* UIKit.framework */,
+				75DE668B1DABD3F200E52FD0 /* UIKit.framework */,
 				492DADD39FD73FE0D68407A3 /* Pods_JustStudio.framework */,
 				F23405B96ED7B27E692B4A59 /* Pods_JustStudioTests.framework */,
 				EC49613D166B624246FB2113 /* Pods_JustStudioUITests.framework */,
+				A0899E4389F381D9937CCD07 /* Pods_JustFacts_WatchOS_Extension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -373,9 +403,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 75FC746A1D8C2E4000683CA0 /* Build configuration list for PBXNativeTarget "JustFacts WatchOS Extension" */;
 			buildPhases = (
+				64926ECCBC6EB88F0340B45A /* [CP] Check Pods Manifest.lock */,
 				75FC74531D8C2E3F00683CA0 /* Sources */,
 				75FC74541D8C2E3F00683CA0 /* Frameworks */,
 				75FC74551D8C2E3F00683CA0 /* Resources */,
+				450ECFC3882F700567B429E2 /* [CP] Embed Pods Frameworks */,
+				A3F441C81F90DDD3D668F13F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -412,11 +445,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 883D70331C0DAE22003ECEE2 /* Build configuration list for PBXNativeTarget "JustStudioUITests" */;
 			buildPhases = (
-				6651F453B22354E1FFA3D148 /* [CP] Check Pods Manifest.lock */,
 				883D70201C0DAE22003ECEE2 /* Sources */,
 				883D70211C0DAE22003ECEE2 /* Frameworks */,
 				883D70221C0DAE22003ECEE2 /* Resources */,
-				4767D59E3605ECE451D4B3D8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -442,6 +473,7 @@
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = UT3YUVT7N2;
 						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 0;
@@ -452,6 +484,7 @@
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = UT3YUVT7N2;
 						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -553,19 +586,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JustStudio/Pods-JustStudio-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4767D59E3605ECE451D4B3D8 /* [CP] Copy Pods Resources */ = {
+		450ECFC3882F700567B429E2 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "[CP] Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JustStudioUITests/Pods-JustStudioUITests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JustFacts WatchOS Extension/Pods-JustFacts WatchOS Extension-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4E63342072CA38680BFF8E0D /* [CP] Embed Pods Frameworks */ = {
@@ -583,7 +616,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JustStudio/Pods-JustStudio-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6651F453B22354E1FFA3D148 /* [CP] Check Pods Manifest.lock */ = {
+		64926ECCBC6EB88F0340B45A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -596,6 +629,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A3F441C81F90DDD3D668F13F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JustFacts WatchOS Extension/Pods-JustFacts WatchOS Extension-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A9BBB0F60A50B7E0553DE80D /* [CP] Check Pods Manifest.lock */ = {
@@ -622,8 +670,12 @@
 			files = (
 				75FC74631D8C2E3F00683CA0 /* NotificationController.swift in Sources */,
 				75FC74771D8C3E2C00683CA0 /* Category.swift in Sources */,
+				75024E2E1DA8209B002C5056 /* FactData.swift in Sources */,
+				751F35411DAC1B160099CB19 /* Fact.swift in Sources */,
+				751F35431DAD30230099CB19 /* FactsController.swift in Sources */,
 				75FC74611D8C2E3F00683CA0 /* ExtensionDelegate.swift in Sources */,
 				75FC745F1D8C2E3F00683CA0 /* InterfaceController.swift in Sources */,
+				751F353E1DABDC700099CB19 /* LibraryWatchAPI.swift in Sources */,
 				75D9A3141D92A01E0075BBBD /* CategoryRowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -705,14 +757,44 @@
 /* Begin XCBuildConfiguration section */
 		75FC746B1D8C2E4000683CA0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 377BFE1D839CE693B7BCB1EA /* Pods-JustFacts WatchOS Extension.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CODE_SIGN_ENTITLEMENTS = "JustFacts WatchOS Extension/JustFacts WatchOS Extension.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = UT3YUVT7N2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/Alamofire-watchOS\"",
+				);
 				INFOPLIST_FILE = "JustFacts WatchOS Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-iquote",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/Alamofire/Alamofire.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public\"",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(inherited)",
+					"-iquote",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/Alamofire/Alamofire.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public\"",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"Alamofire\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.fruktorum.JustFacts.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -723,14 +805,44 @@
 		};
 		75FC746C1D8C2E4000683CA0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A6C4C7455CD19EF84BF4328 /* Pods-JustFacts WatchOS Extension.release.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CODE_SIGN_ENTITLEMENTS = "JustFacts WatchOS Extension/JustFacts WatchOS Extension.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = UT3YUVT7N2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/Alamofire-watchOS\"",
+				);
 				INFOPLIST_FILE = "JustFacts WatchOS Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-iquote",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/Alamofire/Alamofire.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public\"",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(inherited)",
+					"-iquote",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/Alamofire/Alamofire.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public\"",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"Alamofire\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.fruktorum.JustFacts.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -747,9 +859,11 @@
 				CLANG_ANALYZER_NONNULL = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = UT3YUVT7N2;
 				IBSC_MODULE = JustFacts_WatchOS_Extension;
 				INFOPLIST_FILE = "JustFacts WatchOS/Info.plist";
+				OTHER_CFLAGS = "\"$PODS_CONFIGURATION_BUILD/Alamofire/framework/Headers\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fruktorum.JustFacts.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -768,9 +882,11 @@
 				CLANG_ANALYZER_NONNULL = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = UT3YUVT7N2;
 				IBSC_MODULE = JustFacts_WatchOS_Extension;
 				INFOPLIST_FILE = "JustFacts WatchOS/Info.plist";
+				OTHER_CFLAGS = "\"$PODS_CONFIGURATION_BUILD/Alamofire/framework/Headers\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fruktorum.JustFacts.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -921,7 +1037,6 @@
 		};
 		883D70341C0DAE22003ECEE2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 12F41E2AD60D40074395FCBB /* Pods-JustStudioUITests.debug.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = UT3YUVT7N2;
 				ENABLE_BITCODE = NO;
@@ -937,7 +1052,6 @@
 		};
 		883D70351C0DAE22003ECEE2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A727AB167C36D5CD7EB9B127 /* Pods-JustStudioUITests.release.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = UT3YUVT7N2;
 				ENABLE_BITCODE = NO;
