@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import UIKit
+
 
 class CategoryData: NSObject {
     var id : String!
@@ -15,7 +17,7 @@ class CategoryData: NSObject {
     var image_url : String!
     var name: String!
     var ru: String!
-    var image: UIImage?
+    var image: UIImageView?
     
     init(id: String!, active:Bool!, en:String!, image_url:String!, name:String!, ru:String!) {
         super.init()
