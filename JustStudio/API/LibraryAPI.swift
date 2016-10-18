@@ -22,7 +22,86 @@ class LibraryAPI : NSObject  {
     }
     
     func getAllCategory(_ completion: @escaping (_ categories: [CategoryData]) -> Void) -> Void {
-        Alamofire.request("\(SERVER_URL)/categories")
+        //----------
+        
+        let url = NSURL(string: "\(SERVER_URL)/categories")
+        
+        let task = URLSession.shared.dataTask(with: url! as URL) {(data, response, error) in
+            print(NSString(data: data!, encoding: String.Encoding.utf8.rawValue))
+            print(" response ====== s\(response)")
+            
+            if (error != nil) {
+                print("API error: \(error), \(error?.localizedDescription)")
+            }
+            
+            do {
+                if let json:NSDictionary = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? [String:AnyObject] as NSDictionary? {
+                    let jsonCategoryArr = json["categories"] as! [AnyObject]
+                    
+                    var categoryArr: [CategoryData] = []
+                    let categories = jsonCategoryArr.shuffle()
+                    for element in categories {
+                        let dict = element as! NSDictionary
+                        let categoryData = CategoryData(id:(dict["_id"] as? String) , active:(dict["active"] as? Bool), en:(dict["en"] as? String), image_url:(dict["image"] as? String), name:(dict["name"] as? String), ru:(dict["ru"] as? String))
+                        categoryArr.append(categoryData)
+                        
+                    }
+                    completion(categoryArr)
+                }
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+            
+    }
+    
+        task.resume()
+    
+        //----------
+        
+    }
+
+    func getFactsByCategory(_ category:String, completion: @escaping (_ facts: [FactData]) -> Void) -> Void {
+        
+        let url = NSURL(string: "\(SERVER_URL)/facts?category=\(category)")//\(SERVER_URL)/facts", parameters:["category":category]
+
+        let task = URLSession.shared.dataTask(with: url! as URL) {(data, response, error) in
+            print(NSString(data: data!, encoding: String.Encoding.utf8.rawValue))
+            print(" response ====== s\(response)")
+            
+            if (error != nil) {
+                print("API error: \(error), \(error?.localizedDescription)")
+            }
+            
+            do {
+                if let json:NSDictionary = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? [String:AnyObject] as NSDictionary? {
+                    let jsonFactsArr = json["facts"] as! NSArray
+                    
+                    var factsArr: [FactData] = []
+                    for element in jsonFactsArr {
+                        let dict = element as! NSDictionary
+                        let factData = FactData(id:(dict["_id"] as? String) , active:(dict["active"] as? Bool), category:(dict["category"] as? String), en:(dict["en"] as? String), ru:(dict["ru"] as? String), image_url:(dict["image"] as? String))
+                        factsArr.append(factData)
+                    }
+                    completion(factsArr)
+                }
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+            
+        }
+       
+        
+        task.resume()
+    }
+    
+    
+    
+/*    func getAllCategory(_ completion: @escaping (_ categories: [CategoryData]) -> Void) -> Void {
+       // Alamofire.request("\(SERVER_URL)/categories")
+       // Alamofire.request(.GET, "http://justfacts.ju5tudio.com:5793")
+        
+         Alamofire.request("\(SERVER_URL)/categories")
+            
             .validate(statusCode: 200..<300)
             .validate(contentType: ["application/json"])
             .responseJSON { response in
@@ -75,47 +154,12 @@ class LibraryAPI : NSObject  {
         }
     }
    
-/*    func getAllCategoryForWatch(_ completion: @escaping (_ categories: [Category]) -> Void) -> Void {
-        Alamofire.request("\(SERVER_URL)/categories")
-            .validate(statusCode: 200..<300)
-            .validate(contentType: ["application/json"])
-            .responseJSON { response in
-                
-                print(response.request)  // original URL request
-                print(response.response) // HTTP URL response
-                print(response.data)     // server data
-                print(response.result)   // result of response serialization
-                
-                if response.result.value != nil {
-                    switch response.result {
-                    case .success(let JSON):
-                        
-                        let jsonDict = JSON as! NSDictionary
-                        let jsonCategoryArr = jsonDict["categories"] as! [AnyObject]
-                        
-                        var categoryArr: [CategoryData] = []
-                        let categories = jsonCategoryArr.shuffle()
-                        for element in categories {
-                            let dict = element as! NSDictionary
-                            let categoryData = CategoryData(id:(dict["_id"] as? String) , active:(dict["active"] as? Bool), en:(dict["en"] as? String), image_url:(dict["image"] as? String), name:(dict["name"] as? String), ru:(dict["ru"] as? String))
-                            categoryArr.append(categoryData)
-                            
-                        }
-                        completion(categoryArr)
-                        
-                        
-                    case .failure(let error):
-                        print("Request failed with error: \(error)")
-                        completion([])
-                        
-                    }
-                }
-        }
-    }*/
+
     
     
     func getFactsByCategory(_ category:String, completion: @escaping (_ facts: [FactData]) -> Void) -> Void {
-        Alamofire.request("\(SERVER_URL)/facts", parameters:["category":category])
+        // Alamofire.request("\(SERVER_URL)/facts", parameters:["category":category])
+        Alamofire.URLRequest("\(SERVER_URL)/facts", parameters:["category":category])
             .validate(statusCode: 200..<300)
             .validate(contentType: ["application/json"])
             .responseJSON { response in
@@ -132,7 +176,7 @@ class LibraryAPI : NSObject  {
                 completion(factsArr)
         }
     }
-    
+    */
     
     func writeIntoFile (_ text:String) {
         let file = "Category.json" //this is the file. we will write to and read from it

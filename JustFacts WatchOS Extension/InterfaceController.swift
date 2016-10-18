@@ -64,11 +64,6 @@ class InterfaceController: WKInterfaceController {
         
     }
     
-    
-    
-
-    
-    
     func prepareTable () {
         categoryTable.setNumberOfRows((categories?.count)!, withRowType: "CategoryRow")
         for index in 0..<categoryTable.numberOfRows {

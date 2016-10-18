@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Alamofire
+//import Alamofire
 
 let SERVER_URL:NSString = "http://justfacts.ju5tudio.com:5793"
 
@@ -23,7 +23,50 @@ class LibraryWatchAPI : NSObject  {
     
     
     func getAllCategoryForWatch(_ completion: @escaping (_ categories: [Category]) -> Void) -> Void {
-        Alamofire.request("\(SERVER_URL)/categories")
+        //----------
+        
+        let url = NSURL(string: "\(SERVER_URL)/categories")
+        
+        let task = URLSession.shared.dataTask(with: url! as URL) {(data, response, error) in
+            print(NSString(data: data!, encoding: String.Encoding.utf8.rawValue))
+            print(" response ====== s\(response)")
+            
+            if (error != nil) {
+                print("API error: \(error), \(error?.localizedDescription)")
+            }
+            
+            do {
+                if let json:NSDictionary = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? [String:AnyObject] as NSDictionary? {
+                    let jsonCategoryArr = json["categories"] as! [AnyObject]
+                    
+                    var categoryArr: [Category] = []
+                    let categories = jsonCategoryArr.shuffle()
+                    for element in categories {
+                        let dict = element as! NSDictionary
+                        let categoryData = Category(_id: (dict["_id"] as? String)!, active: (dict["active"] as? Bool)!, ru: (dict["ru"] as? String)!, image: (dict["name"] as? String)!, en: (dict["en"] as? String)!, name: (dict["name"] as? String)!)
+                        
+                        categoryArr.append(categoryData)
+                        
+                    }
+                    completion(categoryArr)
+                }
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+            
+        }
+        
+        task.resume()
+        
+        //----------
+    }
+    
+        
+        
+        
+        
+        
+        /*Alamofire.request("\(SERVER_URL)/categories")
             .validate(statusCode: 200..<300)
             .validate(contentType: ["application/json"])
             .responseJSON { response in
@@ -57,14 +100,52 @@ class LibraryWatchAPI : NSObject  {
                         
                     }
                 }
-            }
+            }*/
     }
     
 
     /////
 
     func getFactsByCategoryForWatch(_ category:String, completion:@escaping([Fact]) -> Void) -> Void {
-        Alamofire.request("\(SERVER_URL)/facts", parameters:["category":category])
+       //-----
+        let url = NSURL(string: "\(SERVER_URL)/facts?category=\(category)")//\(SERVER_URL)/facts", parameters:["category":category]
+        
+        let task = URLSession.shared.dataTask(with: url! as URL) {(data, response, error) in
+            print(NSString(data: data!, encoding: String.Encoding.utf8.rawValue))
+            print(" response ====== s\(response)")
+            
+            if (error != nil) {
+                print("API error: \(error), \(error?.localizedDescription)")
+            }
+            
+            do {
+                if let json:NSDictionary = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? [String:AnyObject] as NSDictionary? {
+                    let jsonFactsArr = json["facts"] as! NSArray
+                    
+                    var factsArr: [Fact] = []
+                    for element in jsonFactsArr {
+                        let dict = element as! NSDictionary
+                        let factData = Fact(id:(dict["_id"] as? String) , active:(dict["active"] as? Bool), ru:(dict["ru"] as? String), image:(dict["image"] as? String), en:(dict["en"] as? String), category:(dict["category"] as? String))
+                        factsArr.append(factData)
+                    }
+                    completion(factsArr )
+                }
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+            
+        }
+        
+        
+        task.resume()
+}
+        //-----
+        
+        
+        
+        
+        
+        /*Alamofire.request("\(SERVER_URL)/facts", parameters:["category":category])
             .validate(statusCode: 200..<300)
             .validate(contentType: ["application/json"])
             .responseJSON { response in
@@ -81,9 +162,9 @@ class LibraryWatchAPI : NSObject  {
                 
                 completion(MyfactsArr)
                 
-        }
-    }
-}
+        }*/
+
+
 
 
 /////

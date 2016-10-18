@@ -12,17 +12,17 @@ class Category {
   
   let _id: String
   let active: Bool
-  let isAdmin: Bool
+  //let isAdmin: Bool
   let ru: String
   let image: String
   let en: String
   let name: String
     
   
-  init(_id: String, active: Bool, isAdmin: Bool, ru: String, image: String, en: String, name: String) {
+  init(_id: String, active: Bool, ru: String, image: String, en: String, name: String) { // isAdmin: Bool
     self._id = _id
     self.active = active
-    self.isAdmin = isAdmin
+    //self.isAdmin = isAdmin
     self.ru = ru
     self.image = image
     self.en = en
@@ -32,14 +32,14 @@ class Category {
   convenience init(category: [String: AnyObject]) {
     let id = category["_id"]!
     let active = category["active"]!
-    let isAdmin = category["isAdmin"]!
+    //let isAdmin = category["isAdmin"]!
     let ru = category["ru"]!
     let image = category["image"]!
     let en = category["en"]!
     let name = category["name"]!
     
     
-    self.init(_id: id as! String, active: active as! Bool, isAdmin: isAdmin as! Bool, ru: ru as! String, image: image as! String, en: en as! String, name: name as! String)
+    self.init(_id: id as! String, active: active as! Bool, ru: ru as! String, image: image as! String, en: en as! String, name: name as! String)
   }
     
     func readFromFile () -> String {
