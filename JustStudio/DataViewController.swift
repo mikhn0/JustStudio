@@ -36,7 +36,15 @@ class DataViewController: UIViewController {
         
         //self.infoView.insertSubview(blurredEffectView, belowSubview: self.dataLabel)
         
-        self.dataLabel!.text = dataObject.ru
+        var pre = NSLocale.preferredLanguages[0]
+        if pre == "ru-US"{
+            self.dataLabel!.text = dataObject.ru
+        }
+        else {
+            self.dataLabel!.text = dataObject.en
+        }
+        
+  //      self.dataLabel!.text = dataObject.ru  // set language
         self.dataLabel!.shadowColor = UIColor.gray
         self.dataLabel!.layer.shadowRadius = 4
         

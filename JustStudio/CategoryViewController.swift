@@ -75,9 +75,16 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
         
         let categoryData = categories[row]
         
-        let pre = NSLocale.preferredLanguages[0]
+        var pre = NSLocale.preferredLanguages[0]
         print("language === \(pre)")
-        cell.titleLabel.text = categoryData.ru
+        if pre == "ru-US"{
+            cell.titleLabel.text = categoryData.ru
+        }
+        else {
+            cell.titleLabel.text = categoryData.en
+        }
+        
+       // cell.titleLabel.text = categoryData.ru
         cell.titleLabel.sizeToFit()
         
         if (categoryData.image_url != nil) {
