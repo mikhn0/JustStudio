@@ -13,17 +13,13 @@ import Foundation
 class InterfaceController: WKInterfaceController {
 
     @IBOutlet var categoryTable: WKInterfaceTable!
-    var categories = InterfaceController.allCategories()
+    var categories:[Category]?
     var  selectedIndex = 0
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        categoryTable.setNumberOfRows(categories.count, withRowType: "FlightRow")
-        for index in 0..<categoryTable.numberOfRows {
-            if let controller = categoryTable.rowController(at: index) as? CategoryRowController {
-                controller.category = categories[index]
-            }
-        }
+        
+        self.allCategories()
     }
     
     override func didAppear() {
@@ -34,27 +30,53 @@ class InterfaceController: WKInterfaceController {
             })
         }
     }
+    
     override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {
         selectedIndex = rowIndex
+        
+        LibraryWatchAPI.sharedInstance().getFactsByCategoryForWatch ( (categories?[rowIndex].name)! , completion:{ (facts: [Fact]) -> Void in
+ 
+            var contexts: [Fact] = []
+            var controllers:  [String] = []
+            
+            for elem in facts {
+                contexts.append(elem)
+                controllers.append("FactsController")
+                }
+//            contexts.append(facts[0])
+//            controllers.append("FactsController")
+            self.presentController(withNames: controllers, contexts:  contexts);
+        })
     }
 
-    class func allCategories() -> [Category] {
-        var categoriesArr = [Category]()
+    
+    
+    func allCategories() {
+        //var categoriesArr = [Category]()
         
-        let appGroupID = "group.fruktorum.JustFacts"
+        LibraryWatchAPI.sharedInstance().getAllCategoryForWatch ({ (categories: [Category]) -> Void in
+            
+            print(" getAllCategory ====!= \(categories)")
+            self.categories = categories
+            
+            self.prepareTable()
+        })
         
-        let defaults = UserDefaults(suiteName: appGroupID)
-        let ggg = defaults!.string(forKey: "CategoriesJson")
-        print("ggg ===== \(ggg)")
-        if let unit = defaults?.dictionary(forKey: "CategoriesJson") {
-            let categories:[[String: AnyObject]] = unit["categories"] as! [[String: AnyObject]]
-            for dict in categories {
-                let category = Category(category: dict)
-                categoriesArr.append(category)
-            }
+    }
+    
+    
+    
+
+    
+    
+    func prepareTable () {
+        categoryTable.setNumberOfRows((categories?.count)!, withRowType: "CategoryRow")
+        for index in 0..<categoryTable.numberOfRows {
+            if let controller = categoryTable.rowController(at: index) as? CategoryRowController {
+
+                    controller.category = categories?[index]
+               
         }
-        
-        return categoriesArr
-    }
+   }
 }
-
+}

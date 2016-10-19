@@ -27,9 +27,9 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
                 for categ in self.categories {
                 DispatchQueue.global().async {
                         print("START prepare image for \(categ.name)")
-                        let data = try? Data(contentsOf: URL(string: categ.image_url)!)
+                        //let data = try? Data(contentsOf: URL(string: categ.image_url)!)
                         if categ.image == nil {
-                            categ.image = UIImage(data:data!)!
+                            categ.image?.sd_setImage(with: URL(string: categ.image_url)!)//UIImage(data:data!)!
                         }
                         print("FINISHED prepare image for \(categ.name)")
                     }
@@ -73,13 +73,16 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
         let row = (indexPath as NSIndexPath).row
         
         let categoryData = categories[row]
+        
+        let pre = NSLocale.preferredLanguages[0]
+        print("language === \(pre)")
         cell.titleLabel.text = categoryData.ru
         cell.titleLabel.sizeToFit()
         
         if (categoryData.image_url != nil) {
             print("IndexPath.row === \(row)")
             let url = URL(string: categoryData.image_url)
-            cell.photoView.sd_setImage(with: url, placeholderImage: categoryData.image==nil ? UIImage(named:"placeholder") :categoryData.image)
+            cell.photoView.sd_setImage(with: url, placeholderImage: categoryData.image==nil ? UIImage(named:"placeholder") :categoryData.image?.image)
         }
         
         return cell

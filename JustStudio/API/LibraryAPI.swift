@@ -11,7 +11,7 @@ import Alamofire
 
 let SERVER_URL:NSString = "http://justfacts.ju5tudio.com:5793"
 
-class LibraryAPI : NSObject {
+class LibraryAPI : NSObject  {
     
     static var instance: LibraryAPI!
     var pageData: [FactData] = []
@@ -39,12 +39,12 @@ class LibraryAPI : NSObject {
                     DispatchQueue.global().async(execute: {
                         //do {
                             //let jsonData = try JSONSerialization.data(withJSONObject: JSON, options: JSONSerialization.WritingOptions.prettyPrinted)
-                            let appGroupID = "group.fruktorum.JustFacts"
+                           let appGroupID = "group.fruktorum.JustFacts"
                             if let defaults = UserDefaults(suiteName: appGroupID) {
                                 defaults.setValue("GGG", forKey: "CategoriesJson")
                                 defaults.synchronize()
                             }
-                        
+
                             //self.writeIntoFile(NSString(data: jsonData, encoding: String.Encoding.utf8.rawValue)! as String)
                             
                         //} catch let error as NSError {
@@ -69,11 +69,49 @@ class LibraryAPI : NSObject {
                 case .failure(let error):
                     print("Request failed with error: \(error)")
                     completion([])
-                    
+
                 }
             }
         }
     }
+   
+/*    func getAllCategoryForWatch(_ completion: @escaping (_ categories: [Category]) -> Void) -> Void {
+        Alamofire.request("\(SERVER_URL)/categories")
+            .validate(statusCode: 200..<300)
+            .validate(contentType: ["application/json"])
+            .responseJSON { response in
+                
+                print(response.request)  // original URL request
+                print(response.response) // HTTP URL response
+                print(response.data)     // server data
+                print(response.result)   // result of response serialization
+                
+                if response.result.value != nil {
+                    switch response.result {
+                    case .success(let JSON):
+                        
+                        let jsonDict = JSON as! NSDictionary
+                        let jsonCategoryArr = jsonDict["categories"] as! [AnyObject]
+                        
+                        var categoryArr: [CategoryData] = []
+                        let categories = jsonCategoryArr.shuffle()
+                        for element in categories {
+                            let dict = element as! NSDictionary
+                            let categoryData = CategoryData(id:(dict["_id"] as? String) , active:(dict["active"] as? Bool), en:(dict["en"] as? String), image_url:(dict["image"] as? String), name:(dict["name"] as? String), ru:(dict["ru"] as? String))
+                            categoryArr.append(categoryData)
+                            
+                        }
+                        completion(categoryArr)
+                        
+                        
+                    case .failure(let error):
+                        print("Request failed with error: \(error)")
+                        completion([])
+                        
+                    }
+                }
+        }
+    }*/
     
     
     func getFactsByCategory(_ category:String, completion: @escaping (_ facts: [FactData]) -> Void) -> Void {
