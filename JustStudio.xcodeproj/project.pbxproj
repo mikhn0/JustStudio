@@ -850,23 +850,18 @@
 				CLANG_ANALYZER_NONNULL = YES;
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = UT3YUVT7N2;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/Alamofire-watchOS\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "JustFacts WatchOS Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				OTHER_CFLAGS = (
 					"$(inherited)",
 					"-iquote",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/Alamofire/Alamofire.framework/Headers\"",
 					"-isystem",
 					"\"${PODS_ROOT}/Headers/Public\"",
 				);
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(inherited)",
 					"-iquote",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/Alamofire/Alamofire.framework/Headers\"",
 					"-isystem",
 					"\"${PODS_ROOT}/Headers/Public\"",
 				);
@@ -875,8 +870,6 @@
 					"-ObjC",
 					"-framework",
 					"\"AVFoundation\"",
-					"-framework",
-					"\"Alamofire\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.fruktorum.JustFacts.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
@@ -897,10 +890,7 @@
 				CLANG_ANALYZER_NONNULL = YES;
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = UT3YUVT7N2;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/Alamofire-watchOS\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "JustFacts WatchOS Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				OTHER_CFLAGS = (
@@ -913,7 +903,6 @@
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(inherited)",
 					"-iquote",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/Alamofire/Alamofire.framework/Headers\"",
 					"-isystem",
 					"\"${PODS_ROOT}/Headers/Public\"",
 				);
@@ -922,8 +911,6 @@
 					"-ObjC",
 					"-framework",
 					"\"AVFoundation\"",
-					"-framework",
-					"\"Alamofire\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.fruktorum.JustFacts.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
@@ -949,7 +936,7 @@
 				DEVELOPMENT_TEAM = UT3YUVT7N2;
 				IBSC_MODULE = JustFacts_WatchOS_Extension;
 				INFOPLIST_FILE = "JustFacts WatchOS/Info.plist";
-				OTHER_CFLAGS = "\"$PODS_CONFIGURATION_BUILD/Alamofire/framework/Headers\"";
+				OTHER_CFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fruktorum.JustFacts.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -972,7 +959,7 @@
 				DEVELOPMENT_TEAM = UT3YUVT7N2;
 				IBSC_MODULE = JustFacts_WatchOS_Extension;
 				INFOPLIST_FILE = "JustFacts WatchOS/Info.plist";
-				OTHER_CFLAGS = "\"$PODS_CONFIGURATION_BUILD/Alamofire/framework/Headers\"";
+				OTHER_CFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fruktorum.JustFacts.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
