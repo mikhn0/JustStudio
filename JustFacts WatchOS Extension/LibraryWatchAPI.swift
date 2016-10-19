@@ -7,7 +7,6 @@
 //
 
 import Foundation
-//import Alamofire
 
 let SERVER_URL:NSString = "http://justfacts.ju5tudio.com:5793"
 
@@ -23,13 +22,10 @@ class LibraryWatchAPI : NSObject  {
     
     
     func getAllCategoryForWatch(_ completion: @escaping (_ categories: [Category]) -> Void) -> Void {
-        //----------
         
         let url = NSURL(string: "\(SERVER_URL)/categories")
         
         let task = URLSession.shared.dataTask(with: url! as URL) {(data, response, error) in
-            print(NSString(data: data!, encoding: String.Encoding.utf8.rawValue))
-            print(" response ====== s\(response)")
             
             if (error != nil) {
                 print("API error: \(error), \(error?.localizedDescription)")

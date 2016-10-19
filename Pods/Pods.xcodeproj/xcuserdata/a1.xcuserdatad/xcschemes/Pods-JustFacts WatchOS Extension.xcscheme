@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0800"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "79C040AFDDCE1BCBF6D8B5EB0B85887F"
-               BuildableName = "Alamofire.framework"
-               BlueprintName = "Alamofire"
+               BlueprintIdentifier = "7FE07A25286162E563A4DA9F49C76A25"
+               BuildableName = "Pods_JustFacts_WatchOS_Extension.framework"
+               BlueprintName = "Pods-JustFacts WatchOS Extension"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "79C040AFDDCE1BCBF6D8B5EB0B85887F"
-            BuildableName = "Alamofire.framework"
-            BlueprintName = "Alamofire"
+            BlueprintIdentifier = "7FE07A25286162E563A4DA9F49C76A25"
+            BuildableName = "Pods_JustFacts_WatchOS_Extension.framework"
+            BlueprintName = "Pods-JustFacts WatchOS Extension"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
