@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import SDWebImage
 
 class CategoryViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -15,6 +15,7 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
     let textCellIdentifier = "CategoryCell"
     var categories: [CategoryData]! = []
     var heightOfCell: CGFloat = 0.0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,9 +29,8 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
                 for categ in self.categories {
                 DispatchQueue.global().async {
                         print("START prepare image for \(categ.name)")
-                        //let data = try? Data(contentsOf: URL(string: categ.image_url)!)
                         if categ.image == nil {
-                            categ.image?.sd_setImage(with: URL(string: categ.image_url)!)//UIImage(data:data!)!
+                            categ.image?.sd_setImage(with: URL(string: categ.image_url)!)
                         }
                         print("FINISHED prepare image for \(categ.name)")
                     }
@@ -74,27 +74,45 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
         let row = (indexPath as NSIndexPath).row
         
         let categoryData = categories[row]
-        
-        var pre = NSLocale.preferredLanguages[0]
-        print("language === \(pre)")
-        if pre == "ru-US"{
-            cell.titleLabel.text = categoryData.ru
-        }
-        else {
-            cell.titleLabel.text = categoryData.en
-        }
-        
-       // cell.titleLabel.text = categoryData.ru
+  
+        cell.titleLabel.setDescription(dataObject: categoryData)
+
         cell.titleLabel.sizeToFit()
         
         if (categoryData.image_url != nil) {
             print("IndexPath.row === \(row)")
             let url = URL(string: categoryData.image_url)
-            cell.photoView.sd_setImage(with: url, placeholderImage: categoryData.image==nil ? UIImage(named:"placeholder") :categoryData.image?.image)
+            //cell.photoView.sd_setImage(with: url, placeholderImage: categoryData.image==nil ? UIImage(named:"placeholder") :categoryData.image?.image)
+            //cell.indicatorView.startAnimating()
+   
+            //http://res.cloudinary.com/dvq3boovd/image/fetch/c_scale,w_100/
+            
+//           let urlWithService = "http://res.cloudinary.com/dvq3boovd/image/fetch/c_scale,w_100/\(categoryData.image_url)"
+            
+            let urlWithService = "http://res.cloudinary.com/dvq3boovd/image/fetch/c_scale,w_100/"
+            
+           let betweenString = urlWithService+categoryData.image_url
+           let urlService = URL(string: betweenString)
+ 
+            
+         let task = URLSession.shared.dataTask(with: urlService!, completionHandler: { (data, response, error) in
+                if error == nil {
+                  
+                    
+                    cell.photoView.sd_setImage(with: url, placeholderImage: UIImage(data:data!))//, completed: {(image: UIImage?, error: NSError?, imageURL: NSURL?) in
+  
+                }
+            })
+            task.resume()
         }
         
         return cell
+        
     }
+    
+    
+    
+    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectCategory: CategoryData = categories[(indexPath as NSIndexPath).row] 
@@ -115,6 +133,5 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
         }
     }
     
-
     
 }

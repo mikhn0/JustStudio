@@ -20,31 +20,35 @@ class DataViewController: UIViewController {
     var activityIndicator: UIActivityIndicatorView?
     
     override func viewDidLoad() {
+        
         let url = URL(string: dataObject.image_url!)
-        self.imageView.sd_setImage(with: url, placeholderImage:dataObject.image, options:SDWebImageOptions.cacheMemoryOnly , progress: { (receivedSize, expectedSize) in
-                self.activityIndicator!.startAnimating()
-            }) { (image, error, imageCacheType, url) in
-                self.activityIndicator!.stopAnimating()
-        }
         
-        let blurEffect = UIBlurEffect(style: .light)
-        let blurredEffectView = UIVisualEffectView(effect: blurEffect)
-        var frame = self.dataLabel.frame
-        frame.origin.x = 0
-        frame.origin.y = 0
-        blurredEffectView.frame = frame
+        let urlWithService = "http://res.cloudinary.com/dvq3boovd/image/fetch/c_scale,w_100/"
+        let betweenString = urlWithService+dataObject.image_url
+        let urlService = URL(string: betweenString)
         
-        //self.infoView.insertSubview(blurredEffectView, belowSubview: self.dataLabel)
         
-        var pre = NSLocale.preferredLanguages[0]
-        if pre == "ru-US"{
-            self.dataLabel!.text = dataObject.ru
-        }
-        else {
-            self.dataLabel!.text = dataObject.en
-        }
+        self.activityIndicator!.startAnimating()
+        let task = URLSession.shared.dataTask(with: urlService!, completionHandler: { (data, response, error) in
+            if error == nil {
+                self.imageView.sd_setImage(with: url, placeholderImage:UIImage(data:data!), options:SDWebImageOptions.cacheMemoryOnly , progress: nil, completed: { (image, error, imageCacheType, url) in
+                    self.activityIndicator!.stopAnimating()
+                })
+    
+            }
+        })
+        task.resume()
         
-  //      self.dataLabel!.text = dataObject.ru  // set language
+        
+//        let blurEffect = UIBlurEffect(style: .light)
+//        let blurredEffectView = UIVisualEffectView(effect: blurEffect)
+//        var frame = self.dataLabel.frame
+//        frame.origin.x = 0
+//        frame.origin.y = 0
+//        blurredEffectView.frame = frame
+        
+        self.dataLabel.setDescription(dataObject: dataObject)
+        
         self.dataLabel!.shadowColor = UIColor.gray
         self.dataLabel!.layer.shadowRadius = 4
         
