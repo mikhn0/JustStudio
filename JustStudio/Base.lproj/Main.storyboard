@@ -23,9 +23,10 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" semanticContentAttribute="playback" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ugs-G9-h5Q"/>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Cu-IF-ZnT" userLabel="infoView">
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="cF2-Le-7mQ">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="bottom" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="cF2-Le-7mQ">
+                                        <color key="backgroundColor" red="0.22352941179999999" green="0.69803921570000005" blue="0.56862745100000001" alpha="0.0" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="210" id="PNM-zf-xcR"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="300" id="PNM-zf-xcR"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="22"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -34,23 +35,11 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="cF2-Le-7mQ" firstAttribute="leading" secondItem="0Cu-IF-ZnT" secondAttribute="leading" constant="34" id="0S6-k9-LTk"/>
-                                    <constraint firstItem="cF2-Le-7mQ" firstAttribute="leading" secondItem="0Cu-IF-ZnT" secondAttribute="leading" id="GRa-gY-LVT"/>
-                                    <constraint firstAttribute="trailing" secondItem="cF2-Le-7mQ" secondAttribute="trailing" constant="34" id="Ma7-Bt-B0v"/>
-                                    <constraint firstAttribute="bottom" secondItem="cF2-Le-7mQ" secondAttribute="bottom" constant="50" id="W5p-AY-zkr"/>
-                                    <constraint firstAttribute="bottom" secondItem="cF2-Le-7mQ" secondAttribute="bottom" id="ci7-So-5pB"/>
-                                    <constraint firstAttribute="trailing" secondItem="cF2-Le-7mQ" secondAttribute="trailing" id="hJ5-h8-bfC"/>
-                                    <constraint firstAttribute="height" constant="210" id="iul-05-3lW"/>
-                                    <constraint firstAttribute="bottom" secondItem="cF2-Le-7mQ" secondAttribute="bottom" constant="20" id="sef-yt-GYP"/>
+                                    <constraint firstAttribute="bottom" secondItem="cF2-Le-7mQ" secondAttribute="bottom" constant="25" id="7Jz-6P-eVj"/>
+                                    <constraint firstAttribute="trailing" secondItem="cF2-Le-7mQ" secondAttribute="trailing" constant="34" id="8P7-oC-LxO"/>
+                                    <constraint firstItem="cF2-Le-7mQ" firstAttribute="leading" secondItem="0Cu-IF-ZnT" secondAttribute="leading" constant="34" id="LAQ-6c-BWy"/>
+                                    <constraint firstAttribute="height" constant="337" id="iul-05-3lW"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="GRa-gY-LVT"/>
-                                        <exclude reference="W5p-AY-zkr"/>
-                                        <exclude reference="ci7-So-5pB"/>
-                                        <exclude reference="hJ5-h8-bfC"/>
-                                    </mask>
-                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
@@ -93,7 +82,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GmD-Rr-ZGN" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3512" y="1214"/>
+            <point key="canvasLocation" x="3512" y="1213.4932533733133"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vj4-Gh-qt8">
@@ -146,9 +135,18 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aDA-Fw-9Gw" id="wEZ-wO-BkG">
                                             <frame key="frameInset" width="600" height="245"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="ICJ-Lm-0Oy">
+                                                    <frame key="frameInset" minX="275" minY="112" width="20" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </activityIndicatorView>
+                                            </subviews>
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="indicatorView" destination="ICJ-Lm-0Oy" id="Uz9-gF-wiL"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
