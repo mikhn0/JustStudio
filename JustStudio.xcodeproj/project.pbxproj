@@ -11,6 +11,7 @@
 		33B1D18B1DB10EFD000C4062 /* CategoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883D70061C0DAE22003ECEE2 /* CategoryDetailViewController.swift */; };
 		33B1D1E41DB63185000C4062 /* LibraryWatchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751F353D1DABDC700099CB19 /* LibraryWatchAPI.swift */; };
 		33B1D1E51DB6318A000C4062 /* LibraryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F1E09B1C24511100D8C28C /* LibraryAPI.swift */; };
+		637A4E4F1DB78EBE007C3EA6 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FC745E1D8C2E3F00683CA0 /* InterfaceController.swift */; };
 		75024E2E1DA8209B002C5056 /* FactData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8844561E1C281CF00014DA09 /* FactData.swift */; };
 		751F35411DAC1B160099CB19 /* Fact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751F35401DAC1B160099CB19 /* Fact.swift */; };
 		751F35431DAD30230099CB19 /* FactsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751F35421DAD30230099CB19 /* FactsController.swift */; };
@@ -763,6 +764,7 @@
 				751F35411DAC1B160099CB19 /* Fact.swift in Sources */,
 				751F35431DAD30230099CB19 /* FactsController.swift in Sources */,
 				75FC74611D8C2E3F00683CA0 /* ExtensionDelegate.swift in Sources */,
+				637A4E4F1DB78EBE007C3EA6 /* InterfaceController.swift in Sources */,
 				33B1D1E41DB63185000C4062 /* LibraryWatchAPI.swift in Sources */,
 				75D9A3141D92A01E0075BBBD /* CategoryRowController.swift in Sources */,
 			);

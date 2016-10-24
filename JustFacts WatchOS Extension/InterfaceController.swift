@@ -12,6 +12,7 @@ import Foundation
 
 class InterfaceController: WKInterfaceController {
 
+    @IBOutlet var backgroundGroup: WKInterfaceGroup!
     @IBOutlet var categoryTable: WKInterfaceTable!
     var categories:[Category]?
     var  selectedIndex = 0
@@ -33,30 +34,26 @@ class InterfaceController: WKInterfaceController {
     
     override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {
         selectedIndex = rowIndex
-        
+        print("start press on cell")
         LibraryWatchAPI.sharedInstance().getFactsByCategoryForWatch ( (categories?[rowIndex].name)! , completion:{ (facts: [Fact]) -> Void in
  
             var contexts: [Fact] = []
             var controllers:  [String] = []
-            
+            print("GET fact images === ")
             for elem in facts {
+                print("\(elem.image)")
                 contexts.append(elem)
                 controllers.append("FactsController")
-                }
-//            contexts.append(facts[0])
-//            controllers.append("FactsController")
+            }
+
             self.presentController(withNames: controllers, contexts:  contexts);
         })
     }
 
-    
-    
     func allCategories() {
-        //var categoriesArr = [Category]()
         
         LibraryWatchAPI.sharedInstance().getAllCategoryForWatch ({ (categories: [Category]) -> Void in
             
-            print(" getAllCategory ====!= \(categories)")
             self.categories = categories
             
             self.prepareTable()
@@ -68,10 +65,14 @@ class InterfaceController: WKInterfaceController {
         categoryTable.setNumberOfRows((categories?.count)!, withRowType: "CategoryRow")
         for index in 0..<categoryTable.numberOfRows {
             if let controller = categoryTable.rowController(at: index) as? CategoryRowController {
-
-                    controller.category = categories?[index]
-               
+                
+                controller.category = categories?[index]
+                if index == categoryTable.numberOfRows-1 {
+                    backgroundGroup.stopAnimating()
+                    backgroundGroup.setHidden(true)
+                }
+            }
         }
-   }
-}
+    }
+    
 }
