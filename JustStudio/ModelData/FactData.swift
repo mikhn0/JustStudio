@@ -8,23 +8,13 @@
 
 import Foundation
 
-class FactData: NSObject {
-    var id : String!
-    var active : Bool!
+class FactData: BaseData {
+    
     var category : String!
-    var en : String!
-    var ru : String!
-    var image_url : String!
-    var image : UIImage! = UIImage(named:"tree_bsckground")
+    var image : UIImage! = UIImage(named:"tree_background")
     
     init(id:String!, active:Bool!, category:String!, en:String!, ru:String!, image_url:String!) {
-        super.init()
-        self.id = id
-        self.active = active
+        super.init(id:id, ru:ru, en:en, active:active, image_url:image_url)
         self.category = category
-        self.en = en
-        self.ru = ru
-        self.image_url = image_url
     }
 }
-

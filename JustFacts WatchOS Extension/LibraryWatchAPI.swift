@@ -7,7 +7,6 @@
 //
 
 import Foundation
-//import Alamofire
 
 let SERVER_URL:NSString = "http://justfacts.ju5tudio.com:5793"
 
@@ -23,14 +22,11 @@ class LibraryWatchAPI : NSObject  {
     
     
     func getAllCategoryForWatch(_ completion: @escaping (_ categories: [Category]) -> Void) -> Void {
-        //----------
         
         let url = NSURL(string: "\(SERVER_URL)/categories")
-        
+        print("start get all categories!!!")
         let task = URLSession.shared.dataTask(with: url! as URL) {(data, response, error) in
-            print(NSString(data: data!, encoding: String.Encoding.utf8.rawValue))
-            print(" response ====== s\(response)")
-            
+            print("FINISHED get all categories!!!")
             if (error != nil) {
                 print("API error: \(error), \(error?.localizedDescription)")
             }
@@ -42,8 +38,8 @@ class LibraryWatchAPI : NSObject  {
                     var categoryArr: [Category] = []
                     let categories = jsonCategoryArr.shuffle()
                     for element in categories {
-                        let dict = element as! NSDictionary
-                        let categoryData = Category(_id: (dict["_id"] as? String)!, active: (dict["active"] as? Bool)!, ru: (dict["ru"] as? String)!, image: (dict["name"] as? String)!, en: (dict["en"] as? String)!, name: (dict["name"] as? String)!)
+                        let dict = element as! [String : AnyObject]
+                        let categoryData = Category.init(category: dict)
                         
                         categoryArr.append(categoryData)
                         
@@ -59,17 +55,17 @@ class LibraryWatchAPI : NSObject  {
         task.resume()
         
     }
-}
+    
 
-
+    /////
 
     func getFactsByCategoryForWatch(_ category:String, completion:@escaping([Fact]) -> Void) -> Void {
        //-----
-        let url = NSURL(string: "\(SERVER_URL)/facts?category=\(category)")
+        let url = NSURL(string: "\(SERVER_URL)/facts?category=\(category)")//\(SERVER_URL)/facts", parameters:["category":category]
         
         let task = URLSession.shared.dataTask(with: url! as URL) {(data, response, error) in
-            print(NSString(data: data!, encoding: String.Encoding.utf8.rawValue))
-            print(" response ====== s\(response)")
+            //print(NSString(data: data!, encoding: String.Encoding.utf8.rawValue))
+            //print(" response ====== s\(response)")
             
             if (error != nil) {
                 print("API error: \(error), \(error?.localizedDescription)")
@@ -95,8 +91,12 @@ class LibraryWatchAPI : NSObject  {
         
         
         task.resume()
+    }
+
+    
 }
 
+/////
 
 extension Collection {
     /// Return a copy of `self` with its elements shuffled

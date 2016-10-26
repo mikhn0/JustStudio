@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11521.1" systemVersion="16A320" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
         <deployment identifier="watchOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11077"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11517.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11506"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
@@ -14,11 +14,11 @@
                         <table alignment="left" id="SXT-Fg-UtM">
                             <items>
                                 <tableRow identifier="CategoryRow" id="yTO-Fg-MkA" customClass="CategoryRowController" customModule="JustFacts_WatchOS_Extension">
-                                    <group key="rootItem" width="1" height="0.0" alignment="left" id="9Jl-CL-Dpp">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" radius="5" id="9Jl-CL-Dpp">
                                         <items>
-                                            <imageView width="40" height="40" alignment="left" verticalAlignment="center" contentMode="scaleAspectFit" id="AZC-Mj-QNR"/>
+                                            <imageView width="40" height="40" alignment="left" verticalAlignment="center" contentMode="scaleAspectFill" id="AZC-Mj-QNR"/>
                                             <separator alignment="left" id="gCn-jk-wVr">
-                                                <color key="color" red="0.91764705879999997" green="0.094117647060000004" blue="0.37254901959999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="color" red="0.81960784313725488" green="0.90980392156862744" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </separator>
                                             <label width="90" height="39.5" alignment="center" verticalAlignment="center" text="Животные в природе" numberOfLines="0" id="zNd-u7-3uX"/>
                                         </items>
@@ -31,10 +31,12 @@
                                     </connections>
                                 </tableRow>
                             </items>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </table>
+                        <group width="1" height="107" alignment="center" backgroundImage="Activity" contentMode="scaleAspectFill" animationDuration="0.34999999999999998" id="Pmk-Ds-saS"/>
                     </items>
                     <connections>
+                        <outlet property="backgroundGroup" destination="Pmk-Ds-saS" id="cwd-IL-WtC"/>
                         <outlet property="categoryTable" destination="SXT-Fg-UtM" id="Shl-eL-hW9"/>
                     </connections>
                 </controller>
@@ -46,14 +48,25 @@
             <objects>
                 <controller identifier="FactsController" id="Zh1-Xv-I1d" customClass="FactsController" customModule="JustFacts_WatchOS_Extension">
                     <items>
-                        <group alignment="center" layout="vertical" id="8hd-B1-V1M">
+                        <group height="120" alignment="center" layout="vertical" id="8hd-B1-V1M">
                             <items>
-                                <imageView width="1" height="72" alignment="center" contentMode="scaleAspectFit" id="lvX-JE-cue"/>
-                                <label width="1" alignment="left" text="Label" textAlignment="center" numberOfLines="0" id="ECu-Th-eMT"/>
+                                <group width="1" height="140" alignment="left" id="ehQ-bP-bV4">
+                                    <items>
+                                        <group width="1" height="124" alignment="left" backgroundImage="Activity" contentMode="center" animationDuration="0.34999999999999998" id="UHI-BB-4jb">
+                                            <items>
+                                                <imageView width="1" height="118" alignment="center" contentMode="scaleAspectFill" id="lvX-JE-cue">
+                                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </imageView>
+                                            </items>
+                                        </group>
+                                    </items>
+                                </group>
                             </items>
                         </group>
+                        <label width="1" alignment="left" text="Label" textAlignment="center" numberOfLines="0" id="ECu-Th-eMT"/>
                     </items>
                     <connections>
+                        <outlet property="backgroundGroup" destination="ehQ-bP-bV4" id="PhV-Pn-qfc"/>
                         <outlet property="factImage" destination="lvX-JE-cue" id="S7z-Uy-sVK"/>
                         <outlet property="factLabel" destination="ECu-Th-eMT" id="5fK-TS-ywW"/>
                     </connections>
@@ -75,7 +88,7 @@
                     </connections>
                 </notificationController>
             </objects>
-            <point key="canvasLocation" x="220" y="643"/>
+            <point key="canvasLocation" x="220" y="703"/>
         </scene>
         <!--Notification Controller-->
         <scene sceneID="ZPc-GJ-vnh">

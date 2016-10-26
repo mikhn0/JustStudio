@@ -11,6 +11,7 @@ import Foundation
 class CategoryCell: UITableViewCell {
     var photoView : UIImageView!
     var titleLabel : EdgeInsetLabel!
+    @IBOutlet weak var indicatorView: UIActivityIndicatorView!
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
         super.init(style: UITableViewCellStyle.value1, reuseIdentifier: reuseIdentifier)
@@ -41,5 +42,7 @@ class CategoryCell: UITableViewCell {
         let contentRect = self.contentView.bounds
         self.photoView.frame = CGRect(x: 0, y: 0, width: contentRect.size.width, height: contentRect.size.height)
         self.titleLabel.frame = CGRect(x: 20, y: contentRect.size.height-100, width: contentRect.size.width-40, height: 100)
+        
+        
     }
 }

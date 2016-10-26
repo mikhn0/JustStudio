@@ -10,22 +10,15 @@ import Foundation
 import UIKit
 
 
-class CategoryData: NSObject {
-    var id : String!
-    var active : Bool!
-    var en : String!
-    var image_url : String!
+class CategoryData: BaseData {
     var name: String!
-    var ru: String!
     var image: UIImageView?
     
-    init(id: String!, active:Bool!, en:String!, image_url:String!, name:String!, ru:String!) {
-        super.init()
-        self.id = id
-        self.active = active
-        self.en = en
-        self.image_url = image_url
+    init(id: String!, active:Bool!, en:String!, image_url:String!, name:String!, ru:String!)//, image:String!
+    {
+        super.init(id:id, ru:ru, en:en, active:active, image_url:image_url)
         self.name = name
-        self.ru = ru
+ //      self.image = image
+        
     }
 }
