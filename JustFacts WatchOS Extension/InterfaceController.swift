@@ -12,6 +12,7 @@ import Foundation
 
 class InterfaceController: WKInterfaceController {
 
+    @IBOutlet var backgroundGroup: WKInterfaceGroup!
     @IBOutlet var categoryTable: WKInterfaceTable!
     var categories:[Category]?
     var  selectedIndex = 0
@@ -33,30 +34,34 @@ class InterfaceController: WKInterfaceController {
     
     override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {
         selectedIndex = rowIndex
+        print("start press on cell")
+        
+        startAnim()
         
         LibraryWatchAPI.sharedInstance().getFactsByCategoryForWatch ( (categories?[rowIndex].name)! , completion:{ (facts: [Fact]) -> Void in
  
             var contexts: [Fact] = []
             var controllers:  [String] = []
             
-            for elem in facts {
-                contexts.append(elem)
+            var factNumbers = 20
+            if facts.count < factNumbers {
+                factNumbers = facts.count
+            }
+            
+            for index in 0..<factNumbers {
+                contexts.append(facts[index])
                 controllers.append("FactsController")
-                }
-//            contexts.append(facts[0])
-//            controllers.append("FactsController")
+            }
+
             self.presentController(withNames: controllers, contexts:  contexts);
+            self.stopAnim()
         })
     }
 
-    
-    
     func allCategories() {
-        //var categoriesArr = [Category]()
         
         LibraryWatchAPI.sharedInstance().getAllCategoryForWatch ({ (categories: [Category]) -> Void in
             
-            print(" getAllCategory ====!= \(categories)")
             self.categories = categories
             
             self.prepareTable()
@@ -65,13 +70,27 @@ class InterfaceController: WKInterfaceController {
     }
     
     func prepareTable () {
-        categoryTable.setNumberOfRows((categories?.count)!, withRowType: "CategoryRow")
+        let categorienNumber = categories?.count
+        
+        categoryTable.setNumberOfRows(categorienNumber!, withRowType: "CategoryRow")
         for index in 0..<categoryTable.numberOfRows {
             if let controller = categoryTable.rowController(at: index) as? CategoryRowController {
-
-                    controller.category = categories?[index]
-               
+                
+                controller.category = categories?[index]
+                if index == categoryTable.numberOfRows-1 {
+                    self.stopAnim()
+                }
+            }
         }
-   }
-}
+    }
+    
+    func startAnim() {
+        backgroundGroup.startAnimating()
+        backgroundGroup.setHidden(false)
+    }
+    
+    func stopAnim() {
+        backgroundGroup.stopAnimating()
+        backgroundGroup.setHidden(true)
+    }
 }

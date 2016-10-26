@@ -9,14 +9,19 @@
 /* Begin PBXBuildFile section */
 		33B1D18A1DB10EE5000C4062 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75620F421C464FB10069DD5F /* CategoryViewController.swift */; };
 		33B1D18B1DB10EFD000C4062 /* CategoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883D70061C0DAE22003ECEE2 /* CategoryDetailViewController.swift */; };
+		33B1D1E41DB63185000C4062 /* LibraryWatchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751F353D1DABDC700099CB19 /* LibraryWatchAPI.swift */; };
 		33B1D1E51DB6318A000C4062 /* LibraryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F1E09B1C24511100D8C28C /* LibraryAPI.swift */; };
-		33B1D1E71DB8D555000C4062 /* BaseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B1D1E61DB8D555000C4062 /* BaseData.swift */; };
-		33B1D1E91DB8D6D0000C4062 /* UILabel+setDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B1D1E81DB8D6D0000C4062 /* UILabel+setDescription.swift */; };
-		33B1D1EB1DBA2C64000C4062 /* KeyValueObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B1D1EA1DBA2C64000C4062 /* KeyValueObserving.swift */; };
-		751F35411DAC1B160099CB19 /* Fact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751F35401DAC1B160099CB19 /* Fact.swift */; };
+		637A4E4F1DB78EBE007C3EA6 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FC745E1D8C2E3F00683CA0 /* InterfaceController.swift */; };
+		63DB480C1DBE23CD00119897 /* BaseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DB480A1DBE23CD00119897 /* BaseData.swift */; };
+		63DB480D1DBE23CD00119897 /* CategoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DB480B1DBE23CD00119897 /* CategoryData.swift */; };
+		63DB48141DBE246400119897 /* Fact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DB48101DBE23E500119897 /* Fact.swift */; };
+		63DB48151DBE246800119897 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DB480F1DBE23E500119897 /* Category.swift */; };
+		63DB48181DBE260200119897 /* Category.json in Resources */ = {isa = PBXBuildFile; fileRef = 63DB480E1DBE23E500119897 /* Category.json */; };
+		63DB481A1DBE270700119897 /* UILabel+setDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DB48191DBE270700119897 /* UILabel+setDescription.swift */; };
+		63DB481D1DBE290700119897 /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DB481C1DBE290700119897 /* Base.swift */; };
+		63DB481F1DBE2DAE00119897 /* WKInterfaceLabel+setDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DB481E1DBE2DAE00119897 /* WKInterfaceLabel+setDescription.swift */; };
 		751F35431DAD30230099CB19 /* FactsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751F35421DAD30230099CB19 /* FactsController.swift */; };
 		755150FD1C47EE1C00527733 /* UILable+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755150FC1C47EE1C00527733 /* UILable+Layout.swift */; };
-		75620F3E1C464CF10069DD5F /* CategoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75620F3D1C464CF10069DD5F /* CategoryData.swift */; };
 		75620F411C464D880069DD5F /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75620F401C464D880069DD5F /* CategoryCell.swift */; };
 		75620F4A1C4671EC0069DD5F /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 75620F491C4671EC0069DD5F /* UIImage+ImageEffects.m */; };
 		75D9A3141D92A01E0075BBBD /* CategoryRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D9A3131D92A01E0075BBBD /* CategoryRowController.swift */; };
@@ -29,11 +34,6 @@
 		75FC74631D8C2E3F00683CA0 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FC74621D8C2E3F00683CA0 /* NotificationController.swift */; };
 		75FC74651D8C2E3F00683CA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75FC74641D8C2E3F00683CA0 /* Assets.xcassets */; };
 		75FC74691D8C2E4000683CA0 /* JustFacts WatchOS.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 75FC744B1D8C2E3E00683CA0 /* JustFacts WatchOS.app */; };
-		75FC74751D8C3E1B00683CA0 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FC74731D8C3E1B00683CA0 /* Category.swift */; };
-		75FC74761D8C3E1B00683CA0 /* Category.json in Resources */ = {isa = PBXBuildFile; fileRef = 75FC74741D8C3E1B00683CA0 /* Category.json */; };
-		75FC74771D8C3E2C00683CA0 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FC74731D8C3E1B00683CA0 /* Category.swift */; };
-		75FC74781D8C3E3000683CA0 /* Category.json in Resources */ = {isa = PBXBuildFile; fileRef = 75FC74741D8C3E1B00683CA0 /* Category.json */; };
-		75FC74791D8C3E3100683CA0 /* Category.json in Resources */ = {isa = PBXBuildFile; fileRef = 75FC74741D8C3E1B00683CA0 /* Category.json */; };
 		883D70051C0DAE22003ECEE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883D70041C0DAE22003ECEE2 /* AppDelegate.swift */; };
 		883D70091C0DAE22003ECEE2 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883D70081C0DAE22003ECEE2 /* DataViewController.swift */; };
 		883D700B1C0DAE22003ECEE2 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883D700A1C0DAE22003ECEE2 /* ModelController.swift */; };
@@ -98,18 +98,21 @@
 /* Begin PBXFileReference section */
 		1A6C4C7455CD19EF84BF4328 /* Pods-JustFacts WatchOS Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustFacts WatchOS Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-JustFacts WatchOS Extension/Pods-JustFacts WatchOS Extension.release.xcconfig"; sourceTree = "<group>"; };
 		28C62404C5D69967FED13264 /* Pods-JustStudioTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustStudioTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JustStudioTests/Pods-JustStudioTests.debug.xcconfig"; sourceTree = "<group>"; };
-		33B1D1E61DB8D555000C4062 /* BaseData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseData.swift; path = ../BaseData.swift; sourceTree = "<group>"; };
-		33B1D1E81DB8D6D0000C4062 /* UILabel+setDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+setDescription.swift"; sourceTree = "<group>"; };
-		33B1D1EA1DBA2C64000C4062 /* KeyValueObserving.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyValueObserving.swift; sourceTree = "<group>"; };
 		377BFE1D839CE693B7BCB1EA /* Pods-JustFacts WatchOS Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustFacts WatchOS Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JustFacts WatchOS Extension/Pods-JustFacts WatchOS Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		416BB99370592DD884B562DA /* Pods-JustStudio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustStudio.release.xcconfig"; path = "Pods/Target Support Files/Pods-JustStudio/Pods-JustStudio.release.xcconfig"; sourceTree = "<group>"; };
 		492DADD39FD73FE0D68407A3 /* Pods_JustStudio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JustStudio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		63DB480A1DBE23CD00119897 /* BaseData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseData.swift; path = ModelData/BaseData.swift; sourceTree = "<group>"; };
+		63DB480B1DBE23CD00119897 /* CategoryData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryData.swift; path = ModelData/CategoryData.swift; sourceTree = "<group>"; };
+		63DB480E1DBE23E500119897 /* Category.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Category.json; path = Shared/Category.json; sourceTree = "<group>"; };
+		63DB480F1DBE23E500119897 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Category.swift; path = Shared/Category.swift; sourceTree = "<group>"; };
+		63DB48101DBE23E500119897 /* Fact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Fact.swift; path = Shared/Fact.swift; sourceTree = "<group>"; };
+		63DB48191DBE270700119897 /* UILabel+setDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+setDescription.swift"; sourceTree = "<group>"; };
+		63DB481C1DBE290700119897 /* Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Base.swift; path = Shared/Base.swift; sourceTree = "<group>"; };
+		63DB481E1DBE2DAE00119897 /* WKInterfaceLabel+setDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WKInterfaceLabel+setDescription.swift"; sourceTree = "<group>"; };
 		751F353D1DABDC700099CB19 /* LibraryWatchAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryWatchAPI.swift; sourceTree = "<group>"; };
-		751F35401DAC1B160099CB19 /* Fact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fact.swift; sourceTree = "<group>"; };
 		751F35421DAD30230099CB19 /* FactsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FactsController.swift; sourceTree = "<group>"; };
 		755150FC1C47EE1C00527733 /* UILable+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILable+Layout.swift"; sourceTree = "<group>"; };
 		75620F3C1C4580E40069DD5F /* JustStudio-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JustStudio-Bridging-Header.h"; sourceTree = "<group>"; };
-		75620F3D1C464CF10069DD5F /* CategoryData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryData.swift; sourceTree = "<group>"; };
 		75620F401C464D880069DD5F /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		75620F421C464FB10069DD5F /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		75620F481C4671EC0069DD5F /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+ImageEffects.h"; path = "Support File/UIImage+ImageEffects.h"; sourceTree = "<group>"; };
@@ -128,8 +131,6 @@
 		75FC74621D8C2E3F00683CA0 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		75FC74641D8C2E3F00683CA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		75FC74661D8C2E3F00683CA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		75FC74731D8C3E1B00683CA0 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
-		75FC74741D8C3E1B00683CA0 /* Category.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Category.json; sourceTree = "<group>"; };
 		883D70011C0DAE22003ECEE2 /* JustStudio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JustStudio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		883D70041C0DAE22003ECEE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		883D70061C0DAE22003ECEE2 /* CategoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailViewController.swift; sourceTree = "<group>"; };
@@ -213,9 +214,11 @@
 		755150F81C47E41A00527733 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				63DB48191DBE270700119897 /* UILabel+setDescription.swift */,
 				75620F481C4671EC0069DD5F /* UIImage+ImageEffects.h */,
 				75620F491C4671EC0069DD5F /* UIImage+ImageEffects.m */,
 				755150FC1C47EE1C00527733 /* UILable+Layout.swift */,
+				63DB481E1DBE2DAE00119897 /* WKInterfaceLabel+setDescription.swift */,
 			);
 			name = Category;
 			sourceTree = "<group>";
@@ -225,7 +228,6 @@
 			children = (
 				75620F401C464D880069DD5F /* CategoryCell.swift */,
 				75620F421C464FB10069DD5F /* CategoryViewController.swift */,
-				33B1D1EA1DBA2C64000C4062 /* KeyValueObserving.swift */,
 			);
 			name = Category;
 			sourceTree = "<group>";
@@ -275,10 +277,10 @@
 		75FC74721D8C3C0400683CA0 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				75FC74731D8C3E1B00683CA0 /* Category.swift */,
-				75FC74741D8C3E1B00683CA0 /* Category.json */,
-				751F35401DAC1B160099CB19 /* Fact.swift */,
-				33B1D1E81DB8D6D0000C4062 /* UILabel+setDescription.swift */,
+				63DB480E1DBE23E500119897 /* Category.json */,
+				63DB48101DBE23E500119897 /* Fact.swift */,
+				63DB481C1DBE290700119897 /* Base.swift */,
+				63DB480F1DBE23E500119897 /* Category.swift */,
 			);
 			name = Shared;
 			sourceTree = "<group>";
@@ -350,9 +352,9 @@
 		8844561B1C281C5B0014DA09 /* ModelData */ = {
 			isa = PBXGroup;
 			children = (
-				33B1D1E61DB8D555000C4062 /* BaseData.swift */,
+				63DB480A1DBE23CD00119897 /* BaseData.swift */,
+				63DB480B1DBE23CD00119897 /* CategoryData.swift */,
 				8844561E1C281CF00014DA09 /* FactData.swift */,
-				75620F3D1C464CF10069DD5F /* CategoryData.swift */,
 			);
 			name = ModelData;
 			sourceTree = "<group>";
@@ -542,7 +544,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				75FC74511D8C2E3E00683CA0 /* Assets.xcassets in Resources */,
-				75FC74791D8C3E3100683CA0 /* Category.json in Resources */,
 				75FC744F1D8C2E3E00683CA0 /* Interface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -552,7 +553,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				75FC74651D8C2E3F00683CA0 /* Assets.xcassets in Resources */,
-				75FC74781D8C3E3000683CA0 /* Category.json in Resources */,
+				63DB48181DBE260200119897 /* Category.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -561,7 +562,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				883D70131C0DAE22003ECEE2 /* LaunchScreen.storyboard in Resources */,
-				75FC74761D8C3E1B00683CA0 /* Category.json in Resources */,
 				883D70101C0DAE22003ECEE2 /* Assets.xcassets in Resources */,
 				883D700E1C0DAE22003ECEE2 /* Main.storyboard in Resources */,
 			);
@@ -765,10 +765,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				75FC74631D8C2E3F00683CA0 /* NotificationController.swift in Sources */,
-				75FC74771D8C3E2C00683CA0 /* Category.swift in Sources */,
-				751F35411DAC1B160099CB19 /* Fact.swift in Sources */,
 				751F35431DAD30230099CB19 /* FactsController.swift in Sources */,
+				63DB481F1DBE2DAE00119897 /* WKInterfaceLabel+setDescription.swift in Sources */,
+				63DB481D1DBE290700119897 /* Base.swift in Sources */,
+				63DB48141DBE246400119897 /* Fact.swift in Sources */,
 				75FC74611D8C2E3F00683CA0 /* ExtensionDelegate.swift in Sources */,
+				63DB48151DBE246800119897 /* Category.swift in Sources */,
+				637A4E4F1DB78EBE007C3EA6 /* InterfaceController.swift in Sources */,
+				33B1D1E41DB63185000C4062 /* LibraryWatchAPI.swift in Sources */,
 				75D9A3141D92A01E0075BBBD /* CategoryRowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -778,20 +782,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				33B1D18A1DB10EE5000C4062 /* CategoryViewController.swift in Sources */,
-				75620F3E1C464CF10069DD5F /* CategoryData.swift in Sources */,
+				63DB480D1DBE23CD00119897 /* CategoryData.swift in Sources */,
 				33B1D1E51DB6318A000C4062 /* LibraryAPI.swift in Sources */,
+				63DB480C1DBE23CD00119897 /* BaseData.swift in Sources */,
 				755150FD1C47EE1C00527733 /* UILable+Layout.swift in Sources */,
-				33B1D1E71DB8D555000C4062 /* BaseData.swift in Sources */,
 				75620F411C464D880069DD5F /* CategoryCell.swift in Sources */,
+				63DB481A1DBE270700119897 /* UILabel+setDescription.swift in Sources */,
 				883D700B1C0DAE22003ECEE2 /* ModelController.swift in Sources */,
 				883D70091C0DAE22003ECEE2 /* DataViewController.swift in Sources */,
 				75620F4A1C4671EC0069DD5F /* UIImage+ImageEffects.m in Sources */,
 				883D70051C0DAE22003ECEE2 /* AppDelegate.swift in Sources */,
-				33B1D1E91DB8D6D0000C4062 /* UILabel+setDescription.swift in Sources */,
-				75FC74751D8C3E1B00683CA0 /* Category.swift in Sources */,
 				33B1D18B1DB10EFD000C4062 /* CategoryDetailViewController.swift in Sources */,
 				8844561F1C281CF00014DA09 /* FactData.swift in Sources */,
-				33B1D1EB1DBA2C64000C4062 /* KeyValueObserving.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -938,7 +940,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Pavlo Andryeyev (LF2HB98HLY)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = UT3YUVT7N2;
@@ -961,7 +963,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Pavel Andreev (UT3YUVT7N2)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = UT3YUVT7N2;

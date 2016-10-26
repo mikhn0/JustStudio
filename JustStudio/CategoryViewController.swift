@@ -82,13 +82,6 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
         if (categoryData.image_url != nil) {
             print("IndexPath.row === \(row)")
             let url = URL(string: categoryData.image_url)
-            //cell.photoView.sd_setImage(with: url, placeholderImage: categoryData.image==nil ? UIImage(named:"placeholder") :categoryData.image?.image)
-            //cell.indicatorView.startAnimating()
-   
-            //http://res.cloudinary.com/dvq3boovd/image/fetch/c_scale,w_100/
-            
-//           let urlWithService = "http://res.cloudinary.com/dvq3boovd/image/fetch/c_scale,w_100/\(categoryData.image_url)"
-            
             let urlWithService = "http://res.cloudinary.com/dvq3boovd/image/fetch/c_scale,w_100/"
             
            let betweenString = urlWithService+categoryData.image_url
