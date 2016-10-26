@@ -8,23 +8,16 @@
 
 import WatchKit
 
-class Category {
+class Category: Base {
   
-  let _id: String
-  let active: Bool
-  let ru: String
-  let image_mini: String
-  let en: String
-  let name: String
+  var image_mini: String
+  var name: String
     
   
   init(_id: String, active: Bool, ru: String, image: String, en: String, name: String) {
-    self._id = _id
-    self.active = active
-    self.ru = ru
     self.image_mini = image
-    self.en = en
     self.name = name
+    super.init(_id: _id, active: active, ru: ru, en: en)
   }
   
   convenience init(category: [String: AnyObject]) {

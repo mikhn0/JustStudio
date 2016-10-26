@@ -8,22 +8,14 @@
 
 import Foundation
 
-class Fact: NSObject {
-    var id : String!
-    var active : Bool!
-    var ru: String!
+class Fact: Base {
     var image: String!
-    var en: String!
     var category : String!
     
     
     init(id:String!, active:Bool!, ru:String!, image: String!, en:String!, category:String!) {
-        super.init()
-        self.id = id
-        self.active = active
-        self.ru = ru
+        super.init(_id: id, active: active, ru: ru, en: en)
         self.image = image
-        self.en = en
         self.category = category
         
     }

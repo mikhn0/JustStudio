@@ -14,11 +14,8 @@ class CategoryData: BaseData {
     var name: String!
     var image: UIImageView?
     
-    init(id: String!, active:Bool!, en:String!, image_url:String!, name:String!, ru:String!)//, image:String!
-    {
+    init(id: String!, active:Bool!, en:String!, image_url:String!, name:String!, ru:String!) {
         super.init(id:id, ru:ru, en:en, active:active, image_url:image_url)
         self.name = name
- //      self.image = image
-        
     }
 }

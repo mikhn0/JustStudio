@@ -13,7 +13,7 @@ let SERVER_URL:NSString = "http://justfacts.ju5tudio.com:5793"
 class LibraryWatchAPI : NSObject  {
 
         static var instance: LibraryWatchAPI!
-        var pageData: [FactData] = []
+        var pageData: [Fact] = []
         
         class func sharedInstance() -> LibraryWatchAPI {
             self.instance = (self.instance ?? LibraryWatchAPI())

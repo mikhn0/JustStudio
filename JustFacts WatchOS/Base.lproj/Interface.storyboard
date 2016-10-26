@@ -63,7 +63,9 @@
                                 </group>
                             </items>
                         </group>
-                        <label width="1" alignment="left" text="Label" textAlignment="center" numberOfLines="0" id="ECu-Th-eMT"/>
+                        <label width="1" alignment="left" text="Label" textAlignment="center" numberOfLines="0" id="ECu-Th-eMT">
+                            <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                        </label>
                     </items>
                     <connections>
                         <outlet property="backgroundGroup" destination="ehQ-bP-bV4" id="PhV-Pn-qfc"/>

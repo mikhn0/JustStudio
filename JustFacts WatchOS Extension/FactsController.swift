@@ -28,7 +28,6 @@ class FactsController: WKInterfaceController {
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        print("awake of FactsController === ")
         if let fact = context as? Fact { self.fact = fact }
     }
 }
