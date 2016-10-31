@@ -6,38 +6,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "JustStudio/ModelController.swift"
-            timestampString = "488211845.949255"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
-            landmarkName = "pageViewController(_:viewControllerAfter:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "JustStudio/API/LibraryAPI.swift"
-            timestampString = "496774153.69636"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "getAllCategory(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -52,16 +20,16 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "JustFacts_WatchOS_Extension.Category.__deallocating_deinit"
+                  symbolName = "JustFacts_WatchOS_Extension.Category.__ivar_destroyer"
                   moduleName = "JustFacts WatchOS Extension"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/a1/workspase/JustStudio/Shared/Category.swift"
-                  timestampString = "499016261.426516"
+                  timestampString = "499623725.153883"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
                   endingLineNumber = "0"
-                  offsetFromSymbolStart = "16">
+                  offsetFromSymbolStart = "9">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -71,7 +39,7 @@
                   moduleName = "JustFacts WatchOS Extension"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/a1/workspase/JustStudio/Shared/Category.swift"
-                  timestampString = "499016261.430476"
+                  timestampString = "499623725.15589"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "11"
@@ -86,7 +54,7 @@
                   moduleName = "JustFacts WatchOS Extension"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/a1/workspase/JustStudio/Shared/Category.swift"
-                  timestampString = "499016261.432482"
+                  timestampString = "499623725.157946"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"

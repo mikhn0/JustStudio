@@ -57,14 +57,15 @@ class LibraryAPI : NSObject  {
     func getFactsByCategory(_ category:String, completion: @escaping (_ facts: [FactData]) -> Void) -> Void {
         
         let url = NSURL(string: "\(SERVER_URL)/facts?category=\(category)")
-
+        print("url = \(url)")
         let task = URLSession.shared.dataTask(with: url! as URL) {(data, response, error) in
             
             if (error != nil) {
                 print("API error: \(error), \(error?.localizedDescription)")
             }
-            
+            print("response = \(response)")
             do {
+                
                 if let json:NSDictionary = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? [String:AnyObject] as NSDictionary? {
                     let jsonFactsArr = json["facts"] as! NSArray
                     

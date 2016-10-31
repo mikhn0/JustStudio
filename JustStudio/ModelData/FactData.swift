@@ -11,7 +11,7 @@ import Foundation
 class FactData: BaseData {
     
     var category : String!
-    var image : UIImage! = UIImage(named:"tree_background")
+    var image : UIImage?// = UIImage(named:"tree_background")
     
     init(id:String!, active:Bool!, category:String!, en:String!, ru:String!, image_url:String!) {
         super.init(id:id, ru:ru, en:en, active:active, image_url:image_url)
