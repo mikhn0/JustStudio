@@ -42,9 +42,10 @@ class LibraryWatchAPI : NSObject  {
                         let categoryData = Category.init(category: dict)
                         
                         categoryArr.append(categoryData)
-                        
                     }
-                    completion(categoryArr)
+                    DispatchQueue.main.async {
+                        completion(categoryArr)
+                    }
                 }
             } catch let error as NSError {
                 print(error.localizedDescription)
@@ -81,7 +82,9 @@ class LibraryWatchAPI : NSObject  {
                         let factData = Fact(id:(dict["_id"] as? String) , active:(dict["active"] as? Bool), ru:(dict["ru"] as? String), image:(dict["image"] as? String), en:(dict["en"] as? String), category:(dict["category"] as? String))
                         factsArr.append(factData)
                     }
-                    completion(factsArr )
+                    DispatchQueue.main.async {
+                        completion(factsArr )
+                    }
                 }
             } catch let error as NSError {
                 print(error.localizedDescription)
@@ -112,7 +115,7 @@ extension MutableCollection where Index == Int {
     mutating func shuffleInPlace() {
         // empty and single-element collections don't shuffle
         if count < 2 { return }
-        let max:Int = Int(count.hashValue-1)
+        let max:Int = Int(count.hashValue - 1)
         //var r = 0...count - 1
         for i in 0..<max {
             let j = Int(arc4random_uniform(UInt32(count.hashValue - i))) + i

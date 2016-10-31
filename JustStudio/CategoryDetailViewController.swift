@@ -44,7 +44,9 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
         
         LibraryAPI.sharedInstance().getFactsByCategory(self.category!.name!, completion:{ (facts: [FactData]) -> Void in
             
-            self.ConfigurationViewControllers(facts)
+            DispatchQueue.main.async {
+                self.ConfigurationViewControllers(facts)
+            }
 
         })
         
@@ -60,10 +62,10 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
     func ConfigurationViewControllers(_ facts: [FactData]) -> Void {
         
         self.modelController.allFacts = facts;
-        DispatchQueue.global().async {
+        DispatchQueue.global(qos: DispatchQoS.QoSClass.background).async {
             for fact in facts {
-                    let data = try? Data(contentsOf: URL(string: fact.image_url)!)
-                    fact.image = UIImage(data:data!)
+                let data = try? Data(contentsOf: URL(string: fact.image_url)!)
+                fact.image = UIImage(data:data!)
             }
         }
         self.modelController.activityIndicator = self.activityIndicator

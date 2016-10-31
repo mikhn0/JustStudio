@@ -24,28 +24,27 @@ class DataViewController: UIViewController {
         let url = URL(string: dataObject.image_url!)
         
         let urlWithService = "http://res.cloudinary.com/dvq3boovd/image/fetch/c_scale,w_100/"
-        let betweenString = urlWithService+dataObject.image_url
+        let betweenString = urlWithService + dataObject.image_url
         let urlService = URL(string: betweenString)
         
         
         self.activityIndicator!.startAnimating()
-        let task = URLSession.shared.dataTask(with: urlService!, completionHandler: { (data, response, error) in
-            if error == nil {
-                self.imageView.sd_setImage(with: url, placeholderImage:UIImage(data:data!), options:SDWebImageOptions.cacheMemoryOnly , progress: nil, completed: { (image, error, imageCacheType, url) in
-                    self.activityIndicator!.stopAnimating()
-                })
-    
-            }
-        })
-        task.resume()
-        
-        
-//        let blurEffect = UIBlurEffect(style: .light)
-//        let blurredEffectView = UIVisualEffectView(effect: blurEffect)
-//        var frame = self.dataLabel.frame
-//        frame.origin.x = 0
-//        frame.origin.y = 0
-//        blurredEffectView.frame = frame
+        if dataObject.image == nil {
+            let task = URLSession.shared.dataTask(with: urlService!, completionHandler: { (data, response, error) in
+                if error == nil {
+                    DispatchQueue.main.async {
+                        self.imageView.sd_setImage(with: url, placeholderImage: UIImage(data:data!), options: SDWebImageOptions.cacheMemoryOnly, completed: { (image, error, imageCacheType, url) in
+                            self.imageView.image = image
+                            self.activityIndicator!.stopAnimating()
+                        })
+                    }
+                }
+            })
+            task.resume()
+        } else {
+            self.imageView.image = dataObject.image
+            self.activityIndicator!.stopAnimating()
+        }
         
         self.dataLabel.setDescription(dataObject: dataObject)
         
