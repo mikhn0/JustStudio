@@ -15,53 +15,6 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1"
             endingLineNumber = "1">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "JustFacts_WatchOS_Extension.Category.__ivar_destroyer"
-                  moduleName = "JustFacts WatchOS Extension"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/a1/workspase/JustStudio/Shared/Category.swift"
-                  timestampString = "499623725.153883"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "9">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "JustFacts_WatchOS_Extension.Category.init (_id : Swift.String, active : Swift.Bool, ru : Swift.String, en : Swift.String) -&gt; JustFacts_WatchOS_Extension.Category"
-                  moduleName = "JustFacts WatchOS Extension"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/a1/workspase/JustStudio/Shared/Category.swift"
-                  timestampString = "499623725.15589"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "11"
-                  endingLineNumber = "11"
-                  offsetFromSymbolStart = "104">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "JustFacts_WatchOS_Extension.Category.__allocating_init (_id : Swift.String, active : Swift.Bool, ru : Swift.String, en : Swift.String) -&gt; JustFacts_WatchOS_Extension.Category"
-                  moduleName = "JustFacts WatchOS Extension"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/a1/workspase/JustStudio/Shared/Category.swift"
-                  timestampString = "499623725.157946"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "60">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -503,6 +503,7 @@
 						CreatedOnToolsVersion = 7.1.1;
 						DevelopmentTeam = UT3YUVT7N2;
 						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 0;
