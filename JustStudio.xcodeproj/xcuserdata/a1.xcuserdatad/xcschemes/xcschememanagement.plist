@@ -7,12 +7,17 @@
 		<key>JustFacts WatchOS (Notification).xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>5</integer>
+			<integer>2</integer>
 		</dict>
 		<key>JustFacts WatchOS.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>4</integer>
+			<integer>1</integer>
+		</dict>
+		<key>JustStudio iMessage.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
 		</dict>
 		<key>JustStudio.xcscheme</key>
 		<dict>
@@ -22,6 +27,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>33AE23361DC1089800A9B22A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>75FC744A1D8C2E3E00683CA0</key>
 		<dict>
 			<key>primary</key>

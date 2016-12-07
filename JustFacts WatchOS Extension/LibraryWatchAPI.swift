@@ -32,7 +32,7 @@ class LibraryWatchAPI : NSObject  {
             }
             
             do {
-                if let json:NSDictionary = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? [String:AnyObject] as NSDictionary? {
+                if let json:[String:AnyObject] = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? [String:AnyObject] {
                     let jsonCategoryArr = json["categories"] as! [AnyObject]
                     
                     var categoryArr: [Category] = []
