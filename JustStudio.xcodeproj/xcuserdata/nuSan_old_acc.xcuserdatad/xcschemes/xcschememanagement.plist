@@ -14,6 +14,11 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>JustStudio iMessage.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>8</integer>
+		</dict>
 		<key>JustStudio.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -22,6 +27,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>33AE23361DC1089800A9B22A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>75FC744A1D8C2E3E00683CA0</key>
 		<dict>
 			<key>primary</key>
