@@ -21,6 +21,7 @@ class DataViewController: UIViewController {
     
     override func viewDidLoad() {
         
+        print("DataVC link on image = \(dataObject.image)")
         let url = URL(string: dataObject.image_url!)
         
         let urlWithService = "http://res.cloudinary.com/dvq3boovd/image/fetch/c_scale,w_100/"

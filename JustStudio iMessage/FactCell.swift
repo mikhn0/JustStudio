@@ -20,12 +20,12 @@ class FactCell: UICollectionViewCell {
     var image_url:String = ""
     
     override func awakeFromNib() {
-        descrLabel.textColor = UIColor.init(red:71/255, green:90/255, blue:109/255, alpha:1)
-        //titleLabel.font = UIFont.lightFont(ofSize: 20)
-        descrLabel.minimumScaleFactor = 0.5
+        self.descrLabel?.textColor = UIColor.white
+        self.descrLabel?.shadowColor = UIColor.gray
+        self.descrLabel?.shadowOffset = CGSize(width: 1, height: -1)
+        self.descrLabel?.font = UIFont(name: "HelveticaNeue-Medium", size: 35)
         
-        //descrLabel.font = UIFont.altFont(ofSize: 20)
-        descrLabel.minimumScaleFactor = 0.5
+        
     }
     
     func getScreenShortOfCell() -> UIImage {

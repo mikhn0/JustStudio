@@ -10,14 +10,14 @@ import UIKit
 import Foundation
 import Messages
 
-class MessagesViewController: MSMessagesAppViewController, CompactVCDelegate, AddStickersVCDelegate
+class MessagesViewController: MSMessagesAppViewController, CategoryVCDelegate, FactsVCDelegate
 {
-    
-    var compactVC : CompactVC!
-    var addStickersVC: AddStickersVC?
+
+    var categoryVC : CategoryVC!
+    var factsVC: FactsVC?
     var previewVC: PreviewVC!
     
-    var _fact:[Facts] = []
+    var _fact:[FactData] = []
     var savedConversation: MSConversation?
     var messageSelectFromConversation = false
     
@@ -37,7 +37,7 @@ class MessagesViewController: MSMessagesAppViewController, CompactVCDelegate, Ad
     override func viewDidLoad() {
         super.viewDidLoad()
         if self._fact.count == 0 {
-            presentCompactVC()
+            presentCategoryVC()
         }
         NotificationCenter.default.addObserver(self, selector: #selector(self.openExpandedStyle), name: NSNotification.Name(rawValue: "OpenScreenWithExpectedStyle"), object: nil)
     }
@@ -52,55 +52,90 @@ class MessagesViewController: MSMessagesAppViewController, CompactVCDelegate, Ad
     
     override func willTransition (to presentationStyle: MSMessagesAppPresentationStyle) {
         super.willTransition(to: presentationStyle)
-        if presentationStyle == .expanded && messageSelectFromConversation == false || activeConversation?.selectedMessage == nil && presentationStyle == .expanded {
+        if presentationStyle == .expanded && messageSelectFromConversation == true && activeConversation?.selectedMessage != nil && presentationStyle == .expanded {
             
-            presentAddStickersVC()
+            presentPreview ()
+            
+        } else if presentationStyle == .expanded && messageSelectFromConversation == false || activeConversation?.selectedMessage == nil && presentationStyle == .expanded {
+            
+            //presentFactsVC()
+            messageSelectFromConversation = false
+            categoryVC.topOfCategoryVC.constant = 85
+            print("messageSelectFromConversation = \(messageSelectFromConversation)")
             
         } else if presentationStyle == .compact && messageSelectFromConversation == false || activeConversation?.selectedMessage == nil && presentationStyle == .compact {
             
-            presentCompactVC ()
+            messageSelectFromConversation = false
+            categoryVC.topOfCategoryVC.constant = 0
+            presentCategoryVC ()
             NotificationCenter.default.post (name: NSNotification.Name (rawValue: "OpenScreenWithCompactsStyle"), object: nil)
-            
-        } else {
-            
-            presentPreview ()
             
         }
         
     }
     
+    
     //pragma mark - CompactVCDelegate
     
-    func tappedToADDNewsStickersToCollection(_ controller: CompactVC) {
+    func tappedToAddNewsStickersToCollection(_ controller: CategoryVC) {
         messageSelectFromConversation = false
         openExpandedStyle()
+    }
+    
+    func buttonTappedOn(selectCategory: CategoryData, onCell: UIImage) {
+        print("buttonTappedOn method of protocol")
+        openExpandedStyle()
+        presentFactsVC(by: selectCategory.name)
     }
     
     
     //pragma mark - AddStickersVCDelegate
     
-    func chooseStickerToAddToCollection(_ screenShot: UIImage, with fact: Facts) {
-    
-
+    func chooseFactForSend(_ screenShot: UIImage, with fact: Facts) {
+        guard let conversation = activeConversation else {fatalError()}
+        let session = conversation.selectedMessage?.session ?? MSSession()
+        
+        let message = MSMessage(session:session)
+        let layout = MSMessageTemplateLayout()
+        layout.subcaption = " Just Facts: Did You Know?"
+        layout.image = screenShot
+        
+        message.layout = layout
+        
+        var components = URLComponents()
+        components.queryItems = fact.queryItems
+        message.url = components.url
+        
+        conversation.insert(message) { error in
+            if (error) != nil { print(error ?? "ERROR") }
+        }
+        openCompactStyle()
     }
     
     
     //pragma mark - present different VC
     
-    func presentAddStickersVC() {
-        if addStickersVC == nil {
-            let controller = storyboard?.instantiateViewController(withIdentifier: AddStickersVC.storyboardIdentifier) as? AddStickersVC
-            addStickersVC = controller
-            addStickersVC?.delegate = self
+    func presentFactsVC(by category:String) {
+        if factsVC == nil {
+            let controller = storyboard?.instantiateViewController(withIdentifier: FactsVC.storyboardIdentifier) as? FactsVC
+            factsVC = controller
+            factsVC?.delegate = self
+            
+            factsVC?.view.frame = self.view.frame
+            self.addChildViewController(factsVC!)
+            factsVC?.didMove(toParentViewController: self)
+            self.view.addSubview((factsVC?.view)!)
         }
         
-        addStickersVC?.view.frame = self.view.frame
-        self.addChildViewController(addStickersVC!)
-        addStickersVC?.didMove(toParentViewController: self)
-        self.view.addSubview((addStickersVC?.view)!)
-        compactVC.removeFromParentViewController()
-        previewVC?.removeFromParentViewController()
+        uploadFacts(by: category)
+        factsVC?.collectionView.reloadData()
+
         
+        factsVC?.view.isHidden = false
+        //categoryVC.removeFromParentViewController()
+        categoryVC.view.isHidden = true
+        //previewVC?.removeFromParentViewController()
+        previewVC?.view.isHidden = true
     }
     
     func presentPreview() {
@@ -110,51 +145,52 @@ class MessagesViewController: MSMessagesAppViewController, CompactVCDelegate, Ad
             previewVC = controller
             let fact = Facts (message: activeConversation?.selectedMessage)
             
-            let item = try Facts (desc: (fact?.desc)!, image: (fact?.image)! )
+            let item = Facts (desc: (fact?.desc)!, image: (fact?.image)! )
             previewVC.item = item
+            
+            previewVC.view.frame = self.view.frame
+            self.addChildViewController(previewVC!)
+            previewVC.didMove (toParentViewController: self)
+            self.view.addSubview((previewVC?.view)!)
         }
-        
-        previewVC.view.frame = self.view.frame
-        self.addChildViewController(previewVC!)
-        previewVC.didMove (toParentViewController: self)
-        self.view.addSubview((previewVC?.view)!)
         messageSelectFromConversation = false
-        compactVC.removeFromParentViewController()
-        compactVC.view.isHidden = true
-        addStickersVC?.removeFromParentViewController()
-        addStickersVC?.view.isHidden = true
+        
+        previewVC.view.isHidden = false
+        //categoryVC.removeFromParentViewController()
+        categoryVC.view.isHidden = true
+        //factsVC?.removeFromParentViewController()
+        factsVC?.view.isHidden = true
     }
     
-    func presentCompactVC() {
-        if compactVC == nil {
-            let controller = storyboard?.instantiateViewController(withIdentifier: CompactVC.storyboardIdentifier) as? CompactVC
-            
-            compactVC = controller
-            compactVC.delegate = self
-            
+    func presentCategoryVC() {
+        if categoryVC == nil {
+            let controller = storyboard?.instantiateViewController(withIdentifier: CategoryVC.storyboardIdentifier) as? CategoryVC
+            categoryVC = controller
+            categoryVC.delegate = self
             uploadCategories()
             
+            categoryVC.view.frame = self.view.frame
+            self.addChildViewController(categoryVC)
+            categoryVC.didMove(toParentViewController: self)
+            self.view.addSubview(categoryVC.view)
         }
         
-        compactVC.view.frame = self.view.frame
-        self.addChildViewController(compactVC)
-        compactVC.didMove(toParentViewController: self)
-        self.view.addSubview(compactVC.view)
+        categoryVC.categoryTable?.reloadData()
+        categoryVC.changeBrowserViewBackgroundColor(color: UIColor.init(red:1.0, green:1.0, blue:1.0, alpha:1))
         
-        compactVC.factCollection?.reloadData()
-        compactVC.categoryCollection?.reloadData()
-        compactVC.changeBrowserViewBackgroundColor(color: UIColor.init(red:1.0, green:1.0, blue:1.0, alpha:1))
-        
-        addStickersVC?.removeFromParentViewController()
-        previewVC?.removeFromParentViewController()
+        categoryVC.view.isHidden = false
+        //factsVC?.removeFromParentViewController()
+        factsVC?.view.isHidden = true
+       // previewVC?.removeFromParentViewController()
+        previewVC?.view.isHidden = true
     }
     
     
     //pragma mark - Inspection Stickers to match
     
-    func checkNewSticker(newFact:Facts) -> Bool {
+    func checkNewSticker(newFact:FactData) -> Bool {
         for elem in _fact {
-            if elem.desc == newFact.desc
+            if elem.en == newFact.en
             {
                 return true
             }
@@ -162,72 +198,60 @@ class MessagesViewController: MSMessagesAppViewController, CompactVCDelegate, Ad
         return false
     }
     
-    
-    //pragma mark - select one of the cells
-    
-    func buttonTappedOn(selectFact: Facts, onCell: UIImage) {
-        
-        guard let conversation = activeConversation else {fatalError()}
-        let session = conversation.selectedMessage?.session ?? MSSession()
-        
-        let message = MSMessage(session:session)
-        let layout = MSMessageTemplateLayout()
-        layout.subcaption = " Just Studio"
-        layout.image = onCell
-        
-        message.layout = layout
-        
-        var components = URLComponents()
-        components.queryItems = selectFact.queryItems
-        message.url = components.url
-        
-        conversation.insert(message) { error in
-            if (error) != nil { print(error) }
-        }
-    }
-
-
-    
     func uploadCategories() {
-        DispatchQueue.global(qos: DispatchQoS.QoSClass.background).async {
-        
-            LibraryWatchAPI.sharedInstance().getAllCategoryForWatch { (categories) in
+        LibraryAPI.sharedInstance().getAllCategory ({ (categories: [CategoryData]) -> Void in
+            if categories != [] {
+                self.categoryVC._categories = categories;
+                DispatchQueue.main.async {
+                    self.categoryVC.categoryTable?.reloadData()
+                }
                 
-                LibraryWatchAPI.sharedInstance().getFactsByCategoryForWatch(categories[0].name, completion:{ (facts) in
-                    
-                    //Prepare categories for display on compact VC
-                    self.compactVC._categories = categories
-     
-                    
-/*                    // Prepare Facts for display on compact VC
-                    for elem in facts {
-                        let factNewObject = Facts(desc: elem.en, image:elem.image)
-                        
-                        self._fact.append(factNewObject)
-                        self.compactVC.factItems.append(.sticker(factNewObject))
+                for categ in categories {
+                    DispatchQueue.global().async {
+                        print("START prepare image for \(categ.name)")
+                        if categ.image == nil {
+                            categ.image?.sd_setImage(with: URL(string: categ.image_url)!)
+                        }
+                        print("FINISHED prepare image for \(categ.name)")
                     }
-*/
-                    
-                   DispatchQueue.main.async {
-                        self.compactVC.factCollection?.reloadData()
-                        self.compactVC.categoryCollection?.reloadData()
-                    }
-                    
-                })
+                }
+            } else {
+                let alertController = UIAlertController(title: "Error", message: "System error.", preferredStyle: .alert)
                 
+                let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
+                    // ...
+                }
+                alertController.addAction(OKAction)
+                
+                self.present(alertController, animated: true) {
+                    // ...
+                }
             }
-        }
+        })
     }
 
-
-    
+    func uploadFacts(by category:String) {
+        LibraryAPI.sharedInstance().getFactsByCategory(category, completion:{ (facts: [FactData]) -> Void in
+            
+            if facts != [] {
+                self.factsVC?.facts = facts
+            }
+            DispatchQueue.main.async {
+                self.factsVC?.collectionView?.reloadData()
+            }
+        })
+    }
     
     func openExpandedStyle() {
-        requestPresentationStyle(.expanded)
+        if presentationStyle == .compact {
+            requestPresentationStyle(.expanded)
+        }
     }
     
     func openCompactStyle() {
-        requestPresentationStyle(.compact)
+        if presentationStyle == .expanded {
+            requestPresentationStyle(.compact)
+        }
     }
     
     deinit {

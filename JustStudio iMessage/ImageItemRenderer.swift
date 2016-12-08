@@ -41,14 +41,16 @@ class ImageItemRenderer: UICollectionViewCell, PHPhotoLibraryChangeObserver
     
     override func layoutSubviews()
     {
-        let labelFrame = CGRect(x: 0, y: frame.height - 30, width: frame.width, height: 30)
+        let labelFrame = CGRect(x: 0, y: frame.height - 60, width: frame.width, height: 60)
         
         blurOverlay.frame = labelFrame
         
         var imageFrame = labelFrame
         imageFrame.origin.y = 0
-        imageFrame.size.height = frame.height - 30
+        imageFrame.size.height = frame.height - 60
         imageView.frame = imageFrame
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
         
         labelDescription.frame = labelFrame
     }

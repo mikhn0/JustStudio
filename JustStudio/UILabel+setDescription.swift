@@ -20,6 +20,15 @@ extension UILabel {
         }
     }
     
+    class func returnDescription(dataObject: BaseData) -> String {
+        let pre = NSLocale.preferredLanguages[0]
+        if pre.contains("ru") {
+            return dataObject.ru
+        } else {
+            return dataObject.en
+        }
+    }
+    
 }
 
 

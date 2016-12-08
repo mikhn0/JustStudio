@@ -1,0 +1,6 @@
+framework module Pods_JustStudio_iMessage {
+  umbrella header "Pods-JustStudio iMessage-umbrella.h"
+
+  export *
+  module * { export * }
+}

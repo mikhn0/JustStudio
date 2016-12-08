@@ -13,3 +13,7 @@ end
 target 'JustFacts WatchOS Extension' do
     platform :watchos, '2.0'
 end
+
+target 'JustStudio iMessage' do
+    pod 'SDWebImage', '~>3.7'
+end

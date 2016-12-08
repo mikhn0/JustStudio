@@ -67,10 +67,11 @@ extension Facts {
 
 class BaseViewController: UIViewController, UIViewControllerPreviewingDelegate {
     //FactCell
-    func addGestureForEachCell(_ cell:CategoryCell) {
+    func addGestureForEachCell(_ cell:UIView) {
         if traitCollection.forceTouchCapability == UIForceTouchCapability.available
         {
-            previewingContext(cell as! UIViewControllerPreviewing, commit: self)
+            registerForPreviewing(with: self, sourceView: cell)
+            //previewingContext(cell as! UIViewControllerPreviewing, commit: self)
         } else {
             
             // нет описания longPress

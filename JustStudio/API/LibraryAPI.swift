@@ -67,10 +67,10 @@ class LibraryAPI : NSObject  {
             do {
                 
                 if let json:NSDictionary = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? [String:AnyObject] as NSDictionary? {
-                    let jsonFactsArr = json["facts"] as! NSArray
-                    
+                    let jsonFactsArr = json["facts"] as! [AnyObject]
+                    let facts = jsonFactsArr.shuffle()
                     var factsArr: [FactData] = []
-                    for element in jsonFactsArr {
+                    for element in facts {
                         let dict = element as! NSDictionary
                         let factData = FactData(id:(dict["_id"] as? String) , active:(dict["active"] as? Bool), category:(dict["category"] as? String), en:(dict["en"] as? String), ru:(dict["ru"] as? String), image_url:(dict["image"] as? String))
                         factsArr.append(factData)

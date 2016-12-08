@@ -32,8 +32,6 @@ class PeekViewController: UIViewController
                 {
                     itemRenderer.asset = asset;
                 }
-    
-
         }
 
     }

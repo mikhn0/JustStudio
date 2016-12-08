@@ -17,7 +17,7 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
     @IBOutlet weak var shareView: UIView!
     var pageViewController: UIPageViewController?
     var category: CategoryData?
-
+    var semaphore: DispatchSemaphore?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,13 +42,18 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
         self.bannerView.rootViewController = self
         self.bannerView.load(GADRequest())
         
-        LibraryAPI.sharedInstance().getFactsByCategory(self.category!.name!, completion:{ (facts: [FactData]) -> Void in
-            
-            DispatchQueue.main.async {
-                self.ConfigurationViewControllers(facts)
-            }
-
-        })
+        //semaphore = DispatchSemaphore(value: 0)
+        //DispatchQueue.global(qos: .userInitiated).async {
+            print("user initiated task")
+            LibraryAPI.sharedInstance().getFactsByCategory(self.category!.name!, completion:{ (facts: [FactData]) -> Void in
+                
+                DispatchQueue.main.async {
+                    self.ConfigurationViewControllers(facts)
+                }
+                
+            })
+            //self.semaphore?.signal()
+        //}
         
         // Set the page view controller's bounds using an inset rect so that self's view is visible around the edges of the pages.
         var pageViewRect = self.view.bounds
@@ -65,7 +70,10 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
         DispatchQueue.global(qos: DispatchQoS.QoSClass.background).async {
             for fact in facts {
                 let data = try? Data(contentsOf: URL(string: fact.image_url)!)
-                fact.image = UIImage(data:data!)
+                if data != nil {
+                    fact.image = UIImage(data:data!)
+                }
+                print("\(fact.image)")
             }
         }
         self.modelController.activityIndicator = self.activityIndicator
@@ -82,16 +90,23 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
     
     @IBAction func shareAction(_ sender: AnyObject) {
         // Check and see if the text field is empty
-        let currentViewController = self.pageViewController!.viewControllers![0] as! DataViewController
-        let indexOfCurrentViewController = self.modelController.indexOfViewController(currentViewController)
-        
-        if (self.modelController.allFacts[indexOfCurrentViewController].image_url == "") {
-            // The text field is empty so display an Alert
-            displayAlert("Warning", message: "Enter something in the text field!")
-        } else {
-            // We have contents so display the share sheet
-            displayShareSheet(self.modelController.allFacts[indexOfCurrentViewController])
+        //semaphore?.wait(timeout: .distantFuture)
+        print("WE MADE IT OUT OF THERE")
+        if self.pageViewController!.viewControllers!.count > 0 {
+            let currentViewController = self.pageViewController!.viewControllers![0] as! DataViewController
+            let indexOfCurrentViewController = self.modelController.indexOfViewController(currentViewController)
+            
+            if self.modelController.allFacts.count > 0 && indexOfCurrentViewController >= 0 {
+                if (self.modelController.allFacts[indexOfCurrentViewController].image_url == "") {
+                    // The text field is empty so display an Alert
+                    displayAlert("Warning", message: "Enter something in the text field!")
+                } else {
+                    // We have contents so display the share sheet
+                    displayShareSheet(self.modelController.allFacts[indexOfCurrentViewController])
+                }
+            }
         }
+
     }
 
     func displayAlert(_ title: String, message: String) {
@@ -107,8 +122,10 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
         let imageView: UIImageView? = UIImageView()
         imageView!.sd_setImage(with: url)
         let shareImage: UIImage! = imageView?.image
-        let activityViewController = UIActivityViewController(activityItems: [shareContent.ru as String, shareImage as UIImage, siteUrl as URL], applicationActivities: nil)
-        present(activityViewController, animated: true, completion: {})
+        if shareImage != nil {
+            let activityViewController = UIActivityViewController(activityItems: [shareContent.ru as String, shareImage as UIImage, siteUrl as URL], applicationActivities: nil)
+            present(activityViewController, animated: true, completion: {})
+        }
     }
     
     var modelController: ModelController {

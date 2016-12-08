@@ -8,22 +8,21 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>3</integer>
+		</dict>
+		<key>Pods-JustStudio iMessage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods-JustStudio.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>4</integer>
 		</dict>
 		<key>SDWebImage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>5</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -39,6 +38,11 @@
 			<true/>
 		</dict>
 		<key>9FC66F28185ED76750F7A8BCDD07F878</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F90EE799A396420E644063F17988BA16</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -1,2440 +1,987 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>004F47E57DACBC86CC8D08EC8B9B453C</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.script.sh</string>
-			<key>path</key>
-			<string>Pods-JustFacts WatchOS Extension-frameworks.sh</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>008B4CAEA626B5C3F3E9D03A91CAE7B4</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>SDWebImageDownloaderOperation.m</string>
-			<key>path</key>
-			<string>SDWebImage/SDWebImageDownloaderOperation.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>011BAB9C098CCE1AA211930AC54B5A91</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods-JustStudio.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>03697726B7FB58CB3C2652030B0810D3</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>D41D8CD98F00B204E9800998ECF8427E</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>3BBA15F11821432C31825F81E85E9401</string>
-			<key>remoteInfo</key>
-			<string>SDWebImage</string>
-		</dict>
-		<key>05F4A229A752D6AF02EFE7D648C3A79F</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>B17764B339FF59C8911278589E2AD0E4</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>081CD42B047A018CE205572D5B1BCFC2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>339DA8E3E2FCAF8C0CB7155061D75A33</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>09147EC29DF9A42A7D38907C627FED7C</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>B1BE33DFD8CEF1B631E7F7F8008146C3</string>
-				<string>A9D542EA548AEB98EF1DECB30FE72828</string>
-				<string>686321A7742AE0A0E3652A7C048358D5</string>
-				<string>1EF03A4B84540186F0839D10808A4E9B</string>
-				<string>F7F920B6E0DEE28CD06D84B139B75816</string>
-				<string>92523FB44AEB681D88A181344C09A0F8</string>
-				<string>5392B2CEA9D2E22A57CE3C17566C6CB2</string>
-				<string>2914E68089FBB45E6A554FE865BCCD46</string>
-				<string>2DBD0C979437C8216852147943C323F0</string>
-				<string>36CE430DA4C190D68494D9C7F81B4AC8</string>
-				<string>D0FC5FD4E94C78AE293380AD5D34EFA1</string>
-				<string>DAC9F3200DC16B515C94A9384C825D80</string>
-				<string>F600D3E795198F9992448341D034475F</string>
-				<string>610AB9D01E3A5F091B81CB6BF5F76A68</string>
-				<string>169808C84AED16658E622E5D0D5CB945</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>09BB38D95A630F4AD5AE04A01FDB8FDE</key>
-		<dict>
-			<key>fileRef</key>
-			<string>657C2DEDC7E008F33B7202B4025C2E02</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>0CBA370FF728243E5F297D8D308E0A90</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6E908C6E7FF6BED74CC3236655B68796</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>0D81CBF1422ACDD0C66985CD61580A9F</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>SDWebImageDecoder.m</string>
-			<key>path</key>
-			<string>SDWebImage/SDWebImageDecoder.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>0E325234BF0F4D97C8793DA543BA2C77</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>NSData+ImageContentType.m</string>
-			<key>path</key>
-			<string>SDWebImage/NSData+ImageContentType.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>0EA6B74F78E4E589D62E3B7A7F804C39</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Pods-JustFacts WatchOS Extension.modulemap</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>0F31E127349085EFE4CC4B5A9B4F77ED</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>UIImageView+HighlightedWebCache.m</string>
-			<key>path</key>
-			<string>SDWebImage/UIImageView+HighlightedWebCache.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>1233C8B7C54DDB35FF6F876F1F820991</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>3EA079C3BAFDDD83D2AACCDE7B55063E</string>
-				<string>ABA1596489E7541C66C64236B29B0F38</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>1255EBEDC55954DEF75FA8143FDD433D</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.script.sh</string>
-			<key>path</key>
-			<string>Pods-JustFacts WatchOS Extension-resources.sh</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>138935DDF41F58957F0FDBB0F60891A4</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>D1D0022A38C0059058CC13273E6FE9CB</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>CURRENT_PROJECT_VERSION</key>
-				<string>1</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf-with-dsym</string>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
-				<key>DYLIB_COMPATIBILITY_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_CURRENT_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_INSTALL_NAME_BASE</key>
-				<string>@rpath</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_NO_COMMON_BLOCKS</key>
-				<string>YES</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Target Support Files/Pods-JustStudio/Info.plist</string>
-				<key>INSTALL_PATH</key>
-				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>10.0</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<array>
-					<string>$(inherited)</string>
-					<string>@executable_path/Frameworks</string>
-					<string>@loader_path/Frameworks</string>
-				</array>
-				<key>MACH_O_TYPE</key>
-				<string>staticlib</string>
-				<key>MODULEMAP_FILE</key>
-				<string>Target Support Files/Pods-JustStudio/Pods-JustStudio.modulemap</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>NO</string>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PODS_ROOT</key>
-				<string>$(SRCROOT)</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>org.cocoapods.${PRODUCT_NAME:rfc1034identifier}</string>
-				<key>PRODUCT_NAME</key>
-				<string>Pods_JustStudio</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-				<key>VERSIONING_SYSTEM</key>
-				<string>apple-generic</string>
-				<key>VERSION_INFO_PREFIX</key>
-				<string></string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>1428D2D7A70C2A3751AC9A4E1CFB1419</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>UIButton+WebCache.m</string>
-			<key>path</key>
-			<string>SDWebImage/UIButton+WebCache.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>155929269455EC2A662C0B9E3A5F4CFA</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>D6A62881EEC2BFC8D43F65448B98019D</string>
-				<string>279BF7736ACA354EE868829A7CD0901D</string>
-				<string>E9B861C9AE200DA64235DC96DA389779</string>
-				<string>C7B9727ACD1A4A6160E7288F86F59BB0</string>
-				<string>64EF50E465E9564E6E16509B3FE249C1</string>
-				<string>1DD770639ABC7ECFBB9CF318178E3A28</string>
-				<string>C917780DBCE9DB07A19D8ACD3598098C</string>
-				<string>B8B7950A7AE331D209577BF7330D6385</string>
-				<string>011BAB9C098CCE1AA211930AC54B5A91</string>
-				<string>D1D0022A38C0059058CC13273E6FE9CB</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods-JustStudio</string>
-			<key>path</key>
-			<string>Target Support Files/Pods-JustStudio</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>169808C84AED16658E622E5D0D5CB945</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F485E95D4C20CF63CBD6B848AFB7DE24</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>16FEF692374E63C8940EDB84AC670C8A</key>
-		<dict>
-			<key>fileRef</key>
-			<string>DB019A0F22C7B122F3ED75951FDFF524</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>17282697DCE9B2ADC23D2CD62B81215D</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>5DC6CE3690FE2EC95F99A7D0412FB9AB</string>
-				<string>0EA6B74F78E4E589D62E3B7A7F804C39</string>
-				<string>9945B12077E34478272995512F59D64C</string>
-				<string>CF1892F56D88DFA9DBFA4F9A3B2EABE2</string>
-				<string>353DB3D1A9EDE91A1CF339D9F4A69684</string>
-				<string>004F47E57DACBC86CC8D08EC8B9B453C</string>
-				<string>1255EBEDC55954DEF75FA8143FDD433D</string>
-				<string>CBECE3460070DEC80A3AFEAC44022B99</string>
-				<string>1BA42D77323305D707239DB675128C12</string>
-				<string>42C412FCE08BDCB5057E286DF523463F</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods-JustFacts WatchOS Extension</string>
-			<key>path</key>
-			<string>Target Support Files/Pods-JustFacts WatchOS Extension</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>1850E3B987F233822CBE0224AE471697</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>F10FE3015C8919C049FE627BFD9CC99A</string>
-				<string>138935DDF41F58957F0FDBB0F60891A4</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>1BA42D77323305D707239DB675128C12</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods-JustFacts WatchOS Extension.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>1DD770639ABC7ECFBB9CF318178E3A28</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.script.sh</string>
-			<key>path</key>
-			<string>Pods-JustStudio-frameworks.sh</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>1EF03A4B84540186F0839D10808A4E9B</key>
-		<dict>
-			<key>fileRef</key>
-			<string>DFC80FAB25D78F607DDD08BEE732FBB5</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>279BF7736ACA354EE868829A7CD0901D</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Pods-JustStudio.modulemap</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>2914E68089FBB45E6A554FE865BCCD46</key>
-		<dict>
-			<key>fileRef</key>
-			<string>63BD60956221813ED9F99F486D2EEFC2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>2B4E46A778A4F274272F7F923E0909CE</key>
-		<dict>
-			<key>fileRef</key>
-			<string>B8B7950A7AE331D209577BF7330D6385</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>2D8E8EC45A3A1A1D94AE762CB5028504</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>5E0A69BD2F17F16F071979DBF4E00C0B</string>
-				<string>CD64ECF3A9715052BE78682F2A8ECA6B</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>2DBD0C979437C8216852147943C323F0</key>
-		<dict>
-			<key>fileRef</key>
-			<string>4166873F3E66A8DD3FE3CCE6AD433AC9</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>3003F89894231438DE41805D722AEADC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>C22ADAC435AC585FB0BCC4CB5AC3191C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>309D1310691F011E83B20CC2621D1B72</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6E908C6E7FF6BED74CC3236655B68796</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>3236336038E318C641BD6DC179364F99</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>Pods_JustFacts_WatchOS_Extension.framework</string>
-			<key>path</key>
-			<string>Pods-JustFacts WatchOS Extension.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>336C47FD1CFC075069294D025D95AFD7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>95498D916E6996B094294AF2B746C887</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>339DA8E3E2FCAF8C0CB7155061D75A33</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>SDWebImage-umbrella.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>353DB3D1A9EDE91A1CF339D9F4A69684</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>Pods-JustFacts WatchOS Extension-dummy.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>360C4AA1711D9484F2516DAE57D7F0C4</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>1BA42D77323305D707239DB675128C12</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>APPLICATION_EXTENSION_API_ONLY</key>
-				<string>YES</string>
-				<key>CURRENT_PROJECT_VERSION</key>
-				<string>1</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf</string>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
-				<key>DYLIB_COMPATIBILITY_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_CURRENT_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_INSTALL_NAME_BASE</key>
-				<string>@rpath</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_NO_COMMON_BLOCKS</key>
-				<string>YES</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Target Support Files/Pods-JustFacts WatchOS Extension/Info.plist</string>
-				<key>INSTALL_PATH</key>
-				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<array>
-					<string>$(inherited)</string>
-					<string>@executable_path/Frameworks</string>
-					<string>@loader_path/Frameworks</string>
-				</array>
-				<key>MACH_O_TYPE</key>
-				<string>staticlib</string>
-				<key>MODULEMAP_FILE</key>
-				<string>Target Support Files/Pods-JustFacts WatchOS Extension/Pods-JustFacts WatchOS Extension.modulemap</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>YES</string>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PODS_ROOT</key>
-				<string>$(SRCROOT)</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>org.cocoapods.${PRODUCT_NAME:rfc1034identifier}</string>
-				<key>PRODUCT_NAME</key>
-				<string>Pods_JustFacts_WatchOS_Extension</string>
-				<key>SDKROOT</key>
-				<string>watchos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>4</string>
-				<key>VERSIONING_SYSTEM</key>
-				<string>apple-generic</string>
-				<key>VERSION_INFO_PREFIX</key>
-				<string></string>
-				<key>WATCHOS_DEPLOYMENT_TARGET</key>
-				<string>2.0</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>36CE430DA4C190D68494D9C7F81B4AC8</key>
-		<dict>
-			<key>fileRef</key>
-			<string>1428D2D7A70C2A3751AC9A4E1CFB1419</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>38B4333968BF5F37225755C8A30417E0</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>Pods_JustStudio.framework</string>
-			<key>path</key>
-			<string>Pods-JustStudio.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>3BBA15F11821432C31825F81E85E9401</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>1233C8B7C54DDB35FF6F876F1F820991</string>
-			<key>buildPhases</key>
-			<array>
-				<string>09147EC29DF9A42A7D38907C627FED7C</string>
-				<string>DBF50CEC873B94778A5E8848EFA1E1B0</string>
-				<string>B92D0A7D99EFBA1333282395FA271129</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>SDWebImage</string>
-			<key>productName</key>
-			<string>SDWebImage</string>
-			<key>productReference</key>
-			<string>A87E3064271D9F847D74D9C72DDF02C4</string>
-			<key>productType</key>
-			<string>com.apple.product-type.framework</string>
-		</dict>
-		<key>3EA079C3BAFDDD83D2AACCDE7B55063E</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>ABE1C55BCAFFA99A4380A780F130F959</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>CURRENT_PROJECT_VERSION</key>
-				<string>1</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf</string>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
-				<key>DYLIB_COMPATIBILITY_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_CURRENT_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_INSTALL_NAME_BASE</key>
-				<string>@rpath</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_NO_COMMON_BLOCKS</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Target Support Files/SDWebImage/SDWebImage-prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Target Support Files/SDWebImage/Info.plist</string>
-				<key>INSTALL_PATH</key>
-				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.0</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<array>
-					<string>$(inherited)</string>
-					<string>@executable_path/Frameworks</string>
-					<string>@loader_path/Frameworks</string>
-				</array>
-				<key>MODULEMAP_FILE</key>
-				<string>Target Support Files/SDWebImage/SDWebImage.modulemap</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>YES</string>
-				<key>PRODUCT_NAME</key>
-				<string>SDWebImage</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-				<key>VERSIONING_SYSTEM</key>
-				<string>apple-generic</string>
-				<key>VERSION_INFO_PREFIX</key>
-				<string></string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>4059B9CFE8F84CE244ED7607819D80D0</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>SDWebImagePrefetcher.h</string>
-			<key>path</key>
-			<string>SDWebImage/SDWebImagePrefetcher.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>4166873F3E66A8DD3FE3CCE6AD433AC9</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>SDWebImagePrefetcher.m</string>
-			<key>path</key>
-			<string>SDWebImage/SDWebImagePrefetcher.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>42C412FCE08BDCB5057E286DF523463F</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods-JustFacts WatchOS Extension.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>46A77505D14E3F5D84731B41CAD9E3E3</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>6E908C6E7FF6BED74CC3236655B68796</string>
-				<string>DB019A0F22C7B122F3ED75951FDFF524</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>iOS</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>47271AD453CADD73490D036EC2E895C8</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>0CBA370FF728243E5F297D8D308E0A90</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>4BCBF6C317C64E46B96EC5EF1F63215C</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>A0B84E212227F555785498D6FA5D7BFE</string>
-				<string>C3A70302AC70D3E45F8952F07C59E3F0</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>SDWebImage</string>
-			<key>path</key>
-			<string>SDWebImage</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>4C0FAACF1DB7BEDA7CB1C563D3506FB2</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>UIButton+WebCache.h</string>
-			<key>path</key>
-			<string>SDWebImage/UIButton+WebCache.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5392B2CEA9D2E22A57CE3C17566C6CB2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>008B4CAEA626B5C3F3E9D03A91CAE7B4</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>55CA75CC51399A6CB51BF3F5A2DBE5E9</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>CA796AABDF7641C2FE0B565FAC543288</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>watchOS</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>569C10FEFE0C911C8D0C95F4D4ABA563</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>SDWebImageDownloader.m</string>
-			<key>path</key>
-			<string>SDWebImage/SDWebImageDownloader.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>56FD2CC1B1CB1A2ADBCC56AD7337EC9B</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5FEA914C5B2A098DEFD07D3351175289</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>5D6EF9A03AA5DE705ED0D74F54915E4C</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>SDWebImageOperation.h</string>
-			<key>path</key>
-			<string>SDWebImage/SDWebImageOperation.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5DC6CE3690FE2EC95F99A7D0412FB9AB</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5E0A69BD2F17F16F071979DBF4E00C0B</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_ANALYZER_NONNULL</key>
-				<string>YES</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>ENABLE_TESTABILITY</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>POD_CONFIGURATION_DEBUG=1</string>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
-				<string>NO</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>10.0</string>
-				<key>ONLY_ACTIVE_ARCH</key>
-				<string>YES</string>
-				<key>STRIP_INSTALLED_PRODUCT</key>
-				<string>NO</string>
-				<key>SYMROOT</key>
-				<string>${SRCROOT}/../build</string>
-				<key>WATCHOS_DEPLOYMENT_TARGET</key>
-				<string>2.0</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>5FEA914C5B2A098DEFD07D3351175289</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>SDImageCache.h</string>
-			<key>path</key>
-			<string>SDWebImage/SDImageCache.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>610AB9D01E3A5F091B81CB6BF5F76A68</key>
-		<dict>
-			<key>fileRef</key>
-			<string>B48B86EDDBB12B597F1642FB6AD3D356</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>627A4DACCF97E71CA91B66D442D1FA96</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>3236336038E318C641BD6DC179364F99</string>
-				<string>38B4333968BF5F37225755C8A30417E0</string>
-				<string>A87E3064271D9F847D74D9C72DDF02C4</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>635F15165443E09A97632C98EC574AB1</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5D6EF9A03AA5DE705ED0D74F54915E4C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>63A355192D12EBB2EB758ABA8F4CE839</key>
-		<dict>
-			<key>fileRef</key>
-			<string>DA54E22142922A3551D8744E501F0A59</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>63BD60956221813ED9F99F486D2EEFC2</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>SDWebImageManager.m</string>
-			<key>path</key>
-			<string>SDWebImage/SDWebImageManager.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>64EF50E465E9564E6E16509B3FE249C1</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>Pods-JustStudio-dummy.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>657C2DEDC7E008F33B7202B4025C2E02</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>SDWebImageCompat.h</string>
-			<key>path</key>
-			<string>SDWebImage/SDWebImageCompat.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>67E4C936831EF9C97C5C6DE66FAACD75</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>SDWebImage-prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>686321A7742AE0A0E3652A7C048358D5</key>
-		<dict>
-			<key>fileRef</key>
-			<string>E0391698CE5532498A38958A88AF71E7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>6D8A015CAD36D8B0F504E79288415903</key>
-		<dict>
-			<key>fileRef</key>
-			<string>791F1091C9B4B48C1F18A9EA32F33FB5</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>6E908C6E7FF6BED74CC3236655B68796</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>Foundation.framework</string>
-			<key>path</key>
-			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>71C859B94E0B5E196F8B72927227887E</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>7C3D4B873BA7EC5EACE3432E3F6DD7B9</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>72336889B7C373036F64AE05654711B4</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CBECE3460070DEC80A3AFEAC44022B99</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>72F7C095C44932C3BC6A41BE8C7798D3</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D261F58006CF845A74DFE6E9434CB88B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>791F1091C9B4B48C1F18A9EA32F33FB5</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>SDWebImageDownloaderOperation.h</string>
-			<key>path</key>
-			<string>SDWebImage/SDWebImageDownloaderOperation.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>7C3D4B873BA7EC5EACE3432E3F6DD7B9</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>GoogleMobileAds.framework</string>
-			<key>path</key>
-			<string>Frameworks/GoogleMobileAds.framework</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>7DB346D0F39D3F0E887471402A8071AB</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>93A4A3777CF96A4AAC1D13BA6DCCEA73</string>
-				<string>8B6D968432DA454CBE7BE3761821A977</string>
-				<string>A740D6CC19109F2094D643CD4D720DCF</string>
-				<string>627A4DACCF97E71CA91B66D442D1FA96</string>
-				<string>C98141F1D375240B265A372D9DE1B2F5</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>7FE07A25286162E563A4DA9F49C76A25</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>B2E4A6372F022EA610329F78EFA88FCA</string>
-			<key>buildPhases</key>
-			<array>
-				<string>FE8087F88B9DC5F07AC43A9340352540</string>
-				<string>9759001FC82E65F62D91DC5348AE8DDD</string>
-				<string>DB44A8EF69EF0B6C442481A5D2905342</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Pods-JustFacts WatchOS Extension</string>
-			<key>productName</key>
-			<string>Pods-JustFacts WatchOS Extension</string>
-			<key>productReference</key>
-			<string>3236336038E318C641BD6DC179364F99</string>
-			<key>productType</key>
-			<string>com.apple.product-type.framework</string>
-		</dict>
-		<key>8622F7BEEE249ED8D6EC56DD844A6558</key>
-		<dict>
-			<key>fileRef</key>
-			<string>4059B9CFE8F84CE244ED7607819D80D0</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>86A5396D1560169D4BC0F9EC130DA474</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>SDImageCache.m</string>
-			<key>path</key>
-			<string>SDWebImage/SDImageCache.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8B6D968432DA454CBE7BE3761821A977</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>46A77505D14E3F5D84731B41CAD9E3E3</string>
-				<string>55CA75CC51399A6CB51BF3F5A2DBE5E9</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8D5B4230209F1DC8B9CF0DF1117FDE52</key>
-		<dict>
-			<key>fileRef</key>
-			<string>4C0FAACF1DB7BEDA7CB1C563D3506FB2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>92523FB44AEB681D88A181344C09A0F8</key>
-		<dict>
-			<key>fileRef</key>
-			<string>569C10FEFE0C911C8D0C95F4D4ABA563</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>93A4A3777CF96A4AAC1D13BA6DCCEA73</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>text.script.ruby</string>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>name</key>
-			<string>Podfile</string>
-			<key>path</key>
-			<string>../Podfile</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-			<key>xcLanguageSpecificationIdentifier</key>
-			<string>xcode.lang.ruby</string>
-		</dict>
-		<key>941A43F1AA894A181CC9F4C4FFE0002A</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CA796AABDF7641C2FE0B565FAC543288</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>95498D916E6996B094294AF2B746C887</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>NSData+ImageContentType.h</string>
-			<key>path</key>
-			<string>SDWebImage/NSData+ImageContentType.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>9759001FC82E65F62D91DC5348AE8DDD</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>941A43F1AA894A181CC9F4C4FFE0002A</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>991C46630AE773109C12C744AD0ED05D</key>
-		<dict>
-			<key>fileRef</key>
-			<string>353DB3D1A9EDE91A1CF339D9F4A69684</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>9945B12077E34478272995512F59D64C</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>path</key>
-			<string>Pods-JustFacts WatchOS Extension-acknowledgements.markdown</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>9FC66F28185ED76750F7A8BCDD07F878</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>1850E3B987F233822CBE0224AE471697</string>
-			<key>buildPhases</key>
-			<array>
-				<string>05F4A229A752D6AF02EFE7D648C3A79F</string>
-				<string>47271AD453CADD73490D036EC2E895C8</string>
-				<string>B8C02C5B196381145AF3C1DBA45591F4</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>AD4C0D7D3877B9A1657B392DD9363BE3</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Pods-JustStudio</string>
-			<key>productName</key>
-			<string>Pods-JustStudio</string>
-			<key>productReference</key>
-			<string>38B4333968BF5F37225755C8A30417E0</string>
-			<key>productType</key>
-			<string>com.apple.product-type.framework</string>
-		</dict>
-		<key>A0B84E212227F555785498D6FA5D7BFE</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>95498D916E6996B094294AF2B746C887</string>
-				<string>0E325234BF0F4D97C8793DA543BA2C77</string>
-				<string>5FEA914C5B2A098DEFD07D3351175289</string>
-				<string>86A5396D1560169D4BC0F9EC130DA474</string>
-				<string>657C2DEDC7E008F33B7202B4025C2E02</string>
-				<string>DFC80FAB25D78F607DDD08BEE732FBB5</string>
-				<string>D261F58006CF845A74DFE6E9434CB88B</string>
-				<string>0D81CBF1422ACDD0C66985CD61580A9F</string>
-				<string>AB90BF49A32DB148D610D1A49A670EBF</string>
-				<string>569C10FEFE0C911C8D0C95F4D4ABA563</string>
-				<string>791F1091C9B4B48C1F18A9EA32F33FB5</string>
-				<string>008B4CAEA626B5C3F3E9D03A91CAE7B4</string>
-				<string>DA54E22142922A3551D8744E501F0A59</string>
-				<string>63BD60956221813ED9F99F486D2EEFC2</string>
-				<string>5D6EF9A03AA5DE705ED0D74F54915E4C</string>
-				<string>4059B9CFE8F84CE244ED7607819D80D0</string>
-				<string>4166873F3E66A8DD3FE3CCE6AD433AC9</string>
-				<string>4C0FAACF1DB7BEDA7CB1C563D3506FB2</string>
-				<string>1428D2D7A70C2A3751AC9A4E1CFB1419</string>
-				<string>A8E6FDE6BC787EC897D7AEF0432E2B01</string>
-				<string>EE3A107875A6CCEB9F0D87F4534F153D</string>
-				<string>D4DE4EC4F232F09FCA009B4484B07C69</string>
-				<string>B1656C83760EA58F8E92F6CCF13EEBD8</string>
-				<string>A6CB5501F6D7CE40AD53B4C2481EFA40</string>
-				<string>0F31E127349085EFE4CC4B5A9B4F77ED</string>
-				<string>C22ADAC435AC585FB0BCC4CB5AC3191C</string>
-				<string>B48B86EDDBB12B597F1642FB6AD3D356</string>
-				<string>FF9DF78C5EB76068F10F648404F4E35F</string>
-				<string>F485E95D4C20CF63CBD6B848AFB7DE24</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Core</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A194F00953EBE721668AE860F2D86B74</key>
-		<dict>
-			<key>fileRef</key>
-			<string>FF9DF78C5EB76068F10F648404F4E35F</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>A6CB5501F6D7CE40AD53B4C2481EFA40</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>UIImageView+HighlightedWebCache.h</string>
-			<key>path</key>
-			<string>SDWebImage/UIImageView+HighlightedWebCache.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A740D6CC19109F2094D643CD4D720DCF</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>B196E922C3DA07211D8A11073145D585</string>
-				<string>4BCBF6C317C64E46B96EC5EF1F63215C</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A755583F687613A2504D6EAE573E4832</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>42C412FCE08BDCB5057E286DF523463F</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>APPLICATION_EXTENSION_API_ONLY</key>
-				<string>YES</string>
-				<key>CURRENT_PROJECT_VERSION</key>
-				<string>1</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf-with-dsym</string>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
-				<key>DYLIB_COMPATIBILITY_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_CURRENT_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_INSTALL_NAME_BASE</key>
-				<string>@rpath</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_NO_COMMON_BLOCKS</key>
-				<string>YES</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Target Support Files/Pods-JustFacts WatchOS Extension/Info.plist</string>
-				<key>INSTALL_PATH</key>
-				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<array>
-					<string>$(inherited)</string>
-					<string>@executable_path/Frameworks</string>
-					<string>@loader_path/Frameworks</string>
-				</array>
-				<key>MACH_O_TYPE</key>
-				<string>staticlib</string>
-				<key>MODULEMAP_FILE</key>
-				<string>Target Support Files/Pods-JustFacts WatchOS Extension/Pods-JustFacts WatchOS Extension.modulemap</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>NO</string>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PODS_ROOT</key>
-				<string>$(SRCROOT)</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>org.cocoapods.${PRODUCT_NAME:rfc1034identifier}</string>
-				<key>PRODUCT_NAME</key>
-				<string>Pods_JustFacts_WatchOS_Extension</string>
-				<key>SDKROOT</key>
-				<string>watchos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>4</string>
-				<key>VERSIONING_SYSTEM</key>
-				<string>apple-generic</string>
-				<key>VERSION_INFO_PREFIX</key>
-				<string></string>
-				<key>WATCHOS_DEPLOYMENT_TARGET</key>
-				<string>2.0</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>A87E3064271D9F847D74D9C72DDF02C4</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>SDWebImage.framework</string>
-			<key>path</key>
-			<string>SDWebImage.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>A8E6FDE6BC787EC897D7AEF0432E2B01</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>UIImage+GIF.h</string>
-			<key>path</key>
-			<string>SDWebImage/UIImage+GIF.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A9D542EA548AEB98EF1DECB30FE72828</key>
-		<dict>
-			<key>fileRef</key>
-			<string>86A5396D1560169D4BC0F9EC130DA474</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AB90BF49A32DB148D610D1A49A670EBF</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>SDWebImageDownloader.h</string>
-			<key>path</key>
-			<string>SDWebImage/SDWebImageDownloader.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>ABA1596489E7541C66C64236B29B0F38</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>ABE1C55BCAFFA99A4380A780F130F959</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>CURRENT_PROJECT_VERSION</key>
-				<string>1</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf-with-dsym</string>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
-				<key>DYLIB_COMPATIBILITY_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_CURRENT_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_INSTALL_NAME_BASE</key>
-				<string>@rpath</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_NO_COMMON_BLOCKS</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Target Support Files/SDWebImage/SDWebImage-prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Target Support Files/SDWebImage/Info.plist</string>
-				<key>INSTALL_PATH</key>
-				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.0</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<array>
-					<string>$(inherited)</string>
-					<string>@executable_path/Frameworks</string>
-					<string>@loader_path/Frameworks</string>
-				</array>
-				<key>MODULEMAP_FILE</key>
-				<string>Target Support Files/SDWebImage/SDWebImage.modulemap</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>NO</string>
-				<key>PRODUCT_NAME</key>
-				<string>SDWebImage</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-				<key>VERSIONING_SYSTEM</key>
-				<string>apple-generic</string>
-				<key>VERSION_INFO_PREFIX</key>
-				<string></string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>ABE1C55BCAFFA99A4380A780F130F959</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>SDWebImage.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AD4C0D7D3877B9A1657B392DD9363BE3</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>name</key>
-			<string>SDWebImage</string>
-			<key>target</key>
-			<string>3BBA15F11821432C31825F81E85E9401</string>
-			<key>targetProxy</key>
-			<string>03697726B7FB58CB3C2652030B0810D3</string>
-		</dict>
-		<key>B1656C83760EA58F8E92F6CCF13EEBD8</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>UIImage+MultiFormat.m</string>
-			<key>path</key>
-			<string>SDWebImage/UIImage+MultiFormat.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B17764B339FF59C8911278589E2AD0E4</key>
-		<dict>
-			<key>fileRef</key>
-			<string>64EF50E465E9564E6E16509B3FE249C1</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>B196E922C3DA07211D8A11073145D585</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>71C859B94E0B5E196F8B72927227887E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Google-Mobile-Ads-SDK</string>
-			<key>path</key>
-			<string>Google-Mobile-Ads-SDK</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B1BE33DFD8CEF1B631E7F7F8008146C3</key>
-		<dict>
-			<key>fileRef</key>
-			<string>0E325234BF0F4D97C8793DA543BA2C77</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>B2E4A6372F022EA610329F78EFA88FCA</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>360C4AA1711D9484F2516DAE57D7F0C4</string>
-				<string>A755583F687613A2504D6EAE573E4832</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>B48B86EDDBB12B597F1642FB6AD3D356</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>UIImageView+WebCache.m</string>
-			<key>path</key>
-			<string>SDWebImage/UIImageView+WebCache.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B4FF414B693D8ED1EA831C7FB8A3413B</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D4DE4EC4F232F09FCA009B4484B07C69</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>B557D272F7104A497835AD41A0490C6C</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B8B7950A7AE331D209577BF7330D6385</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>Pods-JustStudio-umbrella.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B8C02C5B196381145AF3C1DBA45591F4</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>2B4E46A778A4F274272F7F923E0909CE</string>
-			</array>
-			<key>isa</key>
-			<string>PBXHeadersBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>B92D0A7D99EFBA1333282395FA271129</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>336C47FD1CFC075069294D025D95AFD7</string>
-				<string>56FD2CC1B1CB1A2ADBCC56AD7337EC9B</string>
-				<string>081CD42B047A018CE205572D5B1BCFC2</string>
-				<string>09BB38D95A630F4AD5AE04A01FDB8FDE</string>
-				<string>72F7C095C44932C3BC6A41BE8C7798D3</string>
-				<string>E2C2946DD4561E903FF7239B89688E1C</string>
-				<string>6D8A015CAD36D8B0F504E79288415903</string>
-				<string>63A355192D12EBB2EB758ABA8F4CE839</string>
-				<string>635F15165443E09A97632C98EC574AB1</string>
-				<string>8622F7BEEE249ED8D6EC56DD844A6558</string>
-				<string>8D5B4230209F1DC8B9CF0DF1117FDE52</string>
-				<string>F1E1C6C8AD65C1922D08CE8E3769FDB1</string>
-				<string>B4FF414B693D8ED1EA831C7FB8A3413B</string>
-				<string>FAA183129EE8BB77BE34977FA638872B</string>
-				<string>3003F89894231438DE41805D722AEADC</string>
-				<string>A194F00953EBE721668AE860F2D86B74</string>
-			</array>
-			<key>isa</key>
-			<string>PBXHeadersBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>BBE0F297442D5539D3E397BB6295655F</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>SDWebImage.modulemap</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C22ADAC435AC585FB0BCC4CB5AC3191C</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>UIImageView+WebCache.h</string>
-			<key>path</key>
-			<string>SDWebImage/UIImageView+WebCache.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C3A70302AC70D3E45F8952F07C59E3F0</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>B557D272F7104A497835AD41A0490C6C</string>
-				<string>BBE0F297442D5539D3E397BB6295655F</string>
-				<string>ABE1C55BCAFFA99A4380A780F130F959</string>
-				<string>E0391698CE5532498A38958A88AF71E7</string>
-				<string>67E4C936831EF9C97C5C6DE66FAACD75</string>
-				<string>339DA8E3E2FCAF8C0CB7155061D75A33</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Support Files</string>
-			<key>path</key>
-			<string>../Target Support Files/SDWebImage</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C7B9727ACD1A4A6160E7288F86F59BB0</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Pods-JustStudio-acknowledgements.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C917780DBCE9DB07A19D8ACD3598098C</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.script.sh</string>
-			<key>path</key>
-			<string>Pods-JustStudio-resources.sh</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C98141F1D375240B265A372D9DE1B2F5</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>17282697DCE9B2ADC23D2CD62B81215D</string>
-				<string>155929269455EC2A662C0B9E3A5F4CFA</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Targets Support Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CA796AABDF7641C2FE0B565FAC543288</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>Foundation.framework</string>
-			<key>path</key>
-			<string>Platforms/WatchOS.platform/Developer/SDKs/WatchOS2.2.sdk/System/Library/Frameworks/Foundation.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>CBECE3460070DEC80A3AFEAC44022B99</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>Pods-JustFacts WatchOS Extension-umbrella.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CD64ECF3A9715052BE78682F2A8ECA6B</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_ANALYZER_NONNULL</key>
-				<string>YES</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>YES</string>
-				<key>ENABLE_NS_ASSERTIONS</key>
-				<string>NO</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>POD_CONFIGURATION_RELEASE=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>10.0</string>
-				<key>STRIP_INSTALLED_PRODUCT</key>
-				<string>NO</string>
-				<key>SYMROOT</key>
-				<string>${SRCROOT}/../build</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-				<key>WATCHOS_DEPLOYMENT_TARGET</key>
-				<string>2.0</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>CF1892F56D88DFA9DBFA4F9A3B2EABE2</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Pods-JustFacts WatchOS Extension-acknowledgements.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D0FC5FD4E94C78AE293380AD5D34EFA1</key>
-		<dict>
-			<key>fileRef</key>
-			<string>EE3A107875A6CCEB9F0D87F4534F153D</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D1D0022A38C0059058CC13273E6FE9CB</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods-JustStudio.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D261F58006CF845A74DFE6E9434CB88B</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>SDWebImageDecoder.h</string>
-			<key>path</key>
-			<string>SDWebImage/SDWebImageDecoder.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D41D8CD98F00B204E9800998ECF8427E</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>LastSwiftUpdateCheck</key>
-				<string>0730</string>
-				<key>LastUpgradeCheck</key>
-				<string>0700</string>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>2D8E8EC45A3A1A1D94AE762CB5028504</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-			</array>
-			<key>mainGroup</key>
-			<string>7DB346D0F39D3F0E887471402A8071AB</string>
-			<key>productRefGroup</key>
-			<string>627A4DACCF97E71CA91B66D442D1FA96</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>7FE07A25286162E563A4DA9F49C76A25</string>
-				<string>9FC66F28185ED76750F7A8BCDD07F878</string>
-				<string>3BBA15F11821432C31825F81E85E9401</string>
-			</array>
-		</dict>
-		<key>D4DE4EC4F232F09FCA009B4484B07C69</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>UIImage+MultiFormat.h</string>
-			<key>path</key>
-			<string>SDWebImage/UIImage+MultiFormat.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D6A62881EEC2BFC8D43F65448B98019D</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DA54E22142922A3551D8744E501F0A59</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>SDWebImageManager.h</string>
-			<key>path</key>
-			<string>SDWebImage/SDWebImageManager.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DAC9F3200DC16B515C94A9384C825D80</key>
-		<dict>
-			<key>fileRef</key>
-			<string>B1656C83760EA58F8E92F6CCF13EEBD8</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>DB019A0F22C7B122F3ED75951FDFF524</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>ImageIO.framework</string>
-			<key>path</key>
-			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/ImageIO.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>DB44A8EF69EF0B6C442481A5D2905342</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>72336889B7C373036F64AE05654711B4</string>
-			</array>
-			<key>isa</key>
-			<string>PBXHeadersBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>DBF50CEC873B94778A5E8848EFA1E1B0</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>309D1310691F011E83B20CC2621D1B72</string>
-				<string>16FEF692374E63C8940EDB84AC670C8A</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>DFC80FAB25D78F607DDD08BEE732FBB5</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>SDWebImageCompat.m</string>
-			<key>path</key>
-			<string>SDWebImage/SDWebImageCompat.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E0391698CE5532498A38958A88AF71E7</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>SDWebImage-dummy.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E2C2946DD4561E903FF7239B89688E1C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AB90BF49A32DB148D610D1A49A670EBF</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>E9B861C9AE200DA64235DC96DA389779</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>path</key>
-			<string>Pods-JustStudio-acknowledgements.markdown</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>EE3A107875A6CCEB9F0D87F4534F153D</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>UIImage+GIF.m</string>
-			<key>path</key>
-			<string>SDWebImage/UIImage+GIF.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F10FE3015C8919C049FE627BFD9CC99A</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>011BAB9C098CCE1AA211930AC54B5A91</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>CURRENT_PROJECT_VERSION</key>
-				<string>1</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf</string>
-				<key>DEFINES_MODULE</key>
-				<string>YES</string>
-				<key>DYLIB_COMPATIBILITY_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_CURRENT_VERSION</key>
-				<string>1</string>
-				<key>DYLIB_INSTALL_NAME_BASE</key>
-				<string>@rpath</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_NO_COMMON_BLOCKS</key>
-				<string>YES</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Target Support Files/Pods-JustStudio/Info.plist</string>
-				<key>INSTALL_PATH</key>
-				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>10.0</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<array>
-					<string>$(inherited)</string>
-					<string>@executable_path/Frameworks</string>
-					<string>@loader_path/Frameworks</string>
-				</array>
-				<key>MACH_O_TYPE</key>
-				<string>staticlib</string>
-				<key>MODULEMAP_FILE</key>
-				<string>Target Support Files/Pods-JustStudio/Pods-JustStudio.modulemap</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>YES</string>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PODS_ROOT</key>
-				<string>$(SRCROOT)</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>org.cocoapods.${PRODUCT_NAME:rfc1034identifier}</string>
-				<key>PRODUCT_NAME</key>
-				<string>Pods_JustStudio</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-				<key>VERSIONING_SYSTEM</key>
-				<string>apple-generic</string>
-				<key>VERSION_INFO_PREFIX</key>
-				<string></string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>F1E1C6C8AD65C1922D08CE8E3769FDB1</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A8E6FDE6BC787EC897D7AEF0432E2B01</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>F485E95D4C20CF63CBD6B848AFB7DE24</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>UIView+WebCacheOperation.m</string>
-			<key>path</key>
-			<string>SDWebImage/UIView+WebCacheOperation.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F600D3E795198F9992448341D034475F</key>
-		<dict>
-			<key>fileRef</key>
-			<string>0F31E127349085EFE4CC4B5A9B4F77ED</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F7F920B6E0DEE28CD06D84B139B75816</key>
-		<dict>
-			<key>fileRef</key>
-			<string>0D81CBF1422ACDD0C66985CD61580A9F</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>FAA183129EE8BB77BE34977FA638872B</key>
-		<dict>
-			<key>fileRef</key>
-			<string>A6CB5501F6D7CE40AD53B4C2481EFA40</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>FE8087F88B9DC5F07AC43A9340352540</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>991C46630AE773109C12C744AD0ED05D</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>FF9DF78C5EB76068F10F648404F4E35F</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>UIView+WebCacheOperation.h</string>
-			<key>path</key>
-			<string>SDWebImage/UIView+WebCacheOperation.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>D41D8CD98F00B204E9800998ECF8427E</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		081CD42B047A018CE205572D5B1BCFC2 /* SDWebImage-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 339DA8E3E2FCAF8C0CB7155061D75A33 /* SDWebImage-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09BB38D95A630F4AD5AE04A01FDB8FDE /* SDWebImageCompat.h in Headers */ = {isa = PBXBuildFile; fileRef = 657C2DEDC7E008F33B7202B4025C2E02 /* SDWebImageCompat.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0CBA370FF728243E5F297D8D308E0A90 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E908C6E7FF6BED74CC3236655B68796 /* Foundation.framework */; };
+		169808C84AED16658E622E5D0D5CB945 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F485E95D4C20CF63CBD6B848AFB7DE24 /* UIView+WebCacheOperation.m */; };
+		16FEF692374E63C8940EDB84AC670C8A /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB019A0F22C7B122F3ED75951FDFF524 /* ImageIO.framework */; };
+		1EF03A4B84540186F0839D10808A4E9B /* SDWebImageCompat.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC80FAB25D78F607DDD08BEE732FBB5 /* SDWebImageCompat.m */; };
+		2914E68089FBB45E6A554FE865BCCD46 /* SDWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BD60956221813ED9F99F486D2EEFC2 /* SDWebImageManager.m */; };
+		2B4E46A778A4F274272F7F923E0909CE /* Pods-JustStudio-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FE6E806E237A1FBE25AF39910B8EFCD7 /* Pods-JustStudio-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2DBD0C979437C8216852147943C323F0 /* SDWebImagePrefetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 4166873F3E66A8DD3FE3CCE6AD433AC9 /* SDWebImagePrefetcher.m */; };
+		3003F89894231438DE41805D722AEADC /* UIImageView+WebCache.h in Headers */ = {isa = PBXBuildFile; fileRef = C22ADAC435AC585FB0BCC4CB5AC3191C /* UIImageView+WebCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		309D1310691F011E83B20CC2621D1B72 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E908C6E7FF6BED74CC3236655B68796 /* Foundation.framework */; };
+		336C47FD1CFC075069294D025D95AFD7 /* NSData+ImageContentType.h in Headers */ = {isa = PBXBuildFile; fileRef = 95498D916E6996B094294AF2B746C887 /* NSData+ImageContentType.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		36CE430DA4C190D68494D9C7F81B4AC8 /* UIButton+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1428D2D7A70C2A3751AC9A4E1CFB1419 /* UIButton+WebCache.m */; };
+		4C37EC82B89FE92679A6F2FF20F532CF /* Pods-JustStudio iMessage-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F557F39E646B3CA19D6B86E2EC50BDF0 /* Pods-JustStudio iMessage-dummy.m */; };
+		5392B2CEA9D2E22A57CE3C17566C6CB2 /* SDWebImageDownloaderOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 008B4CAEA626B5C3F3E9D03A91CAE7B4 /* SDWebImageDownloaderOperation.m */; };
+		56FD2CC1B1CB1A2ADBCC56AD7337EC9B /* SDImageCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FEA914C5B2A098DEFD07D3351175289 /* SDImageCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5A9FEC7C67B0C8B1CD1D99BAEF142228 /* Pods-JustStudio iMessage-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BEABB8DD1187ADFA80CAC3E9F3F35BFD /* Pods-JustStudio iMessage-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		610AB9D01E3A5F091B81CB6BF5F76A68 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = B48B86EDDBB12B597F1642FB6AD3D356 /* UIImageView+WebCache.m */; };
+		635F15165443E09A97632C98EC574AB1 /* SDWebImageOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D6EF9A03AA5DE705ED0D74F54915E4C /* SDWebImageOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63A355192D12EBB2EB758ABA8F4CE839 /* SDWebImageManager.h in Headers */ = {isa = PBXBuildFile; fileRef = DA54E22142922A3551D8744E501F0A59 /* SDWebImageManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		686321A7742AE0A0E3652A7C048358D5 /* SDWebImage-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E0391698CE5532498A38958A88AF71E7 /* SDWebImage-dummy.m */; };
+		6D8A015CAD36D8B0F504E79288415903 /* SDWebImageDownloaderOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 791F1091C9B4B48C1F18A9EA32F33FB5 /* SDWebImageDownloaderOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		72336889B7C373036F64AE05654711B4 /* Pods-JustFacts WatchOS Extension-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DFC8BC996191237ACF37C3A3298B5FD3 /* Pods-JustFacts WatchOS Extension-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		72F7C095C44932C3BC6A41BE8C7798D3 /* SDWebImageDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = D261F58006CF845A74DFE6E9434CB88B /* SDWebImageDecoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8622F7BEEE249ED8D6EC56DD844A6558 /* SDWebImagePrefetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 4059B9CFE8F84CE244ED7607819D80D0 /* SDWebImagePrefetcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8D5B4230209F1DC8B9CF0DF1117FDE52 /* UIButton+WebCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C0FAACF1DB7BEDA7CB1C563D3506FB2 /* UIButton+WebCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		92523FB44AEB681D88A181344C09A0F8 /* SDWebImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 569C10FEFE0C911C8D0C95F4D4ABA563 /* SDWebImageDownloader.m */; };
+		941A43F1AA894A181CC9F4C4FFE0002A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA796AABDF7641C2FE0B565FAC543288 /* Foundation.framework */; };
+		991C46630AE773109C12C744AD0ED05D /* Pods-JustFacts WatchOS Extension-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B14C3567B96737BE8BE102FBC430D48 /* Pods-JustFacts WatchOS Extension-dummy.m */; };
+		A194F00953EBE721668AE860F2D86B74 /* UIView+WebCacheOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = FF9DF78C5EB76068F10F648404F4E35F /* UIView+WebCacheOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A6C62E967F20BD4DCFEC99D84F2D5EBF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E908C6E7FF6BED74CC3236655B68796 /* Foundation.framework */; };
+		A9D542EA548AEB98EF1DECB30FE72828 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 86A5396D1560169D4BC0F9EC130DA474 /* SDImageCache.m */; };
+		B17764B339FF59C8911278589E2AD0E4 /* Pods-JustStudio-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA06E9C5C6B36FFE1F875AAC3235F19 /* Pods-JustStudio-dummy.m */; };
+		B1BE33DFD8CEF1B631E7F7F8008146C3 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E325234BF0F4D97C8793DA543BA2C77 /* NSData+ImageContentType.m */; };
+		B4FF414B693D8ED1EA831C7FB8A3413B /* UIImage+MultiFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = D4DE4EC4F232F09FCA009B4484B07C69 /* UIImage+MultiFormat.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D0FC5FD4E94C78AE293380AD5D34EFA1 /* UIImage+GIF.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3A107875A6CCEB9F0D87F4534F153D /* UIImage+GIF.m */; };
+		DAC9F3200DC16B515C94A9384C825D80 /* UIImage+MultiFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = B1656C83760EA58F8E92F6CCF13EEBD8 /* UIImage+MultiFormat.m */; };
+		E2C2946DD4561E903FF7239B89688E1C /* SDWebImageDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = AB90BF49A32DB148D610D1A49A670EBF /* SDWebImageDownloader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F1E1C6C8AD65C1922D08CE8E3769FDB1 /* UIImage+GIF.h in Headers */ = {isa = PBXBuildFile; fileRef = A8E6FDE6BC787EC897D7AEF0432E2B01 /* UIImage+GIF.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F600D3E795198F9992448341D034475F /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F31E127349085EFE4CC4B5A9B4F77ED /* UIImageView+HighlightedWebCache.m */; };
+		F7F920B6E0DEE28CD06D84B139B75816 /* SDWebImageDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D81CBF1422ACDD0C66985CD61580A9F /* SDWebImageDecoder.m */; };
+		FAA183129EE8BB77BE34977FA638872B /* UIImageView+HighlightedWebCache.h in Headers */ = {isa = PBXBuildFile; fileRef = A6CB5501F6D7CE40AD53B4C2481EFA40 /* UIImageView+HighlightedWebCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		03697726B7FB58CB3C2652030B0810D3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3BBA15F11821432C31825F81E85E9401;
+			remoteInfo = SDWebImage;
+		};
+		E234FF81C27AC0844451586D73C5C1A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3BBA15F11821432C31825F81E85E9401;
+			remoteInfo = SDWebImage;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		008B4CAEA626B5C3F3E9D03A91CAE7B4 /* SDWebImageDownloaderOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageDownloaderOperation.m; path = SDWebImage/SDWebImageDownloaderOperation.m; sourceTree = "<group>"; };
+		0B851AE06AAC05CFC7C0BD43C5FDBC07 /* Pods-JustStudio-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JustStudio-resources.sh"; sourceTree = "<group>"; };
+		0D81CBF1422ACDD0C66985CD61580A9F /* SDWebImageDecoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageDecoder.m; path = SDWebImage/SDWebImageDecoder.m; sourceTree = "<group>"; };
+		0DE528056CA0178847BB197145273AEF /* Pods-JustFacts WatchOS Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JustFacts WatchOS Extension.release.xcconfig"; sourceTree = "<group>"; };
+		0E325234BF0F4D97C8793DA543BA2C77 /* NSData+ImageContentType.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSData+ImageContentType.m"; path = "SDWebImage/NSData+ImageContentType.m"; sourceTree = "<group>"; };
+		0F31E127349085EFE4CC4B5A9B4F77ED /* UIImageView+HighlightedWebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+HighlightedWebCache.m"; path = "SDWebImage/UIImageView+HighlightedWebCache.m"; sourceTree = "<group>"; };
+		119BF4722CF230017BCFA6FF736904A1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1407F08BC8463A1EEB1F74B5A3876890 /* Pods-JustStudio iMessage-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JustStudio iMessage-acknowledgements.plist"; sourceTree = "<group>"; };
+		1428D2D7A70C2A3751AC9A4E1CFB1419 /* UIButton+WebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+WebCache.m"; path = "SDWebImage/UIButton+WebCache.m"; sourceTree = "<group>"; };
+		1855DD995C4A2E0CC0B463BEEAD43B08 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1CAFE1EE953C789C92762ED9808A4A54 /* Pods-JustFacts WatchOS Extension-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JustFacts WatchOS Extension-frameworks.sh"; sourceTree = "<group>"; };
+		236112F647CA3EF9421237442DEAF442 /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2EA964284A4B93F4E583EEB3BFAE5ACE /* Pods-JustStudio iMessage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JustStudio iMessage.debug.xcconfig"; sourceTree = "<group>"; };
+		339DA8E3E2FCAF8C0CB7155061D75A33 /* SDWebImage-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SDWebImage-umbrella.h"; sourceTree = "<group>"; };
+		38D1AD9EBA37BA926B6BDF1CA670CBC9 /* Pods-JustStudio iMessage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JustStudio iMessage.release.xcconfig"; sourceTree = "<group>"; };
+		3BD741F2871ECAEA0032B1B04D08076F /* Pods-JustFacts WatchOS Extension-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JustFacts WatchOS Extension-acknowledgements.plist"; sourceTree = "<group>"; };
+		4059B9CFE8F84CE244ED7607819D80D0 /* SDWebImagePrefetcher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImagePrefetcher.h; path = SDWebImage/SDWebImagePrefetcher.h; sourceTree = "<group>"; };
+		4166873F3E66A8DD3FE3CCE6AD433AC9 /* SDWebImagePrefetcher.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImagePrefetcher.m; path = SDWebImage/SDWebImagePrefetcher.m; sourceTree = "<group>"; };
+		41A31FD188E54937A65C4EB0DE2BAC0F /* Pods-JustStudio iMessage-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JustStudio iMessage-resources.sh"; sourceTree = "<group>"; };
+		43BA6FC6D63B13BEB7F8C5C9ED04137E /* Pods-JustStudio-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JustStudio-frameworks.sh"; sourceTree = "<group>"; };
+		4C0FAACF1DB7BEDA7CB1C563D3506FB2 /* UIButton+WebCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+WebCache.h"; path = "SDWebImage/UIButton+WebCache.h"; sourceTree = "<group>"; };
+		569C10FEFE0C911C8D0C95F4D4ABA563 /* SDWebImageDownloader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageDownloader.m; path = SDWebImage/SDWebImageDownloader.m; sourceTree = "<group>"; };
+		58F92A2FE86894A587AEC47BA90A4426 /* Pods-JustStudio-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JustStudio-acknowledgements.plist"; sourceTree = "<group>"; };
+		5B14C3567B96737BE8BE102FBC430D48 /* Pods-JustFacts WatchOS Extension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JustFacts WatchOS Extension-dummy.m"; sourceTree = "<group>"; };
+		5D6EF9A03AA5DE705ED0D74F54915E4C /* SDWebImageOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageOperation.h; path = SDWebImage/SDWebImageOperation.h; sourceTree = "<group>"; };
+		5FA06E9C5C6B36FFE1F875AAC3235F19 /* Pods-JustStudio-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JustStudio-dummy.m"; sourceTree = "<group>"; };
+		5FEA914C5B2A098DEFD07D3351175289 /* SDImageCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageCache.h; path = SDWebImage/SDImageCache.h; sourceTree = "<group>"; };
+		63BD60956221813ED9F99F486D2EEFC2 /* SDWebImageManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageManager.m; path = SDWebImage/SDWebImageManager.m; sourceTree = "<group>"; };
+		644B1B9F6961B964182FB0E6C9DA25A0 /* Pods-JustStudio iMessage-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JustStudio iMessage-frameworks.sh"; sourceTree = "<group>"; };
+		657C2DEDC7E008F33B7202B4025C2E02 /* SDWebImageCompat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageCompat.h; path = SDWebImage/SDWebImageCompat.h; sourceTree = "<group>"; };
+		67E4C936831EF9C97C5C6DE66FAACD75 /* SDWebImage-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SDWebImage-prefix.pch"; sourceTree = "<group>"; };
+		6BD0EC33F68E88B159FF4888967021CD /* Pods_JustStudio_iMessage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JustStudio_iMessage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E908C6E7FF6BED74CC3236655B68796 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		70A8545DDE2250FE8706B2BCC2B00C20 /* Pods-JustFacts WatchOS Extension-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JustFacts WatchOS Extension-acknowledgements.markdown"; sourceTree = "<group>"; };
+		72F514D7660C0AD4DC4667BA283597FE /* Pods_JustStudio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JustStudio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		791F1091C9B4B48C1F18A9EA32F33FB5 /* SDWebImageDownloaderOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageDownloaderOperation.h; path = SDWebImage/SDWebImageDownloaderOperation.h; sourceTree = "<group>"; };
+		7A01BA4FA1CE970057141354017B73BE /* Pods-JustFacts WatchOS Extension-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JustFacts WatchOS Extension-resources.sh"; sourceTree = "<group>"; };
+		7C3D4B873BA7EC5EACE3432E3F6DD7B9 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = Frameworks/GoogleMobileAds.framework; sourceTree = "<group>"; };
+		83E908FB8889E94F9FCCEBD05E483816 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		86A5396D1560169D4BC0F9EC130DA474 /* SDImageCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageCache.m; path = SDWebImage/SDImageCache.m; sourceTree = "<group>"; };
+		8A91203F9A99138C5A9E348581DABFC4 /* Pods-JustFacts WatchOS Extension.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-JustFacts WatchOS Extension.modulemap"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		95498D916E6996B094294AF2B746C887 /* NSData+ImageContentType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSData+ImageContentType.h"; path = "SDWebImage/NSData+ImageContentType.h"; sourceTree = "<group>"; };
+		99BD65902AD62A32F301259C635BF8DE /* Pods-JustStudio-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JustStudio-acknowledgements.markdown"; sourceTree = "<group>"; };
+		A3F8309BC18719EE02B6A95F4E03DAE5 /* Pods-JustStudio iMessage-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JustStudio iMessage-acknowledgements.markdown"; sourceTree = "<group>"; };
+		A6CB5501F6D7CE40AD53B4C2481EFA40 /* UIImageView+HighlightedWebCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+HighlightedWebCache.h"; path = "SDWebImage/UIImageView+HighlightedWebCache.h"; sourceTree = "<group>"; };
+		A8E6FDE6BC787EC897D7AEF0432E2B01 /* UIImage+GIF.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+GIF.h"; path = "SDWebImage/UIImage+GIF.h"; sourceTree = "<group>"; };
+		AB90BF49A32DB148D610D1A49A670EBF /* SDWebImageDownloader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageDownloader.h; path = SDWebImage/SDWebImageDownloader.h; sourceTree = "<group>"; };
+		ABE1C55BCAFFA99A4380A780F130F959 /* SDWebImage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SDWebImage.xcconfig; sourceTree = "<group>"; };
+		B1656C83760EA58F8E92F6CCF13EEBD8 /* UIImage+MultiFormat.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+MultiFormat.m"; path = "SDWebImage/UIImage+MultiFormat.m"; sourceTree = "<group>"; };
+		B48B86EDDBB12B597F1642FB6AD3D356 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+WebCache.m"; path = "SDWebImage/UIImageView+WebCache.m"; sourceTree = "<group>"; };
+		B557D272F7104A497835AD41A0490C6C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BBE0F297442D5539D3E397BB6295655F /* SDWebImage.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SDWebImage.modulemap; sourceTree = "<group>"; };
+		BEABB8DD1187ADFA80CAC3E9F3F35BFD /* Pods-JustStudio iMessage-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JustStudio iMessage-umbrella.h"; sourceTree = "<group>"; };
+		C00094FC5DD5A1AB7CE667C190EB7C72 /* Pods-JustStudio.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-JustStudio.modulemap"; sourceTree = "<group>"; };
+		C22ADAC435AC585FB0BCC4CB5AC3191C /* UIImageView+WebCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+WebCache.h"; path = "SDWebImage/UIImageView+WebCache.h"; sourceTree = "<group>"; };
+		C7420897C2CF3518E11523FD0C719362 /* Pods-JustStudio iMessage.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-JustStudio iMessage.modulemap"; sourceTree = "<group>"; };
+		CA796AABDF7641C2FE0B565FAC543288 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS2.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		CBF16977437EBBC342D05011AE180505 /* Pods-JustStudio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JustStudio.release.xcconfig"; sourceTree = "<group>"; };
+		D261F58006CF845A74DFE6E9434CB88B /* SDWebImageDecoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageDecoder.h; path = SDWebImage/SDWebImageDecoder.h; sourceTree = "<group>"; };
+		D4DE4EC4F232F09FCA009B4484B07C69 /* UIImage+MultiFormat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+MultiFormat.h"; path = "SDWebImage/UIImage+MultiFormat.h"; sourceTree = "<group>"; };
+		D8124998C44A09CF8A9C5CAE5E2505A8 /* Pods_JustFacts_WatchOS_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JustFacts_WatchOS_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA54E22142922A3551D8744E501F0A59 /* SDWebImageManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageManager.h; path = SDWebImage/SDWebImageManager.h; sourceTree = "<group>"; };
+		DB019A0F22C7B122F3ED75951FDFF524 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/ImageIO.framework; sourceTree = DEVELOPER_DIR; };
+		DF70737C3400098D96192747BD4C75A9 /* Pods-JustStudio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JustStudio.debug.xcconfig"; sourceTree = "<group>"; };
+		DFC80FAB25D78F607DDD08BEE732FBB5 /* SDWebImageCompat.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageCompat.m; path = SDWebImage/SDWebImageCompat.m; sourceTree = "<group>"; };
+		DFC8BC996191237ACF37C3A3298B5FD3 /* Pods-JustFacts WatchOS Extension-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JustFacts WatchOS Extension-umbrella.h"; sourceTree = "<group>"; };
+		E0391698CE5532498A38958A88AF71E7 /* SDWebImage-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SDWebImage-dummy.m"; sourceTree = "<group>"; };
+		E5943044D7E5C483C7B313E3F0876576 /* Pods-JustFacts WatchOS Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JustFacts WatchOS Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		EE3A107875A6CCEB9F0D87F4534F153D /* UIImage+GIF.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+GIF.m"; path = "SDWebImage/UIImage+GIF.m"; sourceTree = "<group>"; };
+		F485E95D4C20CF63CBD6B848AFB7DE24 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+WebCacheOperation.m"; path = "SDWebImage/UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		F557F39E646B3CA19D6B86E2EC50BDF0 /* Pods-JustStudio iMessage-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JustStudio iMessage-dummy.m"; sourceTree = "<group>"; };
+		FE6E806E237A1FBE25AF39910B8EFCD7 /* Pods-JustStudio-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JustStudio-umbrella.h"; sourceTree = "<group>"; };
+		FF9DF78C5EB76068F10F648404F4E35F /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+WebCacheOperation.h"; path = "SDWebImage/UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		47271AD453CADD73490D036EC2E895C8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0CBA370FF728243E5F297D8D308E0A90 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9759001FC82E65F62D91DC5348AE8DDD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				941A43F1AA894A181CC9F4C4FFE0002A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB68B1FAED02FDA196C5C6EB884FA39B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6C62E967F20BD4DCFEC99D84F2D5EBF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBF50CEC873B94778A5E8848EFA1E1B0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				309D1310691F011E83B20CC2621D1B72 /* Foundation.framework in Frameworks */,
+				16FEF692374E63C8940EDB84AC670C8A /* ImageIO.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0C0DB006657BE17D5FFEC56C12571663 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				94F7A23BD781278CCCE89DC09EEC7D64 /* Pods-JustFacts WatchOS Extension */,
+				E7E745D02FA9D8A8495F5A934F0E562B /* Pods-JustStudio */,
+				8379028C14645A7DAEE37CE977554956 /* Pods-JustStudio iMessage */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		0D20945488F0F93FEE5ADBCEC9635A42 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D8124998C44A09CF8A9C5CAE5E2505A8 /* Pods_JustFacts_WatchOS_Extension.framework */,
+				72F514D7660C0AD4DC4667BA283597FE /* Pods_JustStudio.framework */,
+				6BD0EC33F68E88B159FF4888967021CD /* Pods_JustStudio_iMessage.framework */,
+				236112F647CA3EF9421237442DEAF442 /* SDWebImage.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		46A77505D14E3F5D84731B41CAD9E3E3 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6E908C6E7FF6BED74CC3236655B68796 /* Foundation.framework */,
+				DB019A0F22C7B122F3ED75951FDFF524 /* ImageIO.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		4BCBF6C317C64E46B96EC5EF1F63215C /* SDWebImage */ = {
+			isa = PBXGroup;
+			children = (
+				A0B84E212227F555785498D6FA5D7BFE /* Core */,
+				C3A70302AC70D3E45F8952F07C59E3F0 /* Support Files */,
+			);
+			path = SDWebImage;
+			sourceTree = "<group>";
+		};
+		55CA75CC51399A6CB51BF3F5A2DBE5E9 /* watchOS */ = {
+			isa = PBXGroup;
+			children = (
+				CA796AABDF7641C2FE0B565FAC543288 /* Foundation.framework */,
+			);
+			name = watchOS;
+			sourceTree = "<group>";
+		};
+		71C859B94E0B5E196F8B72927227887E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7C3D4B873BA7EC5EACE3432E3F6DD7B9 /* GoogleMobileAds.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				8B6D968432DA454CBE7BE3761821A977 /* Frameworks */,
+				A740D6CC19109F2094D643CD4D720DCF /* Pods */,
+				0D20945488F0F93FEE5ADBCEC9635A42 /* Products */,
+				0C0DB006657BE17D5FFEC56C12571663 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		8379028C14645A7DAEE37CE977554956 /* Pods-JustStudio iMessage */ = {
+			isa = PBXGroup;
+			children = (
+				1855DD995C4A2E0CC0B463BEEAD43B08 /* Info.plist */,
+				C7420897C2CF3518E11523FD0C719362 /* Pods-JustStudio iMessage.modulemap */,
+				A3F8309BC18719EE02B6A95F4E03DAE5 /* Pods-JustStudio iMessage-acknowledgements.markdown */,
+				1407F08BC8463A1EEB1F74B5A3876890 /* Pods-JustStudio iMessage-acknowledgements.plist */,
+				F557F39E646B3CA19D6B86E2EC50BDF0 /* Pods-JustStudio iMessage-dummy.m */,
+				644B1B9F6961B964182FB0E6C9DA25A0 /* Pods-JustStudio iMessage-frameworks.sh */,
+				41A31FD188E54937A65C4EB0DE2BAC0F /* Pods-JustStudio iMessage-resources.sh */,
+				BEABB8DD1187ADFA80CAC3E9F3F35BFD /* Pods-JustStudio iMessage-umbrella.h */,
+				2EA964284A4B93F4E583EEB3BFAE5ACE /* Pods-JustStudio iMessage.debug.xcconfig */,
+				38D1AD9EBA37BA926B6BDF1CA670CBC9 /* Pods-JustStudio iMessage.release.xcconfig */,
+			);
+			name = "Pods-JustStudio iMessage";
+			path = "Target Support Files/Pods-JustStudio iMessage";
+			sourceTree = "<group>";
+		};
+		8B6D968432DA454CBE7BE3761821A977 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				46A77505D14E3F5D84731B41CAD9E3E3 /* iOS */,
+				55CA75CC51399A6CB51BF3F5A2DBE5E9 /* watchOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		94F7A23BD781278CCCE89DC09EEC7D64 /* Pods-JustFacts WatchOS Extension */ = {
+			isa = PBXGroup;
+			children = (
+				83E908FB8889E94F9FCCEBD05E483816 /* Info.plist */,
+				8A91203F9A99138C5A9E348581DABFC4 /* Pods-JustFacts WatchOS Extension.modulemap */,
+				70A8545DDE2250FE8706B2BCC2B00C20 /* Pods-JustFacts WatchOS Extension-acknowledgements.markdown */,
+				3BD741F2871ECAEA0032B1B04D08076F /* Pods-JustFacts WatchOS Extension-acknowledgements.plist */,
+				5B14C3567B96737BE8BE102FBC430D48 /* Pods-JustFacts WatchOS Extension-dummy.m */,
+				1CAFE1EE953C789C92762ED9808A4A54 /* Pods-JustFacts WatchOS Extension-frameworks.sh */,
+				7A01BA4FA1CE970057141354017B73BE /* Pods-JustFacts WatchOS Extension-resources.sh */,
+				DFC8BC996191237ACF37C3A3298B5FD3 /* Pods-JustFacts WatchOS Extension-umbrella.h */,
+				E5943044D7E5C483C7B313E3F0876576 /* Pods-JustFacts WatchOS Extension.debug.xcconfig */,
+				0DE528056CA0178847BB197145273AEF /* Pods-JustFacts WatchOS Extension.release.xcconfig */,
+			);
+			name = "Pods-JustFacts WatchOS Extension";
+			path = "Target Support Files/Pods-JustFacts WatchOS Extension";
+			sourceTree = "<group>";
+		};
+		A0B84E212227F555785498D6FA5D7BFE /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				95498D916E6996B094294AF2B746C887 /* NSData+ImageContentType.h */,
+				0E325234BF0F4D97C8793DA543BA2C77 /* NSData+ImageContentType.m */,
+				5FEA914C5B2A098DEFD07D3351175289 /* SDImageCache.h */,
+				86A5396D1560169D4BC0F9EC130DA474 /* SDImageCache.m */,
+				657C2DEDC7E008F33B7202B4025C2E02 /* SDWebImageCompat.h */,
+				DFC80FAB25D78F607DDD08BEE732FBB5 /* SDWebImageCompat.m */,
+				D261F58006CF845A74DFE6E9434CB88B /* SDWebImageDecoder.h */,
+				0D81CBF1422ACDD0C66985CD61580A9F /* SDWebImageDecoder.m */,
+				AB90BF49A32DB148D610D1A49A670EBF /* SDWebImageDownloader.h */,
+				569C10FEFE0C911C8D0C95F4D4ABA563 /* SDWebImageDownloader.m */,
+				791F1091C9B4B48C1F18A9EA32F33FB5 /* SDWebImageDownloaderOperation.h */,
+				008B4CAEA626B5C3F3E9D03A91CAE7B4 /* SDWebImageDownloaderOperation.m */,
+				DA54E22142922A3551D8744E501F0A59 /* SDWebImageManager.h */,
+				63BD60956221813ED9F99F486D2EEFC2 /* SDWebImageManager.m */,
+				5D6EF9A03AA5DE705ED0D74F54915E4C /* SDWebImageOperation.h */,
+				4059B9CFE8F84CE244ED7607819D80D0 /* SDWebImagePrefetcher.h */,
+				4166873F3E66A8DD3FE3CCE6AD433AC9 /* SDWebImagePrefetcher.m */,
+				4C0FAACF1DB7BEDA7CB1C563D3506FB2 /* UIButton+WebCache.h */,
+				1428D2D7A70C2A3751AC9A4E1CFB1419 /* UIButton+WebCache.m */,
+				A8E6FDE6BC787EC897D7AEF0432E2B01 /* UIImage+GIF.h */,
+				EE3A107875A6CCEB9F0D87F4534F153D /* UIImage+GIF.m */,
+				D4DE4EC4F232F09FCA009B4484B07C69 /* UIImage+MultiFormat.h */,
+				B1656C83760EA58F8E92F6CCF13EEBD8 /* UIImage+MultiFormat.m */,
+				A6CB5501F6D7CE40AD53B4C2481EFA40 /* UIImageView+HighlightedWebCache.h */,
+				0F31E127349085EFE4CC4B5A9B4F77ED /* UIImageView+HighlightedWebCache.m */,
+				C22ADAC435AC585FB0BCC4CB5AC3191C /* UIImageView+WebCache.h */,
+				B48B86EDDBB12B597F1642FB6AD3D356 /* UIImageView+WebCache.m */,
+				FF9DF78C5EB76068F10F648404F4E35F /* UIView+WebCacheOperation.h */,
+				F485E95D4C20CF63CBD6B848AFB7DE24 /* UIView+WebCacheOperation.m */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		A740D6CC19109F2094D643CD4D720DCF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B196E922C3DA07211D8A11073145D585 /* Google-Mobile-Ads-SDK */,
+				4BCBF6C317C64E46B96EC5EF1F63215C /* SDWebImage */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B196E922C3DA07211D8A11073145D585 /* Google-Mobile-Ads-SDK */ = {
+			isa = PBXGroup;
+			children = (
+				71C859B94E0B5E196F8B72927227887E /* Frameworks */,
+			);
+			path = "Google-Mobile-Ads-SDK";
+			sourceTree = "<group>";
+		};
+		C3A70302AC70D3E45F8952F07C59E3F0 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B557D272F7104A497835AD41A0490C6C /* Info.plist */,
+				BBE0F297442D5539D3E397BB6295655F /* SDWebImage.modulemap */,
+				ABE1C55BCAFFA99A4380A780F130F959 /* SDWebImage.xcconfig */,
+				E0391698CE5532498A38958A88AF71E7 /* SDWebImage-dummy.m */,
+				67E4C936831EF9C97C5C6DE66FAACD75 /* SDWebImage-prefix.pch */,
+				339DA8E3E2FCAF8C0CB7155061D75A33 /* SDWebImage-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SDWebImage";
+			sourceTree = "<group>";
+		};
+		E7E745D02FA9D8A8495F5A934F0E562B /* Pods-JustStudio */ = {
+			isa = PBXGroup;
+			children = (
+				119BF4722CF230017BCFA6FF736904A1 /* Info.plist */,
+				C00094FC5DD5A1AB7CE667C190EB7C72 /* Pods-JustStudio.modulemap */,
+				99BD65902AD62A32F301259C635BF8DE /* Pods-JustStudio-acknowledgements.markdown */,
+				58F92A2FE86894A587AEC47BA90A4426 /* Pods-JustStudio-acknowledgements.plist */,
+				5FA06E9C5C6B36FFE1F875AAC3235F19 /* Pods-JustStudio-dummy.m */,
+				43BA6FC6D63B13BEB7F8C5C9ED04137E /* Pods-JustStudio-frameworks.sh */,
+				0B851AE06AAC05CFC7C0BD43C5FDBC07 /* Pods-JustStudio-resources.sh */,
+				FE6E806E237A1FBE25AF39910B8EFCD7 /* Pods-JustStudio-umbrella.h */,
+				DF70737C3400098D96192747BD4C75A9 /* Pods-JustStudio.debug.xcconfig */,
+				CBF16977437EBBC342D05011AE180505 /* Pods-JustStudio.release.xcconfig */,
+			);
+			name = "Pods-JustStudio";
+			path = "Target Support Files/Pods-JustStudio";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		B8C02C5B196381145AF3C1DBA45591F4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B4E46A778A4F274272F7F923E0909CE /* Pods-JustStudio-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B92D0A7D99EFBA1333282395FA271129 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				336C47FD1CFC075069294D025D95AFD7 /* NSData+ImageContentType.h in Headers */,
+				56FD2CC1B1CB1A2ADBCC56AD7337EC9B /* SDImageCache.h in Headers */,
+				081CD42B047A018CE205572D5B1BCFC2 /* SDWebImage-umbrella.h in Headers */,
+				09BB38D95A630F4AD5AE04A01FDB8FDE /* SDWebImageCompat.h in Headers */,
+				72F7C095C44932C3BC6A41BE8C7798D3 /* SDWebImageDecoder.h in Headers */,
+				E2C2946DD4561E903FF7239B89688E1C /* SDWebImageDownloader.h in Headers */,
+				6D8A015CAD36D8B0F504E79288415903 /* SDWebImageDownloaderOperation.h in Headers */,
+				63A355192D12EBB2EB758ABA8F4CE839 /* SDWebImageManager.h in Headers */,
+				635F15165443E09A97632C98EC574AB1 /* SDWebImageOperation.h in Headers */,
+				8622F7BEEE249ED8D6EC56DD844A6558 /* SDWebImagePrefetcher.h in Headers */,
+				8D5B4230209F1DC8B9CF0DF1117FDE52 /* UIButton+WebCache.h in Headers */,
+				F1E1C6C8AD65C1922D08CE8E3769FDB1 /* UIImage+GIF.h in Headers */,
+				B4FF414B693D8ED1EA831C7FB8A3413B /* UIImage+MultiFormat.h in Headers */,
+				FAA183129EE8BB77BE34977FA638872B /* UIImageView+HighlightedWebCache.h in Headers */,
+				3003F89894231438DE41805D722AEADC /* UIImageView+WebCache.h in Headers */,
+				A194F00953EBE721668AE860F2D86B74 /* UIView+WebCacheOperation.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CBD94891A4F616353ACEBD551DCA19B4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A9FEC7C67B0C8B1CD1D99BAEF142228 /* Pods-JustStudio iMessage-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB44A8EF69EF0B6C442481A5D2905342 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				72336889B7C373036F64AE05654711B4 /* Pods-JustFacts WatchOS Extension-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		3BBA15F11821432C31825F81E85E9401 /* SDWebImage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1233C8B7C54DDB35FF6F876F1F820991 /* Build configuration list for PBXNativeTarget "SDWebImage" */;
+			buildPhases = (
+				09147EC29DF9A42A7D38907C627FED7C /* Sources */,
+				DBF50CEC873B94778A5E8848EFA1E1B0 /* Frameworks */,
+				B92D0A7D99EFBA1333282395FA271129 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SDWebImage;
+			productName = SDWebImage;
+			productReference = 236112F647CA3EF9421237442DEAF442 /* SDWebImage.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		7FE07A25286162E563A4DA9F49C76A25 /* Pods-JustFacts WatchOS Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B2E4A6372F022EA610329F78EFA88FCA /* Build configuration list for PBXNativeTarget "Pods-JustFacts WatchOS Extension" */;
+			buildPhases = (
+				FE8087F88B9DC5F07AC43A9340352540 /* Sources */,
+				9759001FC82E65F62D91DC5348AE8DDD /* Frameworks */,
+				DB44A8EF69EF0B6C442481A5D2905342 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-JustFacts WatchOS Extension";
+			productName = "Pods-JustFacts WatchOS Extension";
+			productReference = D8124998C44A09CF8A9C5CAE5E2505A8 /* Pods_JustFacts_WatchOS_Extension.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		9FC66F28185ED76750F7A8BCDD07F878 /* Pods-JustStudio */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1850E3B987F233822CBE0224AE471697 /* Build configuration list for PBXNativeTarget "Pods-JustStudio" */;
+			buildPhases = (
+				05F4A229A752D6AF02EFE7D648C3A79F /* Sources */,
+				47271AD453CADD73490D036EC2E895C8 /* Frameworks */,
+				B8C02C5B196381145AF3C1DBA45591F4 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AD4C0D7D3877B9A1657B392DD9363BE3 /* PBXTargetDependency */,
+			);
+			name = "Pods-JustStudio";
+			productName = "Pods-JustStudio";
+			productReference = 72F514D7660C0AD4DC4667BA283597FE /* Pods_JustStudio.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F90EE799A396420E644063F17988BA16 /* Pods-JustStudio iMessage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3543018EBA4DD860219FDCB61E32FA08 /* Build configuration list for PBXNativeTarget "Pods-JustStudio iMessage" */;
+			buildPhases = (
+				3B4D3195F658E1D3687846EDCAA688C2 /* Sources */,
+				BB68B1FAED02FDA196C5C6EB884FA39B /* Frameworks */,
+				CBD94891A4F616353ACEBD551DCA19B4 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				750C846D2C80AFE0CFE9E93ACFCDA965 /* PBXTargetDependency */,
+			);
+			name = "Pods-JustStudio iMessage";
+			productName = "Pods-JustStudio iMessage";
+			productReference = 6BD0EC33F68E88B159FF4888967021CD /* Pods_JustStudio_iMessage.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 0D20945488F0F93FEE5ADBCEC9635A42 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7FE07A25286162E563A4DA9F49C76A25 /* Pods-JustFacts WatchOS Extension */,
+				9FC66F28185ED76750F7A8BCDD07F878 /* Pods-JustStudio */,
+				F90EE799A396420E644063F17988BA16 /* Pods-JustStudio iMessage */,
+				3BBA15F11821432C31825F81E85E9401 /* SDWebImage */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		05F4A229A752D6AF02EFE7D648C3A79F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B17764B339FF59C8911278589E2AD0E4 /* Pods-JustStudio-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		09147EC29DF9A42A7D38907C627FED7C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1BE33DFD8CEF1B631E7F7F8008146C3 /* NSData+ImageContentType.m in Sources */,
+				A9D542EA548AEB98EF1DECB30FE72828 /* SDImageCache.m in Sources */,
+				686321A7742AE0A0E3652A7C048358D5 /* SDWebImage-dummy.m in Sources */,
+				1EF03A4B84540186F0839D10808A4E9B /* SDWebImageCompat.m in Sources */,
+				F7F920B6E0DEE28CD06D84B139B75816 /* SDWebImageDecoder.m in Sources */,
+				92523FB44AEB681D88A181344C09A0F8 /* SDWebImageDownloader.m in Sources */,
+				5392B2CEA9D2E22A57CE3C17566C6CB2 /* SDWebImageDownloaderOperation.m in Sources */,
+				2914E68089FBB45E6A554FE865BCCD46 /* SDWebImageManager.m in Sources */,
+				2DBD0C979437C8216852147943C323F0 /* SDWebImagePrefetcher.m in Sources */,
+				36CE430DA4C190D68494D9C7F81B4AC8 /* UIButton+WebCache.m in Sources */,
+				D0FC5FD4E94C78AE293380AD5D34EFA1 /* UIImage+GIF.m in Sources */,
+				DAC9F3200DC16B515C94A9384C825D80 /* UIImage+MultiFormat.m in Sources */,
+				F600D3E795198F9992448341D034475F /* UIImageView+HighlightedWebCache.m in Sources */,
+				610AB9D01E3A5F091B81CB6BF5F76A68 /* UIImageView+WebCache.m in Sources */,
+				169808C84AED16658E622E5D0D5CB945 /* UIView+WebCacheOperation.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3B4D3195F658E1D3687846EDCAA688C2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C37EC82B89FE92679A6F2FF20F532CF /* Pods-JustStudio iMessage-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE8087F88B9DC5F07AC43A9340352540 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				991C46630AE773109C12C744AD0ED05D /* Pods-JustFacts WatchOS Extension-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		750C846D2C80AFE0CFE9E93ACFCDA965 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SDWebImage;
+			target = 3BBA15F11821432C31825F81E85E9401 /* SDWebImage */;
+			targetProxy = E234FF81C27AC0844451586D73C5C1A3 /* PBXContainerItemProxy */;
+		};
+		AD4C0D7D3877B9A1657B392DD9363BE3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SDWebImage;
+			target = 3BBA15F11821432C31825F81E85E9401 /* SDWebImage */;
+			targetProxy = 03697726B7FB58CB3C2652030B0810D3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		138935DDF41F58957F0FDBB0F60891A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CBF16977437EBBC342D05011AE180505 /* Pods-JustStudio.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-JustStudio/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-JustStudio/Pods-JustStudio.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_JustStudio;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		28FFE813E4DA27D69D499EB56D32F779 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38D1AD9EBA37BA926B6BDF1CA670CBC9 /* Pods-JustStudio iMessage.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-JustStudio iMessage/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-JustStudio iMessage/Pods-JustStudio iMessage.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_JustStudio_iMessage;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		360C4AA1711D9484F2516DAE57D7F0C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5943044D7E5C483C7B313E3F0876576 /* Pods-JustFacts WatchOS Extension.debug.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-JustFacts WatchOS Extension/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-JustFacts WatchOS Extension/Pods-JustFacts WatchOS Extension.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_JustFacts_WatchOS_Extension;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		3EA079C3BAFDDD83D2AACCDE7B55063E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ABE1C55BCAFFA99A4380A780F130F959 /* SDWebImage.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SDWebImage/SDWebImage-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SDWebImage/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SDWebImage/SDWebImage.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = SDWebImage;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5E0A69BD2F17F16F071979DBF4E00C0B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		A755583F687613A2504D6EAE573E4832 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0DE528056CA0178847BB197145273AEF /* Pods-JustFacts WatchOS Extension.release.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-JustFacts WatchOS Extension/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-JustFacts WatchOS Extension/Pods-JustFacts WatchOS Extension.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_JustFacts_WatchOS_Extension;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		ABA1596489E7541C66C64236B29B0F38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ABE1C55BCAFFA99A4380A780F130F959 /* SDWebImage.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SDWebImage/SDWebImage-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SDWebImage/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SDWebImage/SDWebImage.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = SDWebImage;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		CD64ECF3A9715052BE78682F2A8ECA6B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		F10FE3015C8919C049FE627BFD9CC99A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF70737C3400098D96192747BD4C75A9 /* Pods-JustStudio.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-JustStudio/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-JustStudio/Pods-JustStudio.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_JustStudio;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F60361E9AD0DB1A7FFC9CA994F0E018B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2EA964284A4B93F4E583EEB3BFAE5ACE /* Pods-JustStudio iMessage.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-JustStudio iMessage/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-JustStudio iMessage/Pods-JustStudio iMessage.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_JustStudio_iMessage;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1233C8B7C54DDB35FF6F876F1F820991 /* Build configuration list for PBXNativeTarget "SDWebImage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3EA079C3BAFDDD83D2AACCDE7B55063E /* Debug */,
+				ABA1596489E7541C66C64236B29B0F38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1850E3B987F233822CBE0224AE471697 /* Build configuration list for PBXNativeTarget "Pods-JustStudio" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F10FE3015C8919C049FE627BFD9CC99A /* Debug */,
+				138935DDF41F58957F0FDBB0F60891A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5E0A69BD2F17F16F071979DBF4E00C0B /* Debug */,
+				CD64ECF3A9715052BE78682F2A8ECA6B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3543018EBA4DD860219FDCB61E32FA08 /* Build configuration list for PBXNativeTarget "Pods-JustStudio iMessage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F60361E9AD0DB1A7FFC9CA994F0E018B /* Debug */,
+				28FFE813E4DA27D69D499EB56D32F779 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B2E4A6372F022EA610329F78EFA88FCA /* Build configuration list for PBXNativeTarget "Pods-JustFacts WatchOS Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				360C4AA1711D9484F2516DAE57D7F0C4 /* Debug */,
+				A755583F687613A2504D6EAE573E4832 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

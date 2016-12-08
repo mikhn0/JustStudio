@@ -11,20 +11,18 @@ import Messages
 
 
 @available(iOS 10.0, *)
-class CategoryCell: UICollectionViewCell {
+class CategoryCell: UITableViewCell {
     static let reuseIdentifier: String? = "CategoryCell"
     
- //   @IBOutlet weak var activityView: UIView?
     @IBOutlet weak var categoryLabel: UILabel?
     @IBOutlet weak var categoryImage: UIImageView?
     
     override func awakeFromNib() {
-        categoryLabel?.textColor = UIColor.init(red:71/255, green:90/255, blue:109/255, alpha:1)
-        //titleLabel.font = UIFont.lightFont(ofSize: 20)
-        categoryLabel?.minimumScaleFactor = 0.5
-        
-        //descrLabel.font = UIFont.altFont(ofSize: 20)
-        categoryLabel?.minimumScaleFactor = 0.5
+        self.categoryLabel?.textColor = UIColor.white
+        self.categoryLabel?.shadowColor = UIColor.gray
+        self.categoryLabel?.numberOfLines = 0
+        self.categoryLabel?.shadowOffset = CGSize(width: 1, height: -1)
+        self.categoryLabel?.font = UIFont(name: "HelveticaNeue-Medium", size: 35)
     }
     
     func getScreenShortOfCell() -> UIImage {

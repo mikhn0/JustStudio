@@ -90,15 +90,11 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
             
          let task = URLSession.shared.dataTask(with: urlService!, completionHandler: { (data, response, error) in
                 if error == nil {
-                  
-                    
-                    cell.photoView.sd_setImage(with: url, placeholderImage: UIImage(data:data!))//, completed: {(image: UIImage?, error: NSError?, imageURL: NSURL?) in
-  
+                    cell.photoView.sd_setImage(with: url, placeholderImage: UIImage(data:data!))
                 }
             })
             task.resume()
         }
-        
         return cell
         
     }

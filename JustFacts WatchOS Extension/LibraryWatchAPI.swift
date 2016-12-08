@@ -8,7 +8,7 @@
 
 import Foundation
 
-let SERVER_URL:NSString = "http://justfacts.ju5tudio.com:5793"
+let SERVER_URL:NSString = "http://13.91.106.16:5793/"
 
 class LibraryWatchAPI : NSObject  {
 
