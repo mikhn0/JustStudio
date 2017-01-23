@@ -15,7 +15,7 @@ class Base: NSObject {
     let ru: String
     let en: String
     
-    init(_id: String, active: Bool, ru: String, en: String) {
+    init(_ _id: String, _ active: Bool, _ ru: String, _ en: String) {
         self._id = _id
         self.active = active
         self.ru = ru

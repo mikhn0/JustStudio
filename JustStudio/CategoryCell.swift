@@ -21,7 +21,7 @@ class CategoryCell: UITableViewCell {
         self.titleLabel.shadowColor = UIColor.gray
         self.titleLabel.numberOfLines = 0
         self.titleLabel.shadowOffset = CGSize(width: 1, height: -1)
-        self.titleLabel.font = UIFont(name: "HelveticaNeue-Medium", size: 35)
+        self.titleLabel.font = UIFont(name: "AvusW00-CondensedMedium", size: 35)
         
         self.photoView = UIImageView()
         self.photoView.contentMode = UIViewContentMode.scaleAspectFill

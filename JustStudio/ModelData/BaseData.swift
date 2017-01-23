@@ -15,7 +15,7 @@ class BaseData: NSObject {
     var active : Bool!
     var image_url : String!
     
-    init(id:String!, ru:String!, en:String!, active:Bool!, image_url:String!) {
+    init(_ id:String!, _ ru:String!, _ en:String!, _ active:Bool!, _ image_url:String!) {
         super.init()
         self.id = id
         self.ru = ru

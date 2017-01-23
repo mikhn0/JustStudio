@@ -10,26 +10,25 @@ import WatchKit
 
 class Category: Base {
   
-  var image_mini: String
-  var name: String
+    var image_mini: String
+    var name: String
     
+    init(_ _id: String, _ active: Bool, _ ru: String, _ image: String, _ en: String, _ name: String) {
+        self.image_mini = image
+        self.name = name
+        super.init(_id, active, ru, en)
+    }
   
-  init(_id: String, active: Bool, ru: String, image: String, en: String, name: String) {
-    self.image_mini = image
-    self.name = name
-    super.init(_id: _id, active: active, ru: ru, en: en)
-  }
-  
-  convenience init(category: [String: AnyObject]) {
-    let id = category["_id"]!
-    let active = category["active"]!
-    let ru = category["ru"]!
-    let image = category["image_mini"]!
-    let en = category["en"]!
-    let name = category["name"]!
-    
-    
-    self.init(_id: id as! String, active: active as! Bool, ru: ru as! String, image: image as! String, en: en as! String, name: name as! String)
+    convenience init(category: [String: AnyObject]) {
+        let id = category["_id"] as! String
+        let active = category["active"] as! Bool
+        let ru = category["ru"] as! String
+        let urlWithService = "http://res.cloudinary.com/dvq3boovd/image/fetch/c_scale,w_100/"
+        let image = urlWithService + (category["image"] as! String)
+        let en = category["en"] as! String
+        let name = category["name"] as! String
+        
+        self.init(id, active, ru, image, en, name)
     }
 
 }

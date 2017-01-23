@@ -37,8 +37,8 @@ class LibraryAPI : NSObject  {
                     var categoryArr: [CategoryData] = []
                     let categories = jsonCategoryArr.shuffle()
                     for element in categories {
-                        let dict = element as! NSDictionary
-                        let categoryData = CategoryData(id:(dict["_id"] as? String) , active:(dict["active"] as? Bool), en:(dict["en"] as? String), image_url:(dict["image"] as? String), name:(dict["name"] as? String), ru:(dict["ru"] as? String))
+                        let dict = element as! [String : AnyObject]
+                        let categoryData = CategoryData(category:dict)
                         categoryArr.append(categoryData)
                         
                     }
@@ -57,13 +57,11 @@ class LibraryAPI : NSObject  {
     func getFactsByCategory(_ category:String, completion: @escaping (_ facts: [FactData]) -> Void) -> Void {
         
         let url = NSURL(string: "\(SERVER_URL)/facts?category=\(category)")
-        print("url = \(url)")
         let task = URLSession.shared.dataTask(with: url! as URL) {(data, response, error) in
             
             if (error != nil) {
                 print("API error: \(error), \(error?.localizedDescription)")
             }
-            print("response = \(response)")
             do {
                 
                 if let json:NSDictionary = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? [String:AnyObject] as NSDictionary? {
@@ -71,8 +69,8 @@ class LibraryAPI : NSObject  {
                     let facts = jsonFactsArr.shuffle()
                     var factsArr: [FactData] = []
                     for element in facts {
-                        let dict = element as! NSDictionary
-                        let factData = FactData(id:(dict["_id"] as? String) , active:(dict["active"] as? Bool), category:(dict["category"] as? String), en:(dict["en"] as? String), ru:(dict["ru"] as? String), image_url:(dict["image"] as? String))
+                        let dict = element as! [String : AnyObject]
+                        let factData = FactData(fact:dict)
                         factsArr.append(factData)
                     }
                     completion(factsArr)

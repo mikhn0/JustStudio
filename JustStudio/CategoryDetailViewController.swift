@@ -118,14 +118,20 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
     
     func displayShareSheet(_ shareContent:FactData) {
         let siteUrl:URL! = URL(string: "https://justfacts.carrd.co/")
-        let url = URL(string: shareContent.image_url)
-        let imageView: UIImageView? = UIImageView()
-        imageView!.sd_setImage(with: url)
-        let shareImage: UIImage! = imageView?.image
-        if shareImage != nil {
-            let activityViewController = UIActivityViewController(activityItems: [shareContent.ru as String, shareImage as UIImage, siteUrl as URL], applicationActivities: nil)
-            present(activityViewController, animated: true, completion: {})
-        }
+
+        UIGraphicsBeginImageContextWithOptions(CGSize(width: self.view.frame.size.width, height: self.view.frame.size.height-100), true, UIScreen.main.scale)
+        self.view.drawHierarchy(in: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height-50), afterScreenUpdates: false)
+        let shareImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        
+        let activityViewController = UIActivityViewController(activityItems: [cropImage(image: shareImage, toRect: CGRect(x: 0, y: 140, width: shareImage.size.width*3, height: shareImage.size.height*3)), siteUrl as URL], applicationActivities: nil)
+        present(activityViewController, animated: true, completion: {})
+    }
+    
+    func cropImage(image:UIImage, toRect rect:CGRect) -> UIImage{
+        let imageRef:CGImage = image.cgImage!.cropping(to: rect)!
+        let croppedImage:UIImage = UIImage(cgImage:imageRef)
+        return croppedImage
     }
     
     var modelController: ModelController {

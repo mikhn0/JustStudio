@@ -21,7 +21,6 @@ class DataViewController: UIViewController {
     
     override func viewDidLoad() {
         
-        print("DataVC link on image = \(dataObject.image)")
         let url = URL(string: dataObject.image_url!)
         
         let urlWithService = "http://res.cloudinary.com/dvq3boovd/image/fetch/c_scale,w_100/"
@@ -48,9 +47,6 @@ class DataViewController: UIViewController {
         }
         
         self.dataLabel.setDescription(dataObject: dataObject)
-        
-        self.dataLabel!.shadowColor = UIColor.gray
-        self.dataLabel!.layer.shadowRadius = 4
         
         let color:UIColor! = UIColor.black
         self.dataLabel.layer.shadowColor = color.cgColor

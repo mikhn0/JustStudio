@@ -22,7 +22,7 @@ class CategoryCell: UITableViewCell {
         self.categoryLabel?.shadowColor = UIColor.gray
         self.categoryLabel?.numberOfLines = 0
         self.categoryLabel?.shadowOffset = CGSize(width: 1, height: -1)
-        self.categoryLabel?.font = UIFont(name: "HelveticaNeue-Medium", size: 35)
+        self.categoryLabel?.font = UIFont(name: "AvusW00-CondensedMedium", size: 35)
     }
     
     func getScreenShortOfCell() -> UIImage {

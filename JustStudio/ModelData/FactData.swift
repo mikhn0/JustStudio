@@ -13,8 +13,19 @@ class FactData: BaseData {
     var category : String!
     var image : UIImage?// = UIImage(named:"tree_background")
     
-    init(id:String!, active:Bool!, category:String!, en:String!, ru:String!, image_url:String!) {
-        super.init(id:id, ru:ru, en:en, active:active, image_url:image_url)
+    init(_ id:String!, _ active:Bool!, _ category:String!, _ en:String!, _ ru:String!, _ image_url:String!) {
+        super.init(id, ru, en, active, image_url)
         self.category = category
+    }
+    
+    convenience init(fact: [String: AnyObject]) {
+        let id = fact["_id"] as! String
+        let active = fact["active"] as! Bool
+        let ru = fact["ru"] as! String
+        let image = fact["image"] as! String
+        let en = fact["en"] as! String
+        let category = fact["category"] as! String
+        
+        self.init(id, active, category, en, ru, image)
     }
 }

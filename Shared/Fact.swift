@@ -13,22 +13,20 @@ class Fact: Base {
     var category : String!
     
     
-    init(id:String!, active:Bool!, ru:String!, image: String!, en:String!, category:String!) {
-        super.init(_id: id, active: active, ru: ru, en: en)
+    init(_ id:String!,_ active:Bool!,_ ru:String!,_ image: String!,_ en:String!,_ category:String!) {
+        super.init(id, active, ru, en)
         self.image = image
         self.category = category
-        
     }
     
-    convenience init(category: [String: AnyObject]) {
-        let id = category["_id"]!
-        let active = category["active"]!
-        let ru = category["ru"]!
-        let image = category["image"]!
-        let en = category["en"]!
-        let category = category["category"]!
+    convenience init(fact: [String: AnyObject]) {
+        let id = fact["_id"] as! String
+        let active = fact["active"] as! Bool
+        let ru = fact["ru"] as! String
+        let image = fact["image"] as! String
+        let en = fact["en"] as! String
+        let category = fact["category"] as! String
         
-        
-        self.init(id: id as! String, active: active as! Bool, ru: ru as! String, image: image as! String, en: en as! String, category: category as! String)
+        self.init(id, active, ru, image, en, category)
     }
 }

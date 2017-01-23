@@ -79,7 +79,7 @@ class LibraryWatchAPI : NSObject  {
                     var factsArr: [Fact] = []
                     for element in jsonFactsArr {
                         let dict = element as! NSDictionary
-                        let factData = Fact(id:(dict["_id"] as? String) , active:(dict["active"] as? Bool), ru:(dict["ru"] as? String), image:(dict["image"] as? String), en:(dict["en"] as? String), category:(dict["category"] as? String))
+                        let factData = Fact(fact:dict as! [String : AnyObject])
                         factsArr.append(factData)
                     }
                     DispatchQueue.main.async {

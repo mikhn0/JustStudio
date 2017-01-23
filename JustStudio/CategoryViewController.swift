@@ -51,7 +51,7 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
     
         tableView.delegate = self
         tableView.dataSource = self
-        heightOfCell = (self.view.frame.size.height+20) / 2
+        heightOfCell = (self.view.frame.size.height + 20) / 2
     }
 
     
@@ -80,15 +80,12 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
         cell.titleLabel.sizeToFit()
         
         if (categoryData.image_url != nil) {
-            print("IndexPath.row === \(row)")
             let url = URL(string: categoryData.image_url)
             let urlWithService = "http://res.cloudinary.com/dvq3boovd/image/fetch/c_scale,w_100/"
             
-           let betweenString = urlWithService+categoryData.image_url
-           let urlService = URL(string: betweenString)
+            let urlService = URL(string: urlWithService+categoryData.image_url)
  
-            
-         let task = URLSession.shared.dataTask(with: urlService!, completionHandler: { (data, response, error) in
+            let task = URLSession.shared.dataTask(with: urlService!, completionHandler: { (data, response, error) in
                 if error == nil {
                     cell.photoView.sd_setImage(with: url, placeholderImage: UIImage(data:data!))
                 }
@@ -99,13 +96,31 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
         
     }
     
-    
-    
-    
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectCategory: CategoryData = categories[(indexPath as NSIndexPath).row] 
-        self.performSegue(withIdentifier: "FactsByCategorySegue", sender: selectCategory)
+        let selectCategory: CategoryData = categories[(indexPath as NSIndexPath).row]
+        switch selectCategory.name {
+            case "quotes":
+                let justQuotesSchema = "readmyquotesapp://"
+                let justQuotesUrl = URL(string: justQuotesSchema)
+                if UIApplication.shared.canOpenURL(justQuotesUrl!) {
+                    if #available(iOS 10.0, *) {
+                        UIApplication.shared.open(justQuotesUrl!, options: [:], completionHandler: nil)
+                    } else {
+                        let success = UIApplication.shared.openURL(justQuotesUrl!)
+                        print("Open \(justQuotesSchema): \(success)")
+                    }
+                } else {
+                    if #available(iOS 10.0, *) {
+                        UIApplication.shared.open(URL(string: "https://itunes.apple.com/us/app/just-quotes-did-you-know/id1190672970?l=ru&ls=1&mt=8")!, options: [:], completionHandler: nil)
+                    } else {
+                        let success = UIApplication.shared.openURL(URL(string: "https://itunes.apple.com/us/app/just-quotes-did-you-know/id1190672970?l=ru&ls=1&mt=8")!)
+                        print("Open (https://itunes.apple.com/us/app/just-quotes-did-you-know/id1190672970?l=ru&ls=1&mt=8): \(success)")
+                    }
+                }
+            default:
+                self.performSegue(withIdentifier: "FactsByCategorySegue", sender: selectCategory)
+                break
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

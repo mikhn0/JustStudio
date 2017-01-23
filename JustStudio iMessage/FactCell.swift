@@ -23,7 +23,7 @@ class FactCell: UICollectionViewCell {
         self.descrLabel?.textColor = UIColor.white
         self.descrLabel?.shadowColor = UIColor.gray
         self.descrLabel?.shadowOffset = CGSize(width: 1, height: -1)
-        self.descrLabel?.font = UIFont(name: "HelveticaNeue-Medium", size: 35)
+        self.descrLabel?.font = UIFont(name: "AvusW00-CondensedMedium", size: 35)
         
         
     }
