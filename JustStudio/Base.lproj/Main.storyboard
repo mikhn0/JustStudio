@@ -32,13 +32,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Cu-IF-ZnT" userLabel="infoView">
-                                <rect key="frame" x="0.0" y="263" width="600" height="337"/>
+                                <rect key="frame" x="0.0" y="100" width="600" height="500"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="bottom" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="cF2-Le-7mQ">
-                                        <rect key="frame" x="34" y="12" width="532" height="300"/>
+                                        <rect key="frame" x="34" y="408.5" width="532" height="36.5"/>
                                         <color key="backgroundColor" red="0.22352941179999999" green="0.69803921570000005" blue="0.56862745100000001" alpha="0.0" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="300" id="PNM-zf-xcR"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="32" id="PNM-zf-xcR"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="AvusW00-CondensedMedium" family="AvusW00-CondensedMedium" pointSize="30"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -47,10 +47,10 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="cF2-Le-7mQ" secondAttribute="bottom" constant="25" id="7Jz-6P-eVj"/>
+                                    <constraint firstAttribute="bottom" secondItem="cF2-Le-7mQ" secondAttribute="bottom" constant="55" id="7Jz-6P-eVj"/>
                                     <constraint firstAttribute="trailing" secondItem="cF2-Le-7mQ" secondAttribute="trailing" constant="34" id="8P7-oC-LxO"/>
                                     <constraint firstItem="cF2-Le-7mQ" firstAttribute="leading" secondItem="0Cu-IF-ZnT" secondAttribute="leading" constant="34" id="LAQ-6c-BWy"/>
-                                    <constraint firstAttribute="height" constant="337" id="iul-05-3lW"/>
+                                    <constraint firstAttribute="height" constant="500" id="iul-05-3lW"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -74,12 +74,12 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="0pm-Tb-fEK"/>
+                                <exclude reference="gIR-a4-Fj3"/>
                                 <exclude reference="2Ij-Hg-o7L"/>
                                 <exclude reference="Dh7-Tn-cf9"/>
                                 <exclude reference="FGV-2a-hjN"/>
                                 <exclude reference="f0U-CV-nai"/>
-                                <exclude reference="0pm-Tb-fEK"/>
-                                <exclude reference="gIR-a4-Fj3"/>
                                 <exclude reference="Jux-Yg-7eQ"/>
                             </mask>
                         </variation>
