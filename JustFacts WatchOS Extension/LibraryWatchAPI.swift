@@ -28,7 +28,7 @@ class LibraryWatchAPI : NSObject  {
         let task = URLSession.shared.dataTask(with: url! as URL) {(data, response, error) in
             print("FINISHED get all categories!!!")
             if (error != nil) {
-                print("API error: \(error), \(error?.localizedDescription)")
+                print("API error: \(String(describing: error)), \(String(describing: error?.localizedDescription))")
             }
             
             do {
@@ -56,9 +56,6 @@ class LibraryWatchAPI : NSObject  {
         task.resume()
         
     }
-    
-
-    /////
 
     func getFactsByCategoryForWatch(_ category:String, completion:@escaping([Fact]) -> Void) -> Void {
        //-----
@@ -69,7 +66,7 @@ class LibraryWatchAPI : NSObject  {
             //print(" response ====== s\(response)")
             
             if (error != nil) {
-                print("API error: \(error), \(error?.localizedDescription)")
+                print("API error: \(String(describing: error)), \(String(describing: error?.localizedDescription))")
             }
             
             do {
@@ -98,8 +95,6 @@ class LibraryWatchAPI : NSObject  {
 
     
 }
-
-/////
 
 extension Collection {
     /// Return a copy of `self` with its elements shuffled

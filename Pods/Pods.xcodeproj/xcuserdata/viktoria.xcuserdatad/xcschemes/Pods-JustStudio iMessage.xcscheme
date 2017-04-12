@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0820"
+   LastUpgradeVersion = "0830"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F90EE799A396420E644063F17988BA16"
+               BlueprintIdentifier = "5B667D0511981EF6500C723D1035B985"
                BuildableName = "Pods_JustStudio_iMessage.framework"
                BlueprintName = "Pods-JustStudio iMessage"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F90EE799A396420E644063F17988BA16"
+            BlueprintIdentifier = "5B667D0511981EF6500C723D1035B985"
             BuildableName = "Pods_JustStudio_iMessage.framework"
             BlueprintName = "Pods-JustStudio iMessage"
             ReferencedContainer = "container:Pods.xcodeproj">
@@ -60,15 +60,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F90EE799A396420E644063F17988BA16"
-            BuildableName = "Pods_JustStudio_iMessage.framework"
-            BlueprintName = "Pods-JustStudio iMessage"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

@@ -5,10 +5,8 @@ use_frameworks!
 target 'JustStudio' do
     pod 'SDWebImage', '~>3.7'
     pod 'Google-Mobile-Ads-SDK'
+
 end
-
-
-
 
 target 'JustFacts WatchOS Extension' do
     platform :watchos, '2.0'

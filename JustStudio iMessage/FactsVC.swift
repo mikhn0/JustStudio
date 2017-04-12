@@ -9,6 +9,8 @@
 import Foundation
 import Messages
 import ImageIO
+import RealmSwift
+import Realm
 
 protocol FactsVCDelegate: class {
     func chooseFactForSend (_ screenShot:UIImage, with fact: Facts)
@@ -18,12 +20,14 @@ protocol FactsVCDelegate: class {
 class FactsVC: BaseViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     var items: [Facts]! = []
-    var facts: [FactData]! = [] {
+    var facts: Results<FactDataModel>? {
         didSet {
             self.items = []
-            for elem in facts {
+            let firstFact = facts?.first
+            print("first fact = \(String(describing: firstFact?.category))")
+            for elem in facts! {
                 let fact:Facts
-                fact = Facts(desc: UILabel.returnDescription(dataObject: elem), image: elem.image_url)
+                fact = Facts(desc: UILabel.returnDescription(dataObject: elem), image: elem.image!)
                 self.items.append(fact)
             }
         }
@@ -105,10 +109,12 @@ class FactsVC: BaseViewController, UICollectionViewDataSource, UICollectionViewD
             lifeHackNewObject =  lifeHack(title:elem.value(forKey: "title") as! String, subtitle:elem.value(forKey: "content") as! String)
             self.items.append(lifeHackNewObject!)
         }*/
-        for elem in facts {
-            let fact:Facts
-            fact = Facts(desc: UILabel.returnDescription(dataObject: elem), image: elem.image_url)
-            self.items.append(fact)
+        if facts != nil {
+            for elem in facts! {
+                let fact:Facts
+                fact = Facts(desc: UILabel.returnDescription(dataObject: elem), image: elem.image!)
+                self.items.append(fact)
+            }
         }
     }
     

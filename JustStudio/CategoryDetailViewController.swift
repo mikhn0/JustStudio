@@ -8,6 +8,8 @@
 
 import GoogleMobileAds
 import UIKit
+import RealmSwift
+import Realm
 
 class CategoryDetailViewController: UIViewController, UIPageViewControllerDelegate {
     
@@ -16,7 +18,7 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var shareView: UIView!
     var pageViewController: UIPageViewController?
-    var category: CategoryData?
+    var category: CategoryDataModel?
     var semaphore: DispatchSemaphore?
 
     override func viewDidLoad() {
@@ -44,17 +46,15 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
         
         //semaphore = DispatchSemaphore(value: 0)
         //DispatchQueue.global(qos: .userInitiated).async {
-            print("user initiated task")
-            LibraryAPI.sharedInstance().getFactsByCategory(self.category!.name!, completion:{ (facts: [FactData]) -> Void in
-                
-                DispatchQueue.main.async {
-                    self.ConfigurationViewControllers(facts)
-                }
-                
-            })
-            //self.semaphore?.signal()
+        print("user initiated task")
+    
+        LibraryAPI.sharedInstance().getFactsByCategory(self.category!, completion:{ (facts: Results<FactDataModel>?) -> Void in
+            
+            DispatchQueue.main.async {
+                self.ConfigurationViewControllers(facts!)
+            }
+        })
         //}
-        
         // Set the page view controller's bounds using an inset rect so that self's view is visible around the edges of the pages.
         var pageViewRect = self.view.bounds
         if UIDevice.current.userInterfaceIdiom == .pad {
@@ -64,28 +64,17 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
         self.pageViewController!.didMove(toParentViewController: self)
     }
 
-    func ConfigurationViewControllers(_ facts: [FactData]) -> Void {
-        
-        self.modelController.allFacts = facts;
-        DispatchQueue.global(qos: DispatchQoS.QoSClass.background).async {
-            for fact in facts {
-                let data = try? Data(contentsOf: URL(string: fact.image_url)!)
-                if data != nil {
-                    fact.image = UIImage(data:data!)
-                }
-                print("\(fact.image)")
-            }
-        }
+    func ConfigurationViewControllers(_ facts: Results<FactDataModel>?) -> Void {
+        self.modelController.allFacts = facts
         self.modelController.activityIndicator = self.activityIndicator
-        let startingViewController: DataViewController = self.modelController.viewControllerAtIndex(0, storyboard: self.storyboard!)!
         
-        
-        let viewControllers = [startingViewController]
-        self.pageViewController!.setViewControllers(viewControllers, direction: .forward, animated: true, completion: {done in })
-        self.pageViewController!.dataSource = self.modelController
-        self.addChildViewController(self.pageViewController!)
-        self.view.insertSubview(self.pageViewController!.view, belowSubview: self.bannerView)
-        
+        if let startingViewController = self.modelController.viewControllerAtIndex(0, storyboard: self.storyboard!) {
+            let viewControllers = [startingViewController]
+            self.pageViewController!.setViewControllers(viewControllers, direction: .forward, animated: true, completion: {done in })
+            self.pageViewController!.dataSource = self.modelController
+            self.addChildViewController(self.pageViewController!)
+            self.view.insertSubview(self.pageViewController!.view, belowSubview: self.bannerView)
+        }
     }
     
     @IBAction func shareAction(_ sender: AnyObject) {
@@ -96,13 +85,13 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
             let currentViewController = self.pageViewController!.viewControllers![0] as! DataViewController
             let indexOfCurrentViewController = self.modelController.indexOfViewController(currentViewController)
             
-            if self.modelController.allFacts.count > 0 && indexOfCurrentViewController >= 0 {
-                if (self.modelController.allFacts[indexOfCurrentViewController].image_url == "") {
+            if self.modelController.allFacts!.count > 0 && indexOfCurrentViewController >= 0 {
+                if (self.modelController.allFacts![indexOfCurrentViewController].image == "") {
                     // The text field is empty so display an Alert
                     displayAlert("Warning", message: "Enter something in the text field!")
                 } else {
                     // We have contents so display the share sheet
-                    displayShareSheet(self.modelController.allFacts[indexOfCurrentViewController])
+                    displayShareSheet(self.modelController.allFacts![indexOfCurrentViewController])
                 }
             }
         }
@@ -116,7 +105,7 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
         return
     }
     
-    func displayShareSheet(_ shareContent:FactData) {
+    func displayShareSheet(_ shareContent:FactDataModel) {
         let siteUrl:URL! = URL(string: "https://justfacts.carrd.co/")
 
         UIGraphicsBeginImageContextWithOptions(CGSize(width: self.view.frame.size.width, height: self.view.frame.size.height-100), true, UIScreen.main.scale)

@@ -4,90 +4,45 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Alamofire-iOS.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-			<key>orderHint</key>
-			<integer>3</integer>
-		</dict>
-		<key>Alamofire-watchOS.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-			<key>orderHint</key>
-			<integer>4</integer>
-		</dict>
 		<key>Pods-JustFacts WatchOS Extension.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>5</integer>
 		</dict>
 		<key>Pods-JustStudio iMessage.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>9</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods-JustStudio.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>6</integer>
 		</dict>
 		<key>SDWebImage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>7</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>063E3C59C1B7382B70A98D5EF8052B8D</key>
+		<key>38528573E38D91EE180DE816EC698255</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>26E2B2C38643F30148341AA05C2FEA08</key>
+		<key>5B667D0511981EF6500C723D1035B985</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3BBA15F11821432C31825F81E85E9401</key>
+		<key>78630DD8EE2FA9B7FEA929ADBF9FDA4C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7FE07A25286162E563A4DA9F49C76A25</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>89C69EB624EC8137588D9568F2E11964</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>9FC66F28185ED76750F7A8BCDD07F878</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F90EE799A396420E644063F17988BA16</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FE522D662AF8A51C6CE222C5A168E145</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FEC61C4E0ECD063D662F07917C41893C</key>
+		<key>82D93214CCA9965C5A6FEE698033CE9E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

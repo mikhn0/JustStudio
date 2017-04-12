@@ -21,7 +21,6 @@ class FactsController: WKInterfaceController {
 
                 factLabel.setText(fact.en)
                 factImage.downloadedFrom(link: "http://res.cloudinary.com/dvq3boovd/image/fetch/c_scale,w_300/"+fact.image)
-                
             }
         }
     }

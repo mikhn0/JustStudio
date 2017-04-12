@@ -9,7 +9,7 @@
 import Foundation
 
 extension UILabel {
-    func setDescription(dataObject: BaseData) {
+    func setDescription(dataObject: BaseDataModel) {
         
         let pre = NSLocale.preferredLanguages[0]
         
@@ -20,7 +20,7 @@ extension UILabel {
         }
     }
     
-    class func returnDescription(dataObject: BaseData) -> String {
+    class func returnDescription(dataObject: BaseDataModel) -> String {
         let pre = NSLocale.preferredLanguages[0]
         if pre.contains("ru") {
             return dataObject.ru

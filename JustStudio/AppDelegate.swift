@@ -7,14 +7,20 @@
 //
 
 import UIKit
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        let appGroup = "group.com.fruktorum.JustFacts"
+        let fileManager = FileManager.default
+        let realmConfigurator = AppGroupRealmConfiguration(appGroupIdentifier: appGroup, fileManager: fileManager)
+        realmConfigurator.updateDefaultRealmConfiguration()
+        
         // Override point for customization after application launch.
         return true
     }
