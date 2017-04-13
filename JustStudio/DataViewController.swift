@@ -27,7 +27,6 @@ class DataViewController: UIViewController {
         let betweenString = urlWithService + dataObject.image_url
         let urlService = URL(string: betweenString)
         
-        
         self.activityIndicator!.startAnimating()
         if dataObject.image == nil {
             let task = URLSession.shared.dataTask(with: urlService!, completionHandler: { (data, response, error) in

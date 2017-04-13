@@ -79,7 +79,6 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
         self.modelController.activityIndicator = self.activityIndicator
         let startingViewController: DataViewController = self.modelController.viewControllerAtIndex(0, storyboard: self.storyboard!)!
         
-        
         let viewControllers = [startingViewController]
         self.pageViewController!.setViewControllers(viewControllers, direction: .forward, animated: true, completion: {done in })
         self.pageViewController!.dataSource = self.modelController
@@ -93,7 +92,7 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
         //semaphore?.wait(timeout: .distantFuture)
         print("WE MADE IT OUT OF THERE")
         if self.pageViewController!.viewControllers!.count > 0 {
-            let currentViewController = self.pageViewController!.viewControllers![0] as! DataViewController
+            let currentViewController = self.pageViewController!.viewControllers?[0] as! DataViewController
             let indexOfCurrentViewController = self.modelController.indexOfViewController(currentViewController)
             
             if self.modelController.allFacts.count > 0 && indexOfCurrentViewController >= 0 {
@@ -102,11 +101,10 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
                     displayAlert("Warning", message: "Enter something in the text field!")
                 } else {
                     // We have contents so display the share sheet
-                    displayShareSheet(self.modelController.allFacts[indexOfCurrentViewController])
+                    displayShareSheet(self.modelController.allFacts[indexOfCurrentViewController], withSender:sender)
                 }
             }
         }
-
     }
 
     func displayAlert(_ title: String, message: String) {
@@ -116,7 +114,7 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
         return
     }
     
-    func displayShareSheet(_ shareContent:FactData) {
+    func displayShareSheet(_ shareContent:FactData, withSender sender:AnyObject) {
         let siteUrl:URL! = URL(string: "https://justfacts.carrd.co/")
 
         UIGraphicsBeginImageContextWithOptions(CGSize(width: self.view.frame.size.width, height: self.view.frame.size.height-100), true, UIScreen.main.scale)
@@ -125,18 +123,19 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
         UIGraphicsEndImageContext()
         
         let activityViewController = UIActivityViewController(activityItems: [cropImage(image: shareImage, toRect: CGRect(x: 0, y: 140, width: shareImage.size.width*3, height: shareImage.size.height*3)), siteUrl as URL], applicationActivities: nil)
-        present(activityViewController, animated: true, completion: {})
+        activityViewController.popoverPresentationController?.sourceView = sender as? UIView
+        present(activityViewController, animated: true) {
+            print("everything ok")
+        }
     }
     
     func cropImage(image:UIImage, toRect rect:CGRect) -> UIImage{
-        let imageRef:CGImage = image.cgImage!.cropping(to: rect)!
-        let croppedImage:UIImage = UIImage(cgImage:imageRef)
+        let imageRef = image.cgImage!.cropping(to: rect)!
+        let croppedImage = UIImage(cgImage:imageRef)
         return croppedImage
     }
     
     var modelController: ModelController {
-        // Return the model controller object, creating it if necessary.
-        // In more complex implementations, the model controller may be passed to the view controller.
         if _modelController == nil {
             _modelController = ModelController()
         }
@@ -177,6 +176,11 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
         return .mid
     }
 
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "fgdfgdf" {
+            let categoryDetailViewController: CategoryDetailViewController = segue.destination as! CategoryDetailViewController
+            categoryDetailViewController.category = sender as? CategoryData
+        }
+    }
 }
 

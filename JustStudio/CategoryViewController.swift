@@ -111,10 +111,26 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
                     }
                 } else {
                     if #available(iOS 10.0, *) {
-                        UIApplication.shared.open(URL(string: "https://itunes.apple.com/us/app/just-quotes-did-you-know/id1190672970?l=ru&ls=1&mt=8")!, options: [:], completionHandler: nil)
+                        UIApplication.shared.open(URL(string: "https://itunes.apple.com/us/app/just-quotes-did-you-know/id1190672970")!, options: [:], completionHandler: nil)
                     } else {
-                        let success = UIApplication.shared.openURL(URL(string: "https://itunes.apple.com/us/app/just-quotes-did-you-know/id1190672970?l=ru&ls=1&mt=8")!)
-                        print("Open (https://itunes.apple.com/us/app/just-quotes-did-you-know/id1190672970?l=ru&ls=1&mt=8): \(success)")
+                        UIApplication.shared.openURL(URL(string: "https://itunes.apple.com/us/app/just-quotes-did-you-know/id1190672970")!)
+                    }
+                }
+            case "celebrity":
+                let justPeoplesSchema = "readmypeopleapp://"
+                let justPeoplesUrl = URL(string: justPeoplesSchema)
+                if UIApplication.shared.canOpenURL(justPeoplesUrl!) {
+                    if #available(iOS 10.0, *) {
+                        UIApplication.shared.open(justPeoplesUrl!, options: [:], completionHandler: nil)
+                    } else {
+                        let success = UIApplication.shared.openURL(justPeoplesUrl!)
+                        print("Open \(justPeoplesSchema): \(success)")
+                    }
+                } else {
+                    if #available(iOS 10.0, *) {
+                        UIApplication.shared.open(URL(string: "https://itunes.apple.com/us/app/just-people-did-you-know/id1197390666")!, options: [:], completionHandler: nil)
+                    } else {
+                        UIApplication.shared.openURL(URL(string: "https://itunes.apple.com/us/app/just-people-did-you-know/id1197390666")!)
                     }
                 }
             default:
@@ -132,10 +148,8 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
     
     @IBAction func prepareForUnwind(_ segue: UIStoryboardSegue) -> Void {
         if segue.identifier == "unwindToViewController" {
-            //let factVC: CategoryDetailViewController = segue.sourceViewController as! CategoryDetailViewController
             print("UNVIND SEGUE");
         }
     }
-    
-    
+
 }

@@ -19,7 +19,7 @@ class CategoryData: BaseData {
         self.name = name
     }
     
-    convenience init(category: [String: AnyObject]) {
+    convenience init(withCategory category:[String: AnyObject]) {
         let id = category["_id"] as! String
         let active = category["active"] as! Bool
         let ru = category["ru"] as! String

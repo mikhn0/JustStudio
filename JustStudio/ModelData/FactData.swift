@@ -18,7 +18,7 @@ class FactData: BaseData {
         self.category = category
     }
     
-    convenience init(fact: [String: AnyObject]) {
+    convenience init(withFacts fact: [String: AnyObject]) {
         let id = fact["_id"] as! String
         let active = fact["active"] as! Bool
         let ru = fact["ru"] as! String

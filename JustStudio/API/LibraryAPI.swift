@@ -38,7 +38,7 @@ class LibraryAPI : NSObject  {
                     let categories = jsonCategoryArr.shuffle()
                     for element in categories {
                         let dict = element as! [String : AnyObject]
-                        let categoryData = CategoryData(category:dict)
+                        let categoryData = CategoryData(withCategory:dict)
                         categoryArr.append(categoryData)
                         
                     }
@@ -70,7 +70,7 @@ class LibraryAPI : NSObject  {
                     var factsArr: [FactData] = []
                     for element in facts {
                         let dict = element as! [String : AnyObject]
-                        let factData = FactData(fact:dict)
+                        let factData = FactData(withFacts:dict)
                         factsArr.append(factData)
                     }
                     completion(factsArr)
