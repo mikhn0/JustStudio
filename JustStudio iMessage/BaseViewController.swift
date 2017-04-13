@@ -49,8 +49,6 @@ extension Facts {
     }
 }
 
-
-
 extension Facts {
     
     init?(message: MSMessage?) {
@@ -59,11 +57,7 @@ extension Facts {
         
         self.init(queryItems: queryItems)
     }
-    
 }
-
-
-
 
 class BaseViewController: UIViewController, UIViewControllerPreviewingDelegate {
     //FactCell

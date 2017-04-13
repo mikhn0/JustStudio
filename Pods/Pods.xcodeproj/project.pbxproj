@@ -7,113 +7,115 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		081CD42B047A018CE205572D5B1BCFC2 /* SDWebImage-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 339DA8E3E2FCAF8C0CB7155061D75A33 /* SDWebImage-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		09BB38D95A630F4AD5AE04A01FDB8FDE /* SDWebImageCompat.h in Headers */ = {isa = PBXBuildFile; fileRef = 657C2DEDC7E008F33B7202B4025C2E02 /* SDWebImageCompat.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0CBA370FF728243E5F297D8D308E0A90 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E908C6E7FF6BED74CC3236655B68796 /* Foundation.framework */; };
-		169808C84AED16658E622E5D0D5CB945 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F485E95D4C20CF63CBD6B848AFB7DE24 /* UIView+WebCacheOperation.m */; };
-		16FEF692374E63C8940EDB84AC670C8A /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB019A0F22C7B122F3ED75951FDFF524 /* ImageIO.framework */; };
-		1EF03A4B84540186F0839D10808A4E9B /* SDWebImageCompat.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC80FAB25D78F607DDD08BEE732FBB5 /* SDWebImageCompat.m */; };
-		2914E68089FBB45E6A554FE865BCCD46 /* SDWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BD60956221813ED9F99F486D2EEFC2 /* SDWebImageManager.m */; };
-		2B4E46A778A4F274272F7F923E0909CE /* Pods-JustStudio-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FE6E806E237A1FBE25AF39910B8EFCD7 /* Pods-JustStudio-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2DBD0C979437C8216852147943C323F0 /* SDWebImagePrefetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 4166873F3E66A8DD3FE3CCE6AD433AC9 /* SDWebImagePrefetcher.m */; };
-		3003F89894231438DE41805D722AEADC /* UIImageView+WebCache.h in Headers */ = {isa = PBXBuildFile; fileRef = C22ADAC435AC585FB0BCC4CB5AC3191C /* UIImageView+WebCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		309D1310691F011E83B20CC2621D1B72 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E908C6E7FF6BED74CC3236655B68796 /* Foundation.framework */; };
-		336C47FD1CFC075069294D025D95AFD7 /* NSData+ImageContentType.h in Headers */ = {isa = PBXBuildFile; fileRef = 95498D916E6996B094294AF2B746C887 /* NSData+ImageContentType.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		36CE430DA4C190D68494D9C7F81B4AC8 /* UIButton+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1428D2D7A70C2A3751AC9A4E1CFB1419 /* UIButton+WebCache.m */; };
-		4C37EC82B89FE92679A6F2FF20F532CF /* Pods-JustStudio iMessage-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F557F39E646B3CA19D6B86E2EC50BDF0 /* Pods-JustStudio iMessage-dummy.m */; };
-		5392B2CEA9D2E22A57CE3C17566C6CB2 /* SDWebImageDownloaderOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 008B4CAEA626B5C3F3E9D03A91CAE7B4 /* SDWebImageDownloaderOperation.m */; };
-		56FD2CC1B1CB1A2ADBCC56AD7337EC9B /* SDImageCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FEA914C5B2A098DEFD07D3351175289 /* SDImageCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5A9FEC7C67B0C8B1CD1D99BAEF142228 /* Pods-JustStudio iMessage-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BEABB8DD1187ADFA80CAC3E9F3F35BFD /* Pods-JustStudio iMessage-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		610AB9D01E3A5F091B81CB6BF5F76A68 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = B48B86EDDBB12B597F1642FB6AD3D356 /* UIImageView+WebCache.m */; };
-		635F15165443E09A97632C98EC574AB1 /* SDWebImageOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D6EF9A03AA5DE705ED0D74F54915E4C /* SDWebImageOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		63A355192D12EBB2EB758ABA8F4CE839 /* SDWebImageManager.h in Headers */ = {isa = PBXBuildFile; fileRef = DA54E22142922A3551D8744E501F0A59 /* SDWebImageManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		686321A7742AE0A0E3652A7C048358D5 /* SDWebImage-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E0391698CE5532498A38958A88AF71E7 /* SDWebImage-dummy.m */; };
-		6D8A015CAD36D8B0F504E79288415903 /* SDWebImageDownloaderOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 791F1091C9B4B48C1F18A9EA32F33FB5 /* SDWebImageDownloaderOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		72336889B7C373036F64AE05654711B4 /* Pods-JustFacts WatchOS Extension-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DFC8BC996191237ACF37C3A3298B5FD3 /* Pods-JustFacts WatchOS Extension-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		72F7C095C44932C3BC6A41BE8C7798D3 /* SDWebImageDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = D261F58006CF845A74DFE6E9434CB88B /* SDWebImageDecoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8622F7BEEE249ED8D6EC56DD844A6558 /* SDWebImagePrefetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 4059B9CFE8F84CE244ED7607819D80D0 /* SDWebImagePrefetcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8D5B4230209F1DC8B9CF0DF1117FDE52 /* UIButton+WebCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C0FAACF1DB7BEDA7CB1C563D3506FB2 /* UIButton+WebCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		92523FB44AEB681D88A181344C09A0F8 /* SDWebImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 569C10FEFE0C911C8D0C95F4D4ABA563 /* SDWebImageDownloader.m */; };
-		941A43F1AA894A181CC9F4C4FFE0002A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA796AABDF7641C2FE0B565FAC543288 /* Foundation.framework */; };
-		991C46630AE773109C12C744AD0ED05D /* Pods-JustFacts WatchOS Extension-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B14C3567B96737BE8BE102FBC430D48 /* Pods-JustFacts WatchOS Extension-dummy.m */; };
-		A194F00953EBE721668AE860F2D86B74 /* UIView+WebCacheOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = FF9DF78C5EB76068F10F648404F4E35F /* UIView+WebCacheOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A6C62E967F20BD4DCFEC99D84F2D5EBF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E908C6E7FF6BED74CC3236655B68796 /* Foundation.framework */; };
-		A9D542EA548AEB98EF1DECB30FE72828 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 86A5396D1560169D4BC0F9EC130DA474 /* SDImageCache.m */; };
-		B17764B339FF59C8911278589E2AD0E4 /* Pods-JustStudio-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA06E9C5C6B36FFE1F875AAC3235F19 /* Pods-JustStudio-dummy.m */; };
-		B1BE33DFD8CEF1B631E7F7F8008146C3 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E325234BF0F4D97C8793DA543BA2C77 /* NSData+ImageContentType.m */; };
-		B4FF414B693D8ED1EA831C7FB8A3413B /* UIImage+MultiFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = D4DE4EC4F232F09FCA009B4484B07C69 /* UIImage+MultiFormat.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D0FC5FD4E94C78AE293380AD5D34EFA1 /* UIImage+GIF.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3A107875A6CCEB9F0D87F4534F153D /* UIImage+GIF.m */; };
-		DAC9F3200DC16B515C94A9384C825D80 /* UIImage+MultiFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = B1656C83760EA58F8E92F6CCF13EEBD8 /* UIImage+MultiFormat.m */; };
-		E2C2946DD4561E903FF7239B89688E1C /* SDWebImageDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = AB90BF49A32DB148D610D1A49A670EBF /* SDWebImageDownloader.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F1E1C6C8AD65C1922D08CE8E3769FDB1 /* UIImage+GIF.h in Headers */ = {isa = PBXBuildFile; fileRef = A8E6FDE6BC787EC897D7AEF0432E2B01 /* UIImage+GIF.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F600D3E795198F9992448341D034475F /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F31E127349085EFE4CC4B5A9B4F77ED /* UIImageView+HighlightedWebCache.m */; };
-		F7F920B6E0DEE28CD06D84B139B75816 /* SDWebImageDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D81CBF1422ACDD0C66985CD61580A9F /* SDWebImageDecoder.m */; };
-		FAA183129EE8BB77BE34977FA638872B /* UIImageView+HighlightedWebCache.h in Headers */ = {isa = PBXBuildFile; fileRef = A6CB5501F6D7CE40AD53B4C2481EFA40 /* UIImageView+HighlightedWebCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		07E3B70AFB4825A3FA9D80A3636D3BFD /* SDWebImagePrefetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 4059B9CFE8F84CE244ED7607819D80D0 /* SDWebImagePrefetcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0E52CE46F2E2BB91296B046923E0BD24 /* Pods-JustStudio iMessage-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D4BDD4CD8E732AFA98B6C04436C3216D /* Pods-JustStudio iMessage-dummy.m */; };
+		149FE5A13E6D0D300DC35415E2E487AD /* SDWebImagePrefetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 4166873F3E66A8DD3FE3CCE6AD433AC9 /* SDWebImagePrefetcher.m */; };
+		17549351110A16951E4684EDB471E02D /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F31E127349085EFE4CC4B5A9B4F77ED /* UIImageView+HighlightedWebCache.m */; };
+		1D8EDEE6316FDA4DBE958F29A21AA671 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85C745BFEC1E9FEEB2E67AF174ACA2C6 /* Foundation.framework */; };
+		2172C77860F451B737D1258DBB760670 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85C745BFEC1E9FEEB2E67AF174ACA2C6 /* Foundation.framework */; };
+		2209DC4BA1B6AD22C22825212EF24C27 /* UIImage+GIF.h in Headers */ = {isa = PBXBuildFile; fileRef = A8E6FDE6BC787EC897D7AEF0432E2B01 /* UIImage+GIF.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2CBBBD8936D7331000462FDBEA22DA3C /* UIImageView+HighlightedWebCache.h in Headers */ = {isa = PBXBuildFile; fileRef = A6CB5501F6D7CE40AD53B4C2481EFA40 /* UIImageView+HighlightedWebCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3364FE045CCB28BCD81E0D9D1EE4BFF6 /* UIImageView+WebCache.h in Headers */ = {isa = PBXBuildFile; fileRef = C22ADAC435AC585FB0BCC4CB5AC3191C /* UIImageView+WebCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		36664D8793A448BBE752F857738AF76D /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 897AEFBF0822D383493787FFA475DD09 /* ImageIO.framework */; };
+		388AD95B102CA9DE114EB7CFF722BF31 /* UIView+WebCacheOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = FF9DF78C5EB76068F10F648404F4E35F /* UIView+WebCacheOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3A29CC44EB58A2EFBC21CD918041E679 /* SDWebImageDownloaderOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 791F1091C9B4B48C1F18A9EA32F33FB5 /* SDWebImageDownloaderOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		40B297600F795B2246769E80D1FC09B8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CF8DF5AB7960DE7DCE3233F996CCE54 /* Foundation.framework */; };
+		474421DAF40AD675FE125ADA7998E509 /* SDWebImageDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D81CBF1422ACDD0C66985CD61580A9F /* SDWebImageDecoder.m */; };
+		5198975CED3A5E15CD9D3ED9F1AB553C /* SDWebImageCompat.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC80FAB25D78F607DDD08BEE732FBB5 /* SDWebImageCompat.m */; };
+		52AAFE817276055D2562D457E69FD003 /* SDWebImageOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D6EF9A03AA5DE705ED0D74F54915E4C /* SDWebImageOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		55E6D233FA5B52091623F11A898C1C89 /* Pods-JustStudio-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D13494B6EF0B58DF462905317C3DBC46 /* Pods-JustStudio-dummy.m */; };
+		5C6B7E1AA6E3E70AEB6FA8A16D87072A /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 86A5396D1560169D4BC0F9EC130DA474 /* SDImageCache.m */; };
+		67FA38A27C4DC35ADBB1F7DCAB3BAC7D /* UIImage+MultiFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = D4DE4EC4F232F09FCA009B4484B07C69 /* UIImage+MultiFormat.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		72253B4D03D9116D0EF749A0FFF8DD05 /* SDWebImageDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = AB90BF49A32DB148D610D1A49A670EBF /* SDWebImageDownloader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		737C28B91D50589C617E6D99BE4D3F57 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = B48B86EDDBB12B597F1642FB6AD3D356 /* UIImageView+WebCache.m */; };
+		7C1145030D82538D2A20022BC4B2F67F /* UIImage+MultiFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = B1656C83760EA58F8E92F6CCF13EEBD8 /* UIImage+MultiFormat.m */; };
+		7C6418D7128B9AFE2D8C2974C30CE2C1 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E325234BF0F4D97C8793DA543BA2C77 /* NSData+ImageContentType.m */; };
+		82C9F4784EEFB7E1E88259E3339D35F0 /* SDImageCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FEA914C5B2A098DEFD07D3351175289 /* SDImageCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8499B0000F8F1987073E7AC15A23111C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85C745BFEC1E9FEEB2E67AF174ACA2C6 /* Foundation.framework */; };
+		88BA35655D9DA45AC361BB61DD479F6B /* Pods-JustStudio iMessage-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 47131B35D868930F915183BB4E19A417 /* Pods-JustStudio iMessage-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8B2EF7FBA6F8DCF6EB22B93B60184A77 /* SDWebImage-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E0391698CE5532498A38958A88AF71E7 /* SDWebImage-dummy.m */; };
+		8BA695296919ED820A6FB7670331CC67 /* SDWebImageDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = D261F58006CF845A74DFE6E9434CB88B /* SDWebImageDecoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		95944426F4F0FC7B42791B0A2CFD91A6 /* UIButton+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1428D2D7A70C2A3751AC9A4E1CFB1419 /* UIButton+WebCache.m */; };
+		965504E6137CEB0F51B5E23173E9C4E1 /* Pods-JustFacts WatchOS Extension-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 38F6443713F96F313652C1CA15C430B8 /* Pods-JustFacts WatchOS Extension-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9A888CF4B525CFDAA5D3B1C92CD90CE7 /* SDWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BD60956221813ED9F99F486D2EEFC2 /* SDWebImageManager.m */; };
+		9CD952A878E4DD1A2D9ABC628C97C7D2 /* NSData+ImageContentType.h in Headers */ = {isa = PBXBuildFile; fileRef = 95498D916E6996B094294AF2B746C887 /* NSData+ImageContentType.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9DD2E8207129F4E5E6F10C31543E0A96 /* SDWebImageDownloaderOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 008B4CAEA626B5C3F3E9D03A91CAE7B4 /* SDWebImageDownloaderOperation.m */; };
+		AAE205E6ECBCEE80C62F32D989CDB3CD /* Pods-JustStudio-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C6993DF216E39FB7A0598F12C79E533 /* Pods-JustStudio-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B4F242953157CA7428A2D165F9764D6C /* UIButton+WebCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C0FAACF1DB7BEDA7CB1C563D3506FB2 /* UIButton+WebCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C93A48703C2A3B306CDD3FED1C6B14A2 /* SDWebImage-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 339DA8E3E2FCAF8C0CB7155061D75A33 /* SDWebImage-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D28954EEFBE418F01EE749FCEEABB906 /* SDWebImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 569C10FEFE0C911C8D0C95F4D4ABA563 /* SDWebImageDownloader.m */; };
+		D8D0C2290D613A989976676D9BBC6C3A /* UIImage+GIF.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3A107875A6CCEB9F0D87F4534F153D /* UIImage+GIF.m */; };
+		DFE589453510FB7879BEDAF7F0B1493A /* Pods-JustFacts WatchOS Extension-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 06AE73A39515251E7756EFA1D4C5E612 /* Pods-JustFacts WatchOS Extension-dummy.m */; };
+		E08B84400481CE0A9F6FB85AAB032658 /* SDWebImageManager.h in Headers */ = {isa = PBXBuildFile; fileRef = DA54E22142922A3551D8744E501F0A59 /* SDWebImageManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E625623B2935EBE4E79681BE28FBEACE /* SDWebImageCompat.h in Headers */ = {isa = PBXBuildFile; fileRef = 657C2DEDC7E008F33B7202B4025C2E02 /* SDWebImageCompat.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EF31103516A7284752E058C0B4273BC6 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F485E95D4C20CF63CBD6B848AFB7DE24 /* UIView+WebCacheOperation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		03697726B7FB58CB3C2652030B0810D3 /* PBXContainerItemProxy */ = {
+		DE0BF3756EC0DCEE189B83180D94318F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 3BBA15F11821432C31825F81E85E9401;
+			remoteGlobalIDString = 38528573E38D91EE180DE816EC698255;
 			remoteInfo = SDWebImage;
 		};
-		E234FF81C27AC0844451586D73C5C1A3 /* PBXContainerItemProxy */ = {
+		E87E320483516D0973E1A6A3B5C0D80B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 3BBA15F11821432C31825F81E85E9401;
+			remoteGlobalIDString = 38528573E38D91EE180DE816EC698255;
 			remoteInfo = SDWebImage;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		008B4CAEA626B5C3F3E9D03A91CAE7B4 /* SDWebImageDownloaderOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageDownloaderOperation.m; path = SDWebImage/SDWebImageDownloaderOperation.m; sourceTree = "<group>"; };
-		0B851AE06AAC05CFC7C0BD43C5FDBC07 /* Pods-JustStudio-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JustStudio-resources.sh"; sourceTree = "<group>"; };
+		06AE73A39515251E7756EFA1D4C5E612 /* Pods-JustFacts WatchOS Extension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JustFacts WatchOS Extension-dummy.m"; sourceTree = "<group>"; };
 		0D81CBF1422ACDD0C66985CD61580A9F /* SDWebImageDecoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageDecoder.m; path = SDWebImage/SDWebImageDecoder.m; sourceTree = "<group>"; };
-		0DE528056CA0178847BB197145273AEF /* Pods-JustFacts WatchOS Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JustFacts WatchOS Extension.release.xcconfig"; sourceTree = "<group>"; };
 		0E325234BF0F4D97C8793DA543BA2C77 /* NSData+ImageContentType.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSData+ImageContentType.m"; path = "SDWebImage/NSData+ImageContentType.m"; sourceTree = "<group>"; };
 		0F31E127349085EFE4CC4B5A9B4F77ED /* UIImageView+HighlightedWebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+HighlightedWebCache.m"; path = "SDWebImage/UIImageView+HighlightedWebCache.m"; sourceTree = "<group>"; };
-		119BF4722CF230017BCFA6FF736904A1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1407F08BC8463A1EEB1F74B5A3876890 /* Pods-JustStudio iMessage-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JustStudio iMessage-acknowledgements.plist"; sourceTree = "<group>"; };
+		0F41BD974F08B342C846EFCB2B0117B8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1143C3B6FAAAF0B00510D1FAE95595E7 /* Pods-JustStudio iMessage.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-JustStudio iMessage.modulemap"; sourceTree = "<group>"; };
 		1428D2D7A70C2A3751AC9A4E1CFB1419 /* UIButton+WebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+WebCache.m"; path = "SDWebImage/UIButton+WebCache.m"; sourceTree = "<group>"; };
-		1855DD995C4A2E0CC0B463BEEAD43B08 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1CAFE1EE953C789C92762ED9808A4A54 /* Pods-JustFacts WatchOS Extension-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JustFacts WatchOS Extension-frameworks.sh"; sourceTree = "<group>"; };
-		236112F647CA3EF9421237442DEAF442 /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2EA964284A4B93F4E583EEB3BFAE5ACE /* Pods-JustStudio iMessage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JustStudio iMessage.debug.xcconfig"; sourceTree = "<group>"; };
+		1AF0C4B0323CA12A6069B5616576277E /* Pods-JustStudio iMessage-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JustStudio iMessage-acknowledgements.markdown"; sourceTree = "<group>"; };
+		2180187DBE0E4C1F7203DB3C3531689C /* Pods-JustStudio iMessage-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JustStudio iMessage-acknowledgements.plist"; sourceTree = "<group>"; };
+		236112F647CA3EF9421237442DEAF442 /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SDWebImage.framework; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		296776DE206759726DFA03DD9D632F52 /* Pods-JustFacts WatchOS Extension-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JustFacts WatchOS Extension-acknowledgements.markdown"; sourceTree = "<group>"; };
+		2FBA43BC021C4BB4FC1F2972D8AFD1AF /* Pods-JustStudio.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-JustStudio.modulemap"; sourceTree = "<group>"; };
 		339DA8E3E2FCAF8C0CB7155061D75A33 /* SDWebImage-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SDWebImage-umbrella.h"; sourceTree = "<group>"; };
-		38D1AD9EBA37BA926B6BDF1CA670CBC9 /* Pods-JustStudio iMessage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JustStudio iMessage.release.xcconfig"; sourceTree = "<group>"; };
-		3BD741F2871ECAEA0032B1B04D08076F /* Pods-JustFacts WatchOS Extension-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JustFacts WatchOS Extension-acknowledgements.plist"; sourceTree = "<group>"; };
+		38F6443713F96F313652C1CA15C430B8 /* Pods-JustFacts WatchOS Extension-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JustFacts WatchOS Extension-umbrella.h"; sourceTree = "<group>"; };
 		4059B9CFE8F84CE244ED7607819D80D0 /* SDWebImagePrefetcher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImagePrefetcher.h; path = SDWebImage/SDWebImagePrefetcher.h; sourceTree = "<group>"; };
 		4166873F3E66A8DD3FE3CCE6AD433AC9 /* SDWebImagePrefetcher.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImagePrefetcher.m; path = SDWebImage/SDWebImagePrefetcher.m; sourceTree = "<group>"; };
-		41A31FD188E54937A65C4EB0DE2BAC0F /* Pods-JustStudio iMessage-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JustStudio iMessage-resources.sh"; sourceTree = "<group>"; };
-		43BA6FC6D63B13BEB7F8C5C9ED04137E /* Pods-JustStudio-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JustStudio-frameworks.sh"; sourceTree = "<group>"; };
+		44736B22E0EA7059A47BCF7CA8662719 /* Pods-JustFacts WatchOS Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JustFacts WatchOS Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		47131B35D868930F915183BB4E19A417 /* Pods-JustStudio iMessage-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JustStudio iMessage-umbrella.h"; sourceTree = "<group>"; };
 		4C0FAACF1DB7BEDA7CB1C563D3506FB2 /* UIButton+WebCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+WebCache.h"; path = "SDWebImage/UIButton+WebCache.h"; sourceTree = "<group>"; };
 		569C10FEFE0C911C8D0C95F4D4ABA563 /* SDWebImageDownloader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageDownloader.m; path = SDWebImage/SDWebImageDownloader.m; sourceTree = "<group>"; };
-		58F92A2FE86894A587AEC47BA90A4426 /* Pods-JustStudio-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JustStudio-acknowledgements.plist"; sourceTree = "<group>"; };
-		5B14C3567B96737BE8BE102FBC430D48 /* Pods-JustFacts WatchOS Extension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JustFacts WatchOS Extension-dummy.m"; sourceTree = "<group>"; };
+		5A155CA3AEDF1EBA3DB3F326773A06A4 /* Pods-JustFacts WatchOS Extension-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JustFacts WatchOS Extension-frameworks.sh"; sourceTree = "<group>"; };
+		5B68D9FF291E140F456F1D2482E9F214 /* Pods-JustStudio iMessage-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JustStudio iMessage-resources.sh"; sourceTree = "<group>"; };
 		5D6EF9A03AA5DE705ED0D74F54915E4C /* SDWebImageOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageOperation.h; path = SDWebImage/SDWebImageOperation.h; sourceTree = "<group>"; };
-		5FA06E9C5C6B36FFE1F875AAC3235F19 /* Pods-JustStudio-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JustStudio-dummy.m"; sourceTree = "<group>"; };
 		5FEA914C5B2A098DEFD07D3351175289 /* SDImageCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageCache.h; path = SDWebImage/SDImageCache.h; sourceTree = "<group>"; };
 		63BD60956221813ED9F99F486D2EEFC2 /* SDWebImageManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageManager.m; path = SDWebImage/SDWebImageManager.m; sourceTree = "<group>"; };
-		644B1B9F6961B964182FB0E6C9DA25A0 /* Pods-JustStudio iMessage-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JustStudio iMessage-frameworks.sh"; sourceTree = "<group>"; };
+		64BE26093929A059547390A27E96F4FB /* Pods-JustStudio-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JustStudio-resources.sh"; sourceTree = "<group>"; };
 		657C2DEDC7E008F33B7202B4025C2E02 /* SDWebImageCompat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageCompat.h; path = SDWebImage/SDWebImageCompat.h; sourceTree = "<group>"; };
+		67C26AD93B1CDC7B96ED48744AC5F49A /* Pods-JustStudio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JustStudio.debug.xcconfig"; sourceTree = "<group>"; };
 		67E4C936831EF9C97C5C6DE66FAACD75 /* SDWebImage-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SDWebImage-prefix.pch"; sourceTree = "<group>"; };
-		6BD0EC33F68E88B159FF4888967021CD /* Pods_JustStudio_iMessage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JustStudio_iMessage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6E908C6E7FF6BED74CC3236655B68796 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		70A8545DDE2250FE8706B2BCC2B00C20 /* Pods-JustFacts WatchOS Extension-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JustFacts WatchOS Extension-acknowledgements.markdown"; sourceTree = "<group>"; };
-		72F514D7660C0AD4DC4667BA283597FE /* Pods_JustStudio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JustStudio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AFA75C7945B722FA33B754426EC2769 /* Pods-JustStudio-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JustStudio-acknowledgements.markdown"; sourceTree = "<group>"; };
+		6BD0EC33F68E88B159FF4888967021CD /* Pods_JustStudio_iMessage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_JustStudio_iMessage.framework; path = "Pods-JustStudio iMessage.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7201E238AD8D15E2E922ECD687C326AF /* Pods-JustStudio-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JustStudio-frameworks.sh"; sourceTree = "<group>"; };
+		72F514D7660C0AD4DC4667BA283597FE /* Pods_JustStudio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_JustStudio.framework; path = "Pods-JustStudio.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		769D2BB584B7CB634226E1C31B97FC3F /* Pods-JustFacts WatchOS Extension-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JustFacts WatchOS Extension-resources.sh"; sourceTree = "<group>"; };
 		791F1091C9B4B48C1F18A9EA32F33FB5 /* SDWebImageDownloaderOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageDownloaderOperation.h; path = SDWebImage/SDWebImageDownloaderOperation.h; sourceTree = "<group>"; };
-		7A01BA4FA1CE970057141354017B73BE /* Pods-JustFacts WatchOS Extension-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JustFacts WatchOS Extension-resources.sh"; sourceTree = "<group>"; };
 		7C3D4B873BA7EC5EACE3432E3F6DD7B9 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = Frameworks/GoogleMobileAds.framework; sourceTree = "<group>"; };
-		83E908FB8889E94F9FCCEBD05E483816 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7CFEE24610786E332B9BDB82E9476F16 /* Pods-JustFacts WatchOS Extension-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JustFacts WatchOS Extension-acknowledgements.plist"; sourceTree = "<group>"; };
+		85C745BFEC1E9FEEB2E67AF174ACA2C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		86A5396D1560169D4BC0F9EC130DA474 /* SDImageCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageCache.m; path = SDWebImage/SDImageCache.m; sourceTree = "<group>"; };
-		8A91203F9A99138C5A9E348581DABFC4 /* Pods-JustFacts WatchOS Extension.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-JustFacts WatchOS Extension.modulemap"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		897AEFBF0822D383493787FFA475DD09 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/ImageIO.framework; sourceTree = DEVELOPER_DIR; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		95498D916E6996B094294AF2B746C887 /* NSData+ImageContentType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSData+ImageContentType.h"; path = "SDWebImage/NSData+ImageContentType.h"; sourceTree = "<group>"; };
-		99BD65902AD62A32F301259C635BF8DE /* Pods-JustStudio-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JustStudio-acknowledgements.markdown"; sourceTree = "<group>"; };
-		A3F8309BC18719EE02B6A95F4E03DAE5 /* Pods-JustStudio iMessage-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JustStudio iMessage-acknowledgements.markdown"; sourceTree = "<group>"; };
+		9C6993DF216E39FB7A0598F12C79E533 /* Pods-JustStudio-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JustStudio-umbrella.h"; sourceTree = "<group>"; };
+		9CF8DF5AB7960DE7DCE3233F996CCE54 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS3.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		A2B3ECFB55CFB6ABAC974E74DD270782 /* Pods-JustFacts WatchOS Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JustFacts WatchOS Extension.release.xcconfig"; sourceTree = "<group>"; };
+		A3FCDA30BDD38043964D533D9A5F234C /* Pods-JustStudio-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JustStudio-acknowledgements.plist"; sourceTree = "<group>"; };
 		A6CB5501F6D7CE40AD53B4C2481EFA40 /* UIImageView+HighlightedWebCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+HighlightedWebCache.h"; path = "SDWebImage/UIImageView+HighlightedWebCache.h"; sourceTree = "<group>"; };
 		A8E6FDE6BC787EC897D7AEF0432E2B01 /* UIImage+GIF.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+GIF.h"; path = "SDWebImage/UIImage+GIF.h"; sourceTree = "<group>"; };
 		AB90BF49A32DB148D610D1A49A670EBF /* SDWebImageDownloader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageDownloader.h; path = SDWebImage/SDWebImageDownloader.h; sourceTree = "<group>"; };
@@ -121,77 +123,64 @@
 		B1656C83760EA58F8E92F6CCF13EEBD8 /* UIImage+MultiFormat.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+MultiFormat.m"; path = "SDWebImage/UIImage+MultiFormat.m"; sourceTree = "<group>"; };
 		B48B86EDDBB12B597F1642FB6AD3D356 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+WebCache.m"; path = "SDWebImage/UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		B557D272F7104A497835AD41A0490C6C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BBE0F297442D5539D3E397BB6295655F /* SDWebImage.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SDWebImage.modulemap; sourceTree = "<group>"; };
-		BEABB8DD1187ADFA80CAC3E9F3F35BFD /* Pods-JustStudio iMessage-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JustStudio iMessage-umbrella.h"; sourceTree = "<group>"; };
-		C00094FC5DD5A1AB7CE667C190EB7C72 /* Pods-JustStudio.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-JustStudio.modulemap"; sourceTree = "<group>"; };
+		BBE0F297442D5539D3E397BB6295655F /* SDWebImage.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SDWebImage.modulemap; sourceTree = "<group>"; };
 		C22ADAC435AC585FB0BCC4CB5AC3191C /* UIImageView+WebCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+WebCache.h"; path = "SDWebImage/UIImageView+WebCache.h"; sourceTree = "<group>"; };
-		C7420897C2CF3518E11523FD0C719362 /* Pods-JustStudio iMessage.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-JustStudio iMessage.modulemap"; sourceTree = "<group>"; };
-		CA796AABDF7641C2FE0B565FAC543288 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS2.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		CBF16977437EBBC342D05011AE180505 /* Pods-JustStudio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JustStudio.release.xcconfig"; sourceTree = "<group>"; };
+		C46CBE84163F25A6749C938F26C3ED06 /* Pods-JustStudio iMessage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JustStudio iMessage.release.xcconfig"; sourceTree = "<group>"; };
+		CE6ACCD9A664D80055B6802A52030F90 /* Pods-JustStudio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JustStudio.release.xcconfig"; sourceTree = "<group>"; };
+		D13494B6EF0B58DF462905317C3DBC46 /* Pods-JustStudio-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JustStudio-dummy.m"; sourceTree = "<group>"; };
 		D261F58006CF845A74DFE6E9434CB88B /* SDWebImageDecoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageDecoder.h; path = SDWebImage/SDWebImageDecoder.h; sourceTree = "<group>"; };
+		D4BDD4CD8E732AFA98B6C04436C3216D /* Pods-JustStudio iMessage-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JustStudio iMessage-dummy.m"; sourceTree = "<group>"; };
 		D4DE4EC4F232F09FCA009B4484B07C69 /* UIImage+MultiFormat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+MultiFormat.h"; path = "SDWebImage/UIImage+MultiFormat.h"; sourceTree = "<group>"; };
-		D8124998C44A09CF8A9C5CAE5E2505A8 /* Pods_JustFacts_WatchOS_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JustFacts_WatchOS_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8124998C44A09CF8A9C5CAE5E2505A8 /* Pods_JustFacts_WatchOS_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_JustFacts_WatchOS_Extension.framework; path = "Pods-JustFacts WatchOS Extension.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA54E22142922A3551D8744E501F0A59 /* SDWebImageManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageManager.h; path = SDWebImage/SDWebImageManager.h; sourceTree = "<group>"; };
-		DB019A0F22C7B122F3ED75951FDFF524 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/ImageIO.framework; sourceTree = DEVELOPER_DIR; };
-		DF70737C3400098D96192747BD4C75A9 /* Pods-JustStudio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JustStudio.debug.xcconfig"; sourceTree = "<group>"; };
+		DB3C74882AB9E372C7897AB20E67A57B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB5193B4CB2A9C82F5F6792540980931 /* Pods-JustStudio iMessage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JustStudio iMessage.debug.xcconfig"; sourceTree = "<group>"; };
 		DFC80FAB25D78F607DDD08BEE732FBB5 /* SDWebImageCompat.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageCompat.m; path = SDWebImage/SDWebImageCompat.m; sourceTree = "<group>"; };
-		DFC8BC996191237ACF37C3A3298B5FD3 /* Pods-JustFacts WatchOS Extension-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JustFacts WatchOS Extension-umbrella.h"; sourceTree = "<group>"; };
 		E0391698CE5532498A38958A88AF71E7 /* SDWebImage-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SDWebImage-dummy.m"; sourceTree = "<group>"; };
-		E5943044D7E5C483C7B313E3F0876576 /* Pods-JustFacts WatchOS Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JustFacts WatchOS Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		E8DA480EF3225E02E1C3C19D817D4B11 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE3A107875A6CCEB9F0D87F4534F153D /* UIImage+GIF.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+GIF.m"; path = "SDWebImage/UIImage+GIF.m"; sourceTree = "<group>"; };
+		F1BB4455999ECA9AC0691AFCB43F5DE1 /* Pods-JustFacts WatchOS Extension.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-JustFacts WatchOS Extension.modulemap"; sourceTree = "<group>"; };
 		F485E95D4C20CF63CBD6B848AFB7DE24 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+WebCacheOperation.m"; path = "SDWebImage/UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
-		F557F39E646B3CA19D6B86E2EC50BDF0 /* Pods-JustStudio iMessage-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JustStudio iMessage-dummy.m"; sourceTree = "<group>"; };
-		FE6E806E237A1FBE25AF39910B8EFCD7 /* Pods-JustStudio-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JustStudio-umbrella.h"; sourceTree = "<group>"; };
 		FF9DF78C5EB76068F10F648404F4E35F /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+WebCacheOperation.h"; path = "SDWebImage/UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		47271AD453CADD73490D036EC2E895C8 /* Frameworks */ = {
+		333C748F3A0D7811F1786B28FC890169 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0CBA370FF728243E5F297D8D308E0A90 /* Foundation.framework in Frameworks */,
+				1D8EDEE6316FDA4DBE958F29A21AA671 /* Foundation.framework in Frameworks */,
+				36664D8793A448BBE752F857738AF76D /* ImageIO.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9759001FC82E65F62D91DC5348AE8DDD /* Frameworks */ = {
+		D022437E68049ED0BA14D1FD2ACB2116 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				941A43F1AA894A181CC9F4C4FFE0002A /* Foundation.framework in Frameworks */,
+				8499B0000F8F1987073E7AC15A23111C /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BB68B1FAED02FDA196C5C6EB884FA39B /* Frameworks */ = {
+		D667E4C165FBC17EC1E880895E4F48AA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6C62E967F20BD4DCFEC99D84F2D5EBF /* Foundation.framework in Frameworks */,
+				2172C77860F451B737D1258DBB760670 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DBF50CEC873B94778A5E8848EFA1E1B0 /* Frameworks */ = {
+		DADE7D1291B00EFD713B7156A75BD91C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				309D1310691F011E83B20CC2621D1B72 /* Foundation.framework in Frameworks */,
-				16FEF692374E63C8940EDB84AC670C8A /* ImageIO.framework in Frameworks */,
+				40B297600F795B2246769E80D1FC09B8 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0C0DB006657BE17D5FFEC56C12571663 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				94F7A23BD781278CCCE89DC09EEC7D64 /* Pods-JustFacts WatchOS Extension */,
-				E7E745D02FA9D8A8495F5A934F0E562B /* Pods-JustStudio */,
-				8379028C14645A7DAEE37CE977554956 /* Pods-JustStudio iMessage */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
 		0D20945488F0F93FEE5ADBCEC9635A42 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,13 +192,39 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		46A77505D14E3F5D84731B41CAD9E3E3 /* iOS */ = {
+		268420C8694081096C5575BF05143550 /* Pods-JustStudio iMessage */ = {
 			isa = PBXGroup;
 			children = (
-				6E908C6E7FF6BED74CC3236655B68796 /* Foundation.framework */,
-				DB019A0F22C7B122F3ED75951FDFF524 /* ImageIO.framework */,
+				0F41BD974F08B342C846EFCB2B0117B8 /* Info.plist */,
+				1143C3B6FAAAF0B00510D1FAE95595E7 /* Pods-JustStudio iMessage.modulemap */,
+				1AF0C4B0323CA12A6069B5616576277E /* Pods-JustStudio iMessage-acknowledgements.markdown */,
+				2180187DBE0E4C1F7203DB3C3531689C /* Pods-JustStudio iMessage-acknowledgements.plist */,
+				D4BDD4CD8E732AFA98B6C04436C3216D /* Pods-JustStudio iMessage-dummy.m */,
+				5B68D9FF291E140F456F1D2482E9F214 /* Pods-JustStudio iMessage-resources.sh */,
+				47131B35D868930F915183BB4E19A417 /* Pods-JustStudio iMessage-umbrella.h */,
+				DB5193B4CB2A9C82F5F6792540980931 /* Pods-JustStudio iMessage.debug.xcconfig */,
+				C46CBE84163F25A6749C938F26C3ED06 /* Pods-JustStudio iMessage.release.xcconfig */,
 			);
-			name = iOS;
+			name = "Pods-JustStudio iMessage";
+			path = "Target Support Files/Pods-JustStudio iMessage";
+			sourceTree = "<group>";
+		};
+		348C9F20270EA00E229CD3E4E28E310E /* Pods-JustStudio */ = {
+			isa = PBXGroup;
+			children = (
+				DB3C74882AB9E372C7897AB20E67A57B /* Info.plist */,
+				2FBA43BC021C4BB4FC1F2972D8AFD1AF /* Pods-JustStudio.modulemap */,
+				6AFA75C7945B722FA33B754426EC2769 /* Pods-JustStudio-acknowledgements.markdown */,
+				A3FCDA30BDD38043964D533D9A5F234C /* Pods-JustStudio-acknowledgements.plist */,
+				D13494B6EF0B58DF462905317C3DBC46 /* Pods-JustStudio-dummy.m */,
+				7201E238AD8D15E2E922ECD687C326AF /* Pods-JustStudio-frameworks.sh */,
+				64BE26093929A059547390A27E96F4FB /* Pods-JustStudio-resources.sh */,
+				9C6993DF216E39FB7A0598F12C79E533 /* Pods-JustStudio-umbrella.h */,
+				67C26AD93B1CDC7B96ED48744AC5F49A /* Pods-JustStudio.debug.xcconfig */,
+				CE6ACCD9A664D80055B6802A52030F90 /* Pods-JustStudio.release.xcconfig */,
+			);
+			name = "Pods-JustStudio";
+			path = "Target Support Files/Pods-JustStudio";
 			sourceTree = "<group>";
 		};
 		4BCBF6C317C64E46B96EC5EF1F63215C /* SDWebImage */ = {
@@ -218,15 +233,18 @@
 				A0B84E212227F555785498D6FA5D7BFE /* Core */,
 				C3A70302AC70D3E45F8952F07C59E3F0 /* Support Files */,
 			);
+			name = SDWebImage;
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
-		55CA75CC51399A6CB51BF3F5A2DBE5E9 /* watchOS */ = {
+		5ECA134DB9E356F90BA86537B6CED938 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				CA796AABDF7641C2FE0B565FAC543288 /* Foundation.framework */,
+				E2096D63E3AC9CAB5547D2CA5DF92C31 /* Pods-JustFacts WatchOS Extension */,
+				348C9F20270EA00E229CD3E4E28E310E /* Pods-JustStudio */,
+				268420C8694081096C5575BF05143550 /* Pods-JustStudio iMessage */,
 			);
-			name = watchOS;
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 		71C859B94E0B5E196F8B72927227887E /* Frameworks */ = {
@@ -244,53 +262,26 @@
 				8B6D968432DA454CBE7BE3761821A977 /* Frameworks */,
 				A740D6CC19109F2094D643CD4D720DCF /* Pods */,
 				0D20945488F0F93FEE5ADBCEC9635A42 /* Products */,
-				0C0DB006657BE17D5FFEC56C12571663 /* Targets Support Files */,
+				5ECA134DB9E356F90BA86537B6CED938 /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		8379028C14645A7DAEE37CE977554956 /* Pods-JustStudio iMessage */ = {
-			isa = PBXGroup;
-			children = (
-				1855DD995C4A2E0CC0B463BEEAD43B08 /* Info.plist */,
-				C7420897C2CF3518E11523FD0C719362 /* Pods-JustStudio iMessage.modulemap */,
-				A3F8309BC18719EE02B6A95F4E03DAE5 /* Pods-JustStudio iMessage-acknowledgements.markdown */,
-				1407F08BC8463A1EEB1F74B5A3876890 /* Pods-JustStudio iMessage-acknowledgements.plist */,
-				F557F39E646B3CA19D6B86E2EC50BDF0 /* Pods-JustStudio iMessage-dummy.m */,
-				644B1B9F6961B964182FB0E6C9DA25A0 /* Pods-JustStudio iMessage-frameworks.sh */,
-				41A31FD188E54937A65C4EB0DE2BAC0F /* Pods-JustStudio iMessage-resources.sh */,
-				BEABB8DD1187ADFA80CAC3E9F3F35BFD /* Pods-JustStudio iMessage-umbrella.h */,
-				2EA964284A4B93F4E583EEB3BFAE5ACE /* Pods-JustStudio iMessage.debug.xcconfig */,
-				38D1AD9EBA37BA926B6BDF1CA670CBC9 /* Pods-JustStudio iMessage.release.xcconfig */,
-			);
-			name = "Pods-JustStudio iMessage";
-			path = "Target Support Files/Pods-JustStudio iMessage";
 			sourceTree = "<group>";
 		};
 		8B6D968432DA454CBE7BE3761821A977 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				46A77505D14E3F5D84731B41CAD9E3E3 /* iOS */,
-				55CA75CC51399A6CB51BF3F5A2DBE5E9 /* watchOS */,
+				92249EBFD8A28BF833C95E6D1D4C1813 /* iOS */,
+				F6B40A53422DA946F51BDC9CC563B492 /* watchOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		94F7A23BD781278CCCE89DC09EEC7D64 /* Pods-JustFacts WatchOS Extension */ = {
+		92249EBFD8A28BF833C95E6D1D4C1813 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				83E908FB8889E94F9FCCEBD05E483816 /* Info.plist */,
-				8A91203F9A99138C5A9E348581DABFC4 /* Pods-JustFacts WatchOS Extension.modulemap */,
-				70A8545DDE2250FE8706B2BCC2B00C20 /* Pods-JustFacts WatchOS Extension-acknowledgements.markdown */,
-				3BD741F2871ECAEA0032B1B04D08076F /* Pods-JustFacts WatchOS Extension-acknowledgements.plist */,
-				5B14C3567B96737BE8BE102FBC430D48 /* Pods-JustFacts WatchOS Extension-dummy.m */,
-				1CAFE1EE953C789C92762ED9808A4A54 /* Pods-JustFacts WatchOS Extension-frameworks.sh */,
-				7A01BA4FA1CE970057141354017B73BE /* Pods-JustFacts WatchOS Extension-resources.sh */,
-				DFC8BC996191237ACF37C3A3298B5FD3 /* Pods-JustFacts WatchOS Extension-umbrella.h */,
-				E5943044D7E5C483C7B313E3F0876576 /* Pods-JustFacts WatchOS Extension.debug.xcconfig */,
-				0DE528056CA0178847BB197145273AEF /* Pods-JustFacts WatchOS Extension.release.xcconfig */,
+				85C745BFEC1E9FEEB2E67AF174ACA2C6 /* Foundation.framework */,
+				897AEFBF0822D383493787FFA475DD09 /* ImageIO.framework */,
 			);
-			name = "Pods-JustFacts WatchOS Extension";
-			path = "Target Support Files/Pods-JustFacts WatchOS Extension";
+			name = iOS;
 			sourceTree = "<group>";
 		};
 		A0B84E212227F555785498D6FA5D7BFE /* Core */ = {
@@ -343,6 +334,7 @@
 			children = (
 				71C859B94E0B5E196F8B72927227887E /* Frameworks */,
 			);
+			name = "Google-Mobile-Ads-SDK";
 			path = "Google-Mobile-Ads-SDK";
 			sourceTree = "<group>";
 		};
@@ -360,84 +352,92 @@
 			path = "../Target Support Files/SDWebImage";
 			sourceTree = "<group>";
 		};
-		E7E745D02FA9D8A8495F5A934F0E562B /* Pods-JustStudio */ = {
+		E2096D63E3AC9CAB5547D2CA5DF92C31 /* Pods-JustFacts WatchOS Extension */ = {
 			isa = PBXGroup;
 			children = (
-				119BF4722CF230017BCFA6FF736904A1 /* Info.plist */,
-				C00094FC5DD5A1AB7CE667C190EB7C72 /* Pods-JustStudio.modulemap */,
-				99BD65902AD62A32F301259C635BF8DE /* Pods-JustStudio-acknowledgements.markdown */,
-				58F92A2FE86894A587AEC47BA90A4426 /* Pods-JustStudio-acknowledgements.plist */,
-				5FA06E9C5C6B36FFE1F875AAC3235F19 /* Pods-JustStudio-dummy.m */,
-				43BA6FC6D63B13BEB7F8C5C9ED04137E /* Pods-JustStudio-frameworks.sh */,
-				0B851AE06AAC05CFC7C0BD43C5FDBC07 /* Pods-JustStudio-resources.sh */,
-				FE6E806E237A1FBE25AF39910B8EFCD7 /* Pods-JustStudio-umbrella.h */,
-				DF70737C3400098D96192747BD4C75A9 /* Pods-JustStudio.debug.xcconfig */,
-				CBF16977437EBBC342D05011AE180505 /* Pods-JustStudio.release.xcconfig */,
+				E8DA480EF3225E02E1C3C19D817D4B11 /* Info.plist */,
+				F1BB4455999ECA9AC0691AFCB43F5DE1 /* Pods-JustFacts WatchOS Extension.modulemap */,
+				296776DE206759726DFA03DD9D632F52 /* Pods-JustFacts WatchOS Extension-acknowledgements.markdown */,
+				7CFEE24610786E332B9BDB82E9476F16 /* Pods-JustFacts WatchOS Extension-acknowledgements.plist */,
+				06AE73A39515251E7756EFA1D4C5E612 /* Pods-JustFacts WatchOS Extension-dummy.m */,
+				5A155CA3AEDF1EBA3DB3F326773A06A4 /* Pods-JustFacts WatchOS Extension-frameworks.sh */,
+				769D2BB584B7CB634226E1C31B97FC3F /* Pods-JustFacts WatchOS Extension-resources.sh */,
+				38F6443713F96F313652C1CA15C430B8 /* Pods-JustFacts WatchOS Extension-umbrella.h */,
+				44736B22E0EA7059A47BCF7CA8662719 /* Pods-JustFacts WatchOS Extension.debug.xcconfig */,
+				A2B3ECFB55CFB6ABAC974E74DD270782 /* Pods-JustFacts WatchOS Extension.release.xcconfig */,
 			);
-			name = "Pods-JustStudio";
-			path = "Target Support Files/Pods-JustStudio";
+			name = "Pods-JustFacts WatchOS Extension";
+			path = "Target Support Files/Pods-JustFacts WatchOS Extension";
+			sourceTree = "<group>";
+		};
+		F6B40A53422DA946F51BDC9CC563B492 /* watchOS */ = {
+			isa = PBXGroup;
+			children = (
+				9CF8DF5AB7960DE7DCE3233F996CCE54 /* Foundation.framework */,
+			);
+			name = watchOS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		B8C02C5B196381145AF3C1DBA45591F4 /* Headers */ = {
+		00AE0108CDE00EF5325230F46269A15A /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B4E46A778A4F274272F7F923E0909CE /* Pods-JustStudio-umbrella.h in Headers */,
+				AAE205E6ECBCEE80C62F32D989CDB3CD /* Pods-JustStudio-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B92D0A7D99EFBA1333282395FA271129 /* Headers */ = {
+		2ED5ED383E0962EAAF577E2B10959449 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				336C47FD1CFC075069294D025D95AFD7 /* NSData+ImageContentType.h in Headers */,
-				56FD2CC1B1CB1A2ADBCC56AD7337EC9B /* SDImageCache.h in Headers */,
-				081CD42B047A018CE205572D5B1BCFC2 /* SDWebImage-umbrella.h in Headers */,
-				09BB38D95A630F4AD5AE04A01FDB8FDE /* SDWebImageCompat.h in Headers */,
-				72F7C095C44932C3BC6A41BE8C7798D3 /* SDWebImageDecoder.h in Headers */,
-				E2C2946DD4561E903FF7239B89688E1C /* SDWebImageDownloader.h in Headers */,
-				6D8A015CAD36D8B0F504E79288415903 /* SDWebImageDownloaderOperation.h in Headers */,
-				63A355192D12EBB2EB758ABA8F4CE839 /* SDWebImageManager.h in Headers */,
-				635F15165443E09A97632C98EC574AB1 /* SDWebImageOperation.h in Headers */,
-				8622F7BEEE249ED8D6EC56DD844A6558 /* SDWebImagePrefetcher.h in Headers */,
-				8D5B4230209F1DC8B9CF0DF1117FDE52 /* UIButton+WebCache.h in Headers */,
-				F1E1C6C8AD65C1922D08CE8E3769FDB1 /* UIImage+GIF.h in Headers */,
-				B4FF414B693D8ED1EA831C7FB8A3413B /* UIImage+MultiFormat.h in Headers */,
-				FAA183129EE8BB77BE34977FA638872B /* UIImageView+HighlightedWebCache.h in Headers */,
-				3003F89894231438DE41805D722AEADC /* UIImageView+WebCache.h in Headers */,
-				A194F00953EBE721668AE860F2D86B74 /* UIView+WebCacheOperation.h in Headers */,
+				965504E6137CEB0F51B5E23173E9C4E1 /* Pods-JustFacts WatchOS Extension-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CBD94891A4F616353ACEBD551DCA19B4 /* Headers */ = {
+		8BB3D4C917049B2EE278938567F2C4AD /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A9FEC7C67B0C8B1CD1D99BAEF142228 /* Pods-JustStudio iMessage-umbrella.h in Headers */,
+				88BA35655D9DA45AC361BB61DD479F6B /* Pods-JustStudio iMessage-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DB44A8EF69EF0B6C442481A5D2905342 /* Headers */ = {
+		971B701EE583359474AED3ECA64A6E6A /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72336889B7C373036F64AE05654711B4 /* Pods-JustFacts WatchOS Extension-umbrella.h in Headers */,
+				9CD952A878E4DD1A2D9ABC628C97C7D2 /* NSData+ImageContentType.h in Headers */,
+				82C9F4784EEFB7E1E88259E3339D35F0 /* SDImageCache.h in Headers */,
+				C93A48703C2A3B306CDD3FED1C6B14A2 /* SDWebImage-umbrella.h in Headers */,
+				E625623B2935EBE4E79681BE28FBEACE /* SDWebImageCompat.h in Headers */,
+				8BA695296919ED820A6FB7670331CC67 /* SDWebImageDecoder.h in Headers */,
+				72253B4D03D9116D0EF749A0FFF8DD05 /* SDWebImageDownloader.h in Headers */,
+				3A29CC44EB58A2EFBC21CD918041E679 /* SDWebImageDownloaderOperation.h in Headers */,
+				E08B84400481CE0A9F6FB85AAB032658 /* SDWebImageManager.h in Headers */,
+				52AAFE817276055D2562D457E69FD003 /* SDWebImageOperation.h in Headers */,
+				07E3B70AFB4825A3FA9D80A3636D3BFD /* SDWebImagePrefetcher.h in Headers */,
+				B4F242953157CA7428A2D165F9764D6C /* UIButton+WebCache.h in Headers */,
+				2209DC4BA1B6AD22C22825212EF24C27 /* UIImage+GIF.h in Headers */,
+				67FA38A27C4DC35ADBB1F7DCAB3BAC7D /* UIImage+MultiFormat.h in Headers */,
+				2CBBBD8936D7331000462FDBEA22DA3C /* UIImageView+HighlightedWebCache.h in Headers */,
+				3364FE045CCB28BCD81E0D9D1EE4BFF6 /* UIImageView+WebCache.h in Headers */,
+				388AD95B102CA9DE114EB7CFF722BF31 /* UIView+WebCacheOperation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		3BBA15F11821432C31825F81E85E9401 /* SDWebImage */ = {
+		38528573E38D91EE180DE816EC698255 /* SDWebImage */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1233C8B7C54DDB35FF6F876F1F820991 /* Build configuration list for PBXNativeTarget "SDWebImage" */;
+			buildConfigurationList = 6CABBA33863A967298D9B928E594F58A /* Build configuration list for PBXNativeTarget "SDWebImage" */;
 			buildPhases = (
-				09147EC29DF9A42A7D38907C627FED7C /* Sources */,
-				DBF50CEC873B94778A5E8848EFA1E1B0 /* Frameworks */,
-				B92D0A7D99EFBA1333282395FA271129 /* Headers */,
+				BD8B58FCFB8776EE92CD92260F6AE643 /* Sources */,
+				333C748F3A0D7811F1786B28FC890169 /* Frameworks */,
+				971B701EE583359474AED3ECA64A6E6A /* Headers */,
 			);
 			buildRules = (
 			);
@@ -448,13 +448,31 @@
 			productReference = 236112F647CA3EF9421237442DEAF442 /* SDWebImage.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		7FE07A25286162E563A4DA9F49C76A25 /* Pods-JustFacts WatchOS Extension */ = {
+		5B667D0511981EF6500C723D1035B985 /* Pods-JustStudio iMessage */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B2E4A6372F022EA610329F78EFA88FCA /* Build configuration list for PBXNativeTarget "Pods-JustFacts WatchOS Extension" */;
+			buildConfigurationList = AEA364E2B3B37180989DA4AAEB3EFE8B /* Build configuration list for PBXNativeTarget "Pods-JustStudio iMessage" */;
 			buildPhases = (
-				FE8087F88B9DC5F07AC43A9340352540 /* Sources */,
-				9759001FC82E65F62D91DC5348AE8DDD /* Frameworks */,
-				DB44A8EF69EF0B6C442481A5D2905342 /* Headers */,
+				A0FC10D140F5DE0484C11B1E184B6749 /* Sources */,
+				D667E4C165FBC17EC1E880895E4F48AA /* Frameworks */,
+				8BB3D4C917049B2EE278938567F2C4AD /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F9B2B0282D615060194774203371A9DF /* PBXTargetDependency */,
+			);
+			name = "Pods-JustStudio iMessage";
+			productName = "Pods-JustStudio iMessage";
+			productReference = 6BD0EC33F68E88B159FF4888967021CD /* Pods_JustStudio_iMessage.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		78630DD8EE2FA9B7FEA929ADBF9FDA4C /* Pods-JustFacts WatchOS Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2ABDE5BFC39DBA3976FAAFBEEEDC60ED /* Build configuration list for PBXNativeTarget "Pods-JustFacts WatchOS Extension" */;
+			buildPhases = (
+				00468B7785EB07D419128119FD4F7721 /* Sources */,
+				DADE7D1291B00EFD713B7156A75BD91C /* Frameworks */,
+				2ED5ED383E0962EAAF577E2B10959449 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -465,40 +483,22 @@
 			productReference = D8124998C44A09CF8A9C5CAE5E2505A8 /* Pods_JustFacts_WatchOS_Extension.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		9FC66F28185ED76750F7A8BCDD07F878 /* Pods-JustStudio */ = {
+		82D93214CCA9965C5A6FEE698033CE9E /* Pods-JustStudio */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1850E3B987F233822CBE0224AE471697 /* Build configuration list for PBXNativeTarget "Pods-JustStudio" */;
+			buildConfigurationList = 4FCF045B938DC34CC20CCCE9660E8698 /* Build configuration list for PBXNativeTarget "Pods-JustStudio" */;
 			buildPhases = (
-				05F4A229A752D6AF02EFE7D648C3A79F /* Sources */,
-				47271AD453CADD73490D036EC2E895C8 /* Frameworks */,
-				B8C02C5B196381145AF3C1DBA45591F4 /* Headers */,
+				6AA0488196B9F1A7F2442DFB9F7B976C /* Sources */,
+				D022437E68049ED0BA14D1FD2ACB2116 /* Frameworks */,
+				00AE0108CDE00EF5325230F46269A15A /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				AD4C0D7D3877B9A1657B392DD9363BE3 /* PBXTargetDependency */,
+				2572A9EFC1339A7E271F2BCEFB9A6920 /* PBXTargetDependency */,
 			);
 			name = "Pods-JustStudio";
 			productName = "Pods-JustStudio";
 			productReference = 72F514D7660C0AD4DC4667BA283597FE /* Pods_JustStudio.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		F90EE799A396420E644063F17988BA16 /* Pods-JustStudio iMessage */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3543018EBA4DD860219FDCB61E32FA08 /* Build configuration list for PBXNativeTarget "Pods-JustStudio iMessage" */;
-			buildPhases = (
-				3B4D3195F658E1D3687846EDCAA688C2 /* Sources */,
-				BB68B1FAED02FDA196C5C6EB884FA39B /* Frameworks */,
-				CBD94891A4F616353ACEBD551DCA19B4 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				750C846D2C80AFE0CFE9E93ACFCDA965 /* PBXTargetDependency */,
-			);
-			name = "Pods-JustStudio iMessage";
-			productName = "Pods-JustStudio iMessage";
-			productReference = 6BD0EC33F68E88B159FF4888967021CD /* Pods_JustStudio_iMessage.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -522,117 +522,120 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7FE07A25286162E563A4DA9F49C76A25 /* Pods-JustFacts WatchOS Extension */,
-				9FC66F28185ED76750F7A8BCDD07F878 /* Pods-JustStudio */,
-				F90EE799A396420E644063F17988BA16 /* Pods-JustStudio iMessage */,
-				3BBA15F11821432C31825F81E85E9401 /* SDWebImage */,
+				78630DD8EE2FA9B7FEA929ADBF9FDA4C /* Pods-JustFacts WatchOS Extension */,
+				82D93214CCA9965C5A6FEE698033CE9E /* Pods-JustStudio */,
+				5B667D0511981EF6500C723D1035B985 /* Pods-JustStudio iMessage */,
+				38528573E38D91EE180DE816EC698255 /* SDWebImage */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		05F4A229A752D6AF02EFE7D648C3A79F /* Sources */ = {
+		00468B7785EB07D419128119FD4F7721 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B17764B339FF59C8911278589E2AD0E4 /* Pods-JustStudio-dummy.m in Sources */,
+				DFE589453510FB7879BEDAF7F0B1493A /* Pods-JustFacts WatchOS Extension-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		09147EC29DF9A42A7D38907C627FED7C /* Sources */ = {
+		6AA0488196B9F1A7F2442DFB9F7B976C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1BE33DFD8CEF1B631E7F7F8008146C3 /* NSData+ImageContentType.m in Sources */,
-				A9D542EA548AEB98EF1DECB30FE72828 /* SDImageCache.m in Sources */,
-				686321A7742AE0A0E3652A7C048358D5 /* SDWebImage-dummy.m in Sources */,
-				1EF03A4B84540186F0839D10808A4E9B /* SDWebImageCompat.m in Sources */,
-				F7F920B6E0DEE28CD06D84B139B75816 /* SDWebImageDecoder.m in Sources */,
-				92523FB44AEB681D88A181344C09A0F8 /* SDWebImageDownloader.m in Sources */,
-				5392B2CEA9D2E22A57CE3C17566C6CB2 /* SDWebImageDownloaderOperation.m in Sources */,
-				2914E68089FBB45E6A554FE865BCCD46 /* SDWebImageManager.m in Sources */,
-				2DBD0C979437C8216852147943C323F0 /* SDWebImagePrefetcher.m in Sources */,
-				36CE430DA4C190D68494D9C7F81B4AC8 /* UIButton+WebCache.m in Sources */,
-				D0FC5FD4E94C78AE293380AD5D34EFA1 /* UIImage+GIF.m in Sources */,
-				DAC9F3200DC16B515C94A9384C825D80 /* UIImage+MultiFormat.m in Sources */,
-				F600D3E795198F9992448341D034475F /* UIImageView+HighlightedWebCache.m in Sources */,
-				610AB9D01E3A5F091B81CB6BF5F76A68 /* UIImageView+WebCache.m in Sources */,
-				169808C84AED16658E622E5D0D5CB945 /* UIView+WebCacheOperation.m in Sources */,
+				55E6D233FA5B52091623F11A898C1C89 /* Pods-JustStudio-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3B4D3195F658E1D3687846EDCAA688C2 /* Sources */ = {
+		A0FC10D140F5DE0484C11B1E184B6749 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C37EC82B89FE92679A6F2FF20F532CF /* Pods-JustStudio iMessage-dummy.m in Sources */,
+				0E52CE46F2E2BB91296B046923E0BD24 /* Pods-JustStudio iMessage-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FE8087F88B9DC5F07AC43A9340352540 /* Sources */ = {
+		BD8B58FCFB8776EE92CD92260F6AE643 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				991C46630AE773109C12C744AD0ED05D /* Pods-JustFacts WatchOS Extension-dummy.m in Sources */,
+				7C6418D7128B9AFE2D8C2974C30CE2C1 /* NSData+ImageContentType.m in Sources */,
+				5C6B7E1AA6E3E70AEB6FA8A16D87072A /* SDImageCache.m in Sources */,
+				8B2EF7FBA6F8DCF6EB22B93B60184A77 /* SDWebImage-dummy.m in Sources */,
+				5198975CED3A5E15CD9D3ED9F1AB553C /* SDWebImageCompat.m in Sources */,
+				474421DAF40AD675FE125ADA7998E509 /* SDWebImageDecoder.m in Sources */,
+				D28954EEFBE418F01EE749FCEEABB906 /* SDWebImageDownloader.m in Sources */,
+				9DD2E8207129F4E5E6F10C31543E0A96 /* SDWebImageDownloaderOperation.m in Sources */,
+				9A888CF4B525CFDAA5D3B1C92CD90CE7 /* SDWebImageManager.m in Sources */,
+				149FE5A13E6D0D300DC35415E2E487AD /* SDWebImagePrefetcher.m in Sources */,
+				95944426F4F0FC7B42791B0A2CFD91A6 /* UIButton+WebCache.m in Sources */,
+				D8D0C2290D613A989976676D9BBC6C3A /* UIImage+GIF.m in Sources */,
+				7C1145030D82538D2A20022BC4B2F67F /* UIImage+MultiFormat.m in Sources */,
+				17549351110A16951E4684EDB471E02D /* UIImageView+HighlightedWebCache.m in Sources */,
+				737C28B91D50589C617E6D99BE4D3F57 /* UIImageView+WebCache.m in Sources */,
+				EF31103516A7284752E058C0B4273BC6 /* UIView+WebCacheOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		750C846D2C80AFE0CFE9E93ACFCDA965 /* PBXTargetDependency */ = {
+		2572A9EFC1339A7E271F2BCEFB9A6920 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SDWebImage;
-			target = 3BBA15F11821432C31825F81E85E9401 /* SDWebImage */;
-			targetProxy = E234FF81C27AC0844451586D73C5C1A3 /* PBXContainerItemProxy */;
+			target = 38528573E38D91EE180DE816EC698255 /* SDWebImage */;
+			targetProxy = E87E320483516D0973E1A6A3B5C0D80B /* PBXContainerItemProxy */;
 		};
-		AD4C0D7D3877B9A1657B392DD9363BE3 /* PBXTargetDependency */ = {
+		F9B2B0282D615060194774203371A9DF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SDWebImage;
-			target = 3BBA15F11821432C31825F81E85E9401 /* SDWebImage */;
-			targetProxy = 03697726B7FB58CB3C2652030B0810D3 /* PBXContainerItemProxy */;
+			target = 38528573E38D91EE180DE816EC698255 /* SDWebImage */;
+			targetProxy = DE0BF3756EC0DCEE189B83180D94318F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		138935DDF41F58957F0FDBB0F60891A4 /* Release */ = {
+		0345D6E594508E67138CF765DE615C3B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CBF16977437EBBC342D05011AE180505 /* Pods-JustStudio.release.xcconfig */;
+			baseConfigurationReference = ABE1C55BCAFFA99A4380A780F130F959 /* SDWebImage.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-JustStudio/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/SDWebImage/SDWebImage-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SDWebImage/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-JustStudio/Pods-JustStudio.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_JustStudio;
+				MODULEMAP_FILE = "Target Support Files/SDWebImage/SDWebImage.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = SDWebImage;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
-		28FFE813E4DA27D69D499EB56D32F779 /* Release */ = {
+		20CEB8D2DE7F63F680698A4C6316AC25 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 38D1AD9EBA37BA926B6BDF1CA670CBC9 /* Pods-JustStudio iMessage.release.xcconfig */;
+			baseConfigurationReference = C46CBE84163F25A6749C938F26C3ED06 /* Pods-JustStudio iMessage.release.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
@@ -661,11 +664,123 @@
 			};
 			name = Release;
 		};
-		360C4AA1711D9484F2516DAE57D7F0C4 /* Debug */ = {
+		684B8F1534BB67F71518564796441D2B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E5943044D7E5C483C7B313E3F0876576 /* Pods-JustFacts WatchOS Extension.debug.xcconfig */;
+			baseConfigurationReference = ABE1C55BCAFFA99A4380A780F130F959 /* SDWebImage.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SDWebImage/SDWebImage-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SDWebImage/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SDWebImage/SDWebImage.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = SDWebImage;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		70D1191F9D0BC1DC90FCA0049BF4213E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67C26AD93B1CDC7B96ED48744AC5F49A /* Pods-JustStudio.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-JustStudio/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-JustStudio/Pods-JustStudio.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_JustStudio;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7F64ACF917B77735942E284667E50CB9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		979E16530C4B2A18EBEDF7D32AEB59E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44736B22E0EA7059A47BCF7CA8662719 /* Pods-JustFacts WatchOS Extension.debug.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
@@ -694,11 +809,50 @@
 			};
 			name = Debug;
 		};
-		3EA079C3BAFDDD83D2AACCDE7B55063E /* Debug */ = {
+		A45D101AF0D22B8019AE07E092533D57 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ABE1C55BCAFFA99A4380A780F130F959 /* SDWebImage.xcconfig */;
+			baseConfigurationReference = A2B3ECFB55CFB6ABAC974E74DD270782 /* Pods-JustFacts WatchOS Extension.release.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-JustFacts WatchOS Extension/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-JustFacts WatchOS Extension/Pods-JustFacts WatchOS Extension.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_JustFacts_WatchOS_Extension;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		BBAE17E7E94D0544F163DDA3FD619251 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB5193B4CB2A9C82F5F6792540980931 /* Pods-JustStudio iMessage.debug.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
@@ -707,14 +861,18 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/SDWebImage/SDWebImage-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SDWebImage/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-JustStudio iMessage/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SDWebImage/SDWebImage.modulemap";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-JustStudio iMessage/Pods-JustStudio iMessage.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = SDWebImage;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_JustStudio_iMessage;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -723,7 +881,42 @@
 			};
 			name = Debug;
 		};
-		5E0A69BD2F17F16F071979DBF4E00C0B /* Debug */ = {
+		F698B7C4B78E906104D54C13D2DECC45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE6ACCD9A664D80055B6802A52030F90 /* Pods-JustStudio.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-JustStudio/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-JustStudio/Pods-JustStudio.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_JustStudio;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FA8E00FBF88125B1AF101B3C47740F14 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -741,6 +934,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -760,196 +954,21 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
-			};
-			name = Debug;
-		};
-		A755583F687613A2504D6EAE573E4832 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0DE528056CA0178847BB197145273AEF /* Pods-JustFacts WatchOS Extension.release.xcconfig */;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-JustFacts WatchOS Extension/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-JustFacts WatchOS Extension/Pods-JustFacts WatchOS Extension.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_JustFacts_WatchOS_Extension;
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
-			};
-			name = Release;
-		};
-		ABA1596489E7541C66C64236B29B0F38 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = ABE1C55BCAFFA99A4380A780F130F959 /* SDWebImage.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/SDWebImage/SDWebImage-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SDWebImage/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SDWebImage/SDWebImage.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = SDWebImage;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		CD64ECF3A9715052BE78682F2A8ECA6B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-				VALIDATE_PRODUCT = YES;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
-			};
-			name = Release;
-		};
-		F10FE3015C8919C049FE627BFD9CC99A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DF70737C3400098D96192747BD4C75A9 /* Pods-JustStudio.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-JustStudio/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-JustStudio/Pods-JustStudio.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_JustStudio;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		F60361E9AD0DB1A7FFC9CA994F0E018B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2EA964284A4B93F4E583EEB3BFAE5ACE /* Pods-JustStudio iMessage.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-JustStudio iMessage/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-JustStudio iMessage/Pods-JustStudio iMessage.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_JustStudio_iMessage;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1233C8B7C54DDB35FF6F876F1F820991 /* Build configuration list for PBXNativeTarget "SDWebImage" */ = {
+		2ABDE5BFC39DBA3976FAAFBEEEDC60ED /* Build configuration list for PBXNativeTarget "Pods-JustFacts WatchOS Extension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3EA079C3BAFDDD83D2AACCDE7B55063E /* Debug */,
-				ABA1596489E7541C66C64236B29B0F38 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1850E3B987F233822CBE0224AE471697 /* Build configuration list for PBXNativeTarget "Pods-JustStudio" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F10FE3015C8919C049FE627BFD9CC99A /* Debug */,
-				138935DDF41F58957F0FDBB0F60891A4 /* Release */,
+				979E16530C4B2A18EBEDF7D32AEB59E6 /* Debug */,
+				A45D101AF0D22B8019AE07E092533D57 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -957,26 +976,35 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5E0A69BD2F17F16F071979DBF4E00C0B /* Debug */,
-				CD64ECF3A9715052BE78682F2A8ECA6B /* Release */,
+				FA8E00FBF88125B1AF101B3C47740F14 /* Debug */,
+				7F64ACF917B77735942E284667E50CB9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3543018EBA4DD860219FDCB61E32FA08 /* Build configuration list for PBXNativeTarget "Pods-JustStudio iMessage" */ = {
+		4FCF045B938DC34CC20CCCE9660E8698 /* Build configuration list for PBXNativeTarget "Pods-JustStudio" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F60361E9AD0DB1A7FFC9CA994F0E018B /* Debug */,
-				28FFE813E4DA27D69D499EB56D32F779 /* Release */,
+				70D1191F9D0BC1DC90FCA0049BF4213E /* Debug */,
+				F698B7C4B78E906104D54C13D2DECC45 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B2E4A6372F022EA610329F78EFA88FCA /* Build configuration list for PBXNativeTarget "Pods-JustFacts WatchOS Extension" */ = {
+		6CABBA33863A967298D9B928E594F58A /* Build configuration list for PBXNativeTarget "SDWebImage" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				360C4AA1711D9484F2516DAE57D7F0C4 /* Debug */,
-				A755583F687613A2504D6EAE573E4832 /* Release */,
+				0345D6E594508E67138CF765DE615C3B /* Debug */,
+				684B8F1534BB67F71518564796441D2B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AEA364E2B3B37180989DA4AAEB3EFE8B /* Build configuration list for PBXNativeTarget "Pods-JustStudio iMessage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBAE17E7E94D0544F163DDA3FD619251 /* Debug */,
+				20CEB8D2DE7F63F680698A4C6316AC25 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

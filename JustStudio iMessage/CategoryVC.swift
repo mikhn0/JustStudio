@@ -1,5 +1,5 @@
 //
-//  JustStudioCollectionVC.swift
+//  CategoryVC.swift
 //  JustStudio
 //
 //  Created by nuSan_old_acc on 26.10.16.
@@ -10,11 +10,12 @@ import Foundation
 import Messages
 import ImageIO
 import SDWebImage
+import RealmSwift
 
 protocol CategoryVCDelegate: class {
     func tappedToAddNewsStickersToCollection (_ controller:CategoryVC)
     //Facts
-    func buttonTappedOn(selectCategory: CategoryData, onCell: UIImage)
+    func buttonTappedOn(selectCategory: CategoryDataModel, onCell: UIImage)
 }
 
 
@@ -26,7 +27,8 @@ class CategoryVC: BaseViewController, UITableViewDelegate, UITableViewDataSource
     @IBOutlet weak var categoryTable:UITableView?
     @IBOutlet weak var topOfCategoryVC: NSLayoutConstraint!
 
-    var _categories: [CategoryData] = []
+    var _categories: Results<CategoryDataModel>?
+    var messagesViewController: MessagesViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,44 +46,40 @@ class CategoryVC: BaseViewController, UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return _categories.count
+        return _categories?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return dequeueCategoryCell(for: _categories[indexPath.row], at:indexPath)
+        return dequeueCategoryCell(for: _categories![indexPath.row], at:indexPath)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell:CategoryCell = tableView.cellForRow(at: indexPath) as! CategoryCell
-        delegate?.buttonTappedOn(selectCategory:_categories[indexPath.row], onCell: cell.getScreenShortOfCell())
+        delegate?.buttonTappedOn(selectCategory:(_categories?[indexPath.row])!, onCell: cell.getScreenShortOfCell())
     }
 
 //очередь для категории ячейки
-    private func dequeueCategoryCell(for category: CategoryData, at indexPath:IndexPath) -> UITableViewCell {
+    private func dequeueCategoryCell(for category: CategoryDataModel, at indexPath:IndexPath) -> UITableViewCell {
         let cell = categoryTable?.dequeueReusableCell(withIdentifier: CategoryCell.reuseIdentifier!, for: indexPath) as! CategoryCell
         cell.categoryLabel?.setDescription(dataObject: category)
         
-        if (category.image_url != nil) {
-            let url = URL(string: category.image_url)
+        if (category.image != "") {
+            let url = URL(string: category.image)
             let urlWithService = "http://res.cloudinary.com/dvq3boovd/image/fetch/c_scale,w_100/"
             
-            let betweenString = urlWithService + category.image_url
+            let betweenString = urlWithService + category.image
             let urlService = URL(string: betweenString)
-            
             
             let task = URLSession.shared.dataTask(with: urlService!, completionHandler: { (data, response, error) in
                 if error == nil {
-                    
-                    
                     cell.categoryImage?.sd_setImage(with: url, placeholderImage: UIImage(data:data!))
-                    
                 }
             })
             task.resume()
         }
+       // messagesViewController._currentUpdateCategoryData = nil
         return cell
     }
-
 }
 
 @IBDesignable class TopAlignedLabel: UILabel {

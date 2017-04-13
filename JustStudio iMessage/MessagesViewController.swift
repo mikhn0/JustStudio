@@ -9,6 +9,7 @@
 import UIKit
 import Foundation
 import Messages
+import RealmSwift
 
 class MessagesViewController: MSMessagesAppViewController, CategoryVCDelegate, FactsVCDelegate
 {
@@ -17,9 +18,13 @@ class MessagesViewController: MSMessagesAppViewController, CategoryVCDelegate, F
     var factsVC: FactsVC?
     var previewVC: PreviewVC!
     
-    var _fact:[FactData] = []
+    var _fact:[FactDataModel] = []
     var savedConversation: MSConversation?
     var messageSelectFromConversation = false
+    
+    var _countOfCategories: Int?
+    var _indexesOfDifferenceObject:[Int:CategoryDataModel] = [:]
+    var _currentUpdateCategoryData:CategoryDataModel?
     
     var messageImage: UIImage? {
         guard let image = UIImage (named: "app") else {return nil}
@@ -36,6 +41,14 @@ class MessagesViewController: MSMessagesAppViewController, CategoryVCDelegate, F
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let appGroup = "group.com.fruktorum.JustFacts"
+        let fileManager = FileManager.default
+        let realmConfigurator = AppGroupRealmConfiguration(appGroupIdentifier: appGroup, fileManager: fileManager)
+        realmConfigurator.updateDefaultRealmConfiguration()
+        
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
+        
         if self._fact.count == 0 {
             presentCategoryVC()
         }
@@ -69,7 +82,6 @@ class MessagesViewController: MSMessagesAppViewController, CategoryVCDelegate, F
             categoryVC.topOfCategoryVC.constant = 0
             presentCategoryVC ()
             NotificationCenter.default.post (name: NSNotification.Name (rawValue: "OpenScreenWithCompactsStyle"), object: nil)
-            
         }
         
     }
@@ -82,10 +94,10 @@ class MessagesViewController: MSMessagesAppViewController, CategoryVCDelegate, F
         openExpandedStyle()
     }
     
-    func buttonTappedOn(selectCategory: CategoryData, onCell: UIImage) {
+    func buttonTappedOn(selectCategory: CategoryDataModel, onCell: UIImage) {
         print("buttonTappedOn method of protocol")
         openExpandedStyle()
-        presentFactsVC(by: selectCategory.name)
+        presentFactsVC(by: selectCategory)
     }
     
     
@@ -115,7 +127,7 @@ class MessagesViewController: MSMessagesAppViewController, CategoryVCDelegate, F
     
     //pragma mark - present different VC
     
-    func presentFactsVC(by category:String) {
+    func presentFactsVC(by category:CategoryDataModel) {
         if factsVC == nil {
             let controller = storyboard?.instantiateViewController(withIdentifier: FactsVC.storyboardIdentifier) as? FactsVC
             factsVC = controller
@@ -126,7 +138,6 @@ class MessagesViewController: MSMessagesAppViewController, CategoryVCDelegate, F
             factsVC?.didMove(toParentViewController: self)
             self.view.addSubview((factsVC?.view)!)
         }
-        
         uploadFacts(by: category)
         factsVC?.collectionView.reloadData()
 
@@ -188,7 +199,7 @@ class MessagesViewController: MSMessagesAppViewController, CategoryVCDelegate, F
     
     //pragma mark - Inspection Stickers to match
     
-    func checkNewSticker(newFact:FactData) -> Bool {
+    func checkNewSticker(newFact:FactDataModel) -> Bool {
         for elem in _fact {
             if elem.en == newFact.en
             {
@@ -199,41 +210,90 @@ class MessagesViewController: MSMessagesAppViewController, CategoryVCDelegate, F
     }
     
     func uploadCategories() {
-        LibraryAPI.sharedInstance().getAllCategory ({ (categories: [CategoryData]) -> Void in
-            if categories != [] {
-                self.categoryVC._categories = categories;
-                DispatchQueue.main.async {
-                    self.categoryVC.categoryTable?.reloadData()
-                }
-                
-                for categ in categories {
-                    DispatchQueue.global().async {
-                        print("START prepare image for \(categ.name)")
-                        if categ.image == nil {
-                            categ.image?.sd_setImage(with: URL(string: categ.image_url)!)
+        LibraryAPI.sharedInstance().getAllCategory ({ (categories: Results<CategoryDataModel>?) -> Void in
+            if categories != nil {
+                if self.categoryVC._categories != nil {
+                    let _categoriesRef = ThreadSafeReference(to: categories!)
+                    let _oldCategoriesRef = ThreadSafeReference(to: self.categoryVC._categories!)
+                    
+                    DispatchQueue(label: "_CheckDifCateg").async {
+                        let realm = try! Realm()
+                        guard let categ = realm.resolve(_categoriesRef) else {
+                            return // person was deleted
                         }
-                        print("FINISHED prepare image for \(categ.name)")
+                        guard let oldCateg = realm.resolve(_oldCategoriesRef) else {
+                            return // person was deleted
+                        }
+                        self.checkDifferenceCategoriesInDB(categoriesFromDB: categ, oldCategories: oldCateg)
                     }
-                }
-            } else {
-                let alertController = UIAlertController(title: "Error", message: "System error.", preferredStyle: .alert)
-                
-                let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
-                    // ...
-                }
-                alertController.addAction(OKAction)
-                
-                self.present(alertController, animated: true) {
-                    // ...
+                } else {
+                    self.categoryVC._categories = categories; //запись категорий
+                    self._countOfCategories = categories?.count
+                    DispatchQueue.main.async {
+                        self.categoryVC.categoryTable?.reloadData()
+                    }
                 }
             }
         })
     }
+    
+//                for categ in categories! {
+//                    DispatchQueue.global().async {
+//                        print("START prepare image for \(categ.name)")
+//                        let data = try? Data(contentsOf: URL(string: categ.image)!)
+//                        if data != nil {
+//                            categ.image_view = data! as NSData
+//                        }
+//                        print("FINISHED prepare image for \(categ.name)")
+//                    }
+//                }
+    
+//            } else {
+//                let alertController = UIAlertController(title: "Error", message: "System error.", preferredStyle: .alert)
+//                
+//                let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
+//                    // ...
+//                }
+//                alertController.addAction(OKAction)
+//                
+//                self.present(alertController, animated: true) {
+//                    // ...
+//                }
+//            }
 
-    func uploadFacts(by category:String) {
-        LibraryAPI.sharedInstance().getFactsByCategory(category, completion:{ (facts: [FactData]) -> Void in
+    func checkDifferenceCategoriesInDB(categoriesFromDB: Results<CategoryDataModel>, oldCategories: Results<CategoryDataModel>) {
+        if _countOfCategories == categoriesFromDB.count {
+            for elem in categoriesFromDB {
+                if oldCategories.contains(elem) == false {
+                    if let index = oldCategories.index(of: elem) {
+                        _indexesOfDifferenceObject[index] = elem
+                    }
+                }
+            }
+            if _indexesOfDifferenceObject.count > 0 {
+                for (key, value) in _indexesOfDifferenceObject {
+                    let _categoryRef = ThreadSafeReference(to: value)
+                    DispatchQueue.main.async {
+                        self.categoryVC.categoryTable?.beginUpdates()
+                        let indexPath:IndexPath = IndexPath(row: key, section: 0)
+                        let realm = try! Realm()
+                        guard let categ = realm.resolve(_categoryRef) else {
+                            return // person was deleted
+                        }
+                        self._currentUpdateCategoryData = categ
+                        self.categoryVC.categoryTable?.reloadRows(at: [indexPath], with: .none)
+                        self.categoryVC.categoryTable?.endUpdates()
+                    }
+                }
+                self.categoryVC._categories = categoriesFromDB
+            }
+        }
+    }
+
+    func uploadFacts(by category:CategoryDataModel) {
+        LibraryAPI.sharedInstance().getFactsByCategory(category, completion:{ (facts: Results<FactDataModel>?) -> Void in
             
-            if facts != [] {
+            if facts != nil {
                 self.factsVC?.facts = facts
             }
             DispatchQueue.main.async {

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RealmSwift
+import Realm
 
 /*
  A controller object that manages a simple model -- a collection of month names.
@@ -20,7 +22,7 @@ import UIKit
 
 class ModelController: NSObject, UIPageViewControllerDataSource {
 
-    var allFacts: [FactData] = []
+    var allFacts: Results<FactDataModel>?
     var activityIndicator: UIActivityIndicatorView!
 
     override init() {
@@ -29,13 +31,13 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
 
     func viewControllerAtIndex(_ index: Int, storyboard: UIStoryboard) -> DataViewController? {
         // Return the data view controller for the given index.
-        if (self.allFacts.count == 0) || (index >= self.allFacts.count) {
+        if (allFacts?.count == 0) || (index >= (allFacts?.count)!) {
             return nil
         }
 
         // Create a new view controller and pass suitable data.
         let dataViewController = storyboard.instantiateViewController(withIdentifier: "DataViewController") as! DataViewController
-        dataViewController.dataObject = self.allFacts[index]
+        dataViewController.dataObject = allFacts?[index]
         dataViewController.activityIndicator = self.activityIndicator
         return dataViewController
     }
@@ -44,9 +46,9 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
         // Return the index of the given data view controller.
         // For simplicity, this implementation uses a static array of model objects and the view controller stores the model object; you can therefore use the model object to identify the index.
         var indexOfFact: Int = NSNotFound
-        for index in 0  ..< allFacts.count  {
-            let factData: FactData = allFacts[index]
-            if factData.id == viewController.dataObject.id {
+        for index in 0  ..< allFacts!.count  {
+            let factData: FactDataModel = allFacts![index]
+            if factData._id == viewController.dataObject._id {
                 indexOfFact = index
                 break
             }
@@ -68,12 +70,12 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
     }
 
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        var index = self.indexOfViewController(viewController as! DataViewController)
+        var index = indexOfViewController(viewController as! DataViewController)
         if index == NSNotFound {
             return nil
         }
         index += 1
-        if index == self.allFacts.count {
+        if index == allFacts?.count {
             return nil
         }
         return self.viewControllerAtIndex(index, storyboard: viewController.storyboard!)

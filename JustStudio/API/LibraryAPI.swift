@@ -7,107 +7,83 @@
 //
 
 import Foundation
+import RealmSwift
+import Realm
 
 let SERVER_URL:NSString = "http://13.91.106.16:5793/"
 
+
 class LibraryAPI : NSObject  {
     
+    let persistencyManager: PersistencyManager
+    let httpClient: HTTPClient
+    let isOnline: Bool
+    
+    override init() {
+        persistencyManager = PersistencyManager()
+        httpClient = HTTPClient()
+        isOnline = true
+        super.init()
+    }
+    
+    
+    lazy var categoryArray: Results<CategoryDataModel> = {
+        DispatchQueue.main.sync {
+            let realm = try! Realm()
+            return realm.objects(CategoryDataModel.self)
+        }
+    }()
+    
     static var instance: LibraryAPI!
-    var pageData: [FactData] = []
     
     class func sharedInstance() -> LibraryAPI {
         self.instance = (self.instance ?? LibraryAPI())
         return self.instance
     }
     
-    func getAllCategory(_ completion: @escaping (_ categories: [CategoryData]) -> Void) -> Void {
+    func getAllCategory(_ completion: @escaping (_ categories:  Results<CategoryDataModel>? ) -> Void) {
         
-        let url = NSURL(string: "\(SERVER_URL)/categories")
-        
-        let task = URLSession.shared.dataTask(with: url! as URL) {(data, response, error) in
-            
-            if (error != nil) {
-                print("API error: \(error), \(error?.localizedDescription)")
-            }
-            
-            do {
-                if let json:NSDictionary = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? [String:AnyObject] as NSDictionary? {
-                    let jsonCategoryArr = json["categories"] as! [AnyObject]
-                    
-                    var categoryArr: [CategoryData] = []
-                    let categories = jsonCategoryArr.shuffle()
-                    for element in categories {
-                        let dict = element as! [String : AnyObject]
-                        let categoryData = CategoryData(withCategory:dict)
-                        categoryArr.append(categoryData)
-                        
-                    }
-                    completion(categoryArr)
-                }
-            } catch let error as NSError {
-                print(error.localizedDescription)
-            }
-            
+        //1 get categories from BD
+        if let categoriesFromDB = self.persistencyManager.readCategoryFromBD(), categoriesFromDB.count > 0 {
+            completion(categoriesFromDB)
         }
-    
-    task.resume()
-        
-    }
-
-    func getFactsByCategory(_ category:String, completion: @escaping (_ facts: [FactData]) -> Void) -> Void {
-        
-        let url = NSURL(string: "\(SERVER_URL)/facts?category=\(category)")
-        let task = URLSession.shared.dataTask(with: url! as URL) {(data, response, error) in
-            
-            if (error != nil) {
-                print("API error: \(error), \(error?.localizedDescription)")
+        if isOnline {
+            //2 request from Server all categories
+            httpClient.getCategoriesFromServer() { (_ categories: [AnyObject]) -> Void in
+                self.persistencyManager.writeCategoriesToBD(categories: categories, completion(self.persistencyManager.readCategoryFromBD()!))
             }
-            do {
-                
-                if let json:NSDictionary = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? [String:AnyObject] as NSDictionary? {
-                    let jsonFactsArr = json["facts"] as! [AnyObject]
-                    let facts = jsonFactsArr.shuffle()
-                    var factsArr: [FactData] = []
-                    for element in facts {
-                        let dict = element as! [String : AnyObject]
-                        let factData = FactData(withFacts:dict)
-                        factsArr.append(factData)
-                    }
-                    completion(factsArr)
-                }
-            } catch let error as NSError {
-                print(error.localizedDescription)
-            }
-            
-        }
-       
-        
-        task.resume()
-    }
-
-}
-
-extension Collection {
-    /// Return a copy of `self` with its elements shuffled
-    func shuffle() -> [Iterator.Element] {
-        var list = Array(self)
-        list.shuffleInPlace()
-        return list
-    }
-}
-
-extension MutableCollection where Index == Int {
-    /// Shuffle the elements of `self` in-place.
-    mutating func shuffleInPlace() {
-        // empty and single-element collections don't shuffle
-        if count < 2 { return }
-        let max:Int = Int(count.hashValue-1)
-        
-        for i in 0..<max {
-            let j = Int(arc4random_uniform(UInt32(count.hashValue - i))) + i
-            guard i != j else { continue }
-            swap(&self[i], &self[j])
         }
     }
-    
+
+    func getFactsByCategory(_ category: CategoryDataModel, completion: @escaping (_ facts: Results<FactDataModel>?) -> Void) -> Void {
+        //1 get facts from BD
+        if let factsByCategory = persistencyManager.readFactFromBD(category: category), factsByCategory.count > 0 {
+            completion(factsByCategory)
+        }
+        
+        let lastOpenCategory = category.last_show
+        print("-----Дата последнего открытия категории \(category.name) = \(lastOpenCategory)")
+        let realm = try! Realm()
+        try! realm.write {
+            category.last_show = Date()
+            print("-----Дата текущего открытия категории \(category.name) = \(category.last_show)")
+        }
+        
+        let afterSomeTime = Date(timeInterval: 86400, since: lastOpenCategory)
+        print("-----Дата спустя 1 день с последнего открытия категории \(category.name) = \(afterSomeTime)")
+        
+        let currentData = Date()
+        
+        if currentData >= afterSomeTime {
+            print("-----Грузим с сервера! \(currentData) >= \(afterSomeTime)")
+
+            if isOnline {
+                //2 request from Server all categories
+                httpClient.getFactsFromServer(category) { (_ factsInThisCategory: [AnyObject]) -> Void in
+                    self.persistencyManager.writeFactsToBD(selectCategory: category, facts: factsInThisCategory, completion(self.persistencyManager.readFactFromBD(category: category)!)) }
+            }
+        }else{
+            print("-----1 день не прошел с последнего открытия, с сервера не грузим!")
+        }
+    }
 }
