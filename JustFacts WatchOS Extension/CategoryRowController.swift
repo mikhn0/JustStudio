@@ -23,7 +23,6 @@ class CategoryRowController: NSObject {
                 // 4
                 titleLabel.setText(category.en)
                 image.setImageWithUrl(category.image_mini)
-        
             }
         }
     }
@@ -48,8 +47,6 @@ public extension WKInterfaceImage {
                 }
             }
             }) .resume()
-        
-        
     }
     
     func downloadedFrom(url: URL) {

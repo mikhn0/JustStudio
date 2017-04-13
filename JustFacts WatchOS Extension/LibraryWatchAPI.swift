@@ -86,14 +86,9 @@ class LibraryWatchAPI : NSObject  {
             } catch let error as NSError {
                 print(error.localizedDescription)
             }
-            
         }
-        
-        
         task.resume()
     }
-
-    
 }
 
 extension Collection {

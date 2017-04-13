@@ -171,8 +171,24 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
                         print("Open (https://itunes.apple.com/us/app/just-quotes-did-you-know/id1190672970?l=ru&ls=1&mt=8): \(success)")
                     }
                 }
+            case "celebrity":
+                let justPeoplesSchema = "readmypeopleapp://"
+                let justPeoplesUrl = URL(string: justPeoplesSchema)
+                if UIApplication.shared.canOpenURL(justPeoplesUrl!) {
+                    if #available(iOS 10.0, *) {
+                        UIApplication.shared.open(justPeoplesUrl!, options: [:], completionHandler: nil)
+                    } else {
+                        let success = UIApplication.shared.openURL(justPeoplesUrl!)
+                        print("Open \(justPeoplesSchema): \(success)")
+                    }
+                } else {
+                    if #available(iOS 10.0, *) {
+                        UIApplication.shared.open(URL(string: "https://itunes.apple.com/us/app/just-people-did-you-know/id1197390666")!, options: [:], completionHandler: nil)
+                    } else {
+                        UIApplication.shared.openURL(URL(string: "https://itunes.apple.com/us/app/just-people-did-you-know/id1197390666")!)
+                    }
+            }
             default:
-                
                 self.performSegue(withIdentifier: "FactsByCategorySegue", sender: selectCategory)
                 break
         }

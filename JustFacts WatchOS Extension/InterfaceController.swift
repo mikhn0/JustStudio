@@ -8,17 +8,25 @@
 
 import WatchKit
 import Foundation
-
+import RealmSwift
+import Realm
 
 class InterfaceController: WKInterfaceController {
 
     @IBOutlet var backgroundGroup: WKInterfaceGroup!
     @IBOutlet var categoryTable: WKInterfaceTable!
     var categories:[Category]?
-    var  selectedIndex = 0
+    var selectedIndex = 0
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
+        
+        let appGroup = "group.com.fruktorum.JustFacts"
+        let fileManager = FileManager.default
+        let realmConfigurator = AppGroupRealmConfiguration(appGroupIdentifier: appGroup, fileManager: fileManager)
+        realmConfigurator.updateDefaultRealmConfiguration()
+        
+       // print(Realm.Configuration.defaultConfiguration.fileURL!)
         
         self.allCategories()
     }

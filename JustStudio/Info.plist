@@ -37,6 +37,7 @@
 	<string>2</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
+		<string>readmypeopleapp</string>
 		<string>readmyquotesapp</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>

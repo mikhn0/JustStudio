@@ -9,20 +9,18 @@
 import Foundation
 import RealmSwift
 import Realm
+import SystemConfiguration
 
 let SERVER_URL:NSString = "http://13.91.106.16:5793/"
-
 
 class LibraryAPI : NSObject  {
     
     let persistencyManager: PersistencyManager
     let httpClient: HTTPClient
-    let isOnline: Bool
     
     override init() {
         persistencyManager = PersistencyManager()
         httpClient = HTTPClient()
-        isOnline = true
         super.init()
     }
     
@@ -41,13 +39,33 @@ class LibraryAPI : NSObject  {
         return self.instance
     }
     
+    class func isConnectedToNetwork() -> Bool {
+        var zeroAddress = sockaddr_in()
+        zeroAddress.sin_len = UInt8(MemoryLayout.size(ofValue: zeroAddress))
+        zeroAddress.sin_family = sa_family_t(AF_INET)
+        
+        guard let defaultRouteReachability = withUnsafePointer(to: &zeroAddress, {
+            $0.withMemoryRebound(to: sockaddr.self, capacity: 1) {
+                zeroSockAddress in SCNetworkReachabilityCreateWithAddress(nil, zeroSockAddress)}
+        }) else { return false }
+        
+        var flags : SCNetworkReachabilityFlags = []
+        if !SCNetworkReachabilityGetFlags(defaultRouteReachability, &flags) { return false }
+        
+        let isReachable = flags.contains(.reachable)
+        let needsConnection = flags.contains(.connectionRequired)
+        
+        return (isReachable && !needsConnection)
+    }
+    
     func getAllCategory(_ completion: @escaping (_ categories:  Results<CategoryDataModel>? ) -> Void) {
         
         //1 get categories from BD
         if let categoriesFromDB = self.persistencyManager.readCategoryFromBD(), categoriesFromDB.count > 0 {
             completion(categoriesFromDB)
         }
-        if isOnline {
+        
+        if LibraryAPI.isConnectedToNetwork() {
             //2 request from Server all categories
             httpClient.getCategoriesFromServer() { (_ categories: [AnyObject]) -> Void in
                 self.persistencyManager.writeCategoriesToBD(categories: categories, completion(self.persistencyManager.readCategoryFromBD()!))
@@ -77,7 +95,7 @@ class LibraryAPI : NSObject  {
         if currentData >= afterSomeTime {
             print("-----Грузим с сервера! \(currentData) >= \(afterSomeTime)")
 
-            if isOnline {
+            if LibraryAPI.isConnectedToNetwork() {
                 //2 request from Server all categories
                 httpClient.getFactsFromServer(category) { (_ factsInThisCategory: [AnyObject]) -> Void in
                     self.persistencyManager.writeFactsToBD(selectCategory: category, facts: factsInThisCategory, completion(self.persistencyManager.readFactFromBD(category: category)!)) }
@@ -86,4 +104,5 @@ class LibraryAPI : NSObject  {
             print("-----1 день не прошел с последнего открытия, с сервера не грузим!")
         }
     }
+    
 }
