@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>Pods-JustFacts WatchOS Extension.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+		<key>Pods-JustStudio iMessage.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
+		<key>Pods-JustStudio.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
+		<key>SDWebImage.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>38528573E38D91EE180DE816EC698255</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5B667D0511981EF6500C723D1035B985</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>78630DD8EE2FA9B7FEA929ADBF9FDA4C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>82D93214CCA9965C5A6FEE698033CE9E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
