@@ -7,54 +7,68 @@
 //
 
 import Foundation
+import RealmSwift
+import Realm
 
 let SERVER_URL:NSString = "http://13.91.106.16:5793/"
 
 class LibraryWatchAPI : NSObject  {
 
-        static var instance: LibraryWatchAPI!
-        var pageData: [Fact] = []
-        
-        class func sharedInstance() -> LibraryWatchAPI {
-            self.instance = (self.instance ?? LibraryWatchAPI())
-            return self.instance
-        }
+    static var instance: LibraryWatchAPI!
+    var pageData: [FactDataModel] = []
+    
+    let persistencyManagerWatch: PersistencyManagerWatch
+    
+    override init() {
+        persistencyManagerWatch = PersistencyManagerWatch()
+        super.init()
+    }
+    
+    class func sharedInstance() -> LibraryWatchAPI {
+        self.instance = (self.instance ?? LibraryWatchAPI())
+        return self.instance
+    }
     
     
-    func getAllCategoryForWatch(_ completion: @escaping (_ categories: [Category]) -> Void) -> Void {
-        
-        let url = NSURL(string: "\(SERVER_URL)/categories")
+    func getAllCategoryForWatch(_ completion: @escaping (_ categories: Results<CategoryDataModel>?) -> Void) {
         print("start get all categories!!!")
-        let task = URLSession.shared.dataTask(with: url! as URL) {(data, response, error) in
+        //1 get categories from BD
+        if let categoriesFromBD = self.persistencyManagerWatch.readCategoryFromBD(), categoriesFromBD.count > 0 {
+            completion(categoriesFromBD)
             print("FINISHED get all categories!!!")
-            if (error != nil) {
-                print("API error: \(String(describing: error)), \(String(describing: error?.localizedDescription))")
-            }
-            
-            do {
-                if let json:[String:AnyObject] = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? [String:AnyObject] {
-                    let jsonCategoryArr = json["categories"] as! [AnyObject]
-                    
-                    var categoryArr: [Category] = []
-                    let categories = jsonCategoryArr.shuffle()
-                    for element in categories {
-                        let dict = element as! [String : AnyObject]
-                        let categoryData = Category.init(category: dict)
-                        
-                        categoryArr.append(categoryData)
-                    }
-                    DispatchQueue.main.async {
-                        completion(categoryArr)
-                    }
-                }
-            } catch let error as NSError {
-                print(error.localizedDescription)
-            }
-            
         }
         
-        task.resume()
-        
+//        let url = NSURL(string: "\(SERVER_URL)/categories")
+//        print("start get all categories!!!")
+//        let task = URLSession.shared.dataTask(with: url! as URL) {(data, response, error) in
+//            print("FINISHED get all categories!!!")
+//            if (error != nil) {
+//                print("API error: \(String(describing: error)), \(String(describing: error?.localizedDescription))")
+//            }
+//            
+//            do {
+//                if let json:[String:AnyObject] = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? [String:AnyObject] {
+//                    let jsonCategoryArr = json["categories"] as! [AnyObject]
+//                    
+//                    var categoryArr: [Category] = []
+//                    let categories = jsonCategoryArr.shuffle()
+//                    for element in categories {
+//                        let dict = element as! [String : AnyObject]
+//                        let categoryData = Category.init(category: dict)
+//                        
+//                        categoryArr.append(categoryData)
+//                    }
+//                    DispatchQueue.main.async {
+//                        completion(categoryArr)
+//                    }
+//                }
+//            } catch let error as NSError {
+//                print(error.localizedDescription)
+//            }
+//            
+//        }
+//        
+//        task.resume()
     }
 
     func getFactsByCategoryForWatch(_ category:String, completion:@escaping([Fact]) -> Void) -> Void {

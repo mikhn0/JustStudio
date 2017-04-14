@@ -47,14 +47,17 @@
 		752E588C1E952530003EF222 /* BaseDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752E58831E93FE30003EF222 /* BaseDataModel.swift */; };
 		752E588E1E96A3DB003EF222 /* PersistencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752E588D1E96A3DB003EF222 /* PersistencyManager.swift */; };
 		752E58901E96A404003EF222 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752E588F1E96A404003EF222 /* HTTPClient.swift */; };
+		753C5E231EA0F01300AF1DEC /* BaseDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752E58831E93FE30003EF222 /* BaseDataModel.swift */; };
+		753C5E241EA0F01300AF1DEC /* CategoryDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752E58851E93FE4E003EF222 /* CategoryDataModel.swift */; };
+		753C5E251EA0F01300AF1DEC /* FactDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752E58871E93FE77003EF222 /* FactDataModel.swift */; };
+		753C5E271EA1139F00AF1DEC /* PersistencyManagerWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753C5E261EA1139F00AF1DEC /* PersistencyManagerWatch.swift */; };
+		753C5E291EA12EA700AF1DEC /* WatchSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753C5E281EA12EA700AF1DEC /* WatchSessionManager.swift */; };
+		753C5E2A1EA12EA700AF1DEC /* WatchSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753C5E281EA12EA700AF1DEC /* WatchSessionManager.swift */; };
+		753C5E2B1EA12EA700AF1DEC /* WatchSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753C5E281EA12EA700AF1DEC /* WatchSessionManager.swift */; };
 		753F16191E9FDD3A00C458D5 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 753F16131E9FDC4900C458D5 /* Realm.framework */; };
 		753F161A1E9FDD3A00C458D5 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 753F16141E9FDC4900C458D5 /* RealmSwift.framework */; };
 		753F161C1E9FDD4400C458D5 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 753F16131E9FDC4900C458D5 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		753F161E1E9FDD4400C458D5 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 753F16141E9FDC4900C458D5 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		753F16201E9FDD6C00C458D5 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 753F16131E9FDC4900C458D5 /* Realm.framework */; };
-		753F16211E9FDD6C00C458D5 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 753F16131E9FDC4900C458D5 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		753F16221E9FDD6C00C458D5 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 753F16141E9FDC4900C458D5 /* RealmSwift.framework */; };
-		753F16231E9FDD6C00C458D5 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 753F16141E9FDC4900C458D5 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		755150FD1C47EE1C00527733 /* UILable+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755150FC1C47EE1C00527733 /* UILable+Layout.swift */; };
 		755202291E96B79D00F3BC2A /* PersistencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752E588D1E96A3DB003EF222 /* PersistencyManager.swift */; };
 		7552022A1E96B7A000F3BC2A /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752E588F1E96A404003EF222 /* HTTPClient.swift */; };
@@ -149,8 +152,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				753F16231E9FDD6C00C458D5 /* RealmSwift.framework in Embed Frameworks */,
-				753F16211E9FDD6C00C458D5 /* Realm.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -232,6 +233,8 @@
 		752E58871E93FE77003EF222 /* FactDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FactDataModel.swift; sourceTree = "<group>"; };
 		752E588D1E96A3DB003EF222 /* PersistencyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistencyManager.swift; sourceTree = "<group>"; };
 		752E588F1E96A404003EF222 /* HTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		753C5E261EA1139F00AF1DEC /* PersistencyManagerWatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistencyManagerWatch.swift; sourceTree = "<group>"; };
+		753C5E281EA12EA700AF1DEC /* WatchSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchSessionManager.swift; sourceTree = "<group>"; };
 		753F16131E9FDC4900C458D5 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		753F16141E9FDC4900C458D5 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		755150FC1C47EE1C00527733 /* UILable+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILable+Layout.swift"; sourceTree = "<group>"; };
@@ -307,8 +310,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				753F16221E9FDD6C00C458D5 /* RealmSwift.framework in Frameworks */,
-				753F16201E9FDD6C00C458D5 /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,6 +382,7 @@
 			isa = PBXGroup;
 			children = (
 				751F353D1DABDC700099CB19 /* LibraryWatchAPI.swift */,
+				753C5E261EA1139F00AF1DEC /* PersistencyManagerWatch.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -480,6 +482,7 @@
 				752E58851E93FE4E003EF222 /* CategoryDataModel.swift */,
 				752E58871E93FE77003EF222 /* FactDataModel.swift */,
 				755856451E9E2B2C0091ABB5 /* AppGroupRealmConfiguration.swift */,
+				753C5E281EA12EA700AF1DEC /* WatchSessionManager.swift */,
 			);
 			name = Shared;
 			sourceTree = "<group>";
@@ -1087,6 +1090,7 @@
 				33AE234B1DC10D7200A9B22A /* CategoryVC.swift in Sources */,
 				752E588B1E95252E003EF222 /* CategoryDataModel.swift in Sources */,
 				33AE23541DC11C4800A9B22A /* AddJustStudioStickerCell.swift in Sources */,
+				753C5E2B1EA12EA700AF1DEC /* WatchSessionManager.swift in Sources */,
 				752E588C1E952530003EF222 /* BaseDataModel.swift in Sources */,
 				3316C6711DC3BE930008F697 /* ImageItemRenderer.swift in Sources */,
 				755856471E9E2B2C0091ABB5 /* AppGroupRealmConfiguration.swift in Sources */,
@@ -1109,12 +1113,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				753C5E231EA0F01300AF1DEC /* BaseDataModel.swift in Sources */,
+				753C5E241EA0F01300AF1DEC /* CategoryDataModel.swift in Sources */,
+				753C5E251EA0F01300AF1DEC /* FactDataModel.swift in Sources */,
 				75FC74631D8C2E3F00683CA0 /* NotificationController.swift in Sources */,
 				751F35431DAD30230099CB19 /* FactsController.swift in Sources */,
 				63DB481F1DBE2DAE00119897 /* WKInterfaceLabel+setDescription.swift in Sources */,
 				63DB481D1DBE290700119897 /* Base.swift in Sources */,
 				63DB48141DBE246400119897 /* Fact.swift in Sources */,
+				753C5E271EA1139F00AF1DEC /* PersistencyManagerWatch.swift in Sources */,
 				75FC74611D8C2E3F00683CA0 /* ExtensionDelegate.swift in Sources */,
+				753C5E2A1EA12EA700AF1DEC /* WatchSessionManager.swift in Sources */,
 				63DB48151DBE246800119897 /* Category.swift in Sources */,
 				637A4E4F1DB78EBE007C3EA6 /* InterfaceController.swift in Sources */,
 				33B1D1E41DB63185000C4062 /* LibraryWatchAPI.swift in Sources */,
@@ -1129,6 +1138,7 @@
 			files = (
 				752E58841E93FE30003EF222 /* BaseDataModel.swift in Sources */,
 				33B1D18A1DB10EE5000C4062 /* CategoryViewController.swift in Sources */,
+				753C5E291EA12EA700AF1DEC /* WatchSessionManager.swift in Sources */,
 				33B1D1E51DB6318A000C4062 /* LibraryAPI.swift in Sources */,
 				755150FD1C47EE1C00527733 /* UILable+Layout.swift in Sources */,
 				752E588E1E96A3DB003EF222 /* PersistencyManager.swift in Sources */,
@@ -1282,6 +1292,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/swift-3.1",
 					"$(PROJECT_DIR)/watch_swift-3.1",
+					RealmSwift.framework,
 				);
 				INFOPLIST_FILE = "JustFacts WatchOS Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -1329,6 +1340,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/swift-3.1",
 					"$(PROJECT_DIR)/watch_swift-3.1",
+					RealmSwift.framework,
 				);
 				INFOPLIST_FILE = "JustFacts WatchOS Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";

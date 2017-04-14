@@ -20,7 +20,6 @@ class PersistencyManager: NSObject {
     
     func readFactFromBD(category: CategoryDataModel) -> Results<FactDataModel>? {
         let aPredicate = NSPredicate(format: "selectCategory = %@", category)
-        //print("realm.objects(FactDataModel.self) = \(realm.objects(FactDataModel.self))")
         return realm.objects(FactDataModel.self).filter(aPredicate)
     }
     

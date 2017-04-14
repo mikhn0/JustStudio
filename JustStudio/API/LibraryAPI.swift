@@ -58,6 +58,17 @@ class LibraryAPI : NSObject  {
         return (isReachable && !needsConnection)
     }
     
+    //функция для получения recieveCategoriesFromServer completion()
+    func recieveCategoriesFromServer(_ completion: @escaping (_ reply:  [String:String] ) -> Void) {
+        if LibraryAPI.isConnectedToNetwork() {
+            httpClient.getCategoriesFromServer() { (_ categories: [AnyObject]) -> Void in
+                self.persistencyManager.writeCategoriesToBD(categories: categories, {
+                    completion(["reply" : "OK"])
+                }())
+            }
+        }
+    }
+    
     func getAllCategory(_ completion: @escaping (_ categories:  Results<CategoryDataModel>? ) -> Void) {
         
         //1 get categories from BD

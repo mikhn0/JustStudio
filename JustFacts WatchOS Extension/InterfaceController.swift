@@ -10,13 +10,16 @@ import WatchKit
 import Foundation
 import RealmSwift
 import Realm
+import WatchConnectivity
 
-class InterfaceController: WKInterfaceController {
+class InterfaceController: WKInterfaceController , WCSessionDelegate {
 
     @IBOutlet var backgroundGroup: WKInterfaceGroup!
     @IBOutlet var categoryTable: WKInterfaceTable!
-    var categories:[Category]?
+    var categories:Results<CategoryDataModel>?
     var selectedIndex = 0
+    
+    let realm = try! Realm()
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -26,8 +29,15 @@ class InterfaceController: WKInterfaceController {
         let realmConfigurator = AppGroupRealmConfiguration(appGroupIdentifier: appGroup, fileManager: fileManager)
         realmConfigurator.updateDefaultRealmConfiguration()
         
-       // print(Realm.Configuration.defaultConfiguration.fileURL!)
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
         
+        if WCSession.isSupported() {
+            let session = WCSession.default()
+            session.delegate = self
+            session.activate()
+            
+            sendMessage()
+        }
         self.allCategories()
     }
     
@@ -68,14 +78,20 @@ class InterfaceController: WKInterfaceController {
     }
 
     func allCategories() {
-        
-        LibraryWatchAPI.sharedInstance().getAllCategoryForWatch ({ (categories: [Category]) -> Void in
-            
-            self.categories = categories
-            
+        let realm = try! Realm()
+        if let categoriesFromDB = realm.objects(CategoryDataModel.self) as? Results<CategoryDataModel> {
+            self.categories = categoriesFromDB //запись категорий
             self.prepareTable()
-        })
-        
+
+            //realmLabel.setText(firstField.text)
+        }
+//        LibraryWatchAPI.sharedInstance().getAllCategoryForWatch ({ (categories: Results<CategoryDataModel>?) -> Void in
+//            
+//            if categories != nil {
+//                    self.categories = categories //запись категорий
+//                    self.prepareTable()
+//            }
+//        })
     }
     
     func prepareTable () {
@@ -101,5 +117,35 @@ class InterfaceController: WKInterfaceController {
     func stopAnim() {
         backgroundGroup.stopAnimating()
         backgroundGroup.setHidden(true)
+    }
+    
+    @available(watchOS 2.2, *)
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        print("ActivationDidComplete")
+        
+        let realm = try! Realm()
+        if (realm.objects(CategoryDataModel.self) as? Results<CategoryDataModel>) == nil {
+            print("БД пустая!")
+            sendMessage()
+        }
+    }
+    
+    
+    func sendMessage(){
+        if WCSession.default().isReachable {
+            let applicationDict = ["getCategories": 1]
+            WCSession.default().sendMessage(applicationDict,
+                                            replyHandler: {
+                                                replyDict in print(replyDict)
+                                                
+                                                if let reply = replyDict as? [String:String], reply == ["reply" : "OK"] {
+                                                    self.allCategories()
+                                                }
+                                                
+            },
+                                            errorHandler: {
+                                                error in print(error.localizedDescription)
+            })
+        }
     }
 }

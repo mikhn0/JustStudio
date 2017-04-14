@@ -15,7 +15,7 @@ class FactsController: WKInterfaceController {
     @IBOutlet var factImage: WKInterfaceImage!
     @IBOutlet var backgroundGroup: WKInterfaceGroup!
 
-    var fact: Fact? {
+    var fact: FactDataModel? {
         didSet {
             if let fact = fact {
 
@@ -27,6 +27,6 @@ class FactsController: WKInterfaceController {
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        if let fact = context as? Fact { self.fact = fact }
+        if let fact = context as? FactDataModel { self.fact = fact }
     }
 }

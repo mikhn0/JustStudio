@@ -9,8 +9,9 @@
 import Foundation
 import SDWebImage
 import RealmSwift
+import WatchConnectivity
 
-class CategoryViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class CategoryViewController: UIViewController, UITableViewDataSource, UITableViewDelegate , WCSessionDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     let textCellIdentifier = "CategoryCell"
@@ -24,7 +25,16 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         print(Realm.Configuration.defaultConfiguration.fileURL!)
+        if WCSession.isSupported() {
+            let session = WCSession.default()
+            session.delegate = self
+            session.activate()
+        }
+        if let path = Realm.Configuration.defaultConfiguration.fileURL {
+            WCSession.default().transferFile(path, metadata: nil)
+        }
         
         LibraryAPI.sharedInstance().getAllCategory ({ (categories: Results<CategoryDataModel>?) -> Void in
             if categories != nil {
@@ -69,6 +79,7 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
         tableView.dataSource = self
         heightOfCell = (self.view.frame.size.height + 20) / 2
     }
+
 
     func checkDifferenceCategoriesInDB(categoriesFromDB: Results<CategoryDataModel>, oldCategories: Results<CategoryDataModel>) {
         if countOfCategories == categoriesFromDB.count {
@@ -222,7 +233,33 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
             print("UNVIND SEGUE");
         }
     }
+    
+    @available(iOS 9.3, *)
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        print("activationDidComplete")
+    }
+    
+    func sessionDidBecomeInactive(_ session: WCSession) {
+        
+    }
+    
+    func sessionDidDeactivate(_ session: WCSession) {
+        
+    }
 
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
+        
+        if let command = message["getCategories"] as! Int?, command == 1 {
+            print("recieve commmand == \(command)")
+            //запрос на сервер с загрузкой данных в бд
+            LibraryAPI.sharedInstance().recieveCategoriesFromServer({ (reply: [String : String]) in
+                replyHandler(reply)
+            })
+        }
+        
+        //replyHandler(["reply" : "OK"])
+    }
+    
 }
 
 extension Array {

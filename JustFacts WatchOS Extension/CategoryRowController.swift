@@ -15,14 +15,14 @@ class CategoryRowController: NSObject {
     @IBOutlet var image: WKInterfaceImage!
     
     // 1
-    var category: Category? {
+    var category: CategoryDataModel? {
         // 2
         didSet {
             // 3
             if let category = category {
                 // 4
                 titleLabel.setText(category.en)
-                image.setImageWithUrl(category.image_mini)
+                image.setImageWithUrl(category.image)
             }
         }
     }
