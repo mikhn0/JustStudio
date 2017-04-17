@@ -21,7 +21,8 @@ public class AppGroupRealmConfiguration {
     
     public func createRealmConfiguration() -> Realm.Configuration {
         let databaseDirectoryPath = self.fileManager.containerURL(forSecurityApplicationGroupIdentifier: self.appGroupIdentifier)!
-        let databasePath = databaseDirectoryPath.appendingPathComponent("databaseForJustFacts.realm")
+        let databasePath = databaseDirectoryPath.appendingPathComponent("db1.realm")
+        
         return Realm.Configuration(fileURL: databasePath)
     }
     

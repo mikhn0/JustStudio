@@ -11,7 +11,7 @@ import SDWebImage
 import RealmSwift
 import WatchConnectivity
 
-class CategoryViewController: UIViewController, UITableViewDataSource, UITableViewDelegate , WCSessionDelegate {
+class CategoryViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     let textCellIdentifier = "CategoryCell"
@@ -21,20 +21,29 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
     var countOfCategories:Int?
     var heightOfCell: CGFloat = 0.0
     
+    var realm : Realm!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         print(Realm.Configuration.defaultConfiguration.fileURL!)
-        if WCSession.isSupported() {
-            let session = WCSession.default()
-            session.delegate = self
-            session.activate()
+        
+        let directory: URL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: K_GROUP_ID)!
+        let fileURL = directory.appendingPathComponent(K_DB_NAME)
+        realm = try! Realm(fileURL: fileURL)
+        let alertController = UIAlertController(title: "Error", message: "file url \(String(describing: realm.configuration.fileURL))", preferredStyle: .alert)
+        
+        let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
+            // ...
         }
-        if let path = Realm.Configuration.defaultConfiguration.fileURL {
-            WCSession.default().transferFile(path, metadata: nil)
+        alertController.addAction(OKAction)
+        
+        present(alertController, animated: true) {
+            // ...
         }
+
+        
+        print("file url \(String(describing: realm.configuration.fileURL))")
         
         LibraryAPI.sharedInstance().getAllCategory ({ (categories: Results<CategoryDataModel>?) -> Void in
             if categories != nil {
@@ -232,32 +241,6 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
         if segue.identifier == "unwindToViewController" {
             print("UNVIND SEGUE");
         }
-    }
-    
-    @available(iOS 9.3, *)
-    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-        print("activationDidComplete")
-    }
-    
-    func sessionDidBecomeInactive(_ session: WCSession) {
-        
-    }
-    
-    func sessionDidDeactivate(_ session: WCSession) {
-        
-    }
-
-    func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
-        
-        if let command = message["getCategories"] as! Int?, command == 1 {
-            print("recieve commmand == \(command)")
-            //запрос на сервер с загрузкой данных в бд
-            LibraryAPI.sharedInstance().recieveCategoriesFromServer({ (reply: [String : String]) in
-                replyHandler(reply)
-            })
-        }
-        
-        //replyHandler(["reply" : "OK"])
     }
     
 }

@@ -37,6 +37,9 @@
 		63DB481A1DBE270700119897 /* UILabel+setDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DB48191DBE270700119897 /* UILabel+setDescription.swift */; };
 		63DB481D1DBE290700119897 /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DB481C1DBE290700119897 /* Base.swift */; };
 		63DB481F1DBE2DAE00119897 /* WKInterfaceLabel+setDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DB481E1DBE2DAE00119897 /* WKInterfaceLabel+setDescription.swift */; };
+		751C2FD11EA4D66D00F5FAF5 /* PersistencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752E588D1E96A3DB003EF222 /* PersistencyManager.swift */; };
+		751C2FD31EA4F8E000F5FAF5 /* AppGroupForWatchOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751C2FD21EA4F8E000F5FAF5 /* AppGroupForWatchOS.swift */; };
+		751C2FD41EA4F8E000F5FAF5 /* AppGroupForWatchOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751C2FD21EA4F8E000F5FAF5 /* AppGroupForWatchOS.swift */; };
 		751F35431DAD30230099CB19 /* FactsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751F35421DAD30230099CB19 /* FactsController.swift */; };
 		75227BF31E9FD954006BD446 /* AppGroupRealmConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755856451E9E2B2C0091ABB5 /* AppGroupRealmConfiguration.swift */; };
 		752E58841E93FE30003EF222 /* BaseDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752E58831E93FE30003EF222 /* BaseDataModel.swift */; };
@@ -224,6 +227,7 @@
 		63DB481E1DBE2DAE00119897 /* WKInterfaceLabel+setDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WKInterfaceLabel+setDescription.swift"; sourceTree = "<group>"; };
 		7032002F94F590871BA16A88 /* Pods-JustStudio iMessage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustStudio iMessage.release.xcconfig"; path = "Pods/Target Support Files/Pods-JustStudio iMessage/Pods-JustStudio iMessage.release.xcconfig"; sourceTree = "<group>"; };
 		7505BE831E93BB70000B7686 /* JustFacts WatchOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JustFacts WatchOS-Bridging-Header.h"; sourceTree = "<group>"; };
+		751C2FD21EA4F8E000F5FAF5 /* AppGroupForWatchOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppGroupForWatchOS.swift; sourceTree = "<group>"; };
 		751F353D1DABDC700099CB19 /* LibraryWatchAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryWatchAPI.swift; sourceTree = "<group>"; };
 		751F35421DAD30230099CB19 /* FactsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FactsController.swift; sourceTree = "<group>"; };
 		75227BDC1E9FB844006BD446 /* JustFacts WatchOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "JustFacts WatchOS.entitlements"; sourceTree = "<group>"; };
@@ -483,6 +487,7 @@
 				752E58871E93FE77003EF222 /* FactDataModel.swift */,
 				755856451E9E2B2C0091ABB5 /* AppGroupRealmConfiguration.swift */,
 				753C5E281EA12EA700AF1DEC /* WatchSessionManager.swift */,
+				751C2FD21EA4F8E000F5FAF5 /* AppGroupForWatchOS.swift */,
 			);
 			name = Shared;
 			sourceTree = "<group>";
@@ -722,7 +727,7 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -1126,9 +1131,11 @@
 				753C5E2A1EA12EA700AF1DEC /* WatchSessionManager.swift in Sources */,
 				63DB48151DBE246800119897 /* Category.swift in Sources */,
 				637A4E4F1DB78EBE007C3EA6 /* InterfaceController.swift in Sources */,
+				751C2FD11EA4D66D00F5FAF5 /* PersistencyManager.swift in Sources */,
 				33B1D1E41DB63185000C4062 /* LibraryWatchAPI.swift in Sources */,
 				75D9A3141D92A01E0075BBBD /* CategoryRowController.swift in Sources */,
 				75227BF31E9FD954006BD446 /* AppGroupRealmConfiguration.swift in Sources */,
+				751C2FD41EA4F8E000F5FAF5 /* AppGroupForWatchOS.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1153,6 +1160,7 @@
 				755856461E9E2B2C0091ABB5 /* AppGroupRealmConfiguration.swift in Sources */,
 				883D70051C0DAE22003ECEE2 /* AppDelegate.swift in Sources */,
 				33B1D18B1DB10EFD000C4062 /* CategoryDetailViewController.swift in Sources */,
+				751C2FD31EA4F8E000F5FAF5 /* AppGroupForWatchOS.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1382,7 +1390,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "JustFacts WatchOS/JustFacts WatchOS.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Pavlo Andryeyev (LF2HB98HLY)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
@@ -1417,7 +1424,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "JustFacts WatchOS/JustFacts WatchOS.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Pavel Andreev (UT3YUVT7N2)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";

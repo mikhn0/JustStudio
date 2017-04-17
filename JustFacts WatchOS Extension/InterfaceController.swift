@@ -16,33 +16,41 @@ class InterfaceController: WKInterfaceController , WCSessionDelegate {
 
     @IBOutlet var backgroundGroup: WKInterfaceGroup!
     @IBOutlet var categoryTable: WKInterfaceTable!
-    var categories:Results<CategoryDataModel>?
+
     var selectedIndex = 0
-    
-    let realm = try! Realm()
+    var realm : Realm!
+
+    var categories: Results<CategoryDataModel>? {
+            return self.realm.objects(CategoryDataModel.self)
+    }
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        let appGroup = "group.com.fruktorum.JustFacts"
-        let fileManager = FileManager.default
-        let realmConfigurator = AppGroupRealmConfiguration(appGroupIdentifier: appGroup, fileManager: fileManager)
-        realmConfigurator.updateDefaultRealmConfiguration()
+//            if WCSession.isSupported() {
+//                let session = WCSession.default()
+//                session.delegate = self
+//                session.activate()
+//                print("---Сессия активирована на iWatch")
+//            }
         
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
+        let directory: URL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: K_GROUP_ID)!
         
-        if WCSession.isSupported() {
-            let session = WCSession.default()
-            session.delegate = self
-            session.activate()
-            
-            sendMessage()
-        }
-        self.allCategories()
+        let fileURL = directory.appendingPathComponent(K_DB_NAME)
+        realm = try! Realm(fileURL: fileURL)
+        print("fileURL ===== \(fileURL)")
+        print("categories ==== \(String(describing: categories))")
+        prepareTable()
     }
     
     override func didAppear() {
         super.didAppear()
+        let directory: URL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: K_GROUP_ID)!
+        
+        let fileURL = directory.appendingPathComponent(K_DB_NAME)
+        realm = try! Realm(fileURL: fileURL)
+        print("categories ==== \(String(describing: categories))")
+        prepareTable()
         if let controller = categoryTable.rowController(at: selectedIndex) as? CategoryRowController {
             animate(withDuration: 0.35, animations: { () -> Void in
                 controller.updateForCheckIn()
@@ -78,13 +86,11 @@ class InterfaceController: WKInterfaceController , WCSessionDelegate {
     }
 
     func allCategories() {
-        let realm = try! Realm()
-        if let categoriesFromDB = realm.objects(CategoryDataModel.self) as? Results<CategoryDataModel> {
-            self.categories = categoriesFromDB //запись категорий
+        //let realm = try! Realm()
+        //if let categoriesFromDB = categories {//realm.objects(CategoryDataModel.self) as? Results<CategoryDataModel> {
+            //self.categories = categoriesFromDB //запись категорий
             self.prepareTable()
-
-            //realmLabel.setText(firstField.text)
-        }
+        //}
 //        LibraryWatchAPI.sharedInstance().getAllCategoryForWatch ({ (categories: Results<CategoryDataModel>?) -> Void in
 //            
 //            if categories != nil {
@@ -95,9 +101,9 @@ class InterfaceController: WKInterfaceController , WCSessionDelegate {
     }
     
     func prepareTable () {
-        let categorienNumber = categories?.count
+        let categoryNumber = categories?.count
         
-        categoryTable.setNumberOfRows(categorienNumber!, withRowType: "CategoryRow")
+        categoryTable.setNumberOfRows(categoryNumber!, withRowType: "CategoryRow")
         for index in 0..<categoryTable.numberOfRows {
             if let controller = categoryTable.rowController(at: index) as? CategoryRowController {
                 
@@ -121,16 +127,41 @@ class InterfaceController: WKInterfaceController , WCSessionDelegate {
     
     @available(watchOS 2.2, *)
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-        print("ActivationDidComplete")
-        
-        let realm = try! Realm()
-        if (realm.objects(CategoryDataModel.self) as? Results<CategoryDataModel>) == nil {
-            print("БД пустая!")
-            sendMessage()
-        }
+        print("ActivationDidComplete on Watch")
+        //sendMessage()
+        recieveFileDB()
     }
     
+    func session(_ session: WCSession, didReceive file: WCSessionFile) {
+        
+        //let realm = try! Realm()
+        if categories == nil {
+            sendMessage()
+        }
+//        if let categ = realm.objects(CategoryDataModel.self) as? Results<CategoryDataModel> {
+//            self.categories = categ
+//        } else  {
+//            sendMessage()
+//        }
+    }
     
+    func session(_ session: WCSession, didFinish fileTransfer: WCSessionFileTransfer, error: Error?) {
+        print("WE GET ERROR")
+    }
+
+    func recieveFileDB() {
+        if WCSession.default().isReachable {
+            let applicationDict = ["getFileDB": 1]
+            WCSession.default().sendMessage(applicationDict,
+                                            replyHandler: {
+                                                replyDict in
+                                                print(replyDict)
+            },
+                                            errorHandler: {
+                                                error in print(error.localizedDescription)
+            })
+        }
+    }
     func sendMessage(){
         if WCSession.default().isReachable {
             let applicationDict = ["getCategories": 1]
@@ -138,7 +169,7 @@ class InterfaceController: WKInterfaceController , WCSessionDelegate {
                                             replyHandler: {
                                                 replyDict in print(replyDict)
                                                 
-                                                if let reply = replyDict as? [String:String], reply == ["reply" : "OK"] {
+                                                if let reply = replyDict as? [String:String], reply["reply"] == "OK" {
                                                     self.allCategories()
                                                 }
                                                 
