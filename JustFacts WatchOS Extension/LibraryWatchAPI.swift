@@ -17,10 +17,10 @@ class LibraryWatchAPI : NSObject  {
     static var instance: LibraryWatchAPI!
     var pageData: [FactDataModel] = []
     
-    let persistencyManagerWatch: PersistencyManager
+    let persistencyManagerWatch: PersistencyManagerWatch
     
     override init() {
-        persistencyManagerWatch = PersistencyManager()
+        persistencyManagerWatch = PersistencyManagerWatch()
         super.init()
     }
     
@@ -33,7 +33,7 @@ class LibraryWatchAPI : NSObject  {
     func getAllCategoryForWatch(_ completion: @escaping (_ categories: Results<CategoryDataModel>?) -> Void) {
         print("start get all categories!!!")
         //1 get categories from BD
-        if let categoriesFromBD = persistencyManagerWatch.readCategoryFromBD(), categoriesFromBD.count > 0 {
+        if let categoriesFromBD = self.persistencyManagerWatch.readCategoryFromBD(), categoriesFromBD.count > 0 {
             completion(categoriesFromBD)
             print("FINISHED get all categories!!!")
         }
@@ -76,6 +76,8 @@ class LibraryWatchAPI : NSObject  {
         let url = NSURL(string: "\(SERVER_URL)/facts?category=\(category)")//\(SERVER_URL)/facts", parameters:["category":category]
         
         let task = URLSession.shared.dataTask(with: url! as URL) {(data, response, error) in
+            //print(NSString(data: data!, encoding: String.Encoding.utf8.rawValue))
+            //print(" response ====== s\(response)")
             
             if (error != nil) {
                 print("API error: \(String(describing: error)), \(String(describing: error?.localizedDescription))")

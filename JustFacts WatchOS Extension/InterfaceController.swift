@@ -18,39 +18,31 @@ class InterfaceController: WKInterfaceController , WCSessionDelegate {
     @IBOutlet var categoryTable: WKInterfaceTable!
 
     var selectedIndex = 0
-    var realm : Realm!
+    var realm: Realm!
 
-    var categories: Results<CategoryDataModel>? {
-            return self.realm.objects(CategoryDataModel.self)
-    }
+    var categories: Results<CategoryDataModel>?
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-//            if WCSession.isSupported() {
-//                let session = WCSession.default()
-//                session.delegate = self
-//                session.activate()
-//                print("---Сессия активирована на iWatch")
-//            }
+        let appGroup = "group.com.fruktorum.JustFacts"
+        let fileManager = FileManager.default
+        let realmConfigurator = AppGroupRealmConfiguration(appGroupIdentifier: appGroup, fileManager: fileManager)
+        realmConfigurator.updateDefaultRealmConfiguration()
         
-        let directory: URL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: K_GROUP_ID)!
+        print("fileDBonWatch ===== \(Realm.Configuration.defaultConfiguration.fileURL!)")
         
-        let fileURL = directory.appendingPathComponent(K_DB_NAME)
-        realm = try! Realm(fileURL: fileURL)
-        print("fileURL ===== \(fileURL)")
-        print("categories ==== \(String(describing: categories))")
-        prepareTable()
+        if WCSession.isSupported() {
+            let session = WCSession.default()
+            session.delegate = self
+            session.activate()
+        }
+        
+        //self.prepareTable()
     }
     
     override func didAppear() {
         super.didAppear()
-        let directory: URL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: K_GROUP_ID)!
-        
-        let fileURL = directory.appendingPathComponent(K_DB_NAME)
-        realm = try! Realm(fileURL: fileURL)
-        print("categories ==== \(String(describing: categories))")
-        prepareTable()
         if let controller = categoryTable.rowController(at: selectedIndex) as? CategoryRowController {
             animate(withDuration: 0.35, animations: { () -> Void in
                 controller.updateForCheckIn()
@@ -86,18 +78,13 @@ class InterfaceController: WKInterfaceController , WCSessionDelegate {
     }
 
     func allCategories() {
-        //let realm = try! Realm()
-        //if let categoriesFromDB = categories {//realm.objects(CategoryDataModel.self) as? Results<CategoryDataModel> {
-            //self.categories = categoriesFromDB //запись категорий
-            self.prepareTable()
-        //}
-//        LibraryWatchAPI.sharedInstance().getAllCategoryForWatch ({ (categories: Results<CategoryDataModel>?) -> Void in
-//            
-//            if categories != nil {
-//                    self.categories = categories //запись категорий
-//                    self.prepareTable()
-//            }
-//        })
+
+        LibraryWatchAPI.sharedInstance().getAllCategoryForWatch ({ (categories: Results<CategoryDataModel>?) -> Void in
+            if categories != nil {
+                    self.categories = categories //запись категорий
+                    self.prepareTable()
+            }
+        })
     }
     
     func prepareTable () {
@@ -128,55 +115,49 @@ class InterfaceController: WKInterfaceController , WCSessionDelegate {
     @available(watchOS 2.2, *)
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         print("ActivationDidComplete on Watch")
-        //sendMessage()
-        recieveFileDB()
+        
+        sendMessage()
+
+        
     }
     
     func session(_ session: WCSession, didReceive file: WCSessionFile) {
+//        print("receiveFile === \(file.fileURL)")
+//        var config = Realm.Configuration()
+//        config.fileURL = file.fileURL
+//        Realm.Configuration.defaultConfiguration = config
+//        print("fileURL === \(Realm.Configuration.defaultConfiguration))")
         
-        //let realm = try! Realm()
-        if categories == nil {
-            sendMessage()
-        }
-//        if let categ = realm.objects(CategoryDataModel.self) as? Results<CategoryDataModel> {
-//            self.categories = categ
-//        } else  {
-//            sendMessage()
-//        }
-    }
-    
-    func session(_ session: WCSession, didFinish fileTransfer: WCSessionFileTransfer, error: Error?) {
-        print("WE GET ERROR")
+        
     }
 
-    func recieveFileDB() {
-        if WCSession.default().isReachable {
-            let applicationDict = ["getFileDB": 1]
-            WCSession.default().sendMessage(applicationDict,
-                                            replyHandler: {
-                                                replyDict in
-                                                print(replyDict)
-            },
-                                            errorHandler: {
-                                                error in print(error.localizedDescription)
-            })
-        }
-    }
-    func sendMessage(){
+//    func recieveFileDB() {
+//        if WCSession.default().isReachable {
+//            let applicationDict = ["getFileDB": 1]
+//            WCSession.default().sendMessage(applicationDict,
+//                                            replyHandler: {
+//                                                replyDict in print(replyDict)
+//            },
+//                                            errorHandler: {
+//                                                error in print(error.localizedDescription)
+//            })
+//        }
+//    }
+    func sendMessage() {
         if WCSession.default().isReachable {
             let applicationDict = ["getCategories": 1]
             WCSession.default().sendMessage(applicationDict,
-                                            replyHandler: {
-                                                replyDict in print(replyDict)
-                                                
-                                                if let reply = replyDict as? [String:String], reply["reply"] == "OK" {
-                                                    self.allCategories()
-                                                }
-                                                
+                                            replyHandler: { replyDict in print(replyDict)
+                                                let fileDB_URL = replyDict["reply"]
+                                                print("!!!! fileDB_URL from App === \(fileDB_URL!)")
             },
-                                            errorHandler: {
-                                                error in print(error.localizedDescription)
-            })
+                                            
+                                                
+//                                                if let reply = replyDict as? [String:String], reply["reply"] == "OK" {
+//                                                    self.allCategories()
+//                                                }
+
+                                            errorHandler: { error in print(error.localizedDescription) })
         }
     }
 }

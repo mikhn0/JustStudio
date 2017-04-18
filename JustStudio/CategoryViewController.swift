@@ -26,12 +26,9 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
+        print("fileDBonApp ===== \(Realm.Configuration.defaultConfiguration.fileURL!)")
         
-        let directory: URL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: K_GROUP_ID)!
-        let fileURL = directory.appendingPathComponent(K_DB_NAME)
-        realm = try! Realm(fileURL: fileURL)
-        let alertController = UIAlertController(title: "Error", message: "file url \(String(describing: realm.configuration.fileURL))", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Error", message: "file url \(String(describing: Realm.Configuration.defaultConfiguration.fileURL!))", preferredStyle: .alert)
         
         let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
             // ...
@@ -42,9 +39,6 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
             // ...
         }
 
-        
-        print("file url \(String(describing: realm.configuration.fileURL))")
-        
         LibraryAPI.sharedInstance().getAllCategory ({ (categories: Results<CategoryDataModel>?) -> Void in
             if categories != nil {
                 if self.categories != nil {
