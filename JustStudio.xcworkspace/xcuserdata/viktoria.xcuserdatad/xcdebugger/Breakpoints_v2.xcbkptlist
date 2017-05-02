@@ -74,45 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JustFacts WatchOS Extension/InterfaceController.swift"
-            timestampString = "514133901.408706"
+            timestampString = "515416953.78324"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "172"
-            endingLineNumber = "172"
-            landmarkName = "sendMessage()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "JustFacts_WatchOS_Extension.InterfaceController.(sendMessage () -&gt; ()).(closure #1)"
-                  moduleName = "JustFacts WatchOS Extension"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/viktoria/workspace/justFacts/JustStudio/JustFacts%20WatchOS%20Extension/InterfaceController.swift"
-                  timestampString = "514132767.921857"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "171"
-                  endingLineNumber = "171"
-                  offsetFromSymbolStart = "158">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "JustFacts_WatchOS_Extension.InterfaceController.(sendMessage () -&gt; ()).(closure #1)"
-                  moduleName = "JustFacts WatchOS Extension"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/viktoria/workspace/justFacts/JustStudio/JustFacts%20WatchOS%20Extension/InterfaceController.swift"
-                  timestampString = "514132767.925099"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "171"
-                  endingLineNumber = "171"
-                  offsetFromSymbolStart = "243">
-               </Location>
-            </Locations>
+            endingLineNumber = "172">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -129,6 +95,38 @@
             endingLineNumber = "65"
             landmarkName = "recieveCategoriesFromServer(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JustStudio.LibraryAPI.(recieveCategoriesFromServer ((Swift.Dictionary&lt;Swift.String, Swift.String&gt;) -&gt; ()) -&gt; ()).(closure #1)"
+                  moduleName = "JustStudio"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/viktoria/workspace/justFacts/JustStudio/JustStudio/API/LibraryAPI.swift"
+                  timestampString = "515421180.19431"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JustStudio.LibraryAPI.(recieveCategoriesFromServer ((Swift.Dictionary&lt;Swift.String, Swift.String&gt;) -&gt; ()) -&gt; ()).(closure #1).(implicit closure #1)"
+                  moduleName = "JustStudio"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/viktoria/workspace/justFacts/JustStudio/JustStudio/API/LibraryAPI.swift"
+                  timestampString = "515421180.19707"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -138,13 +136,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JustFacts WatchOS Extension/InterfaceController.swift"
-            timestampString = "514133901.408706"
+            timestampString = "515416953.78324"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
-            landmarkName = "allCategories()"
-            landmarkType = "7">
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "InterfaceController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -154,13 +152,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JustFacts WatchOS Extension/InterfaceController.swift"
-            timestampString = "514133901.408706"
+            timestampString = "515416953.78324"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
-            landmarkName = "session(_:didReceive:)"
-            landmarkType = "7">
+            startingLineNumber = "130"
+            endingLineNumber = "130"
+            landmarkName = "InterfaceController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -182,23 +180,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "JustFacts WatchOS Extension/InterfaceController.swift"
-            timestampString = "514132666.314137"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "awake(withContext:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JustFacts WatchOS Extension/InterfaceController.swift"
@@ -207,8 +189,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "24"
             endingLineNumber = "24"
-            landmarkName = "categories"
-            landmarkType = "24">
+            landmarkName = "InterfaceController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -218,11 +200,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JustFacts WatchOS Extension/InterfaceController.swift"
-            timestampString = "514133901.408706"
+            timestampString = "515416953.78324"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "didAppear()"
             landmarkType = "7">
          </BreakpointContent>

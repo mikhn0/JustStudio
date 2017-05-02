@@ -24,14 +24,6 @@ class InterfaceController: WKInterfaceController , WCSessionDelegate {
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        
-        let appGroup = "group.com.fruktorum.JustFacts"
-        let fileManager = FileManager.default
-        let realmConfigurator = AppGroupRealmConfiguration(appGroupIdentifier: appGroup, fileManager: fileManager)
-        realmConfigurator.updateDefaultRealmConfiguration()
-        
-        print("fileDBonWatch ===== \(Realm.Configuration.defaultConfiguration.fileURL!)")
-        
         if WCSession.isSupported() {
             let session = WCSession.default()
             session.delegate = self
@@ -150,6 +142,14 @@ class InterfaceController: WKInterfaceController , WCSessionDelegate {
                                             replyHandler: { replyDict in print(replyDict)
                                                 let fileDB_URL = replyDict["reply"]
                                                 print("!!!! fileDB_URL from App === \(fileDB_URL!)")
+                                                
+                                                let appGroup = "group.com.fruktorum.JustFacts"
+                                                let fileManager = FileManager.default
+                                                let realmConfigurator = AppGroupRealmConfiguration(appGroupIdentifier: appGroup, fileManager: fileManager)
+                                                realmConfigurator.setPhoneRealmConfiguration(withPath: URL(fileURLWithPath: fileDB_URL as! String))//(fileDB_URL as! String))
+                                                //print("fileURL === \(Realm.Configuration.defaultConfiguration))")
+
+                                                
             },
                                             
                                                 

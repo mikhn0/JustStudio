@@ -22,12 +22,17 @@ public class AppGroupRealmConfiguration {
     public func createRealmConfiguration() -> Realm.Configuration {
         let databaseDirectoryPath = self.fileManager.containerURL(forSecurityApplicationGroupIdentifier: self.appGroupIdentifier)!
         let databasePath = databaseDirectoryPath.appendingPathComponent("default.realm")
-        
+        print("")
         return Realm.Configuration(fileURL: databasePath)
     }
     
     public func updateDefaultRealmConfiguration() {
         Realm.Configuration.defaultConfiguration =
             self.createRealmConfiguration()
+    }
+    
+    public func setPhoneRealmConfiguration(withPath path:URL) {
+        Realm.Configuration.defaultConfiguration =
+            Realm.Configuration(fileURL: path)
     }
 }
