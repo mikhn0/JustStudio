@@ -11,12 +11,7 @@ import RealmSwift
 import WatchKit
 
 class BaseDataModel: Object {
-    
-// Specify properties to ignore (Realm won't persist these)
-    
-//  override static func ignoredProperties() -> [String] {
-//    return []
-//  }
+
     
     dynamic var _id: String = ""
     dynamic var active: Bool = false
@@ -27,5 +22,6 @@ class BaseDataModel: Object {
     override static func primaryKey() -> String? {
         return "_id"
     }
+    
 }
 

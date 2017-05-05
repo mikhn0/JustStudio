@@ -23,6 +23,11 @@ class PersistencyManager: NSObject {
         return realm.objects(FactDataModel.self).filter(aPredicate)
     }
     
+    func readFactFromDB_ForWatch(category: String) -> Results<FactDataModel>? {
+        let aPredicate = NSPredicate(format: "selectCategory = %@", category)
+        return realm.objects(FactDataModel.self).filter(aPredicate)
+    }
+    
     func writeCategoriesToBD(categories: [AnyObject], _ completion: @autoclosure @escaping () -> Void) {
         
         for element in categories {

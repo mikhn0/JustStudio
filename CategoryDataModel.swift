@@ -13,13 +13,6 @@ import WatchKit
 
 
 class CategoryDataModel: BaseDataModel {
-    
-// Specify properties to ignore (Realm won't persist these)
-    
-//  override static func ignoredProperties() -> [String] {
-//    return []
-//  }
-    
     dynamic var image: String = ""
     dynamic var name: String = ""
     let listOfFacts = List<FactDataModel>()

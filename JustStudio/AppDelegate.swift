@@ -25,13 +25,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
         let realmConfigurator = AppGroupRealmConfiguration(appGroupIdentifier: appGroup, fileManager: fileManager)
         realmConfigurator.updateDefaultRealmConfiguration()
         
-        //let pathFile = Realm.Configuration.defaultConfiguration.fileURL! as URL
-        
         if WCSession.isSupported() {
             let session = WCSession.default()
             session.delegate = self
             session.activate()
-            //wcSession?.transferFile(pathFile, metadata: nil)
         }
         return true
     }
@@ -43,30 +40,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
     
     func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
         
-        if let mess = message["getCategories"] as! Int?, mess == 1 {
-            let path = Realm.Configuration.defaultConfiguration.fileURL! as URL
-            
-            replyHandler(["reply" : "\(path)"])
-            
-            
+        if let messCateg = message["getCategoriesFromDB"] as! Int?, messCateg == 1 {
+            LibraryAPI.sharedInstance().recieveCategoriesFromServer({data in
+                session.sendMessageData(data as Data,
+                                        replyHandler: nil,
+                                        errorHandler: nil)
+                replyHandler(["reply" : "Category_OK"])
+            })
         }
-        
-//        if let command = message["getFileDB"] as! Int?, command == 1 {
-//            replyHandler(["reply" : "transferFileOK"])
-//            DispatchQueue.main.async {
-//                if let path = Realm.Configuration().fileURL {
-//                    WCSession.default().transferFile(path, metadata: nil)
-//                   // replyHandler(["reply" : "transferFileOK"])
-//                    
-//                }
-//            }
-//        } else if let command = message["getCategories"] as! Int?, command == 1 {
-//            replyHandler(["reply" : "OK"])
-//            //запрос на сервер с загрузкой данных в бд
-////            LibraryAPI.sharedInstance().recieveCategoriesFromServer({ (reply: [String : String]) in
-////                replyHandler(reply)
-////            })
-//        }
+        if let messFact = message["getFactsFromDB"] as! String? {
+            LibraryAPI.sharedInstance().receiveFactsFromServer(messFact, {data in
+                session.sendMessageData(data as Data,
+                                        replyHandler: nil,
+                                        errorHandler: nil)
+                replyHandler(["reply" : "Fact_OK"])
+            })
+        }
     }
     
     func sessionDidBecomeInactive(_ session: WCSession) {

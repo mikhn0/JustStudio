@@ -13,8 +13,8 @@ class Fact: Base {
     var category : String!
     
     
-    init(_ id:String!,_ active:Bool!,_ ru:String!,_ image: String!,_ en:String!,_ category:String!) {
-        super.init(id, active, ru, en)
+    init(_ id:String!,_ active:Bool!,_ ru:String!,_ image: String!,_ en:String!,_ category:String!, _ image_view:NSData) {
+        super.init(id, active, ru, en, image_view)
         self.image = image
         self.category = category
     }
@@ -26,7 +26,34 @@ class Fact: Base {
         let image = fact["image"] as! String
         let en = fact["en"] as! String
         let category = fact["category"] as! String
+        let image_view = fact["image_view"] as! NSData
         
-        self.init(id, active, ru, image, en, category)
+        self.init(id, active, ru, image, en, category, image_view)
+    }
+    
+    convenience init(withRealm fact:FactDataModel) {
+        let id = fact._id
+        let active = fact.active
+        let ru = fact.ru
+        let image = fact.image
+        let en = fact.en
+        let category = fact.category
+        let image_view = fact.image_view
+        
+        self.init(id, active, ru, image, en, category, image_view!)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        image = aDecoder.decodeObject(forKey: "image") as! String
+        category = aDecoder.decodeObject(forKey: "category") as! String
+        
+        super.init(coder: aDecoder)
+    }
+    
+    override func encode(with aCoder: NSCoder) {
+        super.encode(with: aCoder)
+        
+        aCoder.encode(image, forKey: "image")
+        aCoder.encode(category, forKey: "category")
     }
 }

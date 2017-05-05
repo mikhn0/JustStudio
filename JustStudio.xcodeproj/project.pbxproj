@@ -74,6 +74,12 @@
 		755E09781E93B83B004E2EAF /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 755E096C1E93B81F004E2EAF /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		75620F411C464D880069DD5F /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75620F401C464D880069DD5F /* CategoryCell.swift */; };
 		75620F4A1C4671EC0069DD5F /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 75620F491C4671EC0069DD5F /* UIImage+ImageEffects.m */; };
+		75857DBF1EBA3B270009BE0C /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DB480F1DBE23E500119897 /* Category.swift */; };
+		75857DC01EBA3B2D0009BE0C /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DB481C1DBE290700119897 /* Base.swift */; };
+		75857DC11EBA3B2F0009BE0C /* Fact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DB48101DBE23E500119897 /* Fact.swift */; };
+		75857DC21EBA4BC30009BE0C /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DB480F1DBE23E500119897 /* Category.swift */; };
+		75857DC31EBA4BC60009BE0C /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DB481C1DBE290700119897 /* Base.swift */; };
+		75857DC41EBA4BC90009BE0C /* Fact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DB48101DBE23E500119897 /* Fact.swift */; };
 		75D9A3141D92A01E0075BBBD /* CategoryRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D9A3131D92A01E0075BBBD /* CategoryRowController.swift */; };
 		75DE668C1DABD3F200E52FD0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75DE668B1DABD3F200E52FD0 /* UIKit.framework */; };
 		75FC744F1D8C2E3E00683CA0 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75FC744D1D8C2E3E00683CA0 /* Interface.storyboard */; };
@@ -439,6 +445,19 @@
 			name = "Support File";
 			sourceTree = "<group>";
 		};
+		75857DBE1EB9E1FB0009BE0C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				63DB48101DBE23E500119897 /* Fact.swift */,
+				63DB481C1DBE290700119897 /* Base.swift */,
+				63DB480F1DBE23E500119897 /* Category.swift */,
+				752E58831E93FE30003EF222 /* BaseDataModel.swift */,
+				752E58851E93FE4E003EF222 /* CategoryDataModel.swift */,
+				752E58871E93FE77003EF222 /* FactDataModel.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		75FC744C1D8C2E3E00683CA0 /* JustFacts WatchOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -479,12 +498,7 @@
 			isa = PBXGroup;
 			children = (
 				63DB480E1DBE23E500119897 /* Category.json */,
-				63DB48101DBE23E500119897 /* Fact.swift */,
-				63DB481C1DBE290700119897 /* Base.swift */,
-				63DB480F1DBE23E500119897 /* Category.swift */,
-				752E58831E93FE30003EF222 /* BaseDataModel.swift */,
-				752E58851E93FE4E003EF222 /* CategoryDataModel.swift */,
-				752E58871E93FE77003EF222 /* FactDataModel.swift */,
+				75857DBE1EB9E1FB0009BE0C /* Model */,
 				755856451E9E2B2C0091ABB5 /* AppGroupRealmConfiguration.swift */,
 				753C5E281EA12EA700AF1DEC /* WatchSessionManager.swift */,
 				751C2FD21EA4F8E000F5FAF5 /* AppGroupForWatchOS.swift */,
@@ -1095,6 +1109,7 @@
 				33AE234B1DC10D7200A9B22A /* CategoryVC.swift in Sources */,
 				752E588B1E95252E003EF222 /* CategoryDataModel.swift in Sources */,
 				33AE23541DC11C4800A9B22A /* AddJustStudioStickerCell.swift in Sources */,
+				75857DC41EBA4BC90009BE0C /* Fact.swift in Sources */,
 				753C5E2B1EA12EA700AF1DEC /* WatchSessionManager.swift in Sources */,
 				752E588C1E952530003EF222 /* BaseDataModel.swift in Sources */,
 				3316C6711DC3BE930008F697 /* ImageItemRenderer.swift in Sources */,
@@ -1103,6 +1118,8 @@
 				33AE234F1DC1161A00A9B22A /* PreviewVC.swift in Sources */,
 				752E588A1E95252C003EF222 /* FactDataModel.swift in Sources */,
 				632C2EF71DF99388004BB1E4 /* UILabel+setDescription.swift in Sources */,
+				75857DC21EBA4BC30009BE0C /* Category.swift in Sources */,
+				75857DC31EBA4BC60009BE0C /* Base.swift in Sources */,
 				33AE234D1DC1142400A9B22A /* FactsVC.swift in Sources */,
 				755202291E96B79D00F3BC2A /* PersistencyManager.swift in Sources */,
 				33AE23521DC11C0F00A9B22A /* FactCell.swift in Sources */,
@@ -1145,7 +1162,9 @@
 			files = (
 				752E58841E93FE30003EF222 /* BaseDataModel.swift in Sources */,
 				33B1D18A1DB10EE5000C4062 /* CategoryViewController.swift in Sources */,
+				75857DBF1EBA3B270009BE0C /* Category.swift in Sources */,
 				753C5E291EA12EA700AF1DEC /* WatchSessionManager.swift in Sources */,
+				75857DC11EBA3B2F0009BE0C /* Fact.swift in Sources */,
 				33B1D1E51DB6318A000C4062 /* LibraryAPI.swift in Sources */,
 				755150FD1C47EE1C00527733 /* UILable+Layout.swift in Sources */,
 				752E588E1E96A3DB003EF222 /* PersistencyManager.swift in Sources */,
@@ -1154,6 +1173,7 @@
 				63DB481A1DBE270700119897 /* UILabel+setDescription.swift in Sources */,
 				883D700B1C0DAE22003ECEE2 /* ModelController.swift in Sources */,
 				752E58861E93FE4E003EF222 /* CategoryDataModel.swift in Sources */,
+				75857DC01EBA3B2D0009BE0C /* Base.swift in Sources */,
 				883D70091C0DAE22003ECEE2 /* DataViewController.swift in Sources */,
 				75620F4A1C4671EC0069DD5F /* UIImage+ImageEffects.m in Sources */,
 				752E58901E96A404003EF222 /* HTTPClient.swift in Sources */,

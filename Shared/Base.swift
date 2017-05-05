@@ -8,17 +8,36 @@
 
 import Foundation
 
-class Base: NSObject {
+class Base:NSObject, NSCoding {
     
-    let _id: String
-    let active: Bool
-    let ru: String
-    let en: String
+    var _id: String
+    var active: Bool
+    var ru: String
+    var en: String
+    var image_view: NSData?
     
-    init(_ _id: String, _ active: Bool, _ ru: String, _ en: String) {
+    init(_ _id: String, _ active: Bool, _ ru: String, _ en: String, _ image_view: NSData) {
         self._id = _id
         self.active = active
         self.ru = ru
         self.en = en
+        self.image_view = image_view
     }
+ 
+    required init?(coder aDecoder: NSCoder) {
+        _id = aDecoder.decodeObject(forKey: "_id") as! String
+        active = aDecoder.decodeBool(forKey: "active")
+        ru = aDecoder.decodeObject(forKey: "ru") as! String
+        en = aDecoder.decodeObject(forKey: "en") as! String
+        image_view = aDecoder.decodeObject(forKey: "image_view") as? NSData
+    }
+    
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(_id, forKey: "_id")
+        aCoder.encode(active, forKey: "active")
+        aCoder.encode(ru, forKey: "ru")
+        aCoder.encode(en, forKey: "en")
+        aCoder.encode(image_view, forKey: "image_view")
+    }
+    
 }

@@ -20,17 +20,19 @@ class InterfaceController: WKInterfaceController , WCSessionDelegate {
     var selectedIndex = 0
     var realm: Realm!
 
-    var categories: Results<CategoryDataModel>?
+    //var categories: Results<CategoryDataModel>?
+    var categoriesFromApp: [Category] = []
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
+        
+        invalidateUserActivity()
+        
         if WCSession.isSupported() {
             let session = WCSession.default()
             session.delegate = self
             session.activate()
         }
-        
-        //self.prepareTable()
     }
     
     override func didAppear() {
@@ -46,7 +48,11 @@ class InterfaceController: WKInterfaceController , WCSessionDelegate {
         selectedIndex = rowIndex
         print("start press on cell")
         
+        sendMessageForFacts(index: selectedIndex)
         startAnim()
+        
+        
+        
         
         LibraryWatchAPI.sharedInstance().getFactsByCategoryForWatch ( (categories?[rowIndex].name)! , completion:{ (facts: [Fact]) -> Void in
  
@@ -69,24 +75,23 @@ class InterfaceController: WKInterfaceController , WCSessionDelegate {
         })
     }
 
-    func allCategories() {
-
-        LibraryWatchAPI.sharedInstance().getAllCategoryForWatch ({ (categories: Results<CategoryDataModel>?) -> Void in
-            if categories != nil {
-                    self.categories = categories //запись категорий
-                    self.prepareTable()
-            }
-        })
-    }
+//    func allCategories(categories:[Category]) {
+//
+//        LibraryWatchAPI.sharedInstance().getAllCategoryForWatch ({ (categories: Results<CategoryDataModel>?) -> Void in
+//            if categories != nil {
+//                    self.categories = categories //запись категорий
+//                    self.prepareTable()
+//            }
+//        })
+//    }
     
     func prepareTable () {
-        let categoryNumber = categories?.count
+        let categoryNumber = categoriesFromApp.count
+        categoryTable.setNumberOfRows(categoryNumber, withRowType: "CategoryRow")
         
-        categoryTable.setNumberOfRows(categoryNumber!, withRowType: "CategoryRow")
         for index in 0..<categoryTable.numberOfRows {
             if let controller = categoryTable.rowController(at: index) as? CategoryRowController {
-                
-                controller.category = categories?[index]
+                controller.category = categoriesFromApp[index]
                 if index == categoryTable.numberOfRows-1 {
                     self.stopAnim()
                 }
@@ -107,57 +112,47 @@ class InterfaceController: WKInterfaceController , WCSessionDelegate {
     @available(watchOS 2.2, *)
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         print("ActivationDidComplete on Watch")
-        
-        sendMessage()
-
-        
-    }
-    
-    func session(_ session: WCSession, didReceive file: WCSessionFile) {
-//        print("receiveFile === \(file.fileURL)")
-//        var config = Realm.Configuration()
-//        config.fileURL = file.fileURL
-//        Realm.Configuration.defaultConfiguration = config
-//        print("fileURL === \(Realm.Configuration.defaultConfiguration))")
-        
+        sendMessageForCategories()
         
     }
 
-//    func recieveFileDB() {
-//        if WCSession.default().isReachable {
-//            let applicationDict = ["getFileDB": 1]
-//            WCSession.default().sendMessage(applicationDict,
-//                                            replyHandler: {
-//                                                replyDict in print(replyDict)
-//            },
-//                                            errorHandler: {
-//                                                error in print(error.localizedDescription)
-//            })
-//        }
-//    }
-    func sendMessage() {
+    func sendMessageForCategories() {
         if WCSession.default().isReachable {
-            let applicationDict = ["getCategories": 1]
+            let applicationDict = ["getCategoriesFromDB": 1]
             WCSession.default().sendMessage(applicationDict,
                                             replyHandler: { replyDict in print(replyDict)
-                                                let fileDB_URL = replyDict["reply"]
-                                                print("!!!! fileDB_URL from App === \(fileDB_URL!)")
-                                                
-                                                let appGroup = "group.com.fruktorum.JustFacts"
-                                                let fileManager = FileManager.default
-                                                let realmConfigurator = AppGroupRealmConfiguration(appGroupIdentifier: appGroup, fileManager: fileManager)
-                                                realmConfigurator.setPhoneRealmConfiguration(withPath: URL(fileURLWithPath: fileDB_URL as! String))//(fileDB_URL as! String))
-                                                //print("fileURL === \(Realm.Configuration.defaultConfiguration))")
-
-                                                
-            },
-                                            
-                                                
-//                                                if let reply = replyDict as? [String:String], reply["reply"] == "OK" {
-//                                                    self.allCategories()
-//                                                }
-
+                                                let reply = replyDict["reply"]
+                                                print("!!!! reply from App_1 === \(reply!)")
+                                            },
                                             errorHandler: { error in print(error.localizedDescription) })
         }
     }
+
+    func sendMessageForFacts(index: Int) {
+        if WCSession.default().isReachable {
+            let applicationDict = ["getFactsFromDB": self.categoriesFromApp[index].name]
+            WCSession.default().sendMessage(applicationDict,
+                                            replyHandler: { replyDict in print(replyDict)
+                                                let reply = replyDict["reply"]
+                                                print("!!!! reply from App_2 === \(reply!)") },
+                                            errorHandler: { error in print(error.localizedDescription) })
+        }
+    }
+    
+    
+    func session(_ session: WCSession, didReceiveMessageData messageData: Data) {
+        print("Get categories from DB")
+        print("message = \(messageData)")
+        NSKeyedUnarchiver.setClass(Category.self, forClassName: "Category")
+        let categoriesFromApp = NSKeyedUnarchiver.unarchiveObject(with: messageData) as! [Category]
+        print("\(categoriesFromApp)")
+        self.categoriesFromApp = categoriesFromApp
+        self.prepareTable()
+        
+        print("")
+        
+        
+        
+    }
+    
 }

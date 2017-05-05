@@ -59,14 +59,41 @@ class LibraryAPI : NSObject  {
     }
     
     //функция для получения recieveCategoriesFromServer completion()
-    func recieveCategoriesFromServer(_ completion: @escaping (_ reply:  [String:String] ) -> Void) {
-        if LibraryAPI.isConnectedToNetwork() {
-            httpClient.getCategoriesFromServer() { (_ categories: [AnyObject]) -> Void in
-                self.persistencyManager.writeCategoriesToBD(categories: categories, {
-                    completion(["reply" : "OK"])
-                }())
+    func recieveCategoriesFromServer(_ completion: (_ data:Data) -> Void) {
+
+        let resultReadCategoryFromDB = persistencyManager.readCategoryFromBD()
+        
+        if resultReadCategoryFromDB != nil, (resultReadCategoryFromDB?.count)! > 0 {
+            var result = [Category]()
+            for elem in resultReadCategoryFromDB! {
+                let category_obj = Category(withRealm: elem)
+                category_obj.image_view = nil
+                result.append(category_obj)
             }
+
+            NSKeyedArchiver.setClassName("Category", for: Category.self)
+            let archiveData = NSKeyedArchiver.archivedData(withRootObject: result) as NSData
+            completion(archiveData as Data)
         }
+    }
+    
+    func receiveFactsFromServer(_ category: String, _ completion: (_ data:Data) -> Void) {
+        
+        let resultReadFactsFromDB = persistencyManager.readFactFromDB_ForWatch(category: category)
+        
+        if resultReadFactsFromDB != nil, (resultReadFactsFromDB?.count)! > 0 {
+            var result = [Fact]()
+            for elem in resultReadFactsFromDB! {
+                let fact_obj = Fact(withRealm: elem)
+                fact_obj.image_view = nil
+                result.append(fact_obj)
+            }
+            
+            NSKeyedArchiver.setClassName("Fact", for: Fact.self)
+            let archiveData = NSKeyedArchiver.archivedData(withRootObject: result) as NSData
+            completion(archiveData as Data)
+        }
+        
     }
     
     func getAllCategory(_ completion: @escaping (_ categories:  Results<CategoryDataModel>? ) -> Void) {

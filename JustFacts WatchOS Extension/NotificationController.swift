@@ -22,6 +22,8 @@ class NotificationController: WKUserNotificationInterfaceController {
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+        
+        self.updateUserActivity("com.fruktorum.JustFacts", userInfo: ["identifier" : 1], webpageURL: nil)
     }
 
     override func didDeactivate() {
