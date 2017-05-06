@@ -79,20 +79,22 @@ class LibraryAPI : NSObject  {
     
     func receiveFactsFromServer(_ category: String, _ completion: (_ data:Data) -> Void) {
         
-        let resultReadFactsFromDB = persistencyManager.readFactFromDB_ForWatch(category: category)
+        //let resultReadFactsFromDB = persistencyManager.readFactFromDB_ForWatch(category: category)
         
-        if resultReadFactsFromDB != nil, (resultReadFactsFromDB?.count)! > 0 {
-            var result = [Fact]()
-            for elem in resultReadFactsFromDB! {
-                let fact_obj = Fact(withRealm: elem)
-                fact_obj.image_view = nil
-                result.append(fact_obj)
-            }
-            
+//        if resultReadFactsFromDB != nil, (resultReadFactsFromDB?.count)! > 0 {
+//            var result = [Fact]()
+//            for elem in resultReadFactsFromDB! {
+//                let fact_obj = Fact(withRealm: elem)
+//                fact_obj.image_view = nil
+//                result.append(fact_obj)
+//            }
+//            
+//            NSKeyedArchiver.setClassName("Fact", for: Fact.self)
+//            let archiveData = NSKeyedArchiver.archivedData(withRootObject: result) as NSData
             NSKeyedArchiver.setClassName("Fact", for: Fact.self)
-            let archiveData = NSKeyedArchiver.archivedData(withRootObject: result) as NSData
+            let archiveData = NSKeyedArchiver.archivedData(withRootObject: [Fact]()) as NSData
             completion(archiveData as Data)
-        }
+//        }
         
     }
     

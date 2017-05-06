@@ -40,20 +40,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
     
     func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
         
-        if let messCateg = message["getCategoriesFromDB"] as! Int?, messCateg == 1 {
+        if let messCateg = message["getCategoriesFromDB"] as! String?, messCateg == "1" {
             LibraryAPI.sharedInstance().recieveCategoriesFromServer({data in
                 session.sendMessageData(data as Data,
                                         replyHandler: nil,
                                         errorHandler: nil)
-                replyHandler(["reply" : "Category_OK"])
+                replyHandler(["reply" : "Category"])
             })
         }
-        if let messFact = message["getFactsFromDB"] as! String? {
-            LibraryAPI.sharedInstance().receiveFactsFromServer(messFact, {data in
+        else{
+            let messFact = message["getFactsFromDB"] as! String? 
+            LibraryAPI.sharedInstance().receiveFactsFromServer(messFact!, {data in
                 session.sendMessageData(data as Data,
                                         replyHandler: nil,
                                         errorHandler: nil)
-                replyHandler(["reply" : "Fact_OK"])
+                replyHandler(["reply" : "Fact"])
             })
         }
     }

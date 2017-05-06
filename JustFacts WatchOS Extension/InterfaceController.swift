@@ -12,6 +12,19 @@ import RealmSwift
 import Realm
 import WatchConnectivity
 
+enum TypeMessageData {
+    case Category
+    case Fact
+    
+    mutating func detectType(byReply reply:String) {
+        if reply == "Category" {
+            self = .Category
+        } else if reply == "Fact" {
+            self = .Fact
+        }
+    }
+}
+
 class InterfaceController: WKInterfaceController , WCSessionDelegate {
 
     @IBOutlet var backgroundGroup: WKInterfaceGroup!
@@ -19,8 +32,8 @@ class InterfaceController: WKInterfaceController , WCSessionDelegate {
 
     var selectedIndex = 0
     var realm: Realm!
-
-    //var categories: Results<CategoryDataModel>?
+    var typeMessageData:TypeMessageData = .Category
+    
     var categoriesFromApp: [Category] = []
     
     override func awake(withContext context: Any?) {
@@ -47,43 +60,30 @@ class InterfaceController: WKInterfaceController , WCSessionDelegate {
     override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {
         selectedIndex = rowIndex
         print("start press on cell")
-        
+        //applicationDict = ["getFactsFromDB": self.categoriesFromApp[selectedIndex].name]
         sendMessageForFacts(index: selectedIndex)
-        startAnim()
-        
-        
-        
-        
-        LibraryWatchAPI.sharedInstance().getFactsByCategoryForWatch ( (categories?[rowIndex].name)! , completion:{ (facts: [Fact]) -> Void in
- 
-            var contexts: [Fact] = []
-            var controllers:  [String] = []
-            
-            var factNumbers = 20
-            if facts.count < factNumbers {
-                factNumbers = facts.count
-            }
-            
-            for index in 0..<factNumbers {
-                contexts.append(facts[index])
-                controllers.append("FactsController")
-            }
-
-
-            self.presentController(withNames: controllers, contexts:  contexts);
-            self.stopAnim()
-        })
-    }
-
-//    func allCategories(categories:[Category]) {
-//
-//        LibraryWatchAPI.sharedInstance().getAllCategoryForWatch ({ (categories: Results<CategoryDataModel>?) -> Void in
-//            if categories != nil {
-//                    self.categories = categories //запись категорий
-//                    self.prepareTable()
+        //startAnim()
+    
+//        LibraryWatchAPI.sharedInstance().getFactsByCategoryForWatch ( (categories?[rowIndex].name)! , completion:{ (facts: [Fact]) -> Void in
+// 
+//            var contexts: [Fact] = []
+//            var controllers:  [String] = []
+//            
+//            var factNumbers = 20
+//            if facts.count < factNumbers {
+//                factNumbers = facts.count
 //            }
+//            
+//            for index in 0..<factNumbers {
+//                contexts.append(facts[index])
+//                controllers.append("FactsController")
+//            }
+//
+//
+//            self.presentController(withNames: controllers, contexts:  contexts);
+//            self.stopAnim()
 //        })
-//    }
+    }
     
     func prepareTable () {
         let categoryNumber = categoriesFromApp.count
@@ -99,6 +99,25 @@ class InterfaceController: WKInterfaceController , WCSessionDelegate {
         }
     }
     
+    func prepareFacts(facts: [Fact]) {
+        startAnim()
+        var contexts: [Fact] = []
+        var controllers:  [String] = []
+        
+        var factNumbers = 20
+        if facts.count < factNumbers {
+            factNumbers = facts.count
+        }
+        
+        for index in 0..<factNumbers {
+            contexts.append(facts[index])
+            controllers.append("FactsController")
+        }
+        
+        self.presentController(withNames: controllers, contexts:  contexts);
+        self.stopAnim()
+    }
+    
     func startAnim() {
         backgroundGroup.startAnimating()
         backgroundGroup.setHidden(false)
@@ -112,16 +131,17 @@ class InterfaceController: WKInterfaceController , WCSessionDelegate {
     @available(watchOS 2.2, *)
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         print("ActivationDidComplete on Watch")
-        sendMessageForCategories()
-        
+        sendMessage()
     }
 
-    func sendMessageForCategories() {
+    func sendMessage() {
+        
         if WCSession.default().isReachable {
-            let applicationDict = ["getCategoriesFromDB": 1]
+            let applicationDict = ["getCategoriesFromDB": "1"]
             WCSession.default().sendMessage(applicationDict,
                                             replyHandler: { replyDict in print(replyDict)
                                                 let reply = replyDict["reply"]
+                                                self.typeMessageData.detectType(byReply: reply as! String)
                                                 print("!!!! reply from App_1 === \(reply!)")
                                             },
                                             errorHandler: { error in print(error.localizedDescription) })
@@ -134,6 +154,7 @@ class InterfaceController: WKInterfaceController , WCSessionDelegate {
             WCSession.default().sendMessage(applicationDict,
                                             replyHandler: { replyDict in print(replyDict)
                                                 let reply = replyDict["reply"]
+                                                self.typeMessageData.detectType(byReply: reply as! String)
                                                 print("!!!! reply from App_2 === \(reply!)") },
                                             errorHandler: { error in print(error.localizedDescription) })
         }
@@ -141,17 +162,25 @@ class InterfaceController: WKInterfaceController , WCSessionDelegate {
     
     
     func session(_ session: WCSession, didReceiveMessageData messageData: Data) {
-        print("Get categories from DB")
-        print("message = \(messageData)")
-        NSKeyedUnarchiver.setClass(Category.self, forClassName: "Category")
-        let categoriesFromApp = NSKeyedUnarchiver.unarchiveObject(with: messageData) as! [Category]
-        print("\(categoriesFromApp)")
-        self.categoriesFromApp = categoriesFromApp
-        self.prepareTable()
-        
-        print("")
-        
-        
+        switch typeMessageData {
+        case .Category:
+            print("Get categories from DB")
+            print("message = \(messageData)")
+            NSKeyedUnarchiver.setClass(Category.self, forClassName: "Category")
+            let categoriesFromApp = NSKeyedUnarchiver.unarchiveObject(with: messageData) as! [Category]
+            print("\(categoriesFromApp)")
+            self.categoriesFromApp = categoriesFromApp
+            self.prepareTable()
+        case .Fact :
+            print("Get facts from DB")
+            print("message = \(messageData)")
+            NSKeyedUnarchiver.setClass(Fact.self, forClassName: "Fact")
+            let factsFromApp = NSKeyedUnarchiver.unarchiveObject(with: messageData) as! [Fact]
+            print("\(factsFromApp)")
+            prepareFacts(facts: factsFromApp)
+        default:
+            break
+        }
         
     }
     

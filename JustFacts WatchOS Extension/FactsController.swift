@@ -15,10 +15,9 @@ class FactsController: WKInterfaceController {
     @IBOutlet var factImage: WKInterfaceImage!
     @IBOutlet var backgroundGroup: WKInterfaceGroup!
 
-    var fact: FactDataModel? {
+    var fact: Fact? {
         didSet {
             if let fact = fact {
-
                 factLabel.setText(fact.en)
                 factImage.downloadedFrom(link: "http://res.cloudinary.com/dvq3boovd/image/fetch/c_scale,w_300/"+fact.image)
             }
@@ -27,6 +26,6 @@ class FactsController: WKInterfaceController {
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        if let fact = context as? FactDataModel { self.fact = fact }
+        if let fact = context as? Fact { self.fact = fact }
     }
 }
