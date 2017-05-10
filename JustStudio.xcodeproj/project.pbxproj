@@ -77,11 +77,11 @@
 		75857DBF1EBA3B270009BE0C /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DB480F1DBE23E500119897 /* Category.swift */; };
 		75857DC01EBA3B2D0009BE0C /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DB481C1DBE290700119897 /* Base.swift */; };
 		75857DC11EBA3B2F0009BE0C /* Fact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DB48101DBE23E500119897 /* Fact.swift */; };
-		75857DC21EBA4BC30009BE0C /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DB480F1DBE23E500119897 /* Category.swift */; };
-		75857DC31EBA4BC60009BE0C /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DB481C1DBE290700119897 /* Base.swift */; };
-		75857DC41EBA4BC90009BE0C /* Fact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DB48101DBE23E500119897 /* Fact.swift */; };
 		75D9A3141D92A01E0075BBBD /* CategoryRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D9A3131D92A01E0075BBBD /* CategoryRowController.swift */; };
 		75DE668C1DABD3F200E52FD0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75DE668B1DABD3F200E52FD0 /* UIKit.framework */; };
+		75E046BC1EC385A500FAC26E /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DB480F1DBE23E500119897 /* Category.swift */; };
+		75E046BD1EC385A800FAC26E /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DB481C1DBE290700119897 /* Base.swift */; };
+		75E046BE1EC385AB00FAC26E /* Fact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DB48101DBE23E500119897 /* Fact.swift */; };
 		75FC744F1D8C2E3E00683CA0 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75FC744D1D8C2E3E00683CA0 /* Interface.storyboard */; };
 		75FC74511D8C2E3E00683CA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75FC74501D8C2E3E00683CA0 /* Assets.xcassets */; };
 		75FC74581D8C2E3F00683CA0 /* JustFacts WatchOS Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 75FC74571D8C2E3F00683CA0 /* JustFacts WatchOS Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -1109,7 +1109,7 @@
 				33AE234B1DC10D7200A9B22A /* CategoryVC.swift in Sources */,
 				752E588B1E95252E003EF222 /* CategoryDataModel.swift in Sources */,
 				33AE23541DC11C4800A9B22A /* AddJustStudioStickerCell.swift in Sources */,
-				75857DC41EBA4BC90009BE0C /* Fact.swift in Sources */,
+				75E046BE1EC385AB00FAC26E /* Fact.swift in Sources */,
 				753C5E2B1EA12EA700AF1DEC /* WatchSessionManager.swift in Sources */,
 				752E588C1E952530003EF222 /* BaseDataModel.swift in Sources */,
 				3316C6711DC3BE930008F697 /* ImageItemRenderer.swift in Sources */,
@@ -1118,8 +1118,8 @@
 				33AE234F1DC1161A00A9B22A /* PreviewVC.swift in Sources */,
 				752E588A1E95252C003EF222 /* FactDataModel.swift in Sources */,
 				632C2EF71DF99388004BB1E4 /* UILabel+setDescription.swift in Sources */,
-				75857DC21EBA4BC30009BE0C /* Category.swift in Sources */,
-				75857DC31EBA4BC60009BE0C /* Base.swift in Sources */,
+				75E046BC1EC385A500FAC26E /* Category.swift in Sources */,
+				75E046BD1EC385A800FAC26E /* Base.swift in Sources */,
 				33AE234D1DC1142400A9B22A /* FactsVC.swift in Sources */,
 				755202291E96B79D00F3BC2A /* PersistencyManager.swift in Sources */,
 				33AE23521DC11C0F00A9B22A /* FactCell.swift in Sources */,

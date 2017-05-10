@@ -50,6 +50,7 @@ class InterfaceController: WKInterfaceController , WCSessionDelegate {
     
     override func didAppear() {
         super.didAppear()
+        categoryTable.setHidden(false)
         if let controller = categoryTable.rowController(at: selectedIndex) as? CategoryRowController {
             animate(withDuration: 0.35, animations: { () -> Void in
                 controller.updateForCheckIn()
@@ -59,33 +60,13 @@ class InterfaceController: WKInterfaceController , WCSessionDelegate {
     
     override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {
         selectedIndex = rowIndex
-        print("start press on cell")
-        //applicationDict = ["getFactsFromDB": self.categoriesFromApp[selectedIndex].name]
+        startAnim()
+        categoryTable.setHidden(true)
         sendMessageForFacts(index: selectedIndex)
-        //startAnim()
-    
-//        LibraryWatchAPI.sharedInstance().getFactsByCategoryForWatch ( (categories?[rowIndex].name)! , completion:{ (facts: [Fact]) -> Void in
-// 
-//            var contexts: [Fact] = []
-//            var controllers:  [String] = []
-//            
-//            var factNumbers = 20
-//            if facts.count < factNumbers {
-//                factNumbers = facts.count
-//            }
-//            
-//            for index in 0..<factNumbers {
-//                contexts.append(facts[index])
-//                controllers.append("FactsController")
-//            }
-//
-//
-//            self.presentController(withNames: controllers, contexts:  contexts);
-//            self.stopAnim()
-//        })
     }
     
     func prepareTable () {
+        categoryTable.setHidden(false)
         let categoryNumber = categoriesFromApp.count
         categoryTable.setNumberOfRows(categoryNumber, withRowType: "CategoryRow")
         
@@ -100,14 +81,10 @@ class InterfaceController: WKInterfaceController , WCSessionDelegate {
     }
     
     func prepareFacts(facts: [Fact]) {
-        startAnim()
         var contexts: [Fact] = []
         var controllers:  [String] = []
         
-        var factNumbers = 20
-        if facts.count < factNumbers {
-            factNumbers = facts.count
-        }
+        let factNumbers = facts.count
         
         for index in 0..<factNumbers {
             contexts.append(facts[index])
@@ -135,17 +112,22 @@ class InterfaceController: WKInterfaceController , WCSessionDelegate {
     }
 
     func sendMessage() {
-        
         if WCSession.default().isReachable {
             let applicationDict = ["getCategoriesFromDB": "1"]
             WCSession.default().sendMessage(applicationDict,
                                             replyHandler: { replyDict in print(replyDict)
-                                                let reply = replyDict["reply"]
-                                                self.typeMessageData.detectType(byReply: reply as! String)
-                                                print("!!!! reply from App_1 === \(reply!)")
+                                                let reply = replyDict["reply"] as! String
+                                                if reply == "Category_Error" {
+                                                    let h0 = { print("ok")}
+                                                    
+                                                    let action = WKAlertAction(title: "OK", style: .default, handler:h0)
+                                                    let warning = SystemWarning.init()
+                                                    self.presentAlert(withTitle: detectCurrentLang(warning), message: "", preferredStyle: .actionSheet, actions: [action])
+                                                }
                                             },
                                             errorHandler: { error in print(error.localizedDescription) })
         }
+        self.typeMessageData.detectType(byReply: "Category")
     }
 
     func sendMessageForFacts(index: Int) {
@@ -153,35 +135,32 @@ class InterfaceController: WKInterfaceController , WCSessionDelegate {
             let applicationDict = ["getFactsFromDB": self.categoriesFromApp[index].name]
             WCSession.default().sendMessage(applicationDict,
                                             replyHandler: { replyDict in print(replyDict)
-                                                let reply = replyDict["reply"]
-                                                self.typeMessageData.detectType(byReply: reply as! String)
-                                                print("!!!! reply from App_2 === \(reply!)") },
+                                                let reply = replyDict["reply"] as! String
+                                                if reply == "Fact_Error" {
+                                                    let action = WKAlertAction(title: "OK", style: .default, handler:{})
+                                                    let warning = SystemWarning()
+                                                    self.presentAlert(withTitle: detectCurrentLang(warning), message: "", preferredStyle: .actionSheet, actions: [action])
+                                                }
+                                            },
                                             errorHandler: { error in print(error.localizedDescription) })
         }
+        self.typeMessageData.detectType(byReply: "Fact")
     }
-    
     
     func session(_ session: WCSession, didReceiveMessageData messageData: Data) {
         switch typeMessageData {
         case .Category:
-            print("Get categories from DB")
-            print("message = \(messageData)")
             NSKeyedUnarchiver.setClass(Category.self, forClassName: "Category")
             let categoriesFromApp = NSKeyedUnarchiver.unarchiveObject(with: messageData) as! [Category]
             print("\(categoriesFromApp)")
             self.categoriesFromApp = categoriesFromApp
             self.prepareTable()
         case .Fact :
-            print("Get facts from DB")
-            print("message = \(messageData)")
             NSKeyedUnarchiver.setClass(Fact.self, forClassName: "Fact")
             let factsFromApp = NSKeyedUnarchiver.unarchiveObject(with: messageData) as! [Fact]
             print("\(factsFromApp)")
             prepareFacts(facts: factsFromApp)
-        default:
-            break
         }
-        
     }
     
 }

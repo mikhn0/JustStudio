@@ -10,14 +10,12 @@ import WatchKit
 
 extension WKInterfaceLabel {
     func setDescription(dataObject: Base) {
-        
-        let pre = NSLocale.preferredLanguages[0]
-        
-        if pre.contains("ru") {
-            self.setText(dataObject.ru)
-        } else {
-            self.setText(dataObject.en)
-        }
+        self.setText(detectCurrentLang(dataObject))
     }
+}
+
+func detectCurrentLang(_ dataObject: Base) -> String {
+    let pre = NSLocale.preferredLanguages[0]
     
+    return pre.contains("ru") ? dataObject.ru : dataObject.en
 }

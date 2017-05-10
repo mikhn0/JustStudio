@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JustFacts WatchOS Extension/InterfaceController.swift"
-            timestampString = "515778107.207188"
+            timestampString = "516134459.556814"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "196"
-            endingLineNumber = "196">
+            startingLineNumber = "175"
+            endingLineNumber = "175">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -88,7 +88,7 @@
                   moduleName = "JustFacts WatchOS Extension"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/viktoria/workspace/justFacts/JustStudio/JustFacts%20WatchOS%20Extension/LibraryWatchAPI.swift"
-                  timestampString = "515778205.143003"
+                  timestampString = "516133601.113403"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "36"
@@ -103,7 +103,7 @@
                   moduleName = "JustFacts WatchOS Extension"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/viktoria/workspace/justFacts/JustStudio/JustFacts%20WatchOS%20Extension/LibraryWatchAPI.swift"
-                  timestampString = "515778205.146994"
+                  timestampString = "516133601.116106"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "36"
@@ -111,22 +111,6 @@
                   offsetFromSymbolStart = "245">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Shared/Category.swift"
-            timestampString = "515678234.872829"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "init(withRealm:)"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -151,13 +135,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Shared/Category.swift"
-            timestampString = "515772834.132741"
+            filePath = "JustStudio/API/LibraryAPI.swift"
+            timestampString = "516124395.236699"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "encode(with:)"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "getFactsFromDB_ForWatch(_:_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -167,29 +151,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "JustFacts WatchOS Extension/InterfaceController.swift"
-            timestampString = "515778107.207188"
+            filePath = "JustStudio/PersistencyManager.swift"
+            timestampString = "516124605.490295"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "165"
-            endingLineNumber = "165"
-            landmarkName = "session(_:didReceiveMessageData:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "JustFacts WatchOS Extension/InterfaceController.swift"
-            timestampString = "515778178.637403"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
-            landmarkName = "sendMessageForFacts(index:)"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "readFactFromDB_ForWatch(category:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

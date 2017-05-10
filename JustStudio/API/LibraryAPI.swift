@@ -58,8 +58,7 @@ class LibraryAPI : NSObject  {
         return (isReachable && !needsConnection)
     }
     
-    //функция для получения recieveCategoriesFromServer completion()
-    func recieveCategoriesFromServer(_ completion: (_ data:Data) -> Void) {
+    func getCategoriesFromDB_ForWatch(_ completion: (_ data:Data?) -> Void) {
 
         let resultReadCategoryFromDB = persistencyManager.readCategoryFromBD()
         
@@ -74,28 +73,28 @@ class LibraryAPI : NSObject  {
             NSKeyedArchiver.setClassName("Category", for: Category.self)
             let archiveData = NSKeyedArchiver.archivedData(withRootObject: result) as NSData
             completion(archiveData as Data)
+        } else {
+            completion(nil)
         }
     }
     
-    func receiveFactsFromServer(_ category: String, _ completion: (_ data:Data) -> Void) {
+    func getFactsFromDB_ForWatch(_ category: String, _ completion: (_ data:Data?) -> Void) {
+        let resultReadFactsFromDB = persistencyManager.readFactFromDB_ForWatch(category: category)
         
-        //let resultReadFactsFromDB = persistencyManager.readFactFromDB_ForWatch(category: category)
-        
-//        if resultReadFactsFromDB != nil, (resultReadFactsFromDB?.count)! > 0 {
-//            var result = [Fact]()
-//            for elem in resultReadFactsFromDB! {
-//                let fact_obj = Fact(withRealm: elem)
-//                fact_obj.image_view = nil
-//                result.append(fact_obj)
-//            }
-//            
-//            NSKeyedArchiver.setClassName("Fact", for: Fact.self)
-//            let archiveData = NSKeyedArchiver.archivedData(withRootObject: result) as NSData
+        if resultReadFactsFromDB != nil, (resultReadFactsFromDB?.count)! > 0 {
+            var result = [Fact]()
+            for elem in resultReadFactsFromDB! {
+                let fact_obj = Fact(withRealm: elem)
+                fact_obj.image_view = nil
+                result.append(fact_obj)
+            }
+            
             NSKeyedArchiver.setClassName("Fact", for: Fact.self)
-            let archiveData = NSKeyedArchiver.archivedData(withRootObject: [Fact]()) as NSData
+            let archiveData = NSKeyedArchiver.archivedData(withRootObject: result) as NSData
             completion(archiveData as Data)
-//        }
-        
+        } else {
+            completion(nil)
+        }
     }
     
     func getAllCategory(_ completion: @escaping (_ categories:  Results<CategoryDataModel>? ) -> Void) {

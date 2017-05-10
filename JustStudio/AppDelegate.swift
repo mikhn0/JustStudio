@@ -41,20 +41,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
     func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
         
         if let messCateg = message["getCategoriesFromDB"] as! String?, messCateg == "1" {
-            LibraryAPI.sharedInstance().recieveCategoriesFromServer({data in
-                session.sendMessageData(data as Data,
-                                        replyHandler: nil,
-                                        errorHandler: nil)
-                replyHandler(["reply" : "Category"])
+            LibraryAPI.sharedInstance().getCategoriesFromDB_ForWatch({data in
+                if data != nil {
+                    replyHandler(["reply" : "Category"])
+                    session.sendMessageData(data!,
+                                            replyHandler: nil,
+                                            errorHandler: nil)
+                } else {
+                    replyHandler(["reply" : "Category_Error"])
+                }
             })
-        }
-        else{
+        } else {
             let messFact = message["getFactsFromDB"] as! String? 
-            LibraryAPI.sharedInstance().receiveFactsFromServer(messFact!, {data in
-                session.sendMessageData(data as Data,
-                                        replyHandler: nil,
-                                        errorHandler: nil)
-                replyHandler(["reply" : "Fact"])
+            LibraryAPI.sharedInstance().getFactsFromDB_ForWatch(messFact!, {data in
+                if data != nil {
+                    replyHandler(["reply" : "Fact"])
+                    session.sendMessageData(data!,
+                                            replyHandler: nil,
+                                            errorHandler: nil)
+                } else {
+                    replyHandler(["reply" : "Fact_Error"])
+                }
             })
         }
     }
@@ -66,7 +73,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
     func sessionDidDeactivate(_ session: WCSession) {
         
     }
-    
 
 }
 

@@ -24,7 +24,7 @@ class PersistencyManager: NSObject {
     }
     
     func readFactFromDB_ForWatch(category: String) -> Results<FactDataModel>? {
-        let aPredicate = NSPredicate(format: "selectCategory = %@", category)
+        let aPredicate = NSPredicate(format: "selectCategory.name = %@", category)
         return realm.objects(FactDataModel.self).filter(aPredicate)
     }
     
