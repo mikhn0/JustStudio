@@ -27,7 +27,7 @@ class FactsVC: BaseViewController, UICollectionViewDataSource, UICollectionViewD
             print("first fact = \(String(describing: firstFact?.category))")
             for elem in facts! {
                 let fact:Facts
-                fact = Facts(desc: UILabel.returnDescription(elem), image: elem.image!)
+                fact = Facts(desc: returnDescriptionForApp(elem), image: elem.image!)
                 self.items.append(fact)
             }
         }
@@ -112,7 +112,7 @@ class FactsVC: BaseViewController, UICollectionViewDataSource, UICollectionViewD
         if facts != nil {
             for elem in facts! {
                 let fact:Facts
-                fact = Facts(desc: UILabel.returnDescription(elem), image: elem.image!)
+                fact = Facts(desc: returnDescriptionForApp(elem), image: elem.image!)
                 self.items.append(fact)
             }
         }

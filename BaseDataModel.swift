@@ -11,7 +11,6 @@ import RealmSwift
 import WatchKit
 
 class BaseDataModel: Object {
-
     
     dynamic var _id: String = ""
     dynamic var active: Bool = false
@@ -22,6 +21,6 @@ class BaseDataModel: Object {
     override static func primaryKey() -> String? {
         return "_id"
     }
-    
 }
+
 

@@ -121,7 +121,7 @@ class InterfaceController: WKInterfaceController , WCSessionDelegate {
                                                     let h0 = { print("ok")}
                                                     
                                                     let action = WKAlertAction(title: "OK", style: .default, handler:h0)
-                                                    let warning = SystemWarning.init()
+                                                    let warning = SystemWarningForWatch.init()
                                                     self.presentAlert(withTitle: detectCurrentLang(warning), message: "", preferredStyle: .actionSheet, actions: [action])
                                                 }
                                             },
@@ -138,7 +138,7 @@ class InterfaceController: WKInterfaceController , WCSessionDelegate {
                                                 let reply = replyDict["reply"] as! String
                                                 if reply == "Fact_Error" {
                                                     let action = WKAlertAction(title: "OK", style: .default, handler:{})
-                                                    let warning = SystemWarning()
+                                                    let warning = SystemWarningForWatch()
                                                     self.presentAlert(withTitle: detectCurrentLang(warning), message: "", preferredStyle: .actionSheet, actions: [action])
                                                 }
                                             },

@@ -14,6 +14,11 @@ import WatchConnectivity
 class CategoryViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var buttonFavorites: BarButton!
+    @IBOutlet weak var buttonToday: BarButton!
+    @IBOutlet weak var buttonRandom: BarButton!
+    
     let textCellIdentifier = "CategoryCell"
     var categories: Results<CategoryDataModel>?
     var indexesOfDifferenceObject:[Int:CategoryDataModel] = [:]
@@ -21,23 +26,19 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
     var countOfCategories:Int?
     var heightOfCell: CGFloat = 0.0
     
+    let httpClient = HTTPClient()
+    var facts: [FactDataModel]!
+    
     var realm : Realm!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        buttonFavorites.styleButtonFavorites()
+        buttonToday.styleButtonToday()
+        buttonRandom.styleButtonRandom()
+        
         print("fileDBonApp ===== \(Realm.Configuration.defaultConfiguration.fileURL!)")
-        
-        let alertController = UIAlertController(title: "Error", message: "file url \(String(describing: Realm.Configuration.defaultConfiguration.fileURL!))", preferredStyle: .alert)
-        
-        let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
-            // ...
-        }
-        alertController.addAction(OKAction)
-        
-        present(alertController, animated: true) {
-            // ...
-        }
 
         LibraryAPI.sharedInstance().getAllCategory ({ (categories: Results<CategoryDataModel>?) -> Void in
             if categories != nil {
@@ -59,24 +60,10 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
                     self.categories = categories; //запись категорий
                     self.countOfCategories = categories?.count
                     self.tableView.reloadData()
+                    
                 }
             }
         })
-            
-            /*else {
-                let alertController = UIAlertController(title: "Error", message: "System error.", preferredStyle: .alert)
-                
-                let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
-                    // ...
-                }
-                alertController.addAction(OKAction)
-                
-                self?.present(alertController, animated: true) {
-                    // ...
-                }
-            }*/
-
-        //проверяем 1. существует ли база-таблицы-данные, если да, то записываем категории
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -85,7 +72,6 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-    
     }
 
     func checkDifferenceCategoriesInDB(categoriesFromDB: Results<CategoryDataModel>, oldCategories: Results<CategoryDataModel>) {
@@ -205,23 +191,6 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
                         UIApplication.shared.openURL(URL(string: "https://itunes.apple.com/us/app/just-people-did-you-know/id1197390666")!)
                     }
                 }
-            case "celebrity":
-                let justPeoplesSchema = "readmypeopleapp://"
-                let justPeoplesUrl = URL(string: justPeoplesSchema)
-                if UIApplication.shared.canOpenURL(justPeoplesUrl!) {
-                    if #available(iOS 10.0, *) {
-                        UIApplication.shared.open(justPeoplesUrl!, options: [:], completionHandler: nil)
-                    } else {
-                        let success = UIApplication.shared.openURL(justPeoplesUrl!)
-                        print("Open \(justPeoplesSchema): \(success)")
-                    }
-                } else {
-                    if #available(iOS 10.0, *) {
-                        UIApplication.shared.open(URL(string: "https://itunes.apple.com/us/app/just-people-did-you-know/id1197390666")!, options: [:], completionHandler: nil)
-                    } else {
-                        UIApplication.shared.openURL(URL(string: "https://itunes.apple.com/us/app/just-people-did-you-know/id1197390666")!)
-                    }
-            }
             default:
                 self.performSegue(withIdentifier: "FactsByCategorySegue", sender: selectCategory)
                 break
@@ -241,6 +210,57 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
         }
     }
     
+    func addFavoritesFacts() -> [FactDataModel] {
+        
+        var favoritesFacts = [FactDataModel]()
+        let favoriteFactData = FactDataModel()
+        
+        if favoritesFacts == [], let likes = UserDefaults.standard.object(forKey: "LIKE_KEY"), (likes as AnyObject).count > 0 {
+            print("add favorites facts 1")
+            favoritesFacts.append(favoriteFactData)
+        } else {
+            print("remove favorites facts!")
+            favoritesFacts.removeAll()
+        }
+        if favoritesFacts != [], (UserDefaults.standard.object(forKey: "LIKE_KEY") as! [AnyObject]).count > 0 {
+            print("add favorites facts 2")
+            favoritesFacts.append(favoriteFactData)
+        }
+        return favoritesFacts
+    }
+    
+    @IBAction func buttonPressFavorites(_ sender: Any) {
+        
+        let favoritesFacts = addFavoritesFacts()
+        if favoritesFacts == [] {
+            let alertController = UIAlertController(title: "Error", message: "There are no favorites facts!", preferredStyle: .alert)
+            let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in }
+            alertController.addAction(OKAction)
+            present(alertController, animated: true) { }
+        }
+    }
+    
+    @IBAction func buttonPressToday(_ sender: Any) {
+        
+        LibraryAPI.sharedInstance().getRandomFactsFromServer ({ (facts: [FactDataModel]) -> Void in
+            if facts != [] {
+                self.facts = facts
+                
+            } else {
+                let alertController = UIAlertController(title: "Error", message: "There are no random facts!", preferredStyle: .alert)
+                let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in }
+                alertController.addAction(OKAction)
+                self.present(alertController, animated: true) { }
+            }
+        })
+        
+    }
+    
+    @IBAction func buttonPressRandom(_ sender: Any) {
+    }
+    
+    
+
 }
 
 extension Array {

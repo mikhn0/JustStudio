@@ -43,7 +43,7 @@ class Base:NSObject, NSCoding {
 }
 
 
-class SystemWarning: Base {
+class SystemWarningForWatch: Base {
   
     init(ru:String, en:String) {
         super.init("", true, ru, en, nil)

@@ -10,14 +10,13 @@ import Foundation
 
 extension UILabel {
     func setDescription(dataObject: BaseDataModel) {
-        text = UILabel.returnDescription(dataObject)
+        text = returnDescriptionForApp(dataObject)
     }
-    
-    class func returnDescription(_ dataObject: BaseDataModel) -> String {
-        let pre = NSLocale.preferredLanguages[0]
-        return pre.contains("ru") ? dataObject.ru : dataObject.en
-    }
-    
+}
+
+func returnDescriptionForApp(_ dataObject: BaseDataModel) -> String {
+    let pre = NSLocale.preferredLanguages[0]
+    return pre.contains("ru") ? dataObject.ru : dataObject.en
 }
 
 

@@ -16,6 +16,5 @@ extension WKInterfaceLabel {
 
 func detectCurrentLang(_ dataObject: Base) -> String {
     let pre = NSLocale.preferredLanguages[0]
-    
     return pre.contains("ru") ? dataObject.ru : dataObject.en
 }

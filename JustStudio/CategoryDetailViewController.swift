@@ -19,7 +19,6 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
     @IBOutlet weak var shareView: UIView!
     var pageViewController: UIPageViewController?
     var category: CategoryDataModel?
-    var semaphore: DispatchSemaphore?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,18 +43,29 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
         self.bannerView.rootViewController = self
         self.bannerView.load(GADRequest())
         
-        //semaphore = DispatchSemaphore(value: 0)
-        //DispatchQueue.global(qos: .userInitiated).async {
         print("user initiated task")
-    
-        LibraryAPI.sharedInstance().getFactsByCategory(self.category!, completion:{ (facts: Results<FactDataModel>?) -> Void in
+        if category!.name == "favorites" {
+            let likesValue = UserDefaults.standard.object(forKey: "LIKE_KEY") as! [[String : AnyObject]] //массив словарей
+            print("likes=====\(likesValue)")
             
-            DispatchQueue.main.async {
-                self.ConfigurationViewControllers(facts!)
+            var quotesArr: [FactDataModel] = []
+            let likes = likesValue.shuffle()
+            for element in likes {
+                let dict = element
+                let quoteData = FactDataModel(value:dict)
+                quotesArr.append(quoteData)
             }
-        })
-        //}
-        // Set the page view controller's bounds using an inset rect so that self's view is visible around the edges of the pages.
+            
+            self.configurationViewControllers(quotesArr)
+            
+        } else {
+            LibraryAPI.sharedInstance().getFactsByCategory(self.category!, completion:{ (facts: Results<FactDataModel>?) -> Void in
+                
+                DispatchQueue.main.async {
+                    self.ConfigurationViewControllers(facts!)
+                }
+            })
+        }
         var pageViewRect = self.view.bounds
         if UIDevice.current.userInterfaceIdiom == .pad {
             pageViewRect = pageViewRect.insetBy(dx: 40.0, dy: 40.0)

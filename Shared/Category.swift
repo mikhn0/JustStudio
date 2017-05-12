@@ -28,7 +28,6 @@ class Category: Base {
         let en = category["en"] as! String
         let name = category["name"] as! String
         let image_view = category["image_view"] as! NSData
-        
         self.init(id, active, ru, image, en, name, image_view)
     }
     
@@ -40,20 +39,17 @@ class Category: Base {
         let en = category.en
         let name = category.name
         let image_view = category.image_view
-        
         self.init(id, active, ru, image, en, name, image_view!)
     }
     
     required init?(coder aDecoder: NSCoder) {
         image_mini = aDecoder.decodeObject(forKey: "image_mini") as! String
         name = aDecoder.decodeObject(forKey: "name") as! String
-        
         super.init(coder: aDecoder)
     }
     
     override func encode(with aCoder: NSCoder) {
         super.encode(with: aCoder)
-        
         aCoder.encode(image_mini, forKey: "image_mini")
         aCoder.encode(name, forKey: "name")
     }
