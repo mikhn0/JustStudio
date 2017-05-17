@@ -26,13 +26,16 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
     var countOfCategories:Int?
     var heightOfCell: CGFloat = 0.0
     
+    static var Instance: CategoryViewController?
+    
     let httpClient = HTTPClient()
-    var facts: [FactDataModel]!
     
     var realm : Realm!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        CategoryViewController.Instance = self
         
         buttonFavorites.styleButtonFavorites()
         buttonToday.styleButtonToday()
@@ -49,10 +52,10 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
                     DispatchQueue(label: ".CheckDifCateg").async {
                         let realm = try! Realm()
                         guard let categ = realm.resolve(categoriesRef) else {
-                            return // person was deleted
+                            return
                         }
                         guard let oldCateg = realm.resolve(oldCategoriesRef) else {
-                            return // person was deleted
+                            return
                         }
                         self.checkDifferenceCategoriesInDB(categoriesFromDB: categ, oldCategories: oldCateg)
                     }
@@ -91,7 +94,7 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
                         let indexPath:IndexPath = IndexPath(row: key, section: 0)
                         let realm = try! Realm()
                         guard let categ = realm.resolve(categoryRef) else {
-                            return // person was deleted
+                            return
                         }
                         self.currentUpdateCategoryData = categ
                         self.tableView.reloadRows(at: [indexPath], with: .none)
@@ -210,58 +213,16 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
         }
     }
     
-    func addFavoritesFacts() -> [FactDataModel] {
+    func showAlert(title: String, message: String) {
         
-        var favoritesFacts = [FactDataModel]()
-        let favoriteFactData = FactDataModel()
-        
-        if favoritesFacts == [], let likes = UserDefaults.standard.object(forKey: "LIKE_KEY"), (likes as AnyObject).count > 0 {
-            print("add favorites facts 1")
-            favoritesFacts.append(favoriteFactData)
-        } else {
-            print("remove favorites facts!")
-            favoritesFacts.removeAll()
-        }
-        if favoritesFacts != [], (UserDefaults.standard.object(forKey: "LIKE_KEY") as! [AnyObject]).count > 0 {
-            print("add favorites facts 2")
-            favoritesFacts.append(favoriteFactData)
-        }
-        return favoritesFacts
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in }
+        alertController.addAction(OKAction)
+        present(alertController, animated: true) { }
     }
-    
-    @IBAction func buttonPressFavorites(_ sender: Any) {
-        
-        let favoritesFacts = addFavoritesFacts()
-        if favoritesFacts == [] {
-            let alertController = UIAlertController(title: "Error", message: "There are no favorites facts!", preferredStyle: .alert)
-            let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in }
-            alertController.addAction(OKAction)
-            present(alertController, animated: true) { }
-        }
-    }
-    
-    @IBAction func buttonPressToday(_ sender: Any) {
-        
-        LibraryAPI.sharedInstance().getRandomFactsFromServer ({ (facts: [FactDataModel]) -> Void in
-            if facts != [] {
-                self.facts = facts
-                
-            } else {
-                let alertController = UIAlertController(title: "Error", message: "There are no random facts!", preferredStyle: .alert)
-                let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in }
-                alertController.addAction(OKAction)
-                self.present(alertController, animated: true) { }
-            }
-        })
-        
-    }
-    
-    @IBAction func buttonPressRandom(_ sender: Any) {
-    }
-    
-    
 
 }
+
 
 extension Array {
     func contains<T>(obj: T) -> Bool where T : BaseDataModel {

@@ -12,8 +12,9 @@ import WatchKit
 
 class FactDataModel: BaseDataModel {
  
-    dynamic var image: String! = nil
-    dynamic var category : String! = nil
+    dynamic var image: String!
+    dynamic var category : String!
     dynamic var selectCategory: CategoryDataModel?
     dynamic var isLike : Bool = false
+    dynamic var random : String!
 }

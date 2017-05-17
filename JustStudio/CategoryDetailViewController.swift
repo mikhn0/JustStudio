@@ -56,7 +56,7 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
                 quotesArr.append(quoteData)
             }
             
-            self.configurationViewControllers(quotesArr)
+           // self.configurationViewControllers(quotesArr)
             
         } else {
             LibraryAPI.sharedInstance().getFactsByCategory(self.category!, completion:{ (facts: Results<FactDataModel>?) -> Void in

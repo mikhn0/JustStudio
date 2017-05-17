@@ -11,7 +11,6 @@ import UIKit
 import SDWebImage
 
 class DataViewController: UIViewController {
-
     
     @IBOutlet weak var dataLabel: UILabel!
     @IBOutlet weak var infoView: UIView!

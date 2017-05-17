@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
         let realmConfigurator = AppGroupRealmConfiguration(appGroupIdentifier: appGroup, fileManager: fileManager)
         realmConfigurator.updateDefaultRealmConfiguration()
         
-        print("fileDBonApp ===== \(Realm.Configuration.defaultConfiguration.fileURL!)")
+        print("!!!!fileDBonApp ===== \(Realm.Configuration.defaultConfiguration.fileURL!)")
         
         if WCSession.isSupported() {
             let session = WCSession.default()

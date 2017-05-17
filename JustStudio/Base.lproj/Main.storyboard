@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="p9R-b8-Qwa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="p9R-b8-Qwa">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -103,6 +103,8 @@
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <tabBarItem key="tabBarItem" systemItem="mostViewed" id="jIg-Eu-xxR"/>
                     <nil key="simulatedStatusBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
                     <navigationBar key="navigationBar" hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" id="y5r-GS-O3M">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -173,9 +175,6 @@
                                                     <constraint firstAttribute="height" constant="50" id="1RH-61-gio"/>
                                                     <constraint firstAttribute="width" constant="70" id="ZsB-RB-hmc"/>
                                                 </constraints>
-                                                <connections>
-                                                    <action selector="buttonPressFavorites:" destination="00L-Fb-ELV" eventType="touchUpInside" id="3hG-qa-7Jc"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -193,9 +192,6 @@
                                                     <constraint firstAttribute="height" constant="50" id="2Dk-kY-iLY"/>
                                                     <constraint firstAttribute="width" constant="70" id="Bcf-TQ-akq"/>
                                                 </constraints>
-                                                <connections>
-                                                    <action selector="buttonPressToday:" destination="00L-Fb-ELV" eventType="touchUpInside" id="0fH-BQ-WhH"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -213,9 +209,6 @@
                                                     <constraint firstAttribute="width" constant="70" id="9IN-l6-njR"/>
                                                     <constraint firstAttribute="height" constant="50" id="kj6-Ie-y2b"/>
                                                 </constraints>
-                                                <connections>
-                                                    <action selector="buttonPressRandom:" destination="00L-Fb-ELV" eventType="touchUpInside" id="g82-3f-bFk"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -274,9 +267,9 @@
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="Ymq-Au-PRV"/>
                     <connections>
-                        <outlet property="buttonFavorites" destination="t3l-gI-R3X" id="pPd-X9-QRw"/>
-                        <outlet property="buttonRandom" destination="UNe-oI-nBI" id="qEj-QC-ZrN"/>
-                        <outlet property="buttonToday" destination="IcE-5p-ryH" id="Aj4-Bt-cM7"/>
+                        <outlet property="buttonFavorites" destination="t3l-gI-R3X" id="2PT-t8-hst"/>
+                        <outlet property="buttonRandom" destination="UNe-oI-nBI" id="jo2-wR-F1p"/>
+                        <outlet property="buttonToday" destination="IcE-5p-ryH" id="aPh-YB-eTV"/>
                         <outlet property="tableView" destination="r4Z-PT-ITO" id="F6s-Fw-XmY"/>
                         <segue destination="SCD-3w-5Ys" kind="show" identifier="FactsByCategorySegue" animates="NO" id="g5P-x8-IfL"/>
                     </connections>

@@ -52,7 +52,6 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
                 indexOfFact = index
                 break
             }
-            
         }
         return indexOfFact
     }
@@ -64,7 +63,6 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
         if (index == 0) || (index == NSNotFound) {
             return nil
         }
-        
         index -= 1
         return self.viewControllerAtIndex(index, storyboard: viewController.storyboard!)
     }

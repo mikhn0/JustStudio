@@ -23,6 +23,11 @@ class PersistencyManager: NSObject {
         return realm.objects(FactDataModel.self).filter(aPredicate)
     }
     
+    func readRandomFactFromDB(random: String) -> Results<FactDataModel>? {
+        let aPredicate = NSPredicate(format: "random = %@", random)
+        return realm.objects(FactDataModel.self).filter(aPredicate)
+    }
+    
     func readFactFromDB_ForWatch(category: String) -> Results<FactDataModel>? {
         let aPredicate = NSPredicate(format: "selectCategory.name = %@", category)
         return realm.objects(FactDataModel.self).filter(aPredicate)
@@ -93,5 +98,46 @@ class PersistencyManager: NSObject {
             completion()
         }
     }
+    
+    func writeRandomFactsToDB(random: String, randomFacts: [FactDataModel], _ completion: @autoclosure @escaping () -> Void) {
+        DispatchQueue.main.async {
+            for element in randomFacts {
+                element.active = true
+                element.image_view = nil
+                element.selectCategory = nil
+                element.isLike = false
+                element.random = random //установка пометки рандомного факта
+                let dict = element
+                let factData = FactDataModel(value: dict)
+                
+                try! self.realm.write {
+                    self.realm.add(factData, update: true)
+                }
+                
+                let factRef = ThreadSafeReference(to: factData)
+                
+                let urlService = URL(string: factData.image)
+                
+                let task = URLSession.shared.dataTask(with: urlService!, completionHandler: { (data, response, error) in
+                    if error == nil {
+                        let realm = try! Realm()
+                        guard let fact = realm.resolve(factRef) else {
+                            return
+                        }
+                        try! realm.write {
+                            if data != nil {
+                                fact.image_view = data! as NSData
+                            }
+                        }
+                    }
+                })
+                task.resume()
+            }
+        }
+        DispatchQueue.main.async {
+            completion()
+        }
+    }
+
     
 }

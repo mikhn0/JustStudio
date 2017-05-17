@@ -69,6 +69,35 @@ class HTTPClient: NSObject {
         task.resume()
     }
     
+    func getRandomFactsFromServer(_ completion: @escaping (_ facts: [AnyObject]) -> Void) -> Void {
+        let url = NSURL(string: "http://13.91.106.16:5793/facts")
+        
+        let task = URLSession.shared.dataTask(with: url! as URL) {(data, response, error) in
+            
+            if (error != nil) {
+                print("API error: \(String(describing: error)), \(String(describing: error?.localizedDescription))")
+            }
+            
+            do {
+                if let json:NSDictionary = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? [String:AnyObject] as NSDictionary? {
+                    let jsonFactsArr = json["facts"] as! [AnyObject]
+                    
+                    var factsArr: [FactDataModel] = []
+                    let facts = jsonFactsArr.shuffle()
+                    for element in facts {
+                        let dict = element as! NSDictionary
+                        let factData = FactDataModel(value: dict)
+                        factsArr.append(factData)
+                    }
+                    completion(factsArr)
+                }
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+        }
+        task.resume()
+    }
+    
     
 }
 
