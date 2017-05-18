@@ -20,10 +20,19 @@ import Realm
  */
 
 
-class ModelController: NSObject, UIPageViewControllerDataSource {
+//protocol Sequence: NSFastEnumeration {
+//    
+//    associatedtype itemType: IteratorProtocol
+//    typealias Element = itemType.Element
+//    var count: Int { get }
+//    subscript(position: Int) -> Element { get }
+//}
 
-    var allFacts: Results<FactDataModel>?
-    var activityIndicator: UIActivityIndicatorView!
+
+class ModelController: NSObject, UIPageViewControllerDataSource {
+    
+    var allFacts: Sequence?
+    var activityIndicator: UIActivityIndicatorView?
 
     override init() {
         super.init()
@@ -31,13 +40,14 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
 
     func viewControllerAtIndex(_ index: Int, storyboard: UIStoryboard) -> DataViewController? {
         // Return the data view controller for the given index.
-        if (allFacts?.count == 0) || (index >= (allFacts?.count)!) {
+
+        if (allFacts?.countResults == 0) || (index >= (allFacts?.countResults)!) {
             return nil
         }
 
         // Create a new view controller and pass suitable data.
         let dataViewController = storyboard.instantiateViewController(withIdentifier: "DataViewController") as! DataViewController
-        dataViewController.dataObject = allFacts?[index]
+        dataViewController.dataObject = allFacts?[byIndex: index]
         dataViewController.activityIndicator = self.activityIndicator
         return dataViewController
     }
@@ -46,8 +56,8 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
         // Return the index of the given data view controller.
         // For simplicity, this implementation uses a static array of model objects and the view controller stores the model object; you can therefore use the model object to identify the index.
         var indexOfFact: Int = NSNotFound
-        for index in 0  ..< allFacts!.count  {
-            let factData: FactDataModel = allFacts![index]
+        for index in 0..<allFacts!.countResults! {
+            let factData = allFacts![byIndex: index]
             if factData._id == viewController.dataObject._id {
                 indexOfFact = index
                 break
@@ -73,7 +83,7 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
             return nil
         }
         index += 1
-        if index == allFacts?.count {
+        if index == allFacts?.countResults {
             return nil
         }
         return self.viewControllerAtIndex(index, storyboard: viewController.storyboard!)

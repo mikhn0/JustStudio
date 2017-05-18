@@ -11,7 +11,7 @@ import SDWebImage
 import RealmSwift
 import WatchConnectivity
 
-class CategoryViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class CategoryViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, BarButtonDataSource {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -40,6 +40,7 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
         buttonFavorites.styleButtonFavorites()
         buttonToday.styleButtonToday()
         buttonRandom.styleButtonRandom()
+        buttonRandom.delegate = self
         
         print("fileDBonApp ===== \(Realm.Configuration.defaultConfiguration.fileURL!)")
 
@@ -195,15 +196,24 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
                     }
                 }
             default:
-                self.performSegue(withIdentifier: "FactsByCategorySegue", sender: selectCategory)
+                performSegue(withIdentifier: "FactsByCategorySegue", sender: selectCategory)
                 break
         }
     }
     
+    func displayRandomFacts(_ facts:[FactDataProtocol]) {
+        performSegue(withIdentifier: "FactsByCategorySegue", sender: facts)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "FactsByCategorySegue" {
-            let categoryDetailViewController: CategoryDetailViewController = segue.destination as! CategoryDetailViewController
-            categoryDetailViewController.category = sender as? CategoryDataModel
+            if sender is CategoryDataModel {
+                let categoryDetailViewController = segue.destination as! CategoryDetailViewController
+                categoryDetailViewController.category = sender as? CategoryDataModel
+            } else if sender is [FactDataProtocol] {
+                let categoryDetailViewController = segue.destination as! CategoryDetailViewController
+                categoryDetailViewController.randomFacts = sender as? [FactDataProtocol]
+            }
         }
     }
     
@@ -212,7 +222,7 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
             print("UNVIND SEGUE");
         }
     }
-    
+
     func showAlert(title: String, message: String) {
         
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -223,6 +233,34 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
 
 }
 
+protocol Sequence {
+    var countResults: Int? {get}
+    subscript (byIndex index:Int) -> FactDataProtocol {get}
+}
+
+extension Results: Sequence {
+    
+    subscript(byIndex index: Int) -> FactDataProtocol {
+        return self[index] as! FactDataProtocol
+    }
+
+    var countResults: Int? {
+        return self.count
+    }
+
+}
+
+extension Array: Sequence {
+    
+    subscript(byIndex index: Int) -> FactDataProtocol {
+        return self[index] as! FactDataProtocol
+    }
+    
+    var countResults: Int? {
+        return self.count
+    }
+    
+}
 
 extension Array {
     func contains<T>(obj: T) -> Bool where T : BaseDataModel {

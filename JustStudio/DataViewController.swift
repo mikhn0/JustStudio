@@ -15,7 +15,7 @@ class DataViewController: UIViewController {
     @IBOutlet weak var dataLabel: UILabel!
     @IBOutlet weak var infoView: UIView!
     @IBOutlet weak var imageView: UIImageView!
-    var dataObject: FactDataModel!
+    var dataObject: FactDataProtocol!
     var activityIndicator: UIActivityIndicatorView?
     
     override func viewDidLoad() {

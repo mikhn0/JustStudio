@@ -11,11 +11,15 @@ import SDWebImage
 import Realm
 import RealmSwift
 
+protocol BarButtonDataSource {
+    func displayRandomFacts(_ facts:[FactDataProtocol])
+}
+
 class BarButton : UIButton {
     
     var facts: [FactDataModel]!
     var categoryViewController = CategoryViewController()
-    var categoryDatailViewController = CategoryDetailViewController()
+    var delegate: BarButtonDataSource?
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
@@ -51,7 +55,6 @@ class BarButton : UIButton {
     }
     
     func addFavoritesFacts() -> [FactDataModel] {
-        
         var favoritesFacts = [FactDataModel]()
         let favoriteFactData = FactDataModel()
         
@@ -79,27 +82,24 @@ class BarButton : UIButton {
     }
     
     func actionPressToday(sender: UIButton) {
-
+        
+        
 
     }
     
     func actionPressRandom(sender: UIButton) {
         
-        DispatchQueue.main.async {
-            LibraryAPI.sharedInstance().getRandomFacts("random", { (facts: Results<FactDataModel>?) -> Void in
-                if facts != nil {
-                    
-                    self.categoryDatailViewController.ConfigurationViewControllers(facts!)
+        LibraryAPI.sharedInstance().getRandomFacts ({ (randomFacts: [AnyObject]?) -> Void in
+            if randomFacts != nil {
+                DispatchQueue.main.async {
+                    self.delegate?.displayRandomFacts(randomFacts as! [FactDataProtocol])
                 }
-                CategoryViewController.Instance?.showAlert(title: "Error", message: "There are no random facts!")
-            })
-        }
-
-           // self.performSegue(withIdentifier: "FactsByCategorySegue", sender: self)
-
-//        if CategoryViewController.Instance != nil {
-//            CategoryViewController.Instance?.showAlert(title: "Error", message: "There are no random facts!")
-//        }
+            } else {
+                if CategoryViewController.Instance != nil {
+                    CategoryViewController.Instance?.showAlert(title: "Error", message: "There are no random facts!")
+                }
+            }
+        })
     }
     
     

@@ -96,6 +96,42 @@ class HTTPClient: NSObject {
             }
         }
         task.resume()
+        
+    }
+    
+    func getTodayFactsFromServer(_ completion: @escaping (_ todayFacts: [AnyObject]) -> Void) -> Void {
+        let url = NSURL(string: "http://history.muffinlabs.com/date")
+        
+        let task = URLSession.shared.dataTask(with: url! as URL) {(data, response, error) in
+            
+            if (error != nil) {
+                print("API error: \(String(describing: error)), \(String(describing: error?.localizedDescription))")
+            }
+            
+            do {
+                if let json:NSDictionary = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? [String:AnyObject] as NSDictionary? {
+                    let jsonTodayDate = json["date"] as! String
+                    print("jsonTodayDate ==== \(jsonTodayDate)")
+                    
+                    let jsonTodayFactsArr = json["Events"] as! [AnyObject]
+                    
+                    var todayFactsArr: [Today] = []
+                    let todayFacts = jsonTodayFactsArr.shuffle()
+                    for element in todayFacts {
+                        
+                        let dict = element as! NSDictionary
+                        let year = dict["year"] as! Int
+                        let textFact = dict["text"] as! String
+                        let todayFactData = Today.init(jsonTodayDate, year, textFact)
+                        todayFactsArr.append(todayFactData)
+                    }
+                    completion(todayFactsArr)
+                }
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+        }
+        task.resume()
     }
     
     

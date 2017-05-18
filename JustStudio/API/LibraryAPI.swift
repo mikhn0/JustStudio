@@ -111,6 +111,15 @@ class LibraryAPI : NSObject  {
             }
         }
     }
+    
+    func getRandomFacts(_ completion: @escaping (_ facts: [AnyObject]?) -> Void) -> Void {
+        
+        if LibraryAPI.isConnectedToNetwork() {
+            httpClient.getRandomFactsFromServer() { (_ facts: [AnyObject]) -> Void in
+                completion(facts)
+            }
+        }
+    }
 
     func getFactsByCategory(_ category: CategoryDataModel, completion: @escaping (_ facts: Results<FactDataModel>?) -> Void) -> Void {
         //1 get facts from BD
@@ -141,14 +150,6 @@ class LibraryAPI : NSObject  {
             }
         }else{
             print("-----1 день не прошел с последнего открытия, с сервера не грузим!")
-        }
-    }
-    
-    func getRandomFacts(_ random: String, _ completion: @escaping (_ facts: Results<FactDataModel>?) -> Void) -> Void {
-        if LibraryAPI.isConnectedToNetwork() {
-                //2 request from Server all categories
-            httpClient.getRandomFactsFromServer { (_ randomFacts: [AnyObject]) -> Void in
-                self.persistencyManager.writeRandomFactsToDB(random: random, randomFacts: randomFacts as! [FactDataModel], completion(self.persistencyManager.readRandomFactFromDB(random: random)!)) }
         }
     }
 

@@ -11,7 +11,7 @@ import RealmSwift
 import Realm
 import WatchKit
 
-class CategoryDataModel: BaseDataModel {
+class CategoryDataModel: BaseDataModel, BaseDataProtocol {
     
     dynamic var image: String = ""
     dynamic var name: String = ""

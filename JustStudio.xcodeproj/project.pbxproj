@@ -26,6 +26,8 @@
 		33B1D18B1DB10EFD000C4062 /* CategoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883D70061C0DAE22003ECEE2 /* CategoryDetailViewController.swift */; };
 		33B1D1E41DB63185000C4062 /* LibraryWatchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751F353D1DABDC700099CB19 /* LibraryWatchAPI.swift */; };
 		33B1D1E51DB6318A000C4062 /* LibraryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F1E09B1C24511100D8C28C /* LibraryAPI.swift */; };
+		4CEE11CC1ECCFB900068747F /* Today.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE11CB1ECCFB900068747F /* Today.swift */; };
+		4CEE11CD1ECD004F0068747F /* Today.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEE11CB1ECCFB900068747F /* Today.swift */; };
 		632C2EF21DF859C5004BB1E4 /* LibraryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F1E09B1C24511100D8C28C /* LibraryAPI.swift */; };
 		632C2EF71DF99388004BB1E4 /* UILabel+setDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DB48191DBE270700119897 /* UILabel+setDescription.swift */; };
 		63485B8B1E2FB945004DF4A8 /* Avus W00 Condensed Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63485B8A1E2FB945004DF4A8 /* Avus W00 Condensed Medium.ttf */; };
@@ -220,6 +222,7 @@
 		416BB99370592DD884B562DA /* Pods-JustStudio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustStudio.release.xcconfig"; path = "Pods/Target Support Files/Pods-JustStudio/Pods-JustStudio.release.xcconfig"; sourceTree = "<group>"; };
 		43DC92B38CDA76776EE6606B /* Pods-JustStudio iMessage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustStudio iMessage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JustStudio iMessage/Pods-JustStudio iMessage.debug.xcconfig"; sourceTree = "<group>"; };
 		492DADD39FD73FE0D68407A3 /* Pods_JustStudio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JustStudio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CEE11CB1ECCFB900068747F /* Today.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Today.swift; sourceTree = "<group>"; };
 		63485B8A1E2FB945004DF4A8 /* Avus W00 Condensed Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Avus W00 Condensed Medium.ttf"; sourceTree = "<group>"; };
 		63DB480E1DBE23E500119897 /* Category.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Category.json; path = Shared/Category.json; sourceTree = "<group>"; };
 		63DB480F1DBE23E500119897 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Category.swift; path = Shared/Category.swift; sourceTree = "<group>"; };
@@ -444,12 +447,13 @@
 		75857DBE1EB9E1FB0009BE0C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				63DB48101DBE23E500119897 /* Fact.swift */,
 				63DB481C1DBE290700119897 /* Base.swift */,
 				63DB480F1DBE23E500119897 /* Category.swift */,
+				63DB48101DBE23E500119897 /* Fact.swift */,
 				752E58831E93FE30003EF222 /* BaseDataModel.swift */,
 				752E58851E93FE4E003EF222 /* CategoryDataModel.swift */,
 				752E58871E93FE77003EF222 /* FactDataModel.swift */,
+				4CEE11CB1ECCFB900068747F /* Today.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -1103,6 +1107,7 @@
 				33AE234B1DC10D7200A9B22A /* CategoryVC.swift in Sources */,
 				752E588B1E95252E003EF222 /* CategoryDataModel.swift in Sources */,
 				33AE23541DC11C4800A9B22A /* AddJustStudioStickerCell.swift in Sources */,
+				4CEE11CD1ECD004F0068747F /* Today.swift in Sources */,
 				75E046BE1EC385AB00FAC26E /* Fact.swift in Sources */,
 				752E588C1E952530003EF222 /* BaseDataModel.swift in Sources */,
 				3316C6711DC3BE930008F697 /* ImageItemRenderer.swift in Sources */,
@@ -1167,6 +1172,7 @@
 				75857DC01EBA3B2D0009BE0C /* Base.swift in Sources */,
 				883D70091C0DAE22003ECEE2 /* DataViewController.swift in Sources */,
 				75620F4A1C4671EC0069DD5F /* UIImage+ImageEffects.m in Sources */,
+				4CEE11CC1ECCFB900068747F /* Today.swift in Sources */,
 				752E58901E96A404003EF222 /* HTTPClient.swift in Sources */,
 				755856461E9E2B2C0091ABB5 /* AppGroupRealmConfiguration.swift in Sources */,
 				883D70051C0DAE22003ECEE2 /* AppDelegate.swift in Sources */,

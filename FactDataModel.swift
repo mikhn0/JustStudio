@@ -10,8 +10,12 @@ import Foundation
 import RealmSwift
 import WatchKit
 
-class FactDataModel: BaseDataModel {
- 
+protocol FactDataProtocol: BaseDataProtocol {
+    var image: String! { get set }
+    var image_view: NSData? { get set }
+}
+
+class FactDataModel: BaseDataModel, FactDataProtocol {
     dynamic var image: String!
     dynamic var category : String!
     dynamic var selectCategory: CategoryDataModel?

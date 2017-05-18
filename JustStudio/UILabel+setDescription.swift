@@ -9,12 +9,12 @@
 import Foundation
 
 extension UILabel {
-    func setDescription(dataObject: BaseDataModel) {
+    func setDescription(dataObject: BaseDataProtocol) {
         text = returnDescriptionForApp(dataObject)
     }
 }
 
-func returnDescriptionForApp(_ dataObject: BaseDataModel) -> String {
+func returnDescriptionForApp(_ dataObject: BaseDataProtocol) -> String {
     let pre = NSLocale.preferredLanguages[0]
     return pre.contains("ru") ? dataObject.ru : dataObject.en
 }

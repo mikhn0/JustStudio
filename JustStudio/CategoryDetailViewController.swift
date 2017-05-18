@@ -11,22 +11,25 @@ import UIKit
 import RealmSwift
 import Realm
 
+
 class CategoryDetailViewController: UIViewController, UIPageViewControllerDelegate {
+
+    var category: CategoryDataModel?
+    var randomFacts: [FactDataProtocol]?
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var bannerView: GADBannerView!
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var shareView: UIView!
     var pageViewController: UIPageViewController?
-    var category: CategoryDataModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         // Configure the page view controller and add it as a child view controller.
-        self.activityIndicator.startAnimating()
+        activityIndicator.startAnimating()
         
-        self.shareView.layer.cornerRadius = 5
+        shareView.layer.cornerRadius = 5
         let blurEffect = UIBlurEffect(style: .light)
         let blurredEffectView = UIVisualEffectView(effect: blurEffect)
         var frame = self.shareView.frame
@@ -43,28 +46,30 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
         self.bannerView.rootViewController = self
         self.bannerView.load(GADRequest())
         
-        print("user initiated task")
-        if category!.name == "favorites" {
-            let likesValue = UserDefaults.standard.object(forKey: "LIKE_KEY") as! [[String : AnyObject]] //массив словарей
-            print("likes=====\(likesValue)")
-            
-            var quotesArr: [FactDataModel] = []
-            let likes = likesValue.shuffle()
-            for element in likes {
-                let dict = element
-                let quoteData = FactDataModel(value:dict)
-                quotesArr.append(quoteData)
-            }
-            
-           // self.configurationViewControllers(quotesArr)
-            
-        } else {
-            LibraryAPI.sharedInstance().getFactsByCategory(self.category!, completion:{ (facts: Results<FactDataModel>?) -> Void in
+        if category != nil {
+            if category!.name == "favorites" {
+                let likesValue = UserDefaults.standard.object(forKey: "LIKE_KEY") as! [[String : AnyObject]] //массив словарей
                 
-                DispatchQueue.main.async {
-                    self.ConfigurationViewControllers(facts!)
+                var quotesArr: [FactDataModel] = []
+                let likes = likesValue.shuffle()
+                for element in likes {
+                    let dict = element
+                    let quoteData = FactDataModel(value:dict)
+                    quotesArr.append(quoteData)
                 }
-            })
+                
+               // self.configurationViewControllers(quotesArr)
+                
+            } else {
+                LibraryAPI.sharedInstance().getFactsByCategory(self.category!, completion:{ (facts: Results<FactDataModel>?) -> Void in
+                    
+                    DispatchQueue.main.async {
+                        self.ConfigurationViewControllers(facts!)
+                    }
+                })
+            }
+        } else if randomFacts != nil {
+           ConfigurationViewControllers(randomFacts!)
         }
         var pageViewRect = self.view.bounds
         if UIDevice.current.userInterfaceIdiom == .pad {
@@ -74,16 +79,18 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
         self.pageViewController!.didMove(toParentViewController: self)
     }
 
-    func ConfigurationViewControllers(_ facts: Results<FactDataModel>?) -> Void {
-        self.modelController.allFacts = facts
-        self.modelController.activityIndicator = self.activityIndicator
+    
+    func ConfigurationViewControllers(_ facts: Sequence?) {
+
+        modelController.allFacts = facts
+        modelController.activityIndicator = activityIndicator
         
         if let startingViewController = self.modelController.viewControllerAtIndex(0, storyboard: self.storyboard!) {
             let viewControllers = [startingViewController]
-            self.pageViewController!.setViewControllers(viewControllers, direction: .forward, animated: true, completion: {done in })
-            self.pageViewController!.dataSource = self.modelController
-            self.addChildViewController(self.pageViewController!)
-            self.view.insertSubview(self.pageViewController!.view, belowSubview: self.bannerView)
+            pageViewController!.setViewControllers(viewControllers, direction: .forward, animated: true, completion: {done in })
+            pageViewController!.dataSource = self.modelController
+            addChildViewController(self.pageViewController!)
+            view.insertSubview(pageViewController!.view, belowSubview: bannerView)
         }
     }
     
@@ -92,16 +99,17 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
         //semaphore?.wait(timeout: .distantFuture)
         print("WE MADE IT OUT OF THERE")
         if self.pageViewController!.viewControllers!.count > 0 {
-            let currentViewController = self.pageViewController!.viewControllers![0] as! DataViewController
-            let indexOfCurrentViewController = self.modelController.indexOfViewController(currentViewController)
+            let currentViewController = pageViewController!.viewControllers![0] as! DataViewController
+            let indexOfCurrentViewController = modelController.indexOfViewController(currentViewController)
             
-            if self.modelController.allFacts!.count > 0 && indexOfCurrentViewController >= 0 {
-                if (self.modelController.allFacts![indexOfCurrentViewController].image == "") {
+            let facts = modelController.allFacts!
+            if facts.countResults! > 0 && indexOfCurrentViewController >= 0 {
+                if (facts[byIndex: indexOfCurrentViewController].image == "") {
                     // The text field is empty so display an Alert
                     displayAlert("Warning", message: "Enter something in the text field!")
                 } else {
                     // We have contents so display the share sheet
-                    displayShareSheet(self.modelController.allFacts![indexOfCurrentViewController])
+                    displayShareSheet(facts[byIndex: indexOfCurrentViewController])
                 }
             }
         }
@@ -115,7 +123,7 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
         return
     }
     
-    func displayShareSheet(_ shareContent:FactDataModel) {
+    func displayShareSheet(_ shareContent:FactDataProtocol) {
         let siteUrl:URL! = URL(string: "https://justfacts.carrd.co/")
 
         UIGraphicsBeginImageContextWithOptions(CGSize(width: self.view.frame.size.width, height: self.view.frame.size.height-100), true, UIScreen.main.scale)
@@ -143,7 +151,7 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
     }
 
     
-    var _modelController: ModelController? = nil
+    var _modelController: ModelController?
 
     
     // MARK: - UIPageViewController delegate methods
