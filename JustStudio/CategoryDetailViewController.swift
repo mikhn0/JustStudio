@@ -16,7 +16,7 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
 
     var category: CategoryDataModel?
     var randomFacts: [FactDataProtocol]?
-    var todayFacts: [Today]?
+    var todayFacts: [TodayProtocol]?
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var bannerView: GADBannerView!
@@ -49,15 +49,15 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
         
         if category != nil {
             if category!.name == "favorites" {
-                let likesValue = UserDefaults.standard.object(forKey: "LIKE_KEY") as! [[String : AnyObject]] //массив словарей
-                
-                var quotesArr: [FactDataModel] = []
-                let likes = likesValue.shuffle()
-                for element in likes {
-                    let dict = element
-                    let quoteData = FactDataModel(value:dict)
-                    quotesArr.append(quoteData)
-                }
+//                let likesValue = UserDefaults.standard.object(forKey: "LIKE_KEY") as! [[String : AnyObject]] //массив словарей
+//                
+//                var quotesArr: [FactDataModel] = []
+//                let likes = likesValue.shuffle()
+//                for element in likes {
+//                    let dict = element
+//                    let quoteData = FactDataModel(value:dict)
+//                    quotesArr.append(quoteData)
+//                }
                 
                // self.configurationViewControllers(quotesArr)
                 
@@ -72,7 +72,9 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
         } else if randomFacts != nil {
            ConfigurationViewControllers(randomFacts!)
         } else if todayFacts != nil {
-            ConfigurationViewControllers(todayFacts!)
+            DispatchQueue.main.async {
+                self.ConfigurationViewControllers(self.todayFacts!)
+            }
         }
         
         

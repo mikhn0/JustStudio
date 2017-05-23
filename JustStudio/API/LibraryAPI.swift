@@ -66,13 +66,13 @@ class LibraryAPI  {
     
     func getAllCategory(_ completion: @escaping (_ categories:  Results<CategoryDataModel>? ) -> Void) {
         
-        //1 get categories from BD
+        //get categories from DB
         if let categoriesFromDB = persistencyManager.readCategoryFromBD(), categoriesFromDB.count > 0 {
             completion(categoriesFromDB)
         }
         
         if LibraryAPI.isConnectedToNetwork() {
-            //2 request from Server all categories
+        //get categories from server -> write to DB -> read from DB
             httpClient.getCategoriesFromServer() { (_ categories: [AnyObject]) -> Void in
                 self.persistencyManager.writeCategoriesToBD(categories: categories, completion(self.persistencyManager.readCategoryFromBD()!))
             }
@@ -94,7 +94,6 @@ class LibraryAPI  {
                 completion(facts)
             }
         }
-        
     }
 
     
@@ -104,8 +103,7 @@ class LibraryAPI  {
             completion(factsByCategory)
         }
         
-        let lastOpenCategory = category.last_show
-        print("-----Дата последнего открытия категории \(category.name) = \(lastOpenCategory)")
+        let lastOpenCategory = category.last_show //Дата последнего открытия категории
         let realm = try! Realm()
         try! realm.write {
             category.last_show = Date()

@@ -124,7 +124,9 @@ class HTTPClient: NSObject {
                         let todayFactData = Today(date: jsonTodayDate, year: year, en: textFact)
                         todayFactsArr.append(todayFactData)
                     }
-                    completion(todayFactsArr)
+                    DispatchQueue.main.sync {
+                        completion(todayFactsArr)
+                    }
                 }
             } catch let error as NSError {
                 print(error.localizedDescription)

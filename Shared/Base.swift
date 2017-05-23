@@ -47,6 +47,8 @@ class SystemWarningForWatch: Base {
   
     init(ru:String, en:String) {
         super.init("", true, ru, en, nil)
+        self.ru = "Для того, что бы просмотреть категории с фактами, откройте сначала приложение на телефоне."
+        self.en = "To view category with facts, please open it firstly in your iphone app."
     }
     
     convenience init() {

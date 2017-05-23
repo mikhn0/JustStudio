@@ -118,11 +118,10 @@ class InterfaceController: WKInterfaceController , WCSessionDelegate {
                                             replyHandler: { replyDict in print(replyDict)
                                                 let reply = replyDict["reply"] as! String
                                                 if reply == "Category_Error" {
-                                                    let h0 = { print("ok")}
-                                                    
-                                                    let action = WKAlertAction(title: "OK", style: .default, handler:h0)
+                                                    let action = WKAlertAction(title: "OK", style: .default, handler:{})
                                                     let warning = SystemWarningForWatch.init()
                                                     self.presentAlert(withTitle: detectCurrentLang(warning), message: "", preferredStyle: .actionSheet, actions: [action])
+                                                    self.sendMessage()
                                                 }
                                             },
                                             errorHandler: { error in print(error.localizedDescription) })

@@ -20,5 +20,4 @@ class FactDataModel: BaseDataModel, FactDataProtocol {
     dynamic var category : String!
     dynamic var selectCategory: CategoryDataModel?
     dynamic var isLike : Bool = false
-    dynamic var random : String!
 }
