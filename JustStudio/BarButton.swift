@@ -13,6 +13,7 @@ import RealmSwift
 
 protocol BarButtonDataSource {
     func displayRandomFacts(_ facts:[FactDataProtocol])
+    func displayTodayFacts(_ facts:[Today])
 }
 
 class BarButton : UIButton {
@@ -82,13 +83,22 @@ class BarButton : UIButton {
     }
     
     func actionPressToday(sender: UIButton) {
-        
+        LibraryAPI.sharedInstance().getTodayFacts({ (todayFacts: [AnyObject]?) -> Void in
+            if todayFacts != nil {
+                DispatchQueue.main.async {
+                    self.delegate?.displayTodayFacts(todayFacts as! [Today])
+                }
+            } else {
+                if CategoryViewController.Instance != nil {
+                    CategoryViewController.Instance?.showAlert(title: "Error", message: "There are no today facts!")
+                }
+            }
+        })
         
 
     }
     
     func actionPressRandom(sender: UIButton) {
-        
         LibraryAPI.sharedInstance().getRandomFacts ({ (randomFacts: [AnyObject]?) -> Void in
             if randomFacts != nil {
                 DispatchQueue.main.async {

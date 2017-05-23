@@ -12,11 +12,11 @@ class Today: NSObject {
     
     var date: String
     var year: Int
-    var text: String
+    var en: String
     
-    init(_ date: String, _ year: Int, _ text: String) {
+    init(_ date: String, _ year: Int, _ en: String) {
         self.date = date
         self.year = year
-        self.text = text
+        self.en = en
     }
 }

@@ -16,6 +16,7 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
 
     var category: CategoryDataModel?
     var randomFacts: [FactDataProtocol]?
+    var todayFacts: [Today]?
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var bannerView: GADBannerView!
@@ -70,7 +71,11 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
             }
         } else if randomFacts != nil {
            ConfigurationViewControllers(randomFacts!)
+        } else if todayFacts != nil {
+            ConfigurationViewControllers(todayFacts!)
         }
+        
+        
         var pageViewRect = self.view.bounds
         if UIDevice.current.userInterfaceIdiom == .pad {
             pageViewRect = pageViewRect.insetBy(dx: 40.0, dy: 40.0)
