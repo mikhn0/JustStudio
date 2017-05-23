@@ -201,7 +201,11 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
         }
     }
     
-    func displayRandomFacts(_ facts:[FactDataProtocol]) {
+    func displayRandomFacts(_ facts: [FactDataProtocol]) {
+        performSegue(withIdentifier: "FactsByCategorySegue", sender: facts)
+    }
+    
+    func displayTodayFacts(_ facts: [Today]) {
         performSegue(withIdentifier: "FactsByCategorySegue", sender: facts)
     }
     
@@ -211,6 +215,9 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
                 let categoryDetailViewController = segue.destination as! CategoryDetailViewController
                 categoryDetailViewController.category = sender as? CategoryDataModel
             } else if sender is [FactDataProtocol] {
+                let categoryDetailViewController = segue.destination as! CategoryDetailViewController
+                categoryDetailViewController.randomFacts = sender as? [FactDataProtocol]
+            } else if sender is [Today] {
                 let categoryDetailViewController = segue.destination as! CategoryDetailViewController
                 categoryDetailViewController.randomFacts = sender as? [FactDataProtocol]
             }

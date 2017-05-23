@@ -87,6 +87,15 @@ class LibraryAPI  {
             }
         }
     }
+    func getTodayFacts(_ completion: @escaping (_ facts: [AnyObject]?) -> Void) -> Void {
+        
+        if LibraryAPI.isConnectedToNetwork() {
+            httpClient.getTodayFactsFromServer() { (_ facts: [AnyObject]) -> Void in
+                completion(facts)
+            }
+        }
+        
+    }
 
     
     func getFactsByCategory(_ category: CategoryDataModel, completion: @escaping (_ facts: Results<FactDataModel>?) -> Void) -> Void {
