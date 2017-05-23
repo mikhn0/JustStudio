@@ -8,15 +8,23 @@
 
 import Foundation
 
-class Today: NSObject {
+protocol TodayProtocol:BaseDataProtocol {
+    var date: String {get}
+    var year: Int {get}
+}
+
+class Today: TodayProtocol {
     
-    var date: String
-    var year: Int
-    var text: String
+    var _id: String = ""
+    var date: String = ""
+    var year: Int = 0
+    var en: String = ""
+    var ru: String = ""
+    var image_view: NSData?
     
-    init(_ date: String, _ year: Int, _ text: String) {
+    init(date:String, year:Int, en:String) {
         self.date = date
         self.year = year
-        self.text = text
+        self.en = en
     }
 }

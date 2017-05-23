@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 import Realm
 
-class PersistencyManager: NSObject {
+class PersistencyManager {
     
     let realm = try! Realm()
 

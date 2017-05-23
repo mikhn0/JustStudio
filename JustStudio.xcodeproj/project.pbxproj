@@ -33,6 +33,9 @@
 		63485B8B1E2FB945004DF4A8 /* Avus W00 Condensed Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63485B8A1E2FB945004DF4A8 /* Avus W00 Condensed Medium.ttf */; };
 		63485B8C1E2FB945004DF4A8 /* Avus W00 Condensed Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63485B8A1E2FB945004DF4A8 /* Avus W00 Condensed Medium.ttf */; };
 		637A4E4F1DB78EBE007C3EA6 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FC745E1D8C2E3F00683CA0 /* InterfaceController.swift */; };
+		63A4E1831ED44C2300B022B5 /* WKPersistencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A4E1811ED44B0700B022B5 /* WKPersistencyManager.swift */; };
+		63A4E1851ED44D7600B022B5 /* WKPersistencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A4E1811ED44B0700B022B5 /* WKPersistencyManager.swift */; };
+		63A4E1861ED44D8100B022B5 /* WKPersistencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A4E1811ED44B0700B022B5 /* WKPersistencyManager.swift */; };
 		63DB48141DBE246400119897 /* Fact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DB48101DBE23E500119897 /* Fact.swift */; };
 		63DB48151DBE246800119897 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DB480F1DBE23E500119897 /* Category.swift */; };
 		63DB48181DBE260200119897 /* Category.json in Resources */ = {isa = PBXBuildFile; fileRef = 63DB480E1DBE23E500119897 /* Category.json */; };
@@ -224,6 +227,7 @@
 		492DADD39FD73FE0D68407A3 /* Pods_JustStudio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JustStudio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CEE11CB1ECCFB900068747F /* Today.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Today.swift; sourceTree = "<group>"; };
 		63485B8A1E2FB945004DF4A8 /* Avus W00 Condensed Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Avus W00 Condensed Medium.ttf"; sourceTree = "<group>"; };
+		63A4E1811ED44B0700B022B5 /* WKPersistencyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WKPersistencyManager.swift; path = API/WKPersistencyManager.swift; sourceTree = "<group>"; };
 		63DB480E1DBE23E500119897 /* Category.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Category.json; path = Shared/Category.json; sourceTree = "<group>"; };
 		63DB480F1DBE23E500119897 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Category.swift; path = Shared/Category.swift; sourceTree = "<group>"; };
 		63DB48101DBE23E500119897 /* Fact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Fact.swift; path = Shared/Fact.swift; sourceTree = "<group>"; };
@@ -577,6 +581,7 @@
 				88F1E09B1C24511100D8C28C /* LibraryAPI.swift */,
 				752E588F1E96A404003EF222 /* HTTPClient.swift */,
 				752E588D1E96A3DB003EF222 /* PersistencyManager.swift */,
+				63A4E1811ED44B0700B022B5 /* WKPersistencyManager.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -1119,6 +1124,7 @@
 				75E046BC1EC385A500FAC26E /* Category.swift in Sources */,
 				75E046BD1EC385A800FAC26E /* Base.swift in Sources */,
 				33AE234D1DC1142400A9B22A /* FactsVC.swift in Sources */,
+				63A4E1861ED44D8100B022B5 /* WKPersistencyManager.swift in Sources */,
 				755202291E96B79D00F3BC2A /* PersistencyManager.swift in Sources */,
 				33AE23521DC11C0F00A9B22A /* FactCell.swift in Sources */,
 				33AE23561DC2214E00A9B22A /* BaseViewController.swift in Sources */,
@@ -1145,6 +1151,7 @@
 				75FC74611D8C2E3F00683CA0 /* ExtensionDelegate.swift in Sources */,
 				63DB48151DBE246800119897 /* Category.swift in Sources */,
 				637A4E4F1DB78EBE007C3EA6 /* InterfaceController.swift in Sources */,
+				63A4E1831ED44C2300B022B5 /* WKPersistencyManager.swift in Sources */,
 				751C2FD11EA4D66D00F5FAF5 /* PersistencyManager.swift in Sources */,
 				33B1D1E41DB63185000C4062 /* LibraryWatchAPI.swift in Sources */,
 				75D9A3141D92A01E0075BBBD /* CategoryRowController.swift in Sources */,
@@ -1163,6 +1170,7 @@
 				33B1D1E51DB6318A000C4062 /* LibraryAPI.swift in Sources */,
 				75E046C21EC49B9C00FAC26E /* BarButton.swift in Sources */,
 				755150FD1C47EE1C00527733 /* UILable+Layout.swift in Sources */,
+				63A4E1851ED44D7600B022B5 /* WKPersistencyManager.swift in Sources */,
 				752E588E1E96A3DB003EF222 /* PersistencyManager.swift in Sources */,
 				75620F411C464D880069DD5F /* CategoryCell.swift in Sources */,
 				752E58881E93FE77003EF222 /* FactDataModel.swift in Sources */,

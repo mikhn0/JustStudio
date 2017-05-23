@@ -83,8 +83,6 @@ class BarButton : UIButton {
     
     func actionPressToday(sender: UIButton) {
         
-        
-
     }
     
     func actionPressRandom(sender: UIButton) {

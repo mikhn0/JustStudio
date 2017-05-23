@@ -13,17 +13,23 @@ import SystemConfiguration
 
 let SERVER_URL:NSString = "http://13.91.106.16:5793/"
 
-class LibraryAPI : NSObject  {
+class LibraryAPI  {
     
     let persistencyManager: PersistencyManager
     let httpClient: HTTPClient
     
-    override init() {
+    init() {
         persistencyManager = PersistencyManager()
         httpClient = HTTPClient()
-        super.init()
     }
     
+    func getCategoriesFromDB_ForWatch(_ completion: (Data?) -> Void) {
+        persistencyManager.getCategoriesFromDB_ForWatch({ (data:Data?) in completion(data) })
+    }
+    
+    func getFactsFromDB_ForWatch(withCategory category: String, _ completion: (Data?) -> Void) {
+        persistencyManager.getFactsFromDB_ForWatch(withCategory:category, {(data:Data?) in completion(data)} )
+    }
     
     lazy var categoryArray: Results<CategoryDataModel> = {
         DispatchQueue.main.sync {
@@ -58,49 +64,10 @@ class LibraryAPI : NSObject  {
         return (isReachable && !needsConnection)
     }
     
-    func getCategoriesFromDB_ForWatch(_ completion: (_ data:Data?) -> Void) {
-
-        let resultReadCategoryFromDB = persistencyManager.readCategoryFromBD()
-        
-        if resultReadCategoryFromDB != nil, (resultReadCategoryFromDB?.count)! > 0 {
-            var result = [Category]()
-            for elem in resultReadCategoryFromDB! {
-                let category_obj = Category(withRealm: elem)
-                category_obj.image_view = nil
-                result.append(category_obj)
-            }
-
-            NSKeyedArchiver.setClassName("Category", for: Category.self)
-            let archiveData = NSKeyedArchiver.archivedData(withRootObject: result) as NSData
-            completion(archiveData as Data)
-        } else {
-            completion(nil)
-        }
-    }
-    
-    func getFactsFromDB_ForWatch(_ category: String, _ completion: (_ data:Data?) -> Void) {
-        let resultReadFactsFromDB = persistencyManager.readFactFromDB_ForWatch(category: category)
-        
-        if resultReadFactsFromDB != nil, (resultReadFactsFromDB?.count)! > 0 {
-            var result = [Fact]()
-            for elem in resultReadFactsFromDB! {
-                let fact_obj = Fact(withRealm: elem)
-                fact_obj.image_view = nil
-                result.append(fact_obj)
-            }
-            
-            NSKeyedArchiver.setClassName("Fact", for: Fact.self)
-            let archiveData = NSKeyedArchiver.archivedData(withRootObject: result) as NSData
-            completion(archiveData as Data)
-        } else {
-            completion(nil)
-        }
-    }
-    
     func getAllCategory(_ completion: @escaping (_ categories:  Results<CategoryDataModel>? ) -> Void) {
         
         //1 get categories from BD
-        if let categoriesFromDB = self.persistencyManager.readCategoryFromBD(), categoriesFromDB.count > 0 {
+        if let categoriesFromDB = persistencyManager.readCategoryFromBD(), categoriesFromDB.count > 0 {
             completion(categoriesFromDB)
         }
         
@@ -121,6 +88,7 @@ class LibraryAPI : NSObject  {
         }
     }
 
+    
     func getFactsByCategory(_ category: CategoryDataModel, completion: @escaping (_ facts: Results<FactDataModel>?) -> Void) -> Void {
         //1 get facts from BD
         if let factsByCategory = persistencyManager.readFactFromBD(category: category), factsByCategory.count > 0 {

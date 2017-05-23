@@ -111,7 +111,6 @@ class HTTPClient: NSObject {
             do {
                 if let json:NSDictionary = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? [String:AnyObject] as NSDictionary? {
                     let jsonTodayDate = json["date"] as! String
-                    print("jsonTodayDate ==== \(jsonTodayDate)")
                     
                     let jsonTodayFactsArr = json["Events"] as! [AnyObject]
                     
@@ -122,7 +121,7 @@ class HTTPClient: NSObject {
                         let dict = element as! NSDictionary
                         let year = dict["year"] as! Int
                         let textFact = dict["text"] as! String
-                        let todayFactData = Today.init(jsonTodayDate, year, textFact)
+                        let todayFactData = Today(date: jsonTodayDate, year: year, en: textFact)
                         todayFactsArr.append(todayFactData)
                     }
                     completion(todayFactsArr)

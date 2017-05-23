@@ -55,7 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
             })
         } else {
             let messFact = message["getFactsFromDB"] as! String? 
-            LibraryAPI.sharedInstance().getFactsFromDB_ForWatch(messFact!, {data in
+            LibraryAPI.sharedInstance().getFactsFromDB_ForWatch(withCategory: messFact!, {data in
                 if data != nil {
                     replyHandler(["reply" : "Fact"])
                     session.sendMessageData(data!,

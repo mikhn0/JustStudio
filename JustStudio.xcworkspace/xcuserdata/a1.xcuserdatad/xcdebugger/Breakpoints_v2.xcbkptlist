@@ -20,61 +20,61 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "JustFacts_WatchOS_Extension.Category.__deallocating_deinit"
-                  moduleName = "JustFacts WatchOS Extension"
+                  symbolName = "JustStudio.Category.__deallocating_deinit"
+                  moduleName = "JustStudio"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/a1/workspase/JustStudio/Shared/Category.swift"
-                  timestampString = "514227902.60409"
+                  timestampString = "517234156.327959"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
                   endingLineNumber = "0"
-                  offsetFromSymbolStart = "16">
+                  offsetFromSymbolStart = "12">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "JustFacts_WatchOS_Extension.Category.__ivar_destroyer"
-                  moduleName = "JustFacts WatchOS Extension"
+                  symbolName = "JustStudio.Category.__ivar_destroyer"
+                  moduleName = "JustStudio"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/a1/workspase/JustStudio/Shared/Category.swift"
-                  timestampString = "514227902.606449"
+                  timestampString = "517234156.330287"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
                   endingLineNumber = "0"
-                  offsetFromSymbolStart = "15">
+                  offsetFromSymbolStart = "20">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "JustFacts_WatchOS_Extension.Category.init (Swift.String, Swift.Bool, Swift.String, Swift.String) -&gt; JustFacts_WatchOS_Extension.Category"
-                  moduleName = "JustFacts WatchOS Extension"
+                  symbolName = "JustStudio.Category.init (Swift.String, Swift.Bool, Swift.String, Swift.String, Swift.Optional&lt;__ObjC.NSData&gt;) -&gt; JustStudio.Category"
+                  moduleName = "JustStudio"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/a1/workspase/JustStudio/Shared/Category.swift"
-                  timestampString = "514227902.608756"
+                  timestampString = "517234156.332365"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "11"
                   endingLineNumber = "11"
-                  offsetFromSymbolStart = "104">
+                  offsetFromSymbolStart = "72">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "JustFacts_WatchOS_Extension.Category.__allocating_init (Swift.String, Swift.Bool, Swift.String, Swift.String) -&gt; JustFacts_WatchOS_Extension.Category"
-                  moduleName = "JustFacts WatchOS Extension"
+                  symbolName = "JustStudio.Category.__allocating_init (Swift.String, Swift.Bool, Swift.String, Swift.String, Swift.Optional&lt;__ObjC.NSData&gt;) -&gt; JustStudio.Category"
+                  moduleName = "JustStudio"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/a1/workspase/JustStudio/Shared/Category.swift"
-                  timestampString = "514227902.611479"
+                  timestampString = "517234156.33427"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
                   endingLineNumber = "0"
-                  offsetFromSymbolStart = "51">
+                  offsetFromSymbolStart = "24">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -189,6 +189,70 @@
             endingLineNumber = "125"
             landmarkName = "session(_:didReceive:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JustStudio/HTTPClient.swift"
+            timestampString = "517228517.195918"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "getTodayFactsFromServer(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JustStudio/API/LibraryAPI.swift"
+            timestampString = "517232006.435998"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "getFactsFromDB_ForWatch(withCategory:_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JustStudio.LibraryAPI.getFactsFromDB_ForWatch (withCategory : Swift.String, (Swift.Optional&lt;Foundation.Data&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "JustStudio"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a1/workspase/JustStudio/JustStudio/API/LibraryAPI.swift"
+                  timestampString = "517234156.3489"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JustStudio.LibraryAPI.(getFactsFromDB_ForWatch (withCategory : Swift.String, (Swift.Optional&lt;Foundation.Data&gt;) -&gt; ()) -&gt; ()).(closure #1)"
+                  moduleName = "JustStudio"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a1/workspase/JustStudio/JustStudio/API/LibraryAPI.swift"
+                  timestampString = "517234156.350922"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
