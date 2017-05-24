@@ -112,19 +112,23 @@ class HTTPClient: NSObject {
                 if let json:NSDictionary = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? [String:AnyObject] as NSDictionary? {
                     let jsonTodayDate = json["date"] as! String
                     
-                    let jsonTodayFactsArr = json["Events"] as! [AnyObject]
+                    let jsonTodayData = json["data"] as? [String:AnyObject]
+                    let jsonTodayEvents = jsonTodayData?["Events"] as? [AnyObject]
                     
-                    var todayFactsArr: [Today] = []
-                    let todayFacts = jsonTodayFactsArr.shuffle()
-                    for element in todayFacts {
-                        
-                        let dict = element as! NSDictionary
-                        let year = dict["year"] as! Int
-                        let textFact = dict["text"] as! String
-                        let todayFactData = Today(date: jsonTodayDate, year: year, en: textFact)
-                        todayFactsArr.append(todayFactData)
+                    var todayFactsArr = [Today]()
+                    let todayFacts = jsonTodayEvents?.shuffle()
+                    
+                    if todayFacts != nil {
+                        for element in todayFacts! {
+                            
+                            let dictFact = element as! NSDictionary
+                            let year = dictFact["year"] as! NSString
+                            let textFact = dictFact["text"] as! String
+                            let todayFactData = Today(date: jsonTodayDate, year: Int(year as String)!, en: textFact)
+                            todayFactsArr.append(todayFactData)
+                        }
+                        completion(todayFactsArr)
                     }
-                    completion(todayFactsArr)
                 }
             } catch let error as NSError {
                 print(error.localizedDescription)

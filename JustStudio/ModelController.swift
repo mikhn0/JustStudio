@@ -19,16 +19,6 @@ import Realm
  There is no need to actually create view controllers for each page in advance -- indeed doing so incurs unnecessary overhead. Given the data model, these methods create, configure, and return a new view controller on demand.
  */
 
-
-//protocol Sequence: NSFastEnumeration {
-//    
-//    associatedtype itemType: IteratorProtocol
-//    typealias Element = itemType.Element
-//    var count: Int { get }
-//    subscript(position: Int) -> Element { get }
-//}
-
-
 class ModelController: NSObject, UIPageViewControllerDataSource {
     
     var allFacts: Sequence?
@@ -38,7 +28,7 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
         super.init()
     }
 
-    func viewControllerAtIndex(_ index: Int, storyboard: UIStoryboard) -> DataViewController? {
+    func viewControllerAtIndex<T:DataModelVCProtocol>(_ index: Int, storyboard: UIStoryboard) -> T? {
         // Return the data view controller for the given index.
 
         if (allFacts?.countResults == 0) || (index >= (allFacts?.countResults)!) {
@@ -46,19 +36,19 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
         }
 
         // Create a new view controller and pass suitable data.
-        let dataViewController = storyboard.instantiateViewController(withIdentifier: "DataViewController") as! DataViewController
-        dataViewController.dataObject = allFacts?[byIndex: index]
-        dataViewController.activityIndicator = self.activityIndicator
+        var dataViewController = storyboard.instantiateViewController(withIdentifier: (allFacts is [TodayProtocol] ? "TodayDataViewController" : "DataViewController")) as! T
+        dataViewController.dataObject = allFacts?[byIndex: index] as? T.Item
+        dataViewController.activityIndicator = activityIndicator
         return dataViewController
     }
 
-    func indexOfViewController(_ viewController: DataViewController) -> Int {
+    func indexOfViewController<T:DataModelVCProtocol>(_ viewController: T) -> Int {
         // Return the index of the given data view controller.
         // For simplicity, this implementation uses a static array of model objects and the view controller stores the model object; you can therefore use the model object to identify the index.
         var indexOfFact: Int = NSNotFound
         for index in 0..<allFacts!.countResults! {
             let factData = allFacts![byIndex: index]
-            if factData._id == viewController.dataObject._id {
+            if factData._id == (viewController.dataObject as! BaseDataProtocol)._id {
                 indexOfFact = index
                 break
             }
@@ -69,16 +59,31 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
     // MARK: - Page View Controller Data Source
 
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        var index = self.indexOfViewController(viewController as! DataViewController)
+        var index = 0
+        let isTodayFactDataModel = allFacts is [Today]
+        index = !isTodayFactDataModel ? indexOfViewController(viewController as! DataViewController) : indexOfViewController(viewController as! TodayDataViewController)
         if (index == 0) || (index == NSNotFound) {
             return nil
         }
         index -= 1
-        return self.viewControllerAtIndex(index, storyboard: viewController.storyboard!)
+        if !isTodayFactDataModel {
+            let vc:DataViewController = viewControllerAtIndex(index, storyboard: viewController.storyboard!)!
+            return vc
+        } else {
+            let vc:TodayDataViewController = viewControllerAtIndex(index, storyboard: viewController.storyboard!)!
+            return vc
+        }
+        
     }
 
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        var index = indexOfViewController(viewController as! DataViewController)
+        var index = 0
+        let isTodayFactDataModel = allFacts is [Today]
+        if !isTodayFactDataModel {
+            index = indexOfViewController(viewController as! DataViewController)
+        } else {
+            index = indexOfViewController(viewController as! TodayDataViewController)
+        }
         if index == NSNotFound {
             return nil
         }
@@ -86,7 +91,13 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
         if index == allFacts?.countResults {
             return nil
         }
-        return self.viewControllerAtIndex(index, storyboard: viewController.storyboard!)
+        if !isTodayFactDataModel {
+            let vc:DataViewController = viewControllerAtIndex(index, storyboard: viewController.storyboard!)!
+            return vc
+        } else {
+            let vc:TodayDataViewController = viewControllerAtIndex(index, storyboard: viewController.storyboard!)!
+            return vc
+        }
     }
 
 }

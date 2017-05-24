@@ -39,11 +39,10 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
         
         buttonFavorites.styleButtonFavorites()
         buttonToday.styleButtonToday()
+        buttonToday.delegate = self
         buttonRandom.styleButtonRandom()
         buttonRandom.delegate = self
         
-        print("fileDBonApp ===== \(Realm.Configuration.defaultConfiguration.fileURL!)")
-
         LibraryAPI.sharedInstance().getAllCategory ({ (categories: Results<CategoryDataModel>?) -> Void in
             if categories != nil {
                 if self.categories != nil {
@@ -107,131 +106,75 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
         }
     }
     
-    //#pragma - mark UITableViewDelegate
+    // ----- UITableViewDelegate START -----
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return heightOfCell
-    }
-    
-    
-    //#pragma - mark UITableViewDataSource
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return countOfCategories ?? 0
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = CategoryCell(style: UITableViewCellStyle.value1, reuseIdentifier: textCellIdentifier)
-        
-        let row = (indexPath as NSIndexPath).row
-        
-        let categoryData = currentUpdateCategoryData != nil ? currentUpdateCategoryData : categories?[row]
-  
-        cell.titleLabel.setDescription(dataObject: categoryData!)
-
-        cell.titleLabel.sizeToFit()
-        
-        if let categoryImage = categoryData?.image, categoryImage != "" {
-            
-            if categoryData!.image_view != nil {
-                cell.photoView.image = UIImage(data:categoryData!.image_view! as Data)
-            } else {
-                
-                let url = URL(string: categoryImage)
-                let urlWithService = "http://res.cloudinary.com/dvq3boovd/image/fetch/c_scale,w_100/"
-                
-                let urlService = URL(string: urlWithService+categoryData!.image)
-     
-                let task = URLSession.shared.dataTask(with: urlService!, completionHandler: { (data, response, error) in
-                        if error == nil {
-                            DispatchQueue.main.async {
-                                cell.photoView.sd_setImage(with: url, placeholderImage: UIImage(data:data!))
-                            }
-                        }
-                })
-                task.resume()
-            }
-        }
-        currentUpdateCategoryData = nil
-        return cell
-        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectCategory: CategoryDataModel = categories![(indexPath as NSIndexPath).row]
         
         switch selectCategory.name {
-            case "quotes":
-                let justQuotesSchema = "readmyquotesapp://"
-                let justQuotesUrl = URL(string: justQuotesSchema)
-                if UIApplication.shared.canOpenURL(justQuotesUrl!) {
-                    if #available(iOS 10.0, *) {
-                        UIApplication.shared.open(justQuotesUrl!, options: [:], completionHandler: nil)
-                    } else {
-                        let success = UIApplication.shared.openURL(justQuotesUrl!)
-                        print("Open \(justQuotesSchema): \(success)")
-                    }
-                } else {
-                    if #available(iOS 10.0, *) {
-                        UIApplication.shared.open(URL(string: "https://itunes.apple.com/us/app/just-quotes-did-you-know/id1190672970")!, options: [:], completionHandler: nil)
-                    } else {
-                        UIApplication.shared.openURL(URL(string: "https://itunes.apple.com/us/app/just-quotes-did-you-know/id1190672970")!)
-                    }
-                }
-            case "celebrity":
-                let justPeoplesSchema = "readmypeopleapp://"
-                let justPeoplesUrl = URL(string: justPeoplesSchema)
-                if UIApplication.shared.canOpenURL(justPeoplesUrl!) {
-                    if #available(iOS 10.0, *) {
-                        UIApplication.shared.open(justPeoplesUrl!, options: [:], completionHandler: nil)
-                    } else {
-                        let success = UIApplication.shared.openURL(justPeoplesUrl!)
-                        print("Open \(justPeoplesSchema): \(success)")
-                    }
-                } else {
-                    if #available(iOS 10.0, *) {
-                        UIApplication.shared.open(URL(string: "https://itunes.apple.com/us/app/just-people-did-you-know/id1197390666")!, options: [:], completionHandler: nil)
-                    } else {
-                        UIApplication.shared.openURL(URL(string: "https://itunes.apple.com/us/app/just-people-did-you-know/id1197390666")!)
-                    }
-                }
-            default:
-                performSegue(withIdentifier: "FactsByCategorySegue", sender: selectCategory)
-                break
+        case "quotes":
+            openApp(bySchema: "readmyquotesapp://", withUrl: "https://itunes.apple.com/us/app/just-quotes-did-you-know/id1190672970")
+        case "celebrity":
+            openApp(bySchema: "readmypeopleapp://", withUrl: "https://itunes.apple.com/us/app/just-people-did-you-know/id1197390666")
+        default:
+            performSegue(withIdentifier: "FactsByCategorySegue", sender: selectCategory)
         }
     }
     
-    func displayRandomFacts(_ facts: [FactDataProtocol]) {
+    // ----- UITableViewDelegate END -----
+    // ----- UITableViewDataSource START -----
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return countOfCategories ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let row = (indexPath as NSIndexPath).row
+        let categoryData = currentUpdateCategoryData != nil ? currentUpdateCategoryData : categories?[row]
+        let model = CategoryCellModel(photoUrl: (categoryData?.image)!, photoData: categoryData?.image_view, title: returnDescriptionForApp(categoryData!))
+        
+        currentUpdateCategoryData = nil
+        return tableView.dequeueReusableCell(viewModel: model, for: indexPath)
+        
+    }
+    // ----- UITableDataSource END -----
+    // ----- BarButtonDataSource START -----
+    
+    func displayFacts(_ facts: [BaseDataProtocol]) {
         performSegue(withIdentifier: "FactsByCategorySegue", sender: facts)
     }
     
-    func displayTodayFacts(_ facts: [Today]) {
-        performSegue(withIdentifier: "FactsByCategorySegue", sender: facts)
-    }
-    
+    // ----- BarButtonDataSource END -----
+    // ----- Segue UIViewController START -----
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "FactsByCategorySegue" {
-            if sender is CategoryDataModel {
-                let categoryDetailViewController = segue.destination as! CategoryDetailViewController
-                categoryDetailViewController.category = sender as? CategoryDataModel
-            } else if sender is [FactDataProtocol] {
-                let categoryDetailViewController = segue.destination as! CategoryDetailViewController
-                categoryDetailViewController.randomFacts = sender as? [FactDataProtocol]
-            } else if sender is [Today] {
-                let categoryDetailViewController = segue.destination as! CategoryDetailViewController
-                categoryDetailViewController.randomFacts = sender as? [FactDataProtocol]
+            
+            let categoryDetailViewController = segue.destination as! CategoryDetailViewController
+            
+            if let category = sender as? CategoryDataModel {
+                categoryDetailViewController.category = category
+                
+            } else if let randomFacts = sender as? [FactDataProtocol] {
+                categoryDetailViewController.randomFacts = randomFacts
+                
+            } else if let todayFacts = sender as? [TodayProtocol] {
+                categoryDetailViewController.todayFacts = todayFacts
             }
         }
     }
     
     @IBAction func prepareForUnwind(_ segue: UIStoryboardSegue) -> Void {
-        if segue.identifier == "unwindToViewController" {
-            print("UNVIND SEGUE");
-        }
+        if segue.identifier == "unwindToViewController" { print("UNVIND SEGUE") }
     }
-
+    
+    // ----- Segue UIViewController END -----
+    
     func showAlert(title: String, message: String) {
-        
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in }
         alertController.addAction(OKAction)
@@ -242,29 +185,29 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
 
 protocol Sequence {
     var countResults: Int? {get}
-    subscript (byIndex index:Int) -> FactDataProtocol {get}
+    subscript (byIndex index:Int) -> BaseDataProtocol {get}
 }
 
 extension Results: Sequence {
     
-    subscript(byIndex index: Int) -> FactDataProtocol {
-        return self[index] as! FactDataProtocol
+    subscript(byIndex index: Int) -> BaseDataProtocol {
+        return self[index] as! BaseDataProtocol
     }
 
     var countResults: Int? {
-        return self.count
+        return count
     }
 
 }
 
 extension Array: Sequence {
     
-    subscript(byIndex index: Int) -> FactDataProtocol {
-        return self[index] as! FactDataProtocol
+    subscript(byIndex index: Int) -> BaseDataProtocol {
+        return self[index] as! BaseDataProtocol
     }
     
     var countResults: Int? {
-        return self.count
+        return count
     }
     
 }

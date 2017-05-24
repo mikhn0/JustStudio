@@ -16,7 +16,7 @@ extension UILabel {
 
 func returnDescriptionForApp(_ dataObject: BaseDataProtocol) -> String {
     let pre = NSLocale.preferredLanguages[0]
-    return pre.contains("ru") ? dataObject.ru : dataObject.en
+    return pre.contains("ru") ? (dataObject.ru == "" ? dataObject.en : dataObject.ru) : dataObject.en
 }
 
 

@@ -10,25 +10,32 @@ import GoogleMobileAds
 import UIKit
 import SDWebImage
 
-class DataViewController: UIViewController {
+protocol DataModelVCProtocol {
+    associatedtype Item
+    var dataObject: Item? {get set}
+    var activityIndicator: UIActivityIndicatorView? {get set}
+}
+
+class DataViewController: UIViewController, DataModelVCProtocol {
+    
+    typealias Item = FactDataProtocol
+    var dataObject: Item?
+    var activityIndicator: UIActivityIndicatorView?
     
     @IBOutlet weak var dataLabel: UILabel!
     @IBOutlet weak var infoView: UIView!
     @IBOutlet weak var imageView: UIImageView!
-    var dataObject: FactDataProtocol!
-    var activityIndicator: UIActivityIndicatorView?
     
     override func viewDidLoad() {
-        //print("!!! \(dataObject.image!)")
-        if (dataObject.image_view != nil) {
-            self.imageView.image = UIImage(data: dataObject.image_view! as Data)
+        if (dataObject!.image_view != nil) {
+            self.imageView.image = UIImage(data: dataObject!.image_view! as Data)
             self.activityIndicator!.stopAnimating()
         } else {
-            if dataObject.image != nil {
-                let url = URL(string: dataObject.image!)
+            if dataObject!.image != nil {
+                let url = URL(string: dataObject!.image!)
                 
                 let urlWithService = "http://res.cloudinary.com/dvq3boovd/image/fetch/c_scale,w_100/"
-                let betweenString = urlWithService + dataObject.image!
+                let betweenString = urlWithService + dataObject!.image!
                 let urlService = URL(string: betweenString)
                 
                 self.activityIndicator!.startAnimating()
@@ -56,7 +63,7 @@ class DataViewController: UIViewController {
 
             }
         }
-        self.dataLabel.setDescription(dataObject: dataObject)
+        self.dataLabel.setDescription(dataObject: dataObject!)
         
         let color:UIColor! = UIColor.black
         self.dataLabel.layer.shadowColor = color.cgColor

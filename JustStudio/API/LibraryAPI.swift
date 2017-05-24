@@ -87,6 +87,7 @@ class LibraryAPI  {
             }
         }
     }
+    
     func getTodayFacts(_ completion: @escaping (_ facts: [AnyObject]?) -> Void) -> Void {
         
         if LibraryAPI.isConnectedToNetwork() {
@@ -125,7 +126,7 @@ class LibraryAPI  {
                 httpClient.getFactsFromServer(category) { (_ factsInThisCategory: [AnyObject]) -> Void in
                     self.persistencyManager.writeFactsToBD(selectCategory: category, facts: factsInThisCategory, completion(self.persistencyManager.readFactFromBD(category: category)!)) }
             }
-        }else{
+        } else {
             print("-----1 день не прошел с последнего открытия, с сервера не грузим!")
         }
     }

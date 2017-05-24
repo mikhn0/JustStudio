@@ -16,7 +16,8 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
 
     var category: CategoryDataModel?
     var randomFacts: [FactDataProtocol]?
-    var todayFacts: [Today]?
+    var todayFacts: [TodayProtocol]?
+    
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var bannerView: GADBannerView!
@@ -65,14 +66,14 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
                 LibraryAPI.sharedInstance().getFactsByCategory(self.category!, completion:{ (facts: Results<FactDataModel>?) -> Void in
                     
                     DispatchQueue.main.async {
-                        self.ConfigurationViewControllers(facts!)
+                        self.configurationViewControllers(facts!, typeVC: DataViewController())
                     }
                 })
             }
         } else if randomFacts != nil {
-           ConfigurationViewControllers(randomFacts!)
+           configurationViewControllers(randomFacts!, typeVC: DataViewController())
         } else if todayFacts != nil {
-            ConfigurationViewControllers(todayFacts!)
+            configurationViewControllers(todayFacts!, typeVC: TodayDataViewController())
         }
         
         
@@ -85,18 +86,23 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
     }
 
     
-    func ConfigurationViewControllers(_ facts: Sequence?) {
+    func configurationViewControllers<T>(_ facts: Sequence?, typeVC vcType:T) where T : UIViewController, T : DataModelVCProtocol{
 
         modelController.allFacts = facts
         modelController.activityIndicator = activityIndicator
-        
-        if let startingViewController = self.modelController.viewControllerAtIndex(0, storyboard: self.storyboard!) {
-            let viewControllers = [startingViewController]
-            pageViewController!.setViewControllers(viewControllers, direction: .forward, animated: true, completion: {done in })
-            pageViewController!.dataSource = self.modelController
-            addChildViewController(self.pageViewController!)
-            view.insertSubview(pageViewController!.view, belowSubview: bannerView)
+        var viewControllers = [AnyObject]()
+        if vcType is DataViewController {
+            let startingViewController:DataViewController = modelController.viewControllerAtIndex(0, storyboard: storyboard!)!
+            viewControllers = [startingViewController]
+            
+        } else {
+            let startingViewController:TodayDataViewController = modelController.viewControllerAtIndex(0, storyboard: storyboard!)!
+            viewControllers = [startingViewController]
         }
+        pageViewController!.setViewControllers(viewControllers as? [UIViewController], direction: .forward, animated: true, completion: {done in })
+        pageViewController!.dataSource = modelController
+        addChildViewController(pageViewController!)
+        view.insertSubview(pageViewController!.view, belowSubview: bannerView)
     }
     
     @IBAction func shareAction(_ sender: AnyObject) {
@@ -109,7 +115,7 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
             
             let facts = modelController.allFacts!
             if facts.countResults! > 0 && indexOfCurrentViewController >= 0 {
-                if (facts[byIndex: indexOfCurrentViewController].image == "") {
+                if let fact = facts[byIndex: indexOfCurrentViewController] as? FactDataProtocol, fact.image == "" {
                     // The text field is empty so display an Alert
                     displayAlert("Warning", message: "Enter something in the text field!")
                 } else {
@@ -128,7 +134,7 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
         return
     }
     
-    func displayShareSheet(_ shareContent:FactDataProtocol) {
+    func displayShareSheet(_ shareContent:BaseDataProtocol) {
         let siteUrl:URL! = URL(string: "https://justfacts.carrd.co/")
 
         UIGraphicsBeginImageContextWithOptions(CGSize(width: self.view.frame.size.width, height: self.view.frame.size.height-100), true, UIScreen.main.scale)
