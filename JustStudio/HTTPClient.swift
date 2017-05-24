@@ -9,6 +9,7 @@
 import Foundation
 import RealmSwift
 import Realm
+import YandexMobileMetrica
 
 class HTTPClient: NSObject {
     let persistencyManager = PersistencyManager()
@@ -27,7 +28,7 @@ class HTTPClient: NSObject {
         let task = URLSession.shared.dataTask(with: url! as URL) {(data, response, error) in
             
             if (error != nil) {
-                print("API error: \(String(describing: error)), \(String(describing: error?.localizedDescription))")
+                catchError(withText: error!)
             }
             do {
                 if let json:NSDictionary = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? [String:AnyObject] as NSDictionary? {
@@ -39,7 +40,7 @@ class HTTPClient: NSObject {
                     }
                 }
             } catch let error as NSError {
-                print(error.localizedDescription)
+                catchError(withText: error)
             }
         }
         task.resume()
@@ -51,7 +52,7 @@ class HTTPClient: NSObject {
         let task = URLSession.shared.dataTask(with: url! as URL) {(data, response, error) in
             
             if (error != nil) {
-                print("API error: \(String(describing: error)), \(String(describing: error?.localizedDescription))")
+                catchError(withText: error!)
             }
             do {
                 if let json:NSDictionary = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? [String:AnyObject] as NSDictionary? {
@@ -63,7 +64,7 @@ class HTTPClient: NSObject {
                     }
                 }
             } catch let error as NSError {
-                print(error.localizedDescription)
+                catchError(withText: error)
             }
         }
         task.resume()
@@ -75,7 +76,7 @@ class HTTPClient: NSObject {
         let task = URLSession.shared.dataTask(with: url! as URL) {(data, response, error) in
             
             if (error != nil) {
-                print("API error: \(String(describing: error)), \(String(describing: error?.localizedDescription))")
+                catchError(withText: error!)
             }
             
             do {
@@ -92,7 +93,7 @@ class HTTPClient: NSObject {
                     completion(factsArr)
                 }
             } catch let error as NSError {
-                print(error.localizedDescription)
+                catchError(withText: error)
             }
         }
         task.resume()
@@ -105,7 +106,7 @@ class HTTPClient: NSObject {
         let task = URLSession.shared.dataTask(with: url! as URL) {(data, response, error) in
             
             if (error != nil) {
-                print("API error: \(String(describing: error)), \(String(describing: error?.localizedDescription))")
+                catchError(withText: error!)
             }
             
             do {
@@ -134,7 +135,7 @@ class HTTPClient: NSObject {
                     }
                 }
             } catch let error as NSError {
-                print(error.localizedDescription)
+                catchError(withText: error)
             }
         }
         task.resume()

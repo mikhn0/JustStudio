@@ -5,7 +5,7 @@ use_frameworks!
 target 'JustStudio' do
     pod 'SDWebImage', '~>3.7'
     pod 'Google-Mobile-Ads-SDK'
-
+    pod 'YandexMobileMetrica/Dynamic', '2.8.0'
 end
 
 target 'JustFacts WatchOS Extension' do
@@ -14,4 +14,5 @@ end
 
 target 'JustStudio iMessage' do
     pod 'SDWebImage', '~>3.7'
+    pod 'YandexMobileMetrica/Dynamic', '2.8.0'
 end

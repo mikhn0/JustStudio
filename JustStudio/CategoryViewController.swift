@@ -10,6 +10,7 @@ import Foundation
 import SDWebImage
 import RealmSwift
 import WatchConnectivity
+import YandexMobileMetrica
 
 class CategoryViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, BarButtonDataSource {
 
@@ -123,6 +124,9 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
         default:
             performSegue(withIdentifier: "FactsByCategorySegue", sender: selectCategory)
         }
+        
+        
+        catchEvent(withText: "CATEGORY_SELECTION_"+selectCategory.name.uppercased())
     }
     
     // ----- UITableViewDelegate END -----

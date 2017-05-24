@@ -10,6 +10,7 @@ import GoogleMobileAds
 import UIKit
 import RealmSwift
 import Realm
+import YandexMobileMetrica
 
 
 class CategoryDetailViewController: UIViewController, UIPageViewControllerDelegate {
@@ -17,7 +18,6 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
     var category: CategoryDataModel?
     var randomFacts: [FactDataProtocol]?
     var todayFacts: [TodayProtocol]?
-    
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var bannerView: GADBannerView!
@@ -107,8 +107,9 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
     
     @IBAction func shareAction(_ sender: AnyObject) {
         // Check and see if the text field is empty
-        //semaphore?.wait(timeout: .distantFuture)
-        print("WE MADE IT OUT OF THERE")
+        
+        catchEvent(withText: "SHARE_ACTION_CLICK")
+        
         if self.pageViewController!.viewControllers!.count > 0 {
             let currentViewController = pageViewController!.viewControllers![0] as! DataViewController
             let indexOfCurrentViewController = modelController.indexOfViewController(currentViewController)
@@ -135,6 +136,7 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
     }
     
     func displayShareSheet(_ shareContent:BaseDataProtocol) {
+        
         let siteUrl:URL! = URL(string: "https://justfacts.carrd.co/")
 
         UIGraphicsBeginImageContextWithOptions(CGSize(width: self.view.frame.size.width, height: self.view.frame.size.height-100), true, UIScreen.main.scale)
@@ -143,7 +145,16 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
         UIGraphicsEndImageContext()
         
         let activityViewController = UIActivityViewController(activityItems: [cropImage(image: shareImage, toRect: CGRect(x: 0, y: 140, width: shareImage.size.width*3, height: shareImage.size.height*3)), siteUrl as URL], applicationActivities: nil)
-        present(activityViewController, animated: true, completion: {})
+        
+        present(activityViewController, animated: true, completion: nil)
+        activityViewController.completionWithItemsHandler = { activity, success, items, error in
+            if success {
+                catchEvent(withText: "SHARE_FACT_IN_\(String(describing: activity?.rawValue))")
+            } else {
+                catchError(withText: error ?? SharingError(rawValue:"SHARING"))
+            }
+            
+        }
     }
     
     func cropImage(image:UIImage, toRect rect:CGRect) -> UIImage{
@@ -194,7 +205,11 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
 
         return .mid
     }
-
-    
 }
 
+struct SharingError:Error {
+    var rawValue:String
+    var localizedDescription:String {
+        return rawValue
+    }
+}

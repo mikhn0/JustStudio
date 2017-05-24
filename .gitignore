@@ -1,0 +1,11 @@
+Pods/YandexMobileMetrica/LICENSE.txt
+Pods/YandexMobileMetrica/README.md
+Pods/YandexMobileMetrica/dynamic/YandexMobileMetrica.framework/Info.plist
+Pods/YandexMobileMetrica/dynamic/YandexMobileMetrica.framework/YandexMobileMetrica
+Pods/YandexMobileMetrica/dynamic/YandexMobileMetrica.framework/Headers/YandexMobileMetrica-umbrella.h
+Pods/YandexMobileMetrica/dynamic/YandexMobileMetrica.framework/Headers/YandexMobileMetrica.h
+Pods/YandexMobileMetrica/dynamic/YandexMobileMetrica.framework/Headers/YMMVersion.h
+Pods/YandexMobileMetrica/dynamic/YandexMobileMetrica.framework/Headers/YMMYandexMetrica.h
+Pods/YandexMobileMetrica/dynamic/YandexMobileMetrica.framework/Headers/YMMYandexMetricaConfiguration.h
+Pods/YandexMobileMetrica/dynamic/YandexMobileMetrica.framework/Headers/YMMYandexMetricaPreloadInfo.h
+Pods/YandexMobileMetrica/dynamic/YandexMobileMetrica.framework/Modules/module.modulemap

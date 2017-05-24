@@ -28,8 +28,8 @@ class DataViewController: UIViewController, DataModelVCProtocol {
     
     override func viewDidLoad() {
         if (dataObject!.image_view != nil) {
-            self.imageView.image = UIImage(data: dataObject!.image_view! as Data)
-            self.activityIndicator!.stopAnimating()
+            imageView.image = UIImage(data: dataObject!.image_view! as Data)
+            activityIndicator!.stopAnimating()
         } else {
             if dataObject!.image != nil {
                 let url = URL(string: dataObject!.image!)
@@ -38,13 +38,12 @@ class DataViewController: UIViewController, DataModelVCProtocol {
                 let betweenString = urlWithService + dataObject!.image!
                 let urlService = URL(string: betweenString)
                 
-                self.activityIndicator!.startAnimating()
+                activityIndicator!.startAnimating()
                 
                 let task = URLSession.shared.dataTask(with: urlService!, completionHandler: { (data, response, error) in
                     if error == nil {
                         DispatchQueue.main.async {
                             self.imageView.sd_setImage(with: url, placeholderImage: UIImage(data:data!), options: SDWebImageOptions.cacheMemoryOnly, completed: { (image, error, imageCacheType, url) in
-                                //self.imageView.image = image
                                 self.activityIndicator!.stopAnimating()
                             })
                         }
@@ -52,25 +51,25 @@ class DataViewController: UIViewController, DataModelVCProtocol {
                 })
                 task.resume()
             } else {
-                self.activityIndicator!.stopAnimating()
+                activityIndicator!.stopAnimating()
                 
                 let alertController = UIAlertController(title: "Error", message: "This fact has not image.", preferredStyle: .alert)
                 
                 let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in}
                 alertController.addAction(OKAction)
                 
-                self.present(alertController, animated: true) {}
+                present(alertController, animated: true) {}
 
             }
         }
         self.dataLabel.setDescription(dataObject: dataObject!)
         
         let color:UIColor! = UIColor.black
-        self.dataLabel.layer.shadowColor = color.cgColor
-        self.dataLabel.layer.shadowRadius = 4.0
-        self.dataLabel.layer.shadowOpacity = 0.9
-        self.dataLabel.layer.shadowOffset = CGSize.zero
-        self.dataLabel.layer.masksToBounds = false
+        dataLabel.layer.shadowColor = color.cgColor
+        dataLabel.layer.shadowRadius = 4.0
+        dataLabel.layer.shadowOpacity = 0.9
+        dataLabel.layer.shadowOffset = CGSize.zero
+        dataLabel.layer.masksToBounds = false
     }
 
 }

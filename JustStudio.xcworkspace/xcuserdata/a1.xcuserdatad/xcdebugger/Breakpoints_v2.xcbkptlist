@@ -24,12 +24,12 @@
                   moduleName = "JustStudio"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/a1/workspase/JustStudio/Shared/Category.swift"
-                  timestampString = "517311453.188801"
+                  timestampString = "517324502.185109"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
                   endingLineNumber = "0"
-                  offsetFromSymbolStart = "12">
+                  offsetFromSymbolStart = "4">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -39,12 +39,12 @@
                   moduleName = "JustStudio"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/a1/workspase/JustStudio/Shared/Category.swift"
-                  timestampString = "517311453.190873"
+                  timestampString = "517324502.18736"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
                   endingLineNumber = "0"
-                  offsetFromSymbolStart = "20">
+                  offsetFromSymbolStart = "4">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -54,12 +54,12 @@
                   moduleName = "JustStudio"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/a1/workspase/JustStudio/Shared/Category.swift"
-                  timestampString = "517311453.192749"
+                  timestampString = "517324502.189615"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "11"
                   endingLineNumber = "11"
-                  offsetFromSymbolStart = "72">
+                  offsetFromSymbolStart = "80">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -69,12 +69,12 @@
                   moduleName = "JustStudio"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/a1/workspase/JustStudio/Shared/Category.swift"
-                  timestampString = "517311453.194508"
+                  timestampString = "517324502.191798"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
                   endingLineNumber = "0"
-                  offsetFromSymbolStart = "24">
+                  offsetFromSymbolStart = "40">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -146,31 +146,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "JustStudio/HTTPClient.swift"
-            timestampString = "517228517.195918"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
-            landmarkName = "getTodayFactsFromServer(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JustStudio/API/LibraryAPI.swift"
-            timestampString = "517232006.435998"
+            timestampString = "517323700.502121"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
             landmarkName = "getFactsFromDB_ForWatch(withCategory:_:)"
             landmarkType = "7">
             <Locations>
@@ -182,12 +166,12 @@
                   moduleName = "JustStudio"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/a1/workspase/JustStudio/JustStudio/API/LibraryAPI.swift"
-                  timestampString = "517311453.203959"
+                  timestampString = "517324502.203544"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31"
-                  offsetFromSymbolStart = "36">
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "32">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -197,12 +181,12 @@
                   moduleName = "JustStudio"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/a1/workspase/JustStudio/JustStudio/API/LibraryAPI.swift"
-                  timestampString = "517311453.205836"
+                  timestampString = "517324502.205936"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31"
-                  offsetFromSymbolStart = "24">
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "20">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -274,31 +258,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "JustStudio/HTTPClient.swift"
-            timestampString = "517241110.959803"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "127"
-            endingLineNumber = "127"
-            landmarkName = "getTodayFactsFromServer(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JustStudio/CategoryViewController.swift"
-            timestampString = "517310590.949476"
+            timestampString = "517319378.238197"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "149"
-            endingLineNumber = "149"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
             landmarkName = "displayFacts(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -322,15 +290,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JustStudio/CategoryViewController.swift"
-            timestampString = "517310590.949476"
+            timestampString = "517319378.238197"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "155"
-            endingLineNumber = "155"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>

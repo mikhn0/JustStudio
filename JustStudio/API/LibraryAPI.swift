@@ -10,6 +10,7 @@ import Foundation
 import RealmSwift
 import Realm
 import SystemConfiguration
+import YandexMobileMetrica
 
 let SERVER_URL:NSString = "http://13.91.106.16:5793/"
 
@@ -128,6 +129,17 @@ class LibraryAPI  {
             print("-----1 день не прошел с последнего открытия, с сервера не грузим!")
         }
     }
+}
 
-    
+func catchError(withText error: Error) {
+    YMMYandexMetrica.reportError("ERROR_\(String(describing: error))", exception: nil) { (error) in
+        print("REPORT ERROR: %@", error.localizedDescription)
+    }
+}
+
+func catchEvent(withText text: String) {
+    YMMYandexMetrica.reportEvent(text) { (error) in
+        print("DID FAIL REPORT EVENT: %@", text)
+        print("REPORT ERROR: %@", error.localizedDescription)
+    }
 }

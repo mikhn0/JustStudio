@@ -3,15 +3,18 @@ PODS:
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
+  - YandexMobileMetrica/Dynamic (2.8.0)
 
 DEPENDENCIES:
   - Google-Mobile-Ads-SDK
   - SDWebImage (~> 3.7)
+  - YandexMobileMetrica/Dynamic (= 2.8.0)
 
 SPEC CHECKSUMS:
   Google-Mobile-Ads-SDK: 0e864ab93ba1ff8afe92e16de0e4e883f581ed33
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+  YandexMobileMetrica: 71aff86c18d7900fece28be158471548c243c0d4
 
-PODFILE CHECKSUM: b368d0eda978416bfd1798528fdf66e8250f0125
+PODFILE CHECKSUM: 32c398f482bf6c703c9dc1115fab7116487c3818
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.0
