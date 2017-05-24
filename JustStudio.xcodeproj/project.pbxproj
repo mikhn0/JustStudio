@@ -64,6 +64,7 @@
 		753F161A1E9FDD3A00C458D5 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 753F16141E9FDC4900C458D5 /* RealmSwift.framework */; };
 		753F161C1E9FDD4400C458D5 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 753F16131E9FDC4900C458D5 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		753F161E1E9FDD4400C458D5 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 753F16141E9FDC4900C458D5 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		75479B0B1ED5CA6500375B03 /* ping.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 75479B0A1ED5CA6500375B03 /* ping.aiff */; };
 		755150FD1C47EE1C00527733 /* UILable+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755150FC1C47EE1C00527733 /* UILable+Layout.swift */; };
 		755202291E96B79D00F3BC2A /* PersistencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752E588D1E96A3DB003EF222 /* PersistencyManager.swift */; };
 		7552022A1E96B7A000F3BC2A /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752E588F1E96A404003EF222 /* HTTPClient.swift */; };
@@ -255,6 +256,7 @@
 		753C5E261EA1139F00AF1DEC /* PersistencyManagerWatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistencyManagerWatch.swift; sourceTree = "<group>"; };
 		753F16131E9FDC4900C458D5 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		753F16141E9FDC4900C458D5 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
+		75479B0A1ED5CA6500375B03 /* ping.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; name = ping.aiff; path = "Support File/ping.aiff"; sourceTree = "<group>"; };
 		755150FC1C47EE1C00527733 /* UILable+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILable+Layout.swift"; sourceTree = "<group>"; };
 		755856431E9E289F0091ABB5 /* JustStudio.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JustStudio.entitlements; sourceTree = "<group>"; };
 		755856441E9E28D70091ABB5 /* JustStudio iMessage.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "JustStudio iMessage.entitlements"; sourceTree = "<group>"; };
@@ -453,6 +455,7 @@
 		75620F441C4671570069DD5F /* Support File */ = {
 			isa = PBXGroup;
 			children = (
+				75479B0A1ED5CA6500375B03 /* ping.aiff */,
 				63485B8A1E2FB945004DF4A8 /* Avus W00 Condensed Medium.ttf */,
 				755150F81C47E41A00527733 /* Category */,
 			);
@@ -849,6 +852,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63485B8B1E2FB945004DF4A8 /* Avus W00 Condensed Medium.ttf in Resources */,
+				75479B0B1ED5CA6500375B03 /* ping.aiff in Resources */,
 				883D70131C0DAE22003ECEE2 /* LaunchScreen.storyboard in Resources */,
 				75E046C01EC48D8000FAC26E /* Assets.xcassets in Resources */,
 				883D700E1C0DAE22003ECEE2 /* Main.storyboard in Resources */,

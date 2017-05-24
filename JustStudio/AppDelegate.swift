@@ -19,6 +19,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
     var window: UIWindow?
     var wcSession: WCSession?
     
+    func incrementBadgeNumberBy(badgeNumberIncrement: Int) {
+        let currentBadgeNumber = UIApplication.shared.applicationIconBadgeNumber
+        let updatedBadgeNumber = currentBadgeNumber + badgeNumberIncrement
+        if (updatedBadgeNumber > -1) {
+            UIApplication.shared.applicationIconBadgeNumber = updatedBadgeNumber
+        }
+    }
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         let appGroup = "group.com.fruktorum.JustFacts"
@@ -38,6 +46,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
         if #available(iOS 10, *) {
             UNUserNotificationCenter.current().requestAuthorization(options:[.badge, .alert, .sound]){ (granted, error) in }
             application.registerForRemoteNotifications()
+            
+            //incrementBadgeNumberBy(badgeNumberIncrement: 1)
+            print("до пуш === \(UIApplication.shared.applicationIconBadgeNumber)")
+
         }
             // iOS 9 support
         else if #available(iOS 9, *) {
@@ -75,10 +87,48 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
         print("APNs registration failed: \(error)")
     }
     
+    private func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        print("!!!!!!!!!!!!")
+        
+        return true
+    }
+    
     // Push notification received
     func application(_ application: UIApplication, didReceiveRemoteNotification data: [AnyHashable : Any]) {
         // Print notification payload data
         print("Push notification received: \(data)")
+        
+        switch application.applicationState {
+        case .active:
+            //app is currently active, can update badges count here Приложение активно, обновите количество значков
+            print("!!!! active")
+            break
+        case .inactive:
+            //app is transitioning from background to foreground (user taps notification), do what you need when user taps here Приложение переходит из фонового режима на передний план (уведомление пользователя о кранах), делайте то, что вам нужно, когда пользователь нажимает здесь
+            incrementBadgeNumberBy(badgeNumberIncrement: -1)
+            print("переход в приложение (-1) = \(UIApplication.shared.applicationIconBadgeNumber)")
+            break
+        case .background:
+            //app is in background, if content-available key of your notification is set to 1, poll to your backend to retrieve data and update your interface here Приложение находится в фоновом режиме, если доступный для содержимого ключ вашего уведомления установлен в 1, опрос на ваш сервер для извлечения данных и обновления вашего интерфейса здесь
+            print("opened from a push notification when the app was on background")
+            incrementBadgeNumberBy(badgeNumberIncrement: +1)
+            print("находимся в background (+1) = \(UIApplication.shared.applicationIconBadgeNumber)")
+            break
+        default:
+            print("!!!! default")
+            break
+        }
+        
+//        if ( application.applicationState == UIApplicationState.inactive || application.applicationState == UIApplicationState.background ){
+//            print("opened from a push notification when the app was on background")
+//            incrementBadgeNumberBy(badgeNumberIncrement: -1)
+//            print("если открыли с background = \(UIApplication.shared.applicationIconBadgeNumber)")
+//        } else {
+//            print("opened from a push notification when the app was on foreground")
+//            incrementBadgeNumberBy(badgeNumberIncrement: -1)
+//            print("если открыли с foreground = \(UIApplication.shared.applicationIconBadgeNumber)")
+//        }
+
     }
     
 
