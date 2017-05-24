@@ -10,6 +10,7 @@ import UIKit
 import RealmSwift
 import WatchConnectivity
 import UserNotifications
+import YandexMobileMetrica
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
