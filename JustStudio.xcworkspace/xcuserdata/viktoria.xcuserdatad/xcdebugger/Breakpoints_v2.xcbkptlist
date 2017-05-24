@@ -6,22 +6,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "JustStudio/PersistencyManager.swift"
-            timestampString = "513781702.339314"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "readCategoryFromBD()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -42,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JustFacts WatchOS Extension/InterfaceController.swift"
-            timestampString = "516134459.556814"
+            timestampString = "517250261.136578"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "175"
-            endingLineNumber = "175">
+            startingLineNumber = "174"
+            endingLineNumber = "174">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -63,6 +47,38 @@
             endingLineNumber = "36"
             landmarkName = "getAllCategoryForWatch(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JustFacts_WatchOS_Extension.LibraryWatchAPI.getAllCategoryForWatch ((Swift.Optional&lt;RealmSwift.Results&lt;JustFacts_WatchOS_Extension.CategoryDataModel&gt;&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "JustFacts WatchOS Extension"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/viktoria/workspace/justFacts/JustStudio/JustFacts%20WatchOS%20Extension/LibraryWatchAPI.swift"
+                  timestampString = "517248058.222169"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "206">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JustFacts_WatchOS_Extension.LibraryWatchAPI.getAllCategoryForWatch ((Swift.Optional&lt;RealmSwift.Results&lt;JustFacts_WatchOS_Extension.CategoryDataModel&gt;&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "JustFacts WatchOS Extension"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/viktoria/workspace/justFacts/JustStudio/JustFacts%20WatchOS%20Extension/LibraryWatchAPI.swift"
+                  timestampString = "517248058.224335"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "245">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -93,23 +109,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "82"
             endingLineNumber = "82"
-            landmarkName = "getFactsFromDB_ForWatch(_:_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "JustStudio/PersistencyManager.swift"
-            timestampString = "516124605.490295"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "readFactFromDB_ForWatch(category:)"
+            landmarkName = "getRandomFacts(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -141,14 +141,14 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "234"
             endingLineNumber = "234"
-            landmarkName = "buttonPressFavorites(_:)"
+            landmarkName = "showAlert(title:message:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JustStudio/AppDelegate.swift"

@@ -55,6 +55,6 @@ class Fact: Base {
         super.encode(with: aCoder)
         aCoder.encode(image, forKey: "image")
         aCoder.encode(category, forKey: "category")
-        aCoder.encode(active, forKey: "isLike")
+        aCoder.encode(isLike, forKey: "isLike")
     }
 }

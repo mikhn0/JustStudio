@@ -61,7 +61,7 @@ class CategoryVC: BaseViewController, UITableViewDelegate, UITableViewDataSource
 //очередь для категории ячейки
     private func dequeueCategoryCell(for category: CategoryDataModel, at indexPath:IndexPath) -> UITableViewCell {
         let cell = categoryTable?.dequeueReusableCell(withIdentifier: CategoryCell.reuseIdentifier!, for: indexPath) as! CategoryCell
-        cell.categoryLabel?.setDescription(dataObject: category as! BaseDataProtocol)
+        cell.categoryLabel?.setDescription(dataObject: category as BaseDataProtocol)
         
         if (category.image != "") {
             let url = URL(string: category.image)

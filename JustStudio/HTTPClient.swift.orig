@@ -129,9 +129,12 @@ class HTTPClient: NSObject {
                         }
                         completion(todayFactsArr)
                     }
+<<<<<<< HEAD
+=======
                     DispatchQueue.main.sync {
                         completion(todayFactsArr)
                     }
+>>>>>>> 847ebdbba24fcfbce3f6c77fc8b4858129a5856b
                 }
             } catch let error as NSError {
                 print(error.localizedDescription)

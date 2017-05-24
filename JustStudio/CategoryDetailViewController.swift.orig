@@ -17,7 +17,10 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
     var category: CategoryDataModel?
     var randomFacts: [FactDataProtocol]?
     var todayFacts: [TodayProtocol]?
+<<<<<<< HEAD
     
+=======
+>>>>>>> 847ebdbba24fcfbce3f6c77fc8b4858129a5856b
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var bannerView: GADBannerView!
@@ -73,7 +76,13 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
         } else if randomFacts != nil {
            configurationViewControllers(randomFacts!, typeVC: DataViewController())
         } else if todayFacts != nil {
+<<<<<<< HEAD
             configurationViewControllers(todayFacts!, typeVC: TodayDataViewController())
+=======
+            DispatchQueue.main.async {
+                self.ConfigurationViewControllers(self.todayFacts!)
+            }
+>>>>>>> 847ebdbba24fcfbce3f6c77fc8b4858129a5856b
         }
         
         
