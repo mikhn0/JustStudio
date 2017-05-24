@@ -236,30 +236,6 @@ class MessagesViewController: MSMessagesAppViewController, CategoryVCDelegate, F
             }
         })
     }
-    
-//                for categ in categories! {
-//                    DispatchQueue.global().async {
-//                        print("START prepare image for \(categ.name)")
-//                        let data = try? Data(contentsOf: URL(string: categ.image)!)
-//                        if data != nil {
-//                            categ.image_view = data! as NSData
-//                        }
-//                        print("FINISHED prepare image for \(categ.name)")
-//                    }
-//                }
-    
-//            } else {
-//                let alertController = UIAlertController(title: "Error", message: "System error.", preferredStyle: .alert)
-//                
-//                let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
-//                    // ...
-//                }
-//                alertController.addAction(OKAction)
-//                
-//                self.present(alertController, animated: true) {
-//                    // ...
-//                }
-//            }
 
     func checkDifferenceCategoriesInDB(categoriesFromDB: Results<CategoryDataModel>, oldCategories: Results<CategoryDataModel>) {
         if _countOfCategories == categoriesFromDB.count {

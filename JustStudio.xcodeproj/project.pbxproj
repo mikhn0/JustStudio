@@ -80,6 +80,7 @@
 		75857DBF1EBA3B270009BE0C /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DB480F1DBE23E500119897 /* Category.swift */; };
 		75857DC01EBA3B2D0009BE0C /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DB481C1DBE290700119897 /* Base.swift */; };
 		75857DC11EBA3B2F0009BE0C /* Fact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DB48101DBE23E500119897 /* Fact.swift */; };
+		75D4E12D1ED5A20A001B2285 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75D4E12C1ED5A20A001B2285 /* UserNotifications.framework */; };
 		75D9A3141D92A01E0075BBBD /* CategoryRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D9A3131D92A01E0075BBBD /* CategoryRowController.swift */; };
 		75DE668C1DABD3F200E52FD0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75DE668B1DABD3F200E52FD0 /* UIKit.framework */; };
 		75E046BC1EC385A500FAC26E /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DB480F1DBE23E500119897 /* Category.swift */; };
@@ -265,6 +266,7 @@
 		75620F421C464FB10069DD5F /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		75620F481C4671EC0069DD5F /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+ImageEffects.h"; path = "Support File/UIImage+ImageEffects.h"; sourceTree = "<group>"; };
 		75620F491C4671EC0069DD5F /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ImageEffects.m"; path = "Support File/UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		75D4E12C1ED5A20A001B2285 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		75D9A3131D92A01E0075BBBD /* CategoryRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryRowController.swift; sourceTree = "<group>"; };
 		75DE668B1DABD3F200E52FD0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		75E046BF1EC48D8000FAC26E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -335,6 +337,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75D4E12D1ED5A20A001B2285 /* UserNotifications.framework in Frameworks */,
 				755E096D1E93B81F004E2EAF /* Realm.framework in Frameworks */,
 				75DE668C1DABD3F200E52FD0 /* UIKit.framework in Frameworks */,
 				755E09771E93B83B004E2EAF /* RealmSwift.framework in Frameworks */,
@@ -598,6 +601,7 @@
 		F4B5816DB2F43C9DC5A3C79F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				75D4E12C1ED5A20A001B2285 /* UserNotifications.framework */,
 				753F16121E9FDC4900C458D5 /* watch_swift-3.1 */,
 				755E096A1E93B81F004E2EAF /* swift-3.1 */,
 				33044B8D1DC26949005E4D38 /* CoreData.framework */,
@@ -774,6 +778,9 @@
 						LastSwiftMigration = 0800;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.Push = {
 								enabled = 1;
 							};
 						};

@@ -9,7 +9,11 @@
 import UIKit
 import RealmSwift
 import WatchConnectivity
+<<<<<<< HEAD
+import YandexMobileMetrica
+=======
 import UserNotifications
+>>>>>>> c0a4a6fb538e970e3e265fdba75a892991f6875e
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
@@ -33,6 +37,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
             session.activate()
         }
         
+<<<<<<< HEAD
+        catchEvent(withText: "ACTIVE_APP")
+=======
         // iOS 10 support
         if #available(iOS 10, *) {
             UNUserNotificationCenter.current().requestAuthorization(options:[.badge, .alert, .sound]){ (granted, error) in }
@@ -52,7 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
         else {  
             application.registerForRemoteNotifications(matching: [.badge, .sound, .alert])
         }
-        catchEvent(withText: "ACTIVE_APP")
+>>>>>>> c0a4a6fb538e970e3e265fdba75a892991f6875e
         
         return true
     }
