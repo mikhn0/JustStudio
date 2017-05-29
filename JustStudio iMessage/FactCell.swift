@@ -13,19 +13,16 @@ import Messages
 @available(iOS 10.0, *)
 
 class FactCell: UICollectionViewCell {
-    static let reuseIdentifier: String? = "FactCell"
-    @IBOutlet weak var image: UIImageView?
-    @IBOutlet weak var descrLabel: UILabel!
-    
+    static let reuseIdentifier = "FactCell"
+    @IBOutlet var imageFact: UIImageView!
+    @IBOutlet var descrFact: UILabel!
     var image_url:String = ""
-    
+
     override func awakeFromNib() {
-        self.descrLabel?.textColor = UIColor.white
-        self.descrLabel?.shadowColor = UIColor.gray
-        self.descrLabel?.shadowOffset = CGSize(width: 1, height: -1)
-        self.descrLabel?.font = UIFont(name: "AvusW00-CondensedMedium", size: 35)
-        
-        
+        descrFact.textColor = UIColor.white
+        descrFact.shadowColor = UIColor.gray
+        descrFact.shadowOffset = CGSize(width: 1, height: -1)
+        descrFact.font = UIFont(name: "AvusW00-CondensedMedium", size: 35)
     }
     
     func getScreenShortOfCell() -> UIImage {

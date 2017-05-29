@@ -17,14 +17,18 @@ class PreviewVC: BaseViewController {
     
     static let storyboardIdentifier = "PreviewVC"
     
-    @IBOutlet weak var previewImage : UIImageView?
-    @IBOutlet weak var previewLabel : UILabel?
+    @IBOutlet var previewImage : UIImageView!
+    @IBOutlet var previewLabel : UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.dismissSelf), name: NSNotification.Name(rawValue: "OpenScreenWithCompactStyle"), object: nil)
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         let url = URL(string: item.image)
         let urlWithService = "http://res.cloudinary.com/dvq3boovd/image/fetch/c_scale,w_100/"
         
@@ -34,16 +38,12 @@ class PreviewVC: BaseViewController {
         
         let task = URLSession.shared.dataTask(with: urlService!, completionHandler: { (data, response, error) in
             if error == nil {
-                self.previewImage?.sd_setImage(with: url, placeholderImage: UIImage(data:data!))
+                self.previewImage.sd_setImage(with: url, placeholderImage: UIImage(data:data!))
             }
         })
         task.resume()
-        previewLabel?.text = item.desc
-        
-
-        
+        previewLabel.text = item.desc
     }
-    
     func dismissSelf() {
         self.dismiss(animated: true, completion: nil)
     }

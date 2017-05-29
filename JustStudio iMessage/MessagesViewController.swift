@@ -11,9 +11,14 @@ import Foundation
 import Messages
 import RealmSwift
 
+enum LastOpenVC {
+    case categories, facts, preview
+}
+
 class MessagesViewController: MSMessagesAppViewController, CategoryVCDelegate, FactsVCDelegate
 {
-
+    var lastOpenVC:LastOpenVC = .categories
+    
     var categoryVC : CategoryVC!
     var factsVC: FactsVC?
     var previewVC: PreviewVC!
@@ -38,7 +43,7 @@ class MessagesViewController: MSMessagesAppViewController, CategoryVCDelegate, F
             image.draw(at: .zero)
         }
     }
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -47,14 +52,18 @@ class MessagesViewController: MSMessagesAppViewController, CategoryVCDelegate, F
         let realmConfigurator = AppGroupRealmConfiguration(appGroupIdentifier: appGroup, fileManager: fileManager)
         realmConfigurator.updateDefaultRealmConfiguration()
         
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
-        
-        if self._fact.count == 0 {
-            presentCategoryVC()
-        }
         NotificationCenter.default.addObserver(self, selector: #selector(self.openExpandedStyle), name: NSNotification.Name(rawValue: "OpenScreenWithExpectedStyle"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.openCompactStyle), name: NSNotification.Name(rawValue: "OpenScreenWithCompactsStyle"), object: nil)
+
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("view will APpear")
+        
+        //if _fact.count == 0 {
+        presentCategoryVC()
+        //}
+    }
     
     override func willSelect(_ message: MSMessage, conversation: MSConversation) {
         super.willSelect(message, conversation: conversation)
@@ -62,19 +71,21 @@ class MessagesViewController: MSMessagesAppViewController, CategoryVCDelegate, F
         messageSelectFromConversation = true
     }
     
+    override func didSelect(_ message: MSMessage, conversation: MSConversation) {
+        super.didSelect(message, conversation: conversation)
+        print("didSelected")
+    }
     
     override func willTransition (to presentationStyle: MSMessagesAppPresentationStyle) {
         super.willTransition(to: presentationStyle)
-        if presentationStyle == .expanded && messageSelectFromConversation == true && activeConversation?.selectedMessage != nil && presentationStyle == .expanded {
+        if presentationStyle == .expanded && messageSelectFromConversation == true || activeConversation?.selectedMessage != nil && presentationStyle == .expanded {
             
             presentPreview ()
             
         } else if presentationStyle == .expanded && messageSelectFromConversation == false || activeConversation?.selectedMessage == nil && presentationStyle == .expanded {
             
-            //presentFactsVC()
             messageSelectFromConversation = false
             categoryVC.topOfCategoryVC.constant = 85
-            print("messageSelectFromConversation = \(messageSelectFromConversation)")
             
         } else if presentationStyle == .compact && messageSelectFromConversation == false || activeConversation?.selectedMessage == nil && presentationStyle == .compact {
             
@@ -84,6 +95,16 @@ class MessagesViewController: MSMessagesAppViewController, CategoryVCDelegate, F
             NotificationCenter.default.post (name: NSNotification.Name (rawValue: "OpenScreenWithCompactsStyle"), object: nil)
         }
         
+    }
+    
+    override func willBecomeActive(with conversation: MSConversation) {
+        savedConversation = conversation
+        factsVC?.dismiss(animated: true, completion: nil)
+        //safariViewController?.dismiss(animated: true, completion: nil)
+        //if let url = conversation.selectedMessage?.url {
+        //    safariViewController = SFSafariViewController(url: url)
+        //    present(safariViewController!, animated: true, completion: nil)
+        //}
     }
     
     
@@ -96,6 +117,7 @@ class MessagesViewController: MSMessagesAppViewController, CategoryVCDelegate, F
     
     func buttonTappedOn(selectCategory: CategoryDataModel, onCell: UIImage) {
         print("buttonTappedOn method of protocol")
+        lastOpenVC = .facts
         openExpandedStyle()
         presentFactsVC(by: selectCategory)
     }
@@ -104,7 +126,8 @@ class MessagesViewController: MSMessagesAppViewController, CategoryVCDelegate, F
     //pragma mark - AddStickersVCDelegate
     
     func chooseFactForSend(_ screenShot: UIImage, with fact: Facts) {
-        guard let conversation = activeConversation else {fatalError()}
+        lastOpenVC = .categories
+        guard let conversation = activeConversation else {fatalError("FATAL ERROR: Conversation is no active")}
         let session = conversation.selectedMessage?.session ?? MSSession()
         
         let message = MSMessage(session:session)
@@ -121,31 +144,29 @@ class MessagesViewController: MSMessagesAppViewController, CategoryVCDelegate, F
         conversation.insert(message) { error in
             if (error) != nil { print(error ?? "ERROR") }
         }
-        openCompactStyle()
     }
-    
     
     //pragma mark - present different VC
     
+    func presentCategoryVC() {
+        if categoryVC == nil {
+            categoryVC = storyboard?.instantiateViewController(withIdentifier: CategoryVC.storyboardIdentifier) as? CategoryVC
+            categoryVC?.delegate = self
+            categoryVC?.view.frame = view.frame
+            navigationController!.pushViewController(categoryVC!, animated: false)
+        }
+        uploadCategories()
+        previewVC?.view.isHidden = true
+    }
+    
     func presentFactsVC(by category:CategoryDataModel) {
         if factsVC == nil {
-            let controller = storyboard?.instantiateViewController(withIdentifier: FactsVC.storyboardIdentifier) as? FactsVC
-            factsVC = controller
+            factsVC = storyboard?.instantiateViewController(withIdentifier: FactsVC.storyboardIdentifier) as? FactsVC
             factsVC?.delegate = self
-            
-            factsVC?.view.frame = self.view.frame
-            self.addChildViewController(factsVC!)
-            factsVC?.didMove(toParentViewController: self)
-            self.view.addSubview((factsVC?.view)!)
+            factsVC?.heightOfVC = view.frame.size.height
         }
+        navigationController!.pushViewController(factsVC!, animated: true)
         uploadFacts(by: category)
-        factsVC?.collectionView.reloadData()
-
-        
-        factsVC?.view.isHidden = false
-        //categoryVC.removeFromParentViewController()
-        categoryVC.view.isHidden = true
-        //previewVC?.removeFromParentViewController()
         previewVC?.view.isHidden = true
     }
     
@@ -154,47 +175,22 @@ class MessagesViewController: MSMessagesAppViewController, CategoryVCDelegate, F
             let controller = storyboard?.instantiateViewController(withIdentifier: PreviewVC.storyboardIdentifier) as? PreviewVC
             
             previewVC = controller
-            let fact = Facts (message: activeConversation?.selectedMessage)
-            
-            let item = Facts (desc: (fact?.desc)!, image: (fact?.image)! )
-            previewVC.item = item
-            
-            previewVC.view.frame = self.view.frame
-            self.addChildViewController(previewVC!)
-            previewVC.didMove (toParentViewController: self)
-            self.view.addSubview((previewVC?.view)!)
         }
+        
+        let fact = Facts (message: activeConversation?.selectedMessage)
+        let item = Facts (desc: (fact?.desc)!, image: (fact?.image)! )
+        previewVC.item = item
+        
+        previewVC.view.frame = view.frame
+        addChildViewController(previewVC!)
+        previewVC.didMove (toParentViewController: self)
+        view.addSubview((previewVC?.view)!)
+        
         messageSelectFromConversation = false
         
         previewVC.view.isHidden = false
-        //categoryVC.removeFromParentViewController()
-        categoryVC.view.isHidden = true
-        //factsVC?.removeFromParentViewController()
-        factsVC?.view.isHidden = true
     }
-    
-    func presentCategoryVC() {
-        if categoryVC == nil {
-            let controller = storyboard?.instantiateViewController(withIdentifier: CategoryVC.storyboardIdentifier) as? CategoryVC
-            categoryVC = controller
-            categoryVC.delegate = self
-            uploadCategories()
-            
-            categoryVC.view.frame = self.view.frame
-            self.addChildViewController(categoryVC)
-            categoryVC.didMove(toParentViewController: self)
-            self.view.addSubview(categoryVC.view)
-        }
-        
-        categoryVC.categoryTable?.reloadData()
-        categoryVC.changeBrowserViewBackgroundColor(color: UIColor.init(red:1.0, green:1.0, blue:1.0, alpha:1))
-        
-        categoryVC.view.isHidden = false
-        //factsVC?.removeFromParentViewController()
-        factsVC?.view.isHidden = true
-       // previewVC?.removeFromParentViewController()
-        previewVC?.view.isHidden = true
-    }
+
     
     
     //pragma mark - Inspection Stickers to match

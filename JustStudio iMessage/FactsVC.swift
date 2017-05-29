@@ -23,11 +23,9 @@ class FactsVC: BaseViewController, UICollectionViewDataSource, UICollectionViewD
     var facts: Results<FactDataModel>? {
         didSet {
             self.items = []
-            let firstFact = facts?.first
-            print("first fact = \(String(describing: firstFact?.category))")
             for elem in facts! {
                 let fact:Facts
-                fact = Facts(desc: returnDescriptionForApp(elem), image: elem.image!)
+                fact = Facts(desc: returnDescriptionForApp(elem), image: elem.image ?? "", image_data: elem.image_view as Data?)
                 self.items.append(fact)
             }
         }
@@ -39,6 +37,7 @@ class FactsVC: BaseViewController, UICollectionViewDataSource, UICollectionViewD
     var filtered:[Facts] = []
     weak var delegate:FactsVCDelegate?
     var tap: UITapGestureRecognizer?
+    var heightOfVC: CGFloat?
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -46,7 +45,18 @@ class FactsVC: BaseViewController, UICollectionViewDataSource, UICollectionViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadFacts()
+        //loadFacts()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        // view
+        let x:CGFloat      = self.view.bounds.origin.x
+        let y:CGFloat      = self.view.bounds.origin.y
+        let width:CGFloat  = self.view.bounds.width
+        let height:CGFloat = heightOfVC!
+        let frame:CGRect   = CGRect(x: x, y: y, width: width, height: height)
+        
+        self.view.frame           = frame
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -67,25 +77,8 @@ class FactsVC: BaseViewController, UICollectionViewDataSource, UICollectionViewD
     }
     
     private func dequeueFactCell(for fact:Facts, at indexPath:IndexPath) -> UICollectionViewCell {
-        let cell = collectionView?.dequeueReusableCell(withReuseIdentifier: FactCell.reuseIdentifier!, for: indexPath) as! FactCell
-        
-        let url = URL(string: fact.image)
-        let urlWithService = "http://res.cloudinary.com/dvq3boovd/image/fetch/c_scale,w_100/"
-        
-        let betweenString = urlWithService + fact.image
-        let urlService = URL(string: betweenString)
-        
-        
-        let task = URLSession.shared.dataTask(with: urlService!, completionHandler: { (data, response, error) in
-            if error == nil {
-                cell.image?.sd_setImage(with: url, placeholderImage: UIImage(data:data!))
-            }
-        })
-        task.resume()
-
-        cell.descrLabel.text = fact.desc
-        cell.image_url = fact.image
-        
+        let model = FactCellModel(photoUrl: fact.image, photoData: fact.image_data as NSData?, title: fact.desc)
+        let cell = collectionView!.dequeueReusableCell(viewModel: model, for: indexPath)
         addGestureForEachCell(cell)
         return cell
     }
@@ -93,34 +86,25 @@ class FactsVC: BaseViewController, UICollectionViewDataSource, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let item = items[indexPath.row]
-        
-        let cell:FactCell! = collectionView.cellForItem(at: indexPath) as! FactCell
-        
-        delegate?.chooseFactForSend(cell.getScreenShortOfCell(), with: item)
-        
+        let cell = collectionView.cellForItem(at: indexPath) as! FactCell
+        let screenShortCell = cell.getScreenShortOfCell()
+        navigationController?.popViewController(animated: false)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "OpenScreenWithCompactsStyle"), object: nil)
+        delegate?.chooseFactForSend(screenShortCell, with: item)
     }
     
     func loadFacts() {
-        // нет CoreData
-       // let objects = (CoreDataManager.instance().allHacks() as? [NSManagedObject])!
-       /* let objects //заглушка
-        for elem in objects {
-            let lifeHackNewObject:lifeHack?
-            lifeHackNewObject =  lifeHack(title:elem.value(forKey: "title") as! String, subtitle:elem.value(forKey: "content") as! String)
-            self.items.append(lifeHackNewObject!)
-        }*/
         if facts != nil {
             for elem in facts! {
-                let fact:Facts
-                fact = Facts(desc: returnDescriptionForApp(elem), image: elem.image!)
-                self.items.append(fact)
+                let fact = Facts(desc: returnDescriptionForApp(elem), image: elem.image!, image_data: elem.image_view! as Data)
+                items.append(fact)
             }
         }
     }
     
     func dismissKeyboard() {
-        self.searchBar.endEditing(true)
-        self.view.removeGestureRecognizer(tap!)
+        searchBar.endEditing(true)
+        view.removeGestureRecognizer(tap!)
     }
     
 }

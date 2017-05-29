@@ -12,6 +12,13 @@ import Messages
 struct Facts {
     var desc:String
     var image:String
+    var image_data:Data?
+    
+    init(desc: String, image:String, image_data:Data?) {
+        self.desc = desc
+        self.image = image
+        self.image_data = image_data
+    }
     
     init(desc: String, image:String) {
         self.desc = desc
@@ -19,8 +26,8 @@ struct Facts {
     }
     
     init?(queryItems: [URLQueryItem]) {
-        var desc: String! = ""
-        var image: String! = String()
+        var desc = ""
+        var image = ""
         
         for queryItem in queryItems {
             let name = queryItem.name
@@ -31,8 +38,7 @@ struct Facts {
                 image = value!
             }
         }
-        self.desc = desc
-        self.image = image
+        self.init(desc: desc, image: image)
     }
 }
 
@@ -42,8 +48,8 @@ extension Facts {
     var queryItems: [URLQueryItem] {
         var items = [URLQueryItem]()
         
-        items.append(URLQueryItem(name: "desc", value: self.desc))
-        items.append(URLQueryItem(name: "image", value: self.image))
+        items.append(URLQueryItem(name: "desc", value: desc))
+        items.append(URLQueryItem(name: "image", value: image))
         
         return items
     }
@@ -60,6 +66,8 @@ extension Facts {
 }
 
 class BaseViewController: UIViewController, UIViewControllerPreviewingDelegate {
+    
+    
     //FactCell
     func addGestureForEachCell(_ cell:UIView) {
         if traitCollection.forceTouchCapability == UIForceTouchCapability.available
@@ -100,7 +108,7 @@ class BaseViewController: UIViewController, UIViewControllerPreviewingDelegate {
         let peekController = PeekViewController(frame: CGRect(x: 0, y: 0,
                                                               width: previewSize,
                                                               height: previewSize))
-        let selectDescription = (previewingContext.sourceView as? FactCell)?.descrLabel.text
+        let selectDescription = (previewingContext.sourceView as? FactCell)?.descrFact.text
         let selectImage = (previewingContext.sourceView as? FactCell)?.image_url
         peekController.asset = Facts(desc: selectDescription!, image: selectImage!)
         return peekController

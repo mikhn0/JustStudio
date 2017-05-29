@@ -24,25 +24,15 @@ class CategoryVC: BaseViewController, UITableViewDelegate, UITableViewDataSource
     static let storyboardIdentifier = "CategoryVC"
     weak var delegate:CategoryVCDelegate?
     
-    @IBOutlet weak var categoryTable:UITableView?
+    var lastOpenVC:LastOpenVC = .categories
     @IBOutlet weak var topOfCategoryVC: NSLayoutConstraint!
+    @IBOutlet weak var categoryTable:UITableView?
 
     var _categories: Results<CategoryDataModel>?
     var messagesViewController: MessagesViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let alertController = UIAlertController(title: "Error", message: "Some little cockroaches ate your Internet", preferredStyle: .alert)
-        
-        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-        alertController.addAction(defaultAction)
-        
-        self.present(alertController, animated: true, completion: nil)
-    }
-    
-    func changeBrowserViewBackgroundColor(color: UIColor) {
-        self.categoryTable?.backgroundColor = color
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -60,25 +50,9 @@ class CategoryVC: BaseViewController, UITableViewDelegate, UITableViewDataSource
 
 //очередь для категории ячейки
     private func dequeueCategoryCell(for category: CategoryDataModel, at indexPath:IndexPath) -> UITableViewCell {
-        let cell = categoryTable?.dequeueReusableCell(withIdentifier: CategoryCell.reuseIdentifier!, for: indexPath) as! CategoryCell
-        cell.categoryLabel?.setDescription(dataObject: category as BaseDataProtocol)
-        
-        if (category.image != "") {
-            let url = URL(string: category.image)
-            let urlWithService = "http://res.cloudinary.com/dvq3boovd/image/fetch/c_scale,w_100/"
-            
-            let betweenString = urlWithService + category.image
-            let urlService = URL(string: betweenString)
-            
-            let task = URLSession.shared.dataTask(with: urlService!, completionHandler: { (data, response, error) in
-                if error == nil {
-                    cell.categoryImage?.sd_setImage(with: url, placeholderImage: UIImage(data:data!))
-                }
-            })
-            task.resume()
-        }
-       // messagesViewController._currentUpdateCategoryData = nil
-        return cell
+        let model = CategoryCellModel(photoUrl: category.image, photoData: category.image_view, title: returnDescriptionForApp(category))
+        // messagesViewController._currentUpdateCategoryData = nil
+        return categoryTable!.dequeueReusableCell(viewModel: model, for: indexPath)
     }
 }
 
@@ -86,29 +60,25 @@ class CategoryVC: BaseViewController, UITableViewDelegate, UITableViewDataSource
     override func drawText(in rect: CGRect) {
         if let stringText = text {
             let stringTextAsNSString = stringText as NSString
-            
-            print(stringText)
-            
+ 
             let firstLineStyle:NSMutableParagraphStyle = NSMutableParagraphStyle()
             firstLineStyle.firstLineHeadIndent = 27
             firstLineStyle.tailIndent = 135
             firstLineStyle.alignment = .center
             
-            let labelStringSize = stringTextAsNSString.boundingRect(with: CGSize(width: self.frame.width,height: CGFloat.greatestFiniteMagnitude),
+            let labelStringSize = stringTextAsNSString.boundingRect(with: CGSize(width: frame.width,height: CGFloat.greatestFiniteMagnitude),
                                                                     options: NSStringDrawingOptions.usesLineFragmentOrigin,
                                                                     attributes: [NSParagraphStyleAttributeName:firstLineStyle],
                                                                     context: nil).size
             
-            super.drawText(in: CGRect(x:0,y: 0,width: self.frame.width, height:ceil(labelStringSize.height)))
+            super.drawText(in: CGRect(x:0,y: 0,width: frame.width, height:ceil(labelStringSize.height)))
         } else {
             super.drawText(in: rect)
         }
     }
     
     func setTextWithCustomAttribute(text:String) {
-        
         self.attributedText = prepareCustomAttribute(text: text)
-        
     }
     
     func prepareCustomAttribute(text: String) -> NSMutableAttributedString {
