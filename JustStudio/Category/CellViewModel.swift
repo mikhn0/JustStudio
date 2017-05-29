@@ -40,11 +40,9 @@ extension CategoryCellModel:CellViewModel {
         cell.titleLabel.sizeToFit()
         
         if photoUrl != "" {
-            
             if photoData != nil {
                 cell.photoView.image = UIImage(data:photoData! as Data)
             } else {
-                
                 let url = URL(string: photoUrl)
                 let urlWithService = "http://res.cloudinary.com/dvq3boovd/image/fetch/c_scale,w_100/"+photoUrl
                 

@@ -29,6 +29,7 @@ class HTTPClient: NSObject {
             
             if (error != nil) {
                 catchError(withText: error!)
+                return
             }
             do {
                 if let json:NSDictionary = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? [String:AnyObject] as NSDictionary? {
@@ -57,10 +58,13 @@ class HTTPClient: NSObject {
             do {
                 if let json:NSDictionary = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? [String:AnyObject] as NSDictionary? {
                     
-                    let jsonFactsArr = json["facts"] as! [AnyObject]
-                    let facts = jsonFactsArr //запись перемешанных фактов в переменную facts
-                    DispatchQueue.main.sync {
-                        completion(facts)
+                    if let jsonFactsArr = json["facts"] as? [AnyObject] {
+                        let facts = jsonFactsArr //запись перемешанных фактов в переменную facts
+                        DispatchQueue.main.sync {
+                            completion(facts)
+                        }
+                    } else {
+                        completion([])
                     }
                 }
             } catch let error as NSError {

@@ -119,9 +119,13 @@ class InterfaceController: WKInterfaceController , WCSessionDelegate {
                                                 let reply = replyDict["reply"] as! String
                                                 if reply == "Category_Error" {
                                                     let action = WKAlertAction(title: "OK", style: .default, handler:{})
-                                                    let warning = SystemWarningForWatch.init()
-                                                    self.presentAlert(withTitle: detectCurrentLang(warning), message: "", preferredStyle: .actionSheet, actions: [action])
-                                                    self.sendMessage()
+                                                    
+                                                    let warning = "NO CATEGORY! DB IS EMPTY!!!"
+                                                    self.presentAlert(withTitle: warning, message: "", preferredStyle: .actionSheet, actions: [action])
+                                                    
+//                                                    let warning = SystemWarningForWatch.init()
+//                                                    self.presentAlert(withTitle: detectCurrentLang(warning), message: "", preferredStyle: .actionSheet, actions: [action])
+//                                                    self.sendMessage()
                                                 }
                                             },
                                             errorHandler: { error in print(error.localizedDescription) })

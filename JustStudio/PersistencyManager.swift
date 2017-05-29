@@ -54,9 +54,9 @@ class PersistencyManager {
                 }
             }
         }
-        DispatchQueue.main.async {
+        //DispatchQueue.main.async {
             completion()
-        }
+        //}
     }
     
     func writeFactsToBD(selectCategory: CategoryDataModel, facts: [AnyObject], _ completion: @autoclosure @escaping () -> Void) {
