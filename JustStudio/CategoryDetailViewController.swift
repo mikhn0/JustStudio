@@ -50,18 +50,6 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
         
         if category != nil {
             if category!.name == "favorites" {
-//                let likesValue = UserDefaults.standard.object(forKey: "LIKE_KEY") as! [[String : AnyObject]] //массив словарей
-//                
-//                var quotesArr: [FactDataModel] = []
-//                let likes = likesValue.shuffle()
-//                for element in likes {
-//                    let dict = element
-//                    let quoteData = FactDataModel(value:dict)
-//                    quotesArr.append(quoteData)
-//                }
-                
-               // self.configurationViewControllers(quotesArr)
-                
             } else {
                 LibraryAPI.sharedInstance().getFactsByCategory(self.category!, completion:{ (facts: Results<FactDataModel>?) -> Void in
                     
@@ -81,8 +69,8 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
         if UIDevice.current.userInterfaceIdiom == .pad {
             pageViewRect = pageViewRect.insetBy(dx: 40.0, dy: 40.0)
         }
-        self.pageViewController!.view.frame = pageViewRect
-        self.pageViewController!.didMove(toParentViewController: self)
+        pageViewController!.view.frame = pageViewRect
+        pageViewController!.didMove(toParentViewController: self)
     }
 
     

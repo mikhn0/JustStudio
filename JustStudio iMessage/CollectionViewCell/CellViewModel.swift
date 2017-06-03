@@ -41,23 +41,26 @@ extension UITableView {
 extension CategoryCellModel:CellViewModel {
     
     func setup(cell: CategoryCell) {
-        cell.categoryLabel.text = title
-        if photoData != nil {
-            cell.categoryImage.image = UIImage(data:photoData! as Data)
-        } else {
-            cell.categoryImage?.image = nil
-            if (photoUrl != "") {
-                let url = URL(string: photoUrl)
-                let urlService = URL(string: "http://res.cloudinary.com/dvq3boovd/image/fetch/c_scale,w_100/" + photoUrl)
-                
-                let task = URLSession.shared.dataTask(with: urlService!, completionHandler: { (data, response, error) in
-                    if error == nil {
-                        cell.categoryImage?.sd_setImage(with: url, placeholderImage: UIImage(data:data!))
-                    }
-                })
-                task.resume()
+        if cell.categoryLabel.text != title {
+            if photoData != nil {
+                cell.categoryImage.image = UIImage(data:photoData! as Data)
+            } else {
+                cell.categoryImage?.image = nil
+                if (photoUrl != "") {
+                    let url = URL(string: photoUrl)
+                    let urlService = URL(string: "http://res.cloudinary.com/dvq3boovd/image/fetch/c_scale,w_100/" + photoUrl)
+                    
+                    let task = URLSession.shared.dataTask(with: urlService!, completionHandler: { (data, response, error) in
+                        if error == nil {
+                            cell.categoryImage?.sd_setImage(with: url, placeholderImage: UIImage(data:data!))
+                        }
+                    })
+                    task.resume()
+                }
             }
         }
+        cell.categoryLabel.text = title
+        
         
     }
 }

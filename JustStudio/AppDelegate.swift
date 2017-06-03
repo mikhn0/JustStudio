@@ -42,29 +42,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
             session.activate()
         }
         
-        // iOS 10 support
-        if #available(iOS 10, *) {
-            UNUserNotificationCenter.current().requestAuthorization(options:[.badge, .alert, .sound]){ (granted, error) in }
-            application.registerForRemoteNotifications()
-            
-            //incrementBadgeNumberBy(badgeNumberIncrement: 1)
-            print("до пуш === \(UIApplication.shared.applicationIconBadgeNumber)")
+        UNUserNotificationCenter.current().requestAuthorization(options:[.badge, .alert, .sound]){ (granted, error) in }
+        application.registerForRemoteNotifications()
 
-        }
-            // iOS 9 support
-        else if #available(iOS 9, *) {
-            UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil))
-            UIApplication.shared.registerForRemoteNotifications()
-        }
-            // iOS 8 support
-        else if #available(iOS 8, *) {
-            UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil))
-            UIApplication.shared.registerForRemoteNotifications()
-        }
-            // iOS 7 support
-        else {  
-            application.registerForRemoteNotifications(matching: [.badge, .sound, .alert])
-        }
         catchEvent(withText: "ACTIVE_APP")
         
         return true
@@ -79,12 +59,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
         print("APNs device token: \(deviceTokenString)")
         
         // Persist it in your backend in case it's new
-    }
-    
-    // Called when APNs failed to register the device for push notifications
-    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-        // Print the error to console (you should alert the user that registration failed)
-        print("APNs registration failed: \(error)")
     }
     
     private func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -114,21 +88,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
             incrementBadgeNumberBy(badgeNumberIncrement: +1)
             print("находимся в background (+1) = \(UIApplication.shared.applicationIconBadgeNumber)")
             break
-        default:
-            print("!!!! default")
-            break
         }
-        
-//        if ( application.applicationState == UIApplicationState.inactive || application.applicationState == UIApplicationState.background ){
-//            print("opened from a push notification when the app was on background")
-//            incrementBadgeNumberBy(badgeNumberIncrement: -1)
-//            print("если открыли с background = \(UIApplication.shared.applicationIconBadgeNumber)")
-//        } else {
-//            print("opened from a push notification when the app was on foreground")
-//            incrementBadgeNumberBy(badgeNumberIncrement: -1)
-//            print("если открыли с foreground = \(UIApplication.shared.applicationIconBadgeNumber)")
-//        }
-
     }
     
 
@@ -183,5 +143,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
             // Инициализация AppMetrica SDK
             YMMYandexMetrica.activate(with: configuration!)
         }
+    }
+}
+
+
+func catchError(withText error: Error) {
+    YMMYandexMetrica.reportError("ERROR_\(String(describing: error))", exception: nil) { (error) in
+        print("REPORT ERROR: %@", error.localizedDescription)
+    }
+}
+
+func catchEvent(withText text: String) {
+    YMMYandexMetrica.reportEvent(text) { (error) in
+        print("DID FAIL REPORT EVENT: %@", text)
+        print("REPORT ERROR: %@", error.localizedDescription)
     }
 }

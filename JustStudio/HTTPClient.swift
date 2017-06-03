@@ -22,13 +22,13 @@ class HTTPClient: NSObject {
         }
     }()
     
-    func getCategoriesFromServer(_ completion: @escaping (_ categories: [AnyObject]) -> Void) -> Void {
+    func getCategoriesFromServer(_ completion: @escaping (_ categories: [AnyObject]) -> Void, _ failure: @escaping (_ error:NSError) -> Void) {
         let url = NSURL(string: "\(SERVER_URL)/categories")
         
         let task = URLSession.shared.dataTask(with: url! as URL) {(data, response, error) in
             
             if (error != nil) {
-                catchError(withText: error!)
+                failure(error! as NSError)
                 return
             }
             do {
@@ -41,19 +41,20 @@ class HTTPClient: NSObject {
                     }
                 }
             } catch let error as NSError {
-                catchError(withText: error)
+                failure(error)
             }
         }
         task.resume()
     }
     
-    func getFactsFromServer(_ category: CategoryDataModel, _ completion: @escaping (_ facts: [AnyObject]) -> Void) -> Void {
+    func getFactsFromServer(_ category: CategoryDataModel, _ completion: @escaping (_ facts: [AnyObject]) -> Void, _ failure: @escaping (_ error:NSError) -> Void) {
         let url = NSURL(string: "\(SERVER_URL)/facts?category=\(category.name)")
         
         let task = URLSession.shared.dataTask(with: url! as URL) {(data, response, error) in
             
             if (error != nil) {
-                catchError(withText: error!)
+                failure(error! as NSError)
+                return
             }
             do {
                 if let json:NSDictionary = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? [String:AnyObject] as NSDictionary? {
@@ -68,19 +69,19 @@ class HTTPClient: NSObject {
                     }
                 }
             } catch let error as NSError {
-                catchError(withText: error)
+                failure(error)
             }
         }
         task.resume()
     }
     
-    func getRandomFactsFromServer(_ completion: @escaping (_ facts: [AnyObject]) -> Void) -> Void {
-        let url = NSURL(string: "http://13.91.106.16:5793/facts")
+    func getRandomFactsFromServer(_ completion: @escaping (_ facts: [AnyObject]) -> Void, _ failure: @escaping (_ error:NSError) -> Void ) {
+        let url = NSURL(string: "\(SERVER_URL)/facts")
         
         let task = URLSession.shared.dataTask(with: url! as URL) {(data, response, error) in
             
             if (error != nil) {
-                catchError(withText: error!)
+                failure(error! as NSError)
             }
             
             do {
@@ -97,20 +98,20 @@ class HTTPClient: NSObject {
                     completion(factsArr)
                 }
             } catch let error as NSError {
-                catchError(withText: error)
+                failure(error)
             }
         }
         task.resume()
         
     }
     
-    func getTodayFactsFromServer(_ completion: @escaping (_ todayFacts: [AnyObject]) -> Void) -> Void {
+    func getTodayFactsFromServer(_ completion: @escaping (_ todayFacts: [AnyObject]) -> Void, _ failure: @escaping (_ error:NSError) -> Void) {
         let url = NSURL(string: "http://history.muffinlabs.com/date")
         
         let task = URLSession.shared.dataTask(with: url! as URL) {(data, response, error) in
             
             if (error != nil) {
-                catchError(withText: error!)
+                failure(error! as NSError)
             }
             
             do {
@@ -139,7 +140,7 @@ class HTTPClient: NSObject {
                     }
                 }
             } catch let error as NSError {
-                catchError(withText: error)
+                failure(error)
             }
         }
         task.resume()

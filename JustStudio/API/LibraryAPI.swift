@@ -74,32 +74,38 @@ class LibraryAPI  {
         
         if LibraryAPI.isConnectedToNetwork() {
         //get categories from server -> write to DB -> read from DB
-            httpClient.getCategoriesFromServer() { (_ categories: [AnyObject]) -> Void in
+            httpClient.getCategoriesFromServer({ (categories) in
                 self.persistencyManager.writeCategoriesToBD(categories: categories, completion(self.persistencyManager.readCategoryFromBD()!))
-            }
+            }, { (error) in
+                print("ERROR: \(error.localizedDescription)")
+            })
         }
     }
     
-    func getRandomFacts(_ completion: @escaping (_ facts: [AnyObject]?) -> Void) -> Void {
+    func getRandomFacts(_ completion: @escaping (_ facts: [AnyObject]?) -> Void) {
         
         if LibraryAPI.isConnectedToNetwork() {
-            httpClient.getRandomFactsFromServer() { (_ facts: [AnyObject]) -> Void in
+            httpClient.getRandomFactsFromServer({ (facts) in
                 completion(facts)
-            }
+            }, { (error) in
+                print("ERROR: \(error.localizedDescription)")
+            })
         }
     }
     
-    func getTodayFacts(_ completion: @escaping (_ facts: [AnyObject]?) -> Void) -> Void {
+    func getTodayFacts(_ completion: @escaping (_ facts: [AnyObject]?) -> Void) {
         
         if LibraryAPI.isConnectedToNetwork() {
-            httpClient.getTodayFactsFromServer() { (_ facts: [AnyObject]) -> Void in
+            httpClient.getTodayFactsFromServer({ (facts) in
                 completion(facts)
-            }
+            }, { (error) in
+                print("ERROR: \(error.localizedDescription)")
+            })
         }
     }
 
     
-    func getFactsByCategory(_ category: CategoryDataModel, completion: @escaping (_ facts: Results<FactDataModel>?) -> Void) -> Void {
+    func getFactsByCategory(_ category: CategoryDataModel, completion: @escaping (_ facts: Results<FactDataModel>?) -> Void) {
         //1 get facts from BD
         if let factsByCategory = persistencyManager.readFactFromBD(category: category), factsByCategory.count > 0 {
             completion(factsByCategory)
@@ -109,21 +115,19 @@ class LibraryAPI  {
         let realm = try! Realm()
         try! realm.write {
             category.last_show = Date()
-            print("-----Дата текущего открытия категории \(category.name) = \(category.last_show)")
         }
         
         let afterSomeTime = Date(timeInterval: 86400, since: lastOpenCategory)
-        print("-----Дата спустя 1 день с последнего открытия категории \(category.name) = \(afterSomeTime)")
-        
         let currentData = Date()
         
         if currentData >= afterSomeTime {
-            print("-----Грузим с сервера! \(currentData) >= \(afterSomeTime)")
-
             if LibraryAPI.isConnectedToNetwork() {
                 //2 request from Server all categories
-                httpClient.getFactsFromServer(category) { (_ factsInThisCategory: [AnyObject]) -> Void in
-                    self.persistencyManager.writeFactsToBD(selectCategory: category, facts: factsInThisCategory, completion(self.persistencyManager.readFactFromBD(category: category)!)) }
+                httpClient.getFactsFromServer(category, { (factsInThisCategory) in
+                    self.persistencyManager.writeFactsToBD(selectCategory: category, facts: factsInThisCategory, completion(self.persistencyManager.readFactFromBD(category: category)!))
+                }, { (error) in
+                    print("ERROR: \(error.localizedDescription)")
+                })
             }
         } else {
             print("-----1 день не прошел с последнего открытия, с сервера не грузим!")
@@ -131,15 +135,3 @@ class LibraryAPI  {
     }
 }
 
-func catchError(withText error: Error) {
-    YMMYandexMetrica.reportError("ERROR_\(String(describing: error))", exception: nil) { (error) in
-        print("REPORT ERROR: %@", error.localizedDescription)
-    }
-}
-
-func catchEvent(withText text: String) {
-    YMMYandexMetrica.reportEvent(text) { (error) in
-        print("DID FAIL REPORT EVENT: %@", text)
-        print("REPORT ERROR: %@", error.localizedDescription)
-    }
-}

@@ -28,8 +28,7 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
     var heightOfCell: CGFloat = 0.0
     
     static var Instance: CategoryViewController?
-    
-    let httpClient = HTTPClient()
+    var categoryDetailViewController:CategoryDetailViewController?
     
     var realm : Realm!
     
@@ -71,11 +70,7 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
         
         tableView.delegate = self
         tableView.dataSource = self
-        heightOfCell = (self.view.frame.size.height + 20) / 2
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+        heightOfCell = (view.frame.size.height + 20) / 2
     }
 
     func checkDifferenceCategoriesInDB(categoriesFromDB: Results<CategoryDataModel>, oldCategories: Results<CategoryDataModel>) {
@@ -92,7 +87,7 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
                     let categoryRef = ThreadSafeReference(to: value)
                     DispatchQueue.main.async {
                         self.tableView.beginUpdates()
-                        let indexPath:IndexPath = IndexPath(row: key, section: 0)
+                        let indexPath = IndexPath(row: key, section: 0)
                         let realm = try! Realm()
                         guard let categ = realm.resolve(categoryRef) else {
                             return
@@ -150,24 +145,21 @@ class CategoryViewController: UIViewController, UITableViewDataSource, UITableVi
     // ----- BarButtonDataSource START -----
     
     func displayFacts(_ facts: [BaseDataProtocol]) {
-        performSegue(withIdentifier: "FactsByCategorySegue", sender: facts)
+        if let randomFacts = facts as? [FactDataProtocol] {
+            categoryDetailViewController?.randomFacts = randomFacts
+            
+        } else if let todayFacts = facts as? [TodayProtocol] {
+            categoryDetailViewController?.todayFacts = todayFacts
+        }
     }
     
     // ----- BarButtonDataSource END -----
     // ----- Segue UIViewController START -----
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "FactsByCategorySegue" {
-            
-            let categoryDetailViewController = segue.destination as! CategoryDetailViewController
-            
+            categoryDetailViewController = segue.destination as? CategoryDetailViewController
             if let category = sender as? CategoryDataModel {
-                categoryDetailViewController.category = category
-                
-            } else if let randomFacts = sender as? [FactDataProtocol] {
-                categoryDetailViewController.randomFacts = randomFacts
-                
-            } else if let todayFacts = sender as? [TodayProtocol] {
-                categoryDetailViewController.todayFacts = todayFacts
+                categoryDetailViewController?.category = category
             }
         }
     }

@@ -13,6 +13,7 @@ import RealmSwift
 
 protocol BarButtonDataSource {
     func displayFacts(_ facts:[BaseDataProtocol])
+    func performSegue(withIdentifier identifier: String, sender: Any?)
 }
 
 class BarButton : UIButton {
@@ -59,14 +60,11 @@ class BarButton : UIButton {
         let favoriteFactData = FactDataModel()
         
         if favoritesFacts == [], let likes = UserDefaults.standard.object(forKey: "LIKE_KEY"), (likes as AnyObject).count > 0 {
-            print("add favorites facts 1")
             favoritesFacts.append(favoriteFactData)
         } else {
-            print("remove favorites facts!")
             favoritesFacts.removeAll()
         }
         if favoritesFacts != [], (UserDefaults.standard.object(forKey: "LIKE_KEY") as! [AnyObject]).count > 0 {
-            print("add favorites facts 2")
             favoritesFacts.append(favoriteFactData)
         }
         return favoritesFacts
@@ -82,6 +80,7 @@ class BarButton : UIButton {
     }
     
     func actionPressToday(sender: UIButton) {
+        delegate?.performSegue(withIdentifier: "FactsByCategorySegue", sender: facts)
         LibraryAPI.sharedInstance().getTodayFacts({ (todayFacts: [AnyObject]?) -> Void in
             if todayFacts != nil {
                 DispatchQueue.main.async {
@@ -96,6 +95,7 @@ class BarButton : UIButton {
     }
     
     func actionPressRandom(sender: UIButton) {
+        delegate?.performSegue(withIdentifier: "FactsByCategorySegue", sender: facts)
         LibraryAPI.sharedInstance().getRandomFacts ({ (randomFacts: [AnyObject]?) -> Void in
             if randomFacts != nil {
                 DispatchQueue.main.async {

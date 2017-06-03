@@ -10,15 +10,6 @@ import UIKit
 import RealmSwift
 import Realm
 
-/*
- A controller object that manages a simple model -- a collection of month names.
- 
- The controller serves as the data source for the page view controller; it therefore implements pageViewController:viewControllerBeforeViewController: and pageViewController:viewControllerAfterViewController:.
- It also implements a custom method, viewControllerAtIndex: which is useful in the implementation of the data source methods, and in the initial configuration of the application.
- 
- There is no need to actually create view controllers for each page in advance -- indeed doing so incurs unnecessary overhead. Given the data model, these methods create, configure, and return a new view controller on demand.
- */
-
 class ModelController: NSObject, UIPageViewControllerDataSource {
     
     var allFacts: Sequence?
@@ -43,8 +34,7 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
     }
 
     func indexOfViewController<T:DataModelVCProtocol>(_ viewController: T) -> Int {
-        // Return the index of the given data view controller.
-        // For simplicity, this implementation uses a static array of model objects and the view controller stores the model object; you can therefore use the model object to identify the index.
+        
         var indexOfFact: Int = NSNotFound
         for index in 0..<allFacts!.countResults! {
             let factData = allFacts![byIndex: index]
@@ -59,31 +49,34 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
     // MARK: - Page View Controller Data Source
 
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        var index = 0
-        let isTodayFactDataModel = allFacts is [Today]
-        index = !isTodayFactDataModel ? indexOfViewController(viewController as! DataViewController) : indexOfViewController(viewController as! TodayDataViewController)
+        if allFacts is [TodayProtocol] {
+            return page(viewControllerBefore: viewController as! TodayDataViewController)
+        } else {
+            return page(viewControllerBefore: viewController as! DataViewController)
+        }
+        
+    }
+    
+    func page<T:DataModelVCProtocol>(viewControllerBefore viewController: T) -> T? where T:UIViewController {
+        var index = indexOfViewController(viewController)
         if (index == 0) || (index == NSNotFound) {
             return nil
         }
         index -= 1
-        if !isTodayFactDataModel {
-            let vc:DataViewController = viewControllerAtIndex(index, storyboard: viewController.storyboard!)!
-            return vc
-        } else {
-            let vc:TodayDataViewController = viewControllerAtIndex(index, storyboard: viewController.storyboard!)!
-            return vc
-        }
-        
+        let vc:T = viewControllerAtIndex(index, storyboard: viewController.storyboard!)!
+        return vc
     }
-
+    
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        var index = 0
-        let isTodayFactDataModel = allFacts is [Today]
-        if !isTodayFactDataModel {
-            index = indexOfViewController(viewController as! DataViewController)
+        if allFacts is [TodayProtocol] {
+            return page(viewControllerAfter: viewController as! TodayDataViewController)
         } else {
-            index = indexOfViewController(viewController as! TodayDataViewController)
+            return page(viewControllerAfter: viewController as! DataViewController)
         }
+    }
+    
+    func page<T:DataModelVCProtocol>(viewControllerAfter viewController: T) -> T? where T:UIViewController {
+        var index = indexOfViewController(viewController)
         if index == NSNotFound {
             return nil
         }
@@ -91,13 +84,8 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
         if index == allFacts?.countResults {
             return nil
         }
-        if !isTodayFactDataModel {
-            let vc:DataViewController = viewControllerAtIndex(index, storyboard: viewController.storyboard!)!
-            return vc
-        } else {
-            let vc:TodayDataViewController = viewControllerAtIndex(index, storyboard: viewController.storyboard!)!
-            return vc
-        }
+        let vc:T = viewControllerAtIndex(index, storyboard: viewController.storyboard!)!
+        return vc
     }
 
 }

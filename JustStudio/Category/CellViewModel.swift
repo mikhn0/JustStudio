@@ -35,29 +35,27 @@ extension UITableView {
 extension CategoryCellModel:CellViewModel {
     
     func setup(cell: CategoryCell) {
-        cell.titleLabel.text = title
-        
-        cell.titleLabel.sizeToFit()
-        
-        if photoUrl != "" {
-            if photoData != nil {
-                cell.photoView.image = UIImage(data:photoData! as Data)
-            } else {
-                let url = URL(string: photoUrl)
-                let urlWithService = "http://res.cloudinary.com/dvq3boovd/image/fetch/c_scale,w_100/"+photoUrl
-                
-                let urlService = URL(string: urlWithService)
-                
-                let task = URLSession.shared.dataTask(with: urlService!, completionHandler: { (data, response, error) in
-                    if error == nil {
-                        DispatchQueue.main.async {
-                            cell.photoView.sd_setImage(with: url, placeholderImage: UIImage(data:data!))
+        if cell.titleLabel.text != title {
+            if photoUrl != "" {
+                if photoData != nil {
+                    cell.photoView.image = UIImage(data:photoData! as Data)
+                } else {
+                    let url = URL(string: photoUrl)
+                    let urlWithService = "http://res.cloudinary.com/dvq3boovd/image/fetch/c_scale,w_100/"+photoUrl
+                    
+                    let urlService = URL(string: urlWithService)
+                    
+                    let task = URLSession.shared.dataTask(with: urlService!, completionHandler: { (data, response, error) in
+                        if error == nil {
+                            DispatchQueue.main.async {
+                                cell.photoView.sd_setImage(with: url, placeholderImage: UIImage(data:data!))
+                            }
                         }
-                    }
-                })
-                task.resume()
+                    })
+                    task.resume()
+                }
             }
         }
-
+        cell.titleLabel.text = title
     }
 }
