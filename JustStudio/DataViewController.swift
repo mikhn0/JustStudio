@@ -10,14 +10,22 @@ import GoogleMobileAds
 import UIKit
 import SDWebImage
 
+protocol TypePageProtocol: class {
+    
+    /// View controller to be added to the UI hierarchy.
+    var viewController: UIViewController { get }
+}
+
 protocol DataModelVCProtocol {
     associatedtype Item
+    //var viewController: UIViewController { get }
     var dataObject: Item? {get set}
     var activityIndicator: UIActivityIndicatorView? {get set}
 }
 
 class DataViewController: UIViewController, DataModelVCProtocol {
     
+    typealias TypePage = DataViewController
     typealias Item = FactDataProtocol
     var dataObject: Item?
     var activityIndicator: UIActivityIndicatorView?
