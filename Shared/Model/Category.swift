@@ -31,16 +31,16 @@ class Category: Base {
         self.init(id, active, ru, image, en, name, image_view)
     }
     
-    convenience init(withRealm category:CategoryDataModel) {
-        let id = category._id
-        let active = category.active
-        let ru = category.ru
-        let image = category.image
-        let en = category.en
-        let name = category.name
-        let image_view = category.image_view
-        self.init(id, active, ru, image, en, name, image_view!)
-    }
+//    convenience init(withRealm category:CategoryDataModel) {
+//        let id = category._id
+//        let active = category.active
+//        let ru = category.ru
+//        let image = category.image
+//        let en = category.en
+//        let name = category.name
+//        let image_view = category.image_view
+//        self.init(id, active, ru, image, en, name, image_view!)
+//    }
     
     required init?(coder aDecoder: NSCoder) {
         image_mini = aDecoder.decodeObject(forKey: "image_mini") as! String

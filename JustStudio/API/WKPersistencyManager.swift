@@ -22,7 +22,7 @@ extension PersistencyManager: WKPersistencyManager {
         if resultReadCategoryFromDB != nil, (resultReadCategoryFromDB?.count)! > 0 {
             var result = [Category]()
             for elem in resultReadCategoryFromDB! {
-                let category_obj = Category(withRealm: elem)
+                let category_obj = Category(elem._id, elem.active, elem.ru, elem.image, elem.en, elem.name, elem.image_view!)
                 category_obj.image_view = nil
                 result.append(category_obj)
             }
@@ -41,7 +41,7 @@ extension PersistencyManager: WKPersistencyManager {
         if resultReadFactsFromDB != nil, (resultReadFactsFromDB?.count)! > 0 {
             var result = [Fact]()
             for elem in resultReadFactsFromDB! {
-                let fact_obj = Fact(withRealm: elem)
+                let fact_obj = Fact(elem._id, elem.active, elem.ru, elem.image, elem.en, elem.category, elem.image_view!, elem.isLike)
                 fact_obj.image_view = nil
                 result.append(fact_obj)
             }
@@ -53,5 +53,4 @@ extension PersistencyManager: WKPersistencyManager {
             completion(nil)
         }
     }
-    
 }

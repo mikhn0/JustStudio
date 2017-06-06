@@ -26,11 +26,9 @@ class CategoryCell: UITableViewCell {
     }
 
     override func layoutSubviews() {
-        
         super.layoutSubviews()
         
         let contentRect = contentView.bounds
         self.titleLabel.frame = CGRect(x: 20, y: contentRect.size.height-100, width: contentRect.size.width-40, height: 100)
-        
     }
 }

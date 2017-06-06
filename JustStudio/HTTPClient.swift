@@ -12,8 +12,6 @@ import Realm
 import YandexMobileMetrica
 
 class HTTPClient: NSObject {
-    let persistencyManager = PersistencyManager()
-    
     
     lazy var categoryArray: Results<CategoryDataModel> = {
         DispatchQueue.main.sync {

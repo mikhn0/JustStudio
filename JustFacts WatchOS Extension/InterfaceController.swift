@@ -8,8 +8,6 @@
 
 import WatchKit
 import Foundation
-import RealmSwift
-import Realm
 import WatchConnectivity
 
 enum TypeMessageData {
@@ -31,7 +29,6 @@ class InterfaceController: WKInterfaceController , WCSessionDelegate {
     @IBOutlet var categoryTable: WKInterfaceTable!
 
     var selectedIndex = 0
-    var realm: Realm!
     var typeMessageData:TypeMessageData = .Category
     
     var categoriesFromApp: [Category] = []

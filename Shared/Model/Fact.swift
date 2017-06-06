@@ -32,17 +32,17 @@ class Fact: Base {
         self.init(id, active, ru, image, en, category, image_view, isLike)
     }
     
-    convenience init(withRealm fact:FactDataModel) {
-        let id = fact._id
-        let active = fact.active
-        let ru = fact.ru
-        let image = fact.image
-        let en = fact.en
-        let category = fact.category
-        let image_view = fact.image_view
-        let isLike = fact.isLike
-        self.init(id, active, ru, image, en, category, image_view!, isLike)
-    }
+//    convenience init(withRealm fact:FactDataModel) {
+//        let id = fact._id
+//        let active = fact.active
+//        let ru = fact.ru
+//        let image = fact.image
+//        let en = fact.en
+//        let category = fact.category
+//        let image_view = fact.image_view
+//        let isLike = fact.isLike
+//        self.init(id, active, ru, image, en, category, image_view!, isLike)
+//    }
     
     required init?(coder aDecoder: NSCoder) {
         image = aDecoder.decodeObject(forKey: "image") as! String
