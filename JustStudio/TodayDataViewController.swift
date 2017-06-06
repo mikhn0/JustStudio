@@ -12,6 +12,7 @@ import SDWebImage
 
 class TodayDataViewController: UIViewController, DataModelVCProtocol {
     
+    typealias TypePage = TodayDataViewController
     typealias Item = TodayProtocol
     var dataObject: TodayProtocol?
     

@@ -10,8 +10,16 @@ import UIKit
 import RealmSwift
 import Realm
 
-class ModelController: NSObject, UIPageViewControllerDataSource {
+protocol ModelControllerProtocol {
+    var allFacts: Sequence? {get set}
+    var activityIndicator: UIActivityIndicatorView? {get set}
+    func viewControllerAtIndex<T:DataModelVCProtocol>(_ index: Int, storyboard: UIStoryboard) -> T?
+    func indexOfViewController<T:DataModelVCProtocol>(_ viewController: T) -> Int
+}
+
+class ModelController<T>: NSObject, UIPageViewControllerDataSource, ModelControllerProtocol where T:DataModelVCProtocol, T:UIViewController {
     
+    typealias TypePage = T
     var allFacts: Sequence?
     var activityIndicator: UIActivityIndicatorView?
 
@@ -57,23 +65,17 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
         
     }
     
-    func page<T:DataModelVCProtocol>(viewControllerBefore viewController: T) -> T? where T:UIViewController {
+    func page<U:DataModelVCProtocol>(viewControllerBefore viewController: U) -> U? where U:UIViewController {
         var index = indexOfViewController(viewController)
         if (index == 0) || (index == NSNotFound) {
             return nil
         }
         index -= 1
-        let vc:T = viewControllerAtIndex(index, storyboard: viewController.storyboard!)!
+        let vc:U = viewControllerAtIndex(index, storyboard: viewController.storyboard!)!
         return vc
     }
     
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        if allFacts is [TodayProtocol] {
-            return page(viewControllerAfter: viewController as! TodayDataViewController)
-        } else {
-            return page(viewControllerAfter: viewController as! DataViewController)
-        }
-    }
+
     
     func page<T:DataModelVCProtocol>(viewControllerAfter viewController: T) -> T? where T:UIViewController {
         var index = indexOfViewController(viewController)
@@ -88,5 +90,15 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
         return vc
     }
 
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        //let vc = viewController as! TypePage.Type
+        return page(viewControllerAfter: viewController as! TodayDataViewController)
+        //        return page(viewControllerAfter:viewController as? TypePage.Type)
+        //        if allFacts is [TodayProtocol] {
+        //            return page(viewControllerAfter: viewController as! TodayDataViewController)
+        //        } else {
+        //            return page(viewControllerAfter: viewController as! DataViewController)
+        //        }
+    }
 }
 

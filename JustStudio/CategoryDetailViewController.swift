@@ -24,7 +24,7 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var shareView: UIView!
     var pageViewController: UIPageViewController?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -38,7 +38,9 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
         frame.origin.x = 0
         frame.origin.y = 0
         blurredEffectView.frame = frame
-        self.shareView.insertSubview(blurredEffectView, belowSubview: self.shareButton)
+        shareView.insertSubview(blurredEffectView, belowSubview: shareButton)
+        
+        shareButton.addTarget(self, action: #selector(shareAction(_:)), for: .touchUpInside)
         
         self.pageViewController = UIPageViewController(transitionStyle: .pageCurl, navigationOrientation: .horizontal, options: nil)
         self.pageViewController!.delegate = self
@@ -54,14 +56,14 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
                 LibraryAPI.sharedInstance().getFactsByCategory(self.category!, completion:{ (facts: Results<FactDataModel>?) -> Void in
                     
                     DispatchQueue.main.async {
-                        self.configurationViewControllers(facts!, typeVC: DataViewController())
+                        self.configurationViewControllers(facts!, typeVC: DataViewController.self)
                     }
                 })
             }
         } else if randomFacts != nil {
-           configurationViewControllers(randomFacts!, typeVC: DataViewController())
+           configurationViewControllers(randomFacts!, typeVC: DataViewController.self)
         } else if todayFacts != nil {
-            configurationViewControllers(todayFacts!, typeVC: TodayDataViewController())
+            configurationViewControllers(todayFacts!, typeVC: TodayDataViewController.self)
         }
         
         
@@ -74,42 +76,37 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
     }
 
     
-    func configurationViewControllers<T>(_ facts: Sequence?, typeVC vcType:T) where T : UIViewController, T : DataModelVCProtocol{
-
-        modelController.allFacts = facts
-        modelController.activityIndicator = activityIndicator
-        var viewControllers = [AnyObject]()
-        if vcType is DataViewController {
-            let startingViewController:DataViewController = modelController.viewControllerAtIndex(0, storyboard: storyboard!)!
-            viewControllers = [startingViewController]
-            
-        } else {
-            let startingViewController:TodayDataViewController = modelController.viewControllerAtIndex(0, storyboard: storyboard!)!
-            viewControllers = [startingViewController]
-        }
-        pageViewController!.setViewControllers(viewControllers as? [UIViewController], direction: .forward, animated: true, completion: {done in })
-        pageViewController!.dataSource = modelController
+    func configurationViewControllers<T:DataModelVCProtocol>(_ facts: Sequence?, typeVC vcType:T.Type) where T:UIViewController {
+        modelController = ModelController<T>()
+        modelController?.allFacts = facts
+        modelController?.activityIndicator = activityIndicator
+        var viewControllers = [T]()
+        let startingViewController:T = modelController!.viewControllerAtIndex(0, storyboard: storyboard!)!
+        viewControllers = [startingViewController]
+        
+        pageViewController!.setViewControllers(viewControllers, direction: .forward, animated: true, completion: {done in })
+        pageViewController!.dataSource = modelController as? UIPageViewControllerDataSource
         addChildViewController(pageViewController!)
         view.insertSubview(pageViewController!.view, belowSubview: bannerView)
     }
     
-    @IBAction func shareAction(_ sender: AnyObject) {
+    func shareAction(_ sender: UIButton) {
         // Check and see if the text field is empty
         
         catchEvent(withText: "SHARE_ACTION_CLICK")
         
-        if self.pageViewController!.viewControllers!.count > 0 {
-            let currentViewController = pageViewController!.viewControllers![0] as! DataViewController
-            let indexOfCurrentViewController = modelController.indexOfViewController(currentViewController)
+        if pageViewController!.viewControllers!.count > 0 {
+            let currentViewController:DataModelVCProtocol = pageViewController!.viewControllers?[0]//DataViewController
+            let indexOfCurrentViewController = modelController?.indexOfViewController(currentViewController)
             
-            let facts = modelController.allFacts!
-            if facts.countResults! > 0 && indexOfCurrentViewController >= 0 {
-                if let fact = facts[byIndex: indexOfCurrentViewController] as? FactDataProtocol, fact.image == "" {
+            let facts = modelController?.allFacts!
+            if (facts?.countResults!)! > 0 && indexOfCurrentViewController! >= 0 {
+                if let fact = facts?[byIndex: indexOfCurrentViewController!] as? FactDataProtocol, fact.image == "" {
                     // The text field is empty so display an Alert
                     displayAlert("Warning", message: "Enter something in the text field!")
                 } else {
                     // We have contents so display the share sheet
-                    displayShareSheet(facts[byIndex: indexOfCurrentViewController])
+                    displayShareSheet((facts?[byIndex: indexOfCurrentViewController!])!)
                 }
             }
         }
@@ -127,8 +124,8 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
         
         let siteUrl:URL! = URL(string: "https://justfacts.carrd.co/")
 
-        UIGraphicsBeginImageContextWithOptions(CGSize(width: self.view.frame.size.width, height: self.view.frame.size.height-100), true, UIScreen.main.scale)
-        self.view.drawHierarchy(in: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height-50), afterScreenUpdates: false)
+        UIGraphicsBeginImageContextWithOptions(CGSize(width: view.frame.width, height: view.frame.height-100), true, UIScreen.main.scale)
+        self.view.drawHierarchy(in: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height-50), afterScreenUpdates: false)
         let shareImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         
@@ -150,50 +147,26 @@ class CategoryDetailViewController: UIViewController, UIPageViewControllerDelega
         let croppedImage:UIImage = UIImage(cgImage:imageRef)
         return croppedImage
     }
-    
-    var modelController: ModelController {
-        // Return the model controller object, creating it if necessary.
-        // In more complex implementations, the model controller may be passed to the view controller.
-        if _modelController == nil {
-            _modelController = ModelController()
-        }
-        return _modelController!
-    }
+    //var modelController: ModelController<T: UIViewController & DataModelVCProtocol>?;
+//    var modelController: ModelController {
+//        if _modelController == nil {
+//            _modelController = ModelController()
+//        }
+//        return _modelController!
+//    }
 
     
-    var _modelController: ModelController?
+    var modelController: ModelControllerProtocol?//ModelController?
+}
 
-    
-    // MARK: - UIPageViewController delegate methods
-
-    func pageViewController(_ pageViewController: UIPageViewController, spineLocationFor orientation: UIInterfaceOrientation) -> UIPageViewControllerSpineLocation {
-        if (orientation == .portrait) || (orientation == .portraitUpsideDown) || (UIDevice.current.userInterfaceIdiom == .phone) {
-            // In portrait orientation or on iPhone: Set the spine position to "min" and the page view controller's view controllers array to contain just one view controller. Setting the spine position to 'UIPageViewControllerSpineLocationMid' in landscape orientation sets the doubleSided property to true, so set it to false here.
-            let currentViewController = self.pageViewController!.viewControllers![0]
-            let viewControllers = [currentViewController]
-            self.pageViewController!.setViewControllers(viewControllers, direction: .forward, animated: true, completion: {done in })
-
-            self.pageViewController!.isDoubleSided = false
-            return .min
-        }
-
-        // In landscape orientation: Set set the spine location to "mid" and the page view controller's view controllers array to contain two view controllers. If the current page is even, set it to contain the current and next view controllers; if it is odd, set the array to contain the previous and current view controllers.
-        let currentViewController = self.pageViewController!.viewControllers![0] as! DataViewController
-        var viewControllers: [UIViewController]
-
-        let indexOfCurrentViewController = self.modelController.indexOfViewController(currentViewController)
-        if (indexOfCurrentViewController == 0) || (indexOfCurrentViewController % 2 == 0) {
-            let nextViewController = self.modelController.pageViewController(self.pageViewController!, viewControllerAfter: currentViewController)
-            viewControllers = [currentViewController, nextViewController!]
-        } else {
-            let previousViewController = self.modelController.pageViewController(self.pageViewController!, viewControllerBefore: currentViewController)
-            viewControllers = [previousViewController!, currentViewController]
-        }
-        self.pageViewController!.setViewControllers(viewControllers, direction: .forward, animated: true, completion: {done in })
-
-        return .mid
+extension DataModelVCProtocol where Self:UIViewController {
+    var viewController: UIViewController {
+        return self
     }
 }
+
+protocol Wibbling:DataModelVCProtocol {}
+
 
 struct SharingError:Error {
     var rawValue:String
